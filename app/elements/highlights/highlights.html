@@ -1,40 +1,36 @@
-<link rel="import" href="../page/page.html">
+<link rel="import" href="../../lib-elements/polymer-jsonp/polymer-jsonp.html">
 
-<link rel="import" href="../../bower_components/polymer-jsonp/polymer-jsonp.html">
-<link rel="import" href="../footer/footer.html">
+<link rel="import" href="../page/page.html">
 
 <polymer-element name="highlights-element" extends="page-element">
   <template>
 
-    <link rel="stylesheet" href="highlights.css">
-
     <!-- Important Owl stylesheet -->
-    <link rel="stylesheet" href="../../gitroot/owlcaroussel/owl-carousel/owl.carousel.css">
- 
-    <!-- Default Theme -->
-    <link rel="stylesheet" href="../../gitroot/owlcaroussel/owl-carousel/owl.theme.css">
+    <!-- build:css ../../lib-elements/owl-carousel/owl.carousel.css -->
+            <link rel="stylesheet" href="../../bower_components/OwlCarousel/owl-carousel/owl.carousel.css">
+    <!-- endbuild -->
+    <!-- build:css ../../lib-elements/owl-carousel/owl.theme.css -->
+            <link rel="stylesheet" href="../../bower_components/OwlCarousel/owl-carousel/owl.theme.css">
+    <!-- endbuild -->
 
-    <div id="{{name}}-wrapper" class='wrapper' data-speed="50" on-scroll="{{scroll}}" style="height:100%;overflow-y:scroll;">
       <div class="container">
         <div id="jumbo" class=" jumbotron fBox" >
-        <div style="padding-bottom: 50px;">
         <h2>
           <span class="small">Some of our center</span>
           <span class="large {{name}}">highlights</span>
         </h2>
       </div>
-      </div>
       <div class="row">
         <div class="col-md-2 ">
-          <div id='{{name}}-affix'  class="fBox">
+          <div id='{{name}}-affix' class="fBox">
             <ul id='{{name}}-navigation' class="nav ">
               Navigation
               <template if="{{structure != null}}">
                 <template repeat="{{section in structure}}">
-                  <li >
-                    <a id='{{name}}-nav-{{section.index}}' class='{{name}}' data-section='{{section.index}}' on-tap='{{navtap}}'>{{section.label}}</a>
+                  <li on-tap="{{gotoSection}}">
+                    <a id='{{name}}-nav-{{section.index}}' class='{{name}}' data-section='{{section.index}}'>{{section.label}}</a>
                   </li> 
-                </template>
+                </template> 
               </template>
             </ul>
           </div>
@@ -169,23 +165,24 @@
     </div>
     </div>
 
-    <footer-element></footer-element>
-
-    </div>
-
-    <polymer-jsonp auto url="https://spreadsheets.google.com/feeds/list/0Asu7h0aKnydhdHlaTndWaUVmOHRpRTMzX3VmWW9VVFE/od6/public/values?alt=json-in-script&callback=" response="{{highlights}}"></polymer-jsonp>
+    <polymer-jsonp auto url="https://spreadsheets.google.com/feeds/list/{{spreadsheet}}/od6/public/values?alt=json-in-script&callback=" response="{{highlights}}"></polymer-jsonp>
 
   </template>
 
-  <script src="../../gitroot/owlcaroussel/owl-carousel/owl.carousel.js"></script>
+  <!-- build:js ../../lib-elements/owl-carousel/owl.carousel.min.js -->
+  <script src="../../bower_components/OwlCarousel/owl-carousel/owl.carousel.min.js"></script>
+  <!-- endbuild -->
 
   <script>
     Polymer('highlights-element', {
       name:'highlights',
-      ready: function(){
+      spreadsheet: '0Asu7h0aKnydhdHlaTndWaUVmOHRpRTMzX3VmWW9VVFE',
+      attached: function(){
         this.super();
-        addEventListener('WebComponentsReady', function() {
-          $('#owl-demo').owlCarousel({
+        var self = this;
+        this.onload=function(){self.refresh();};
+        
+        $('#owl-demo').owlCarousel({
             slideSpeed : 300,
             paginationSpeed : 400,
             singleItem:true,
@@ -194,7 +191,6 @@
             mouseDrag:false,
             touchDrage:false
           });
-        });
       }
     });
   </script>

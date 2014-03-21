@@ -60,10 +60,6 @@
       spreadsheet: '0Asu7h0aKnydhdEhuTGVQVlh5WnlQOHROSlQxRjZJbnc',
       postsChanged: function() {
         if(this.posts){
-          // when the page content is loaded, we make sure to refresh the heights for scrollpsy and navigation!
-          var self = this;
-          this.onload=function(){self.refresh();};
-
           this.$.generalContent.innerHTML = this.posts.feed.entry[0].gsx$general.$t;
           this.$.researchContent.innerHTML = this.posts.feed.entry[0].gsx$research.$t;
           this.$.softwareContent.innerHTML = this.posts.feed.entry[0].gsx$software.$t;

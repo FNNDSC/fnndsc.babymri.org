@@ -10,7 +10,9 @@
       prevSection: 0,
       attached: function(){
         var affix = this.shadowRoot.querySelector('#'+this.name+'-affix');
-        $(affix).affix(); 
+        $(affix).affix();
+
+        this.refresh();
       },
       detached: function(){
           this.targets = null;
@@ -31,11 +33,17 @@
         this.fire('gotoSection', {offsetTop: this.offsetTops[id]});
       },
       scroolChanged: function(){
+        var match = false;
         for(var i = 0; i<this.nbSections - 1; i++){
           if(this.scrool >= this.offsetTops[i] && this.scrool < this.offsetTops[i+1]){
             this.curSection = i;
+            match = true;
             break;
           }
+        }
+
+        if(!match){
+          this.curSection = this.nbSections - 1;
         }
 
         this.updateNavigation();

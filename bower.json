@@ -6,7 +6,9 @@
     "modernizr": "~2.6.2",
     "polymer": "latest",
     "platform": "latest",
-    "more-elememts": "https://github.com/PolymerLabs/more-elements.git"
+    "more-elememts": "https://github.com/PolymerLabs/more-elements.git",
+    "OwlCarousel": "https://github.com/OwlFonk/OwlCarousel.git",
+    "polymer-ui-collapsible": "PolymerLabs/polymer-ui-collapsible#master"
   },
   "devDependencies": {}
 }

@@ -134,13 +134,13 @@ module.exports = function (grunt) {
         },
         
         useminPrepare: {
-            html: '<%= yeoman.app %>/index.html',
+            src: ['<%= yeoman.app %>/index.html'],
             options: {
                 dest: '<%= yeoman.dist %>'
             }
         },
         usemin: {
-            html: ['<%= yeoman.dist %>/{,*/}*.html'],
+            html: ['<%= yeoman.dist %>/{,*/}*.html','<%= yeoman.dist %>/elements/{,*/}*.html'],
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
             options: {
                 dirs: ['<%= yeoman.dist %>']

@@ -67,12 +67,13 @@
     Polymer('research-element', {
       name: 'research',
       spreadsheet: '0Asu7h0aKnydhdEpPMXFFNFVTU1E5ZXFJSGZjbVJTOGc',
+      attached: function(){
+        this.super();
+        var self = this;
+        this.onload=function(){self.refresh();};
+      },
       researchChanged: function() {
         if(this.research){
-          // when the page content is loaded, we make sure to refresh the heights for scrollpsy and navigation!
-          var self = this;
-          this.onload=function(){self.refresh();};
-
           // titles
           this.$.challengesTitle.innerHTML = this.research.feed.entry[0].gsx$challenges.$t;
           this.$.mriTitle.innerHTML = this.research.feed.entry[0].gsx$mri.$t;
