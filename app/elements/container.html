@@ -1,0 +1,76 @@
+<link rel="import" href="../lib-elements/flatiron-director/flatiron-director.html">
+
+<link rel="import" href="footer/footer.html">
+<link rel="import" href="home/home.html">
+<link rel="import" href="research/research.html">
+
+<polymer-element name="container-element"  attributes="route scrollTopC">
+  <template>
+    <style>
+      @host { :scope {display: block;} }
+    </style>
+<div>
+
+<flatiron-director route="{{route}}" autoHash></flatiron-director>
+
+<template if="{{route != null}}">
+  <template if="{{route == 'home-element' || route == ''}}">
+    <home-element id='home-element' structure="{{home}}" scrool="{{scrollTopC}}"></home-element>
+  </template>
+  <template if="{{route == 'research-element'}}">
+    <research-element structure="{{research}}" scrool="{{scrollTopC}}"></research-element>
+  </template>
+  <template if="{{route == 'highlights-element'}}">
+    <!-- <highlights-element></highlights-element> -->
+  </template>
+</template>
+
+
+<!--     <footer-element></footer-element> -->
+
+</div>
+
+  </template>
+  <script>
+    Polymer('container-element', {
+      route: 'home-element',
+      ready: function() {
+        // list the pages
+        this.pages = [{id:'home', label:'home', index:0},
+                     {id:'research', label:'research', index:1},
+                     {id:'highlights', label:'highlights', index:2},
+                     {id:'software', label:'software', index:3},
+                     {id:'team', label:'meet our team', index:4},
+                     {id:'contact', label:'contact us', index:5},
+                     {id:'live', label:'on air', index:6},
+                     {id:'events', label:'events', index:7}];
+
+                             // home page
+        this.home = [{id:'welcome', label:'welcome',index:0}];
+
+        // research page
+        this.research = [{id:'challenges', label:'challenges', index:0},
+                         {id:'mri', label:'mri', index:1},
+                         {id:'nirs', label:'nirs', index:2},
+                         {id:'meg', label:'meg', index:3}];
+
+        // highlights a and awards page
+        this.highlights = [{id:'highlights', label:'highlights', index:0},
+                         {id:'ttfourteen', label:'2014', index:1},
+                         {id:'ttthirteen', label:'2013', index:2},
+                         {id:'tttwelve', label:'2012', index:3},
+                         {id:'tteleven', label:'2011', index:4}];
+      },
+      routeChanged: function() {
+        //window.console.log('new route: ' + this.route);
+        //this.currentElt = this.shadowRoot.querySelector(this.route);
+        //window.console.log(this.shadowRoot);
+          // window.console.log('route: ' + this.route);
+          // var location = this.route.split("/");
+          // this.route = location[0];
+          // // if location2 not redefined, we are good!
+          // window.console.log('page: ' + location[1]);
+        }
+    });
+  </script>
+</polymer-element>

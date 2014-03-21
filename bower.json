@@ -1,0 +1,12 @@
+{
+  "name": "fnndsc-babymri-org",
+  "version": "0.0.0",
+  "dependencies": {
+    "sass-bootstrap": "latest",
+    "modernizr": "~2.6.2",
+    "polymer": "latest",
+    "platform": "latest",
+    "more-elememts": "https://github.com/PolymerLabs/more-elements.git"
+  },
+  "devDependencies": {}
+}
