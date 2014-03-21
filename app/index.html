@@ -50,8 +50,10 @@
             var listPages = $('.navbar ul');
             var nbPages = myApp.pages.length;
             for (var i = 0; i < nbPages; i++) {
-              listPages.append('<li id="'+myApp.pages[i].id+'-nav" ><a href="#'+myApp.pages[i].id+'-element">'+myApp.pages[i].id+'</a></li>');
+              listPages.append('<li id="'+myApp.pages[i].id+'-nav" class="nav-element"><a href="#'+myApp.pages[i].id+'">'+myApp.pages[i].label+'</a></li>');
             }
+
+            myApp.refresh();
 
             // start listening to scroll event for 'scrollspying
             var jqueryBody = $('body');

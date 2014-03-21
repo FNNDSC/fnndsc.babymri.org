@@ -15,7 +15,7 @@
 
 <template if="{{route != null}}">
   <template if="{{route == 'home-element' || route == ''}}">
-    <home-element id='home-element' structure="{{home}}" scrool="{{scrollTopC}}"></home-element>
+    <home-element structure="{{home}}" scrool="{{scrollTopC}}"></home-element>
   </template>
   <template if="{{route == 'research-element'}}">
     <research-element structure="{{research}}" scrool="{{scrollTopC}}"></research-element>
@@ -34,16 +34,18 @@
   <script>
     Polymer('container-element', {
       route: 'home-element',
+      curPage: 0,
+      prevPage: 0,
       ready: function() {
         // list the pages
-        this.pages = [{id:'home', label:'home', index:0},
-                     {id:'research', label:'research', index:1},
-                     {id:'highlights', label:'highlights', index:2},
-                     {id:'software', label:'software', index:3},
-                     {id:'team', label:'meet our team', index:4},
-                     {id:'contact', label:'contact us', index:5},
-                     {id:'live', label:'on air', index:6},
-                     {id:'events', label:'events', index:7}];
+        this.pages = [{id:'home-element', label:'home', index:0},
+                     {id:'research-element', label:'research', index:1},
+                     {id:'highlights-element', label:'highlights', index:2},
+                     {id:'software-element', label:'software', index:3},
+                     {id:'team-element', label:'meet our team', index:4},
+                     {id:'contact-element', label:'contact us', index:5},
+                     {id:'live-element', label:'on air', index:6},
+                     {id:'events-element', label:'events', index:7}];
 
                              // home page
         this.home = [{id:'welcome', label:'welcome',index:0}];
@@ -61,7 +63,33 @@
                          {id:'tttwelve', label:'2012', index:3},
                          {id:'tteleven', label:'2011', index:4}];
       },
+      refresh: function(){
+        // select right element in the top nav
+        this.navElts = this.parentElement.querySelectorAll('.nav-element');
+      },
+      updateNavigation: function(){
+        if(this.curPage != this.prevPage){
+          // desactivate previous section
+          this.navElts[this.prevPage].classList.remove('active');
+          // // activate current section
+          this.navElts[this.curPage].classList.add('active');
+          // update variable
+          this.prevPage = this.curPage;
+        }
+      },
       routeChanged: function() {
+        // get index of current page
+        // should be optimized
+        var nbPages = this.pages.length;
+        for(var i=0; i<nbPages; i++){
+          if(this.pages[i].id == this.route){
+            this.curPage = i;
+            break;
+          }
+        }
+
+        this.updateNavigation();
+        // update active tags
         //window.console.log('new route: ' + this.route);
         //this.currentElt = this.shadowRoot.querySelector(this.route);
         //window.console.log(this.shadowRoot);

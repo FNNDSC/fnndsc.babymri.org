@@ -11,3 +11,7 @@ $iconSpritePath: '/images/glyphicons-halflings.png';
 .navbar, .affix, .affix-top {
     @include transform(translate3d(0,0,0)); 
 }
+
+ .clear {
+     clear:both;
+ }
