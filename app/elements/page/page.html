@@ -49,7 +49,7 @@
         this.updateNavigation();
       },
       updateNavigation: function(){
-        if(this.curSection != this.prevSection){
+        if(this.curSection != this.prevSection && this.targets){
           // desactivate previous section
           this.targets[this.prevSection].classList.remove('active');
           // // activate current section

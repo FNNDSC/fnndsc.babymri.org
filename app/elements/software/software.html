@@ -5,14 +5,6 @@
 <polymer-element name="software-element" extends="page-element">
   <template>
     <!-- <link rel="stylesheet" href="software.css"> -->
-    <!-- Important Owl stylesheet -->
-    <!-- build:css ../../lib-elements/owl-carousel/owl.carousel.css -->
-            <link rel="stylesheet" href="../../bower_components/OwlCarousel/owl-carousel/owl.carousel.css">
-    <!-- endbuild -->
-    <!-- build:css ../../lib-elements/owl-carousel/owl.theme.css -->
-            <link rel="stylesheet" href="../../bower_components/OwlCarousel/owl-carousel/owl.theme.css">
-    <!-- endbuild -->
-
       <div class="container">
         <div id="jumbo" class=" jumbotron fBox" >
           <h2>
@@ -115,10 +107,6 @@
 <polymer-jsonp auto url="https://spreadsheets.google.com/feeds/list/{{spreadsheet}}/od6/public/values?alt=json-in-script&callback=" response="{{softwares}}"></polymer-jsonp>
 
   </template>
-
-  <!-- build:js ../../lib-elements/owl-carousel/owl.carousel.min.js -->
-  <script src="../../bower_components/OwlCarousel/owl-carousel/owl.carousel.min.js"></script>
-  <!-- endbuild -->
 
   <script>
     Polymer('software-element', {
