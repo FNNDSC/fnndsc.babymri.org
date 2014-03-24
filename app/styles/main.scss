@@ -1,6 +1,6 @@
 $iconSpritePath: '/images/glyphicons-halflings.png';
 @import 'sass-bootstrap/lib/bootstrap';
-@import "compass/css3/transform";
+@import "compass/css3";
 @import 'body';
 
 .hero-unit {
@@ -15,3 +15,8 @@ $iconSpritePath: '/images/glyphicons-halflings.png';
  .clear {
      clear:both;
  }
+
+html {
+//  background: url("../images/bg.jpg") no-repeat center center fixed; ;
+//  @include background-size(cover);
+}
