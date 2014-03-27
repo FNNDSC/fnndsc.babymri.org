@@ -8,7 +8,8 @@
     "platform": "latest",
     "more-elememts": "https://github.com/PolymerLabs/more-elements.git",
     "OwlCarousel": "https://github.com/OwlFonk/OwlCarousel.git",
-    "polymer-ui-collapsible": "PolymerLabs/polymer-ui-collapsible#master"
+    "polymer-ui-collapsible": "PolymerLabs/polymer-ui-collapsible#master",
+    "jquery": "1.9"
   },
   "devDependencies": {}
 }
