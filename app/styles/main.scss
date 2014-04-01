@@ -17,13 +17,11 @@ $iconSpritePath: '/images/glyphicons-halflings.png';
 }
 
 html{
-    height:100%;
-    min-height:100%;
-    background: url("../images/bg.jpg") no-repeat center center fixed; ;
-    @include background-size(cover);
-    @include transform(translate3d(0,0,1)); 
+
 }
 
 body{
-  background: none;
+  background: url("../images/bg.jpg") no-repeat center center fixed; ;
+    @include background-size(cover);
+    @include transform(translate3d(0,0,1)); 
 }
