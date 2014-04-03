@@ -21,7 +21,19 @@ html{
 }
 
 body{
-  background: url("../images/bg.jpg") no-repeat center center fixed; ;
+    background: url("../images/bg.jpg") no-repeat center center fixed; ;
     @include background-size(cover);
     @include transform(translate3d(0,0,1)); 
+}
+
+.logo{
+    display:none;
+}
+
+@media (min-width: 1000px){
+.logo{
+	display:block;
+	float:left;
+    margin-right:5px;
+}
 }
