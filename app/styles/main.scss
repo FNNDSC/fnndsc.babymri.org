@@ -21,6 +21,7 @@ html{
 }
 
 body{
+    overflow-y: scroll;
     background: url("../images/bg.jpg") no-repeat center center fixed; ;
     @include background-size(cover);
     @include transform(translate3d(0,0,1)); 
