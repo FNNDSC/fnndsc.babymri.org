@@ -2,9 +2,19 @@
 
 <link rel="import" href="../page/page.html">
 
-<link rel="stylesheet" href="software.css">
 <polymer-element name="software-element" extends="page-element">
   <template>
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../page/page.css" />
+    <link rel="stylesheet" href="software.css">
+    <!-- Important Owl stylesheet -->
+    <!-- build:css ../../styles/owl-carousel/owl.carousel.css -->
+    <link rel="stylesheet" href="../../bower_components/OwlCarousel/owl-carousel/owl.carousel.css">
+    <!-- endbuild -->
+    <!-- build:css ../../styles/owl-carousel/owl.theme.css -->
+    <link rel="stylesheet" href="../../bower_components/OwlCarousel/owl-carousel/owl.theme.css">
+    <!-- endbuild -->
+
       <div class="container">
         <div id="jumbo" class=" jumbotron fBox" >
             <template if="{{softwares == null && cache == null}}">
