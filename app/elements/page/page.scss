@@ -1,34 +1,45 @@
 a.active{
-	border-left: 2px solid black;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
-.fBox{
-    background-color: #FFF;
-    padding: 20px;
-    -webkit-box-sizing: border-box; 
-    -moz-box-sizing: border-box;   
-    box-sizing: border-box; 
-    -moz-box-shadow: rgb(204, 204, 204) 1px 1px 10px 0px;
-    -webkit-box-shadow: rgb(204, 204, 204) 1px 1px 10px 0px;
-    box-shadow: rgb(204, 204, 204) 1px 1px 10px 0px;
-    border-radius: 5px;
+
+.affix-top > .nav > li > a, .affix > .nav > li > a {
+  border-left: 1px solid;
+position: relative;
+display: block;
+padding: 5px;
 }
 
 .jumbotron{
-    background-color: rgba(255, 255, 255, .7);
+    background-color: #008fff;
 }
 
+
 .jumbotron .large{
-    color:rgb(0, 143, 255);
+    color:#FFF;
+}
+
+.pageTitle{
+  background-color:#008fff;
 }
 
 section > .title{
+    font-size: 30px;
+    line-height: normal;
+    padding: 20px;
+    // border-bottom: 1px solid;
+    margin-bottom: 10px;
+    color: darkgray;
+}
+
+section > .content{
     font-size: 20px;
     line-height: normal;
-    padding: 10px;
-    border-bottom: 1px solid;
-    margin-bottom: 10px;
-    color: #353535;
+}
+
+section {
+    margin-bottom:50px;
 }
 
 @media (min-width: 1000px){

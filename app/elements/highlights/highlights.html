@@ -1,14 +1,9 @@
-<link rel="import" href="../../lib-elements/polymer-jsonp/polymer-jsonp.html">
-
 <link rel="import" href="../page/page.html">
 
 <polymer-element name="highlights-element" extends="page-element">
   <template>
-
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link rel="stylesheet" type="text/css" href="../page/page.css" />
     <link rel="stylesheet" type="text/css" href="highlights.css" />
+
     <!-- Important Owl stylesheet -->
     <!-- build:css ../../styles/owl-carousel/owl.carousel.css -->
     <link rel="stylesheet" href="../../bower_components/OwlCarousel/owl-carousel/owl.carousel.css">
@@ -16,56 +11,53 @@
     <!-- build:css ../../styles/owl-carousel/owl.theme.css -->
     <link rel="stylesheet" href="../../bower_components/OwlCarousel/owl-carousel/owl.theme.css">
     <!-- endbuild -->
-    
+
+<div class='pageTitle'>
+<div class="container">
+  <div id="jumbo" class=" jumbotron fBox" >
+      <template if="{{(research == null) && (cache == null)}}">
+        <img class="spinner" src="../../images/spinner.gif">
+      </template>
+<span class="small">Some of our center</span>
+<span class="large {{name}}">highlights</span>
+</div>
+</div>
+</div>
+
       <div class="container">
-        <div id="jumbo" class=" jumbotron fBox" >
-          <template if="{{highlights == null && cache == null}}">
-            <img class="spinner" src="../../images/spinner.gif">
-          </template>
-          <span class="small">Some of our center</span>
-          <span class="large {{name}}">highlights</span>
-      </div>
       <div class="row">
-        <div class="col-md-2 ">
+        <div class="col-md-1 ">
           <div id='{{name}}-affix' class="fBox">
             <ul id='{{name}}-navigation' class="nav ">
-              Navigation
               <template if="{{structure != null}}">
                 <template repeat="{{section in structure}}">
                   <li on-tap="{{gotoSection}}">
                     <a id='{{name}}-nav-{{section.index}}' class='{{name}}' data-section='{{section.index}}'>{{section.label}}</a>
-                  </li> 
-                </template> 
+                  </li>
+                </template>
               </template>
             </ul>
           </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-11">
         <div class="fBox">
-        <section id="highlights" class="element">
+        <!-- <section id="highlights" class="element">
           <div class="title {{name}}">highlights</div>
           <div id="owl-demo" class="owl-carousel">
             <div class="item">
-<!--               <a href="http://goo.gl/oML6sw" target="_blank" class="image"> -->
                 <img src="../../images/highlights/h1.png">
-<!--                 <div class="image-info">" Wow! "<br/>" Amazing! "</div> -->
                 <div class="image-caption">Real-time MRI reslicing in the web browser</div>
-<!--               </a> -->
             </div>
             <div class="item">
-<!--               <a href="http://goo.gl/oML6sw" target="_blank" class="image"> -->
                 <img src="../../images/highlights/h2.png">
                 <div class="image-caption">Highlight #2</div>
-<!--               </a> -->
             </div>
             <div class="item">
-<!--                 <a href="http://goo.gl/oML6sw" target="_blank" class="image"> -->
                   <img src="../../images/highlights/h3.png">
                   <div class="image-caption">Highlight #3</div>
-<!--                 </a> -->
             </div>
           </div>
-        </section>
+        </section> -->
 
         <section id="2014" class="element">
           <div class="title {{name}}">2014</div>
@@ -75,8 +67,8 @@
                 <div class="info row" >
                   <div class="tags col-md-1">
                     <div class='row'>
-                      <span class="col-md-12 {{highlight.gsx$category.$t}}"><span class='icon {{highlight.gsx$category.$t}}'>{{highlight.gsx$category.$t}}</span></span>
-                      <span class="col-md-11 date">{{highlight.gsx$month.$t}}-{{highlight.gsx$day.$t}}</span>
+                      <span class="col-md-12 {{highlight.gsx$category.$t}} {{highlight.gsx$category.$t}}-border"><span class='icon {{highlight.gsx$category.$t}}'>{{highlight.gsx$category.$t}}</span></span>
+                      <span class="col-md-12 date {{highlight.gsx$category.$t}}-border">{{highlight.gsx$month.$t}}-{{highlight.gsx$day.$t}}</span>
                     </div>
                   </div>
                   <div class="content col-md-11">
@@ -90,7 +82,7 @@
             </template>
           </template>
         </section>
- 
+
         <section id="2013" class="element">
           <div class="title {{name}}">2013</div>
           <template if="{{highlights != null}}">
@@ -99,8 +91,8 @@
                 <div class="info row" >
                   <div class="tags col-md-1">
                     <div class='row'>
-                      <span class="col-md-12 {{highlight.gsx$category.$t}}"><span class='icon {{highlight.gsx$category.$t}}'>{{highlight.gsx$category.$t}}</span></span>
-                      <span class="col-md-11 date">{{highlight.gsx$month.$t}}-{{highlight.gsx$day.$t}}</span>
+                      <span class="col-md-12 {{highlight.gsx$category.$t}} {{highlight.gsx$category.$t}}-border"><span class='icon {{highlight.gsx$category.$t}}'>{{highlight.gsx$category.$t}}</span></span>
+                      <span class="col-md-12 date {{highlight.gsx$category.$t}}-border">{{highlight.gsx$month.$t}}-{{highlight.gsx$day.$t}}</span>
                     </div>
                   </div>
                   <div class="content col-md-11">
@@ -123,8 +115,8 @@
                 <div class="info row" >
                   <div class="tags col-md-1">
                     <div class='row'>
-                      <span class="col-md-12 {{highlight.gsx$category.$t}}"><span class='icon {{highlight.gsx$category.$t}}'>{{highlight.gsx$category.$t}}</span></span>
-                      <span class="col-md-11 date">{{highlight.gsx$month.$t}}-{{highlight.gsx$day.$t}}</span>
+                      <span class="col-md-12 {{highlight.gsx$category.$t}} {{highlight.gsx$category.$t}}-border"><span class='icon {{highlight.gsx$category.$t}}'>{{highlight.gsx$category.$t}}</span></span>
+                      <span class="col-md-12 date {{highlight.gsx$category.$t}}-border">{{highlight.gsx$month.$t}}-{{highlight.gsx$day.$t}}</span>
                     </div>
                   </div>
                   <div class="content col-md-11">
@@ -147,8 +139,8 @@
                 <div class="info row" >
                   <div class="tags col-md-1">
                     <div class='row'>
-                      <span class="col-md-12 {{highlight.gsx$category.$t}}"><span class='icon {{highlight.gsx$category.$t}}'>{{highlight.gsx$category.$t}}</span></span>
-                      <span class="col-md-11 date">{{highlight.gsx$month.$t}}-{{highlight.gsx$day.$t}}</span>
+                      <span class="col-md-12 {{highlight.gsx$category.$t}} {{highlight.gsx$category.$t}}-border"><span class='icon {{highlight.gsx$category.$t}}'>{{highlight.gsx$category.$t}}</span></span>
+                      <span class="col-md-12 date {{highlight.gsx$category.$t}}-border">{{highlight.gsx$month.$t}}-{{highlight.gsx$day.$t}}</span>
                     </div>
                   </div>
                   <div class="content col-md-11">
@@ -181,19 +173,6 @@
       spreadsheet: '0Asu7h0aKnydhdHlaTndWaUVmOHRpRTMzX3VmWW9VVFE',
       attached: function(){
         this.super();
-        var self = this;
-        this.onload=function(){self.refresh();};
-
-        $('#owl-demo').owlCarousel({
-            slideSpeed : 300,
-            paginationSpeed : 400,
-            singleItem:true,
-            autoPlay: 8000,
-            stopOnHover: true,
-            mouseDrag:false,
-            touchDrage:false,
-            navigation : true
-          });
 
         if(this.cache != null){
           this.highlights = this.cache;
@@ -202,7 +181,7 @@
       },
       highlightsChanged: function() {
         if(this.highlights){
-          this.cache = this.highlights; 
+          this.cache = this.highlights;
         }
       }
     });

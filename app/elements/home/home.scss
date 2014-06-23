@@ -1,0 +1,33 @@
+@import '../../styles/main.scss';
+@import '../page/page.scss';
+
+.container-fluid{
+  padding:100px;
+}
+
+.light{
+  background-color:#EEE;
+  color:#353535;
+}
+
+.dark{
+  background-color: #353535;
+  color: #EEE;
+}
+
+#welcome .logo-home{
+  display:none;
+}
+
+@media (min-width: 1000px){
+#welcome .content{
+    font-size:30px;
+    padding: 20px 0;
+}
+
+#welcome .logo-home{
+	float:left;
+	display:block;
+	padding:10px;
+}
+}

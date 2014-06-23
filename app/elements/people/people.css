@@ -17,7 +17,7 @@
      }
      .location::before{
         content:"\f0d1";
-        vertical-align:top; 
+        vertical-align:top;
      }
      .biography{
               text-align: left;
@@ -34,14 +34,14 @@
 polymer-ui-collapsible {
         border: 1px solid #ddd;
       }
-      
+
       .polymer-ui-collapsible-header {
         padding: 10px;
         border-bottom: 1px solid #bcbcbc;
         font-weight: normal;
         cursor: pointer;
       }
-      
+
       .content {
         padding: 10px;
       }
@@ -63,9 +63,9 @@ margin-top: 10px;
 #slider{
   position:absolute;
   left:0;
-  height:300px;  
+  height:300px;
 }
-#slider > div 
+#slider > div
 {  position:relative;
   float:left;
   width:890px;
@@ -105,7 +105,7 @@ span{
   display: inline-block!important;
 }
 .department{
-  font-variant: small-caps; 
+  font-variant: small-caps;
 }
 
 .name{
@@ -130,7 +130,7 @@ span{
   padding:5px;
 }
 
-#picture > img{
+#picture img{
   width:100%;
   height:100%;"
 }

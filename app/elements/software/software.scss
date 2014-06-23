@@ -1,3 +1,6 @@
+@import '../../styles/main.scss';
+@import '../page/page.scss';
+
       .slider {
         width: 100%;
         margin: 50px auto 0;
@@ -9,17 +12,17 @@
         border: 1px solid #0088cc;
         margin-top: 30px;
       }
-      
+
       .link{
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         width: 50%;
-        color: #fff;    
+        color: #fff;
         text-align: center;
         padding:10px;
       }
-      
+
       .source{
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
@@ -37,7 +40,7 @@
       .container li{
         line-height: normal;
       }
-      
+
       .technology{
         color: grey;
         font-style: italic;

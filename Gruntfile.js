@@ -29,12 +29,40 @@ module.exports = function (grunt) {
                 nospawn: true,
                 livereload: true
             },
-        
+
             compass: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+                files: '<%= yeoman.app %>/styles/{,*/}*.{scss,sass}',
                 tasks: ['compass']
             },
-            
+
+            compassHome: {
+                files: '<%= yeoman.app %>/elements/home/home.scss',
+                tasks: ['compass:home']
+            },
+
+            compassResearch: {
+                files: '<%= yeoman.app %>/elements/research/research.scss',
+                tasks: ['compass:research']
+            },
+
+            compassSoftware: {
+                files: '<%= yeoman.app %>/elements/software/software.scss',
+                tasks: ['compass:software']
+            },
+
+            compassHighlights: {
+                files: '<%= yeoman.app %>/elements/highlights/highlights.scss',
+                tasks: ['compass:highlights']
+            },
+
+            compassPages: {
+                files: '<%= yeoman.app %>/elements/page/page.scss',
+                tasks: ['compass:home',
+                        'compass:research',
+                        'compass:software',
+                        'compass:highlights']
+            },
+
             livereload: {
                 options: {
                     livereload: LIVERELOAD_PORT
@@ -114,10 +142,10 @@ module.exports = function (grunt) {
                 }
             }
         },
-    
+
         compass: {
             options: {
-                sassDir: '<%= yeoman.app %>/styles',
+                sassDir:'<%= yeoman.app %>/styles',
                 cssDir: '.tmp/styles',
                 imagesDir: '<%= yeoman.app %>/images',
                 javascriptsDir: '<%= yeoman.app %>/scripts',
@@ -130,9 +158,33 @@ module.exports = function (grunt) {
                 options: {
                     debugInfo: true
                 }
+            },
+            home:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/home',
+                  cssDir: '.tmp/elements/home',
+              }
+            },
+            research:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/research',
+                  cssDir: '.tmp/elements/research',
+              }
+            },
+            software:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/software',
+                  cssDir: '.tmp/elements/software',
+              }
+            },
+            highlights:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/highlights',
+                  cssDir: '.tmp/elements/highlights',
+              }
             }
         },
-        
+
         useminPrepare: {
             src: ['<%= yeoman.app %>/index.html'],
             options: {
@@ -164,6 +216,26 @@ module.exports = function (grunt) {
                         '<%= yeoman.app %>/styles/{,*/}*.css'
                     ]
                 }
+            },
+            home: {
+                files: {
+                    '<%= yeoman.dist %>/elements/home/home.css': '.tmp/elements/home/home.css'
+                }
+            },
+            research: {
+                files: {
+                    '<%= yeoman.dist %>/elements/research/research.css': '.tmp/elements/research/research.css'
+                }
+            },
+            highlights: {
+                files: {
+                    '<%= yeoman.dist %>/elements/highlights/highlights.css': '.tmp/elements/highlights/highlights.css'
+                }
+            },
+            software: {
+                files: {
+                    '<%= yeoman.dist %>/elements/software/software.css': '.tmp/elements/software/software.css'
+                }
             }
         },
         htmlmin: {
@@ -185,8 +257,92 @@ module.exports = function (grunt) {
                     src: '*.html',
                     dest: '<%= yeoman.dist %>'
                 }]
-            }
+            },
+            home: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/elements/home',
+                    src: '*.html',
+                    dest: '<%= yeoman.dist %>/elements/home/'
+                }]
+            },
+research: {
+    files: [{
+        expand: true,
+        cwd: '<%= yeoman.app %>/research/home',
+        src: '*.html',
+        dest: '<%= yeoman.dist %>/research/home/'
+    }]
+},
+highlights: {
+    files: [{
+        expand: true,
+        cwd: '<%= yeoman.app %>/elements/highlights',
+        src: '*.html',
+        dest: '<%= yeoman.dist %>/elements/highlights/'
+    }]
+},
+software: {
+    files: [{
+        expand: true,
+        cwd: '<%= yeoman.app %>/elements/software',
+        src: '*.html',
+        dest: '<%= yeoman.dist %>/elements/software/'
+    }]
+},
         },
+          concat: {
+    options: {
+      separator: ';',
+    },
+    dist:{},
+    preload:{
+      head: {
+          src: ['<%= yeoman.app %>/bower_components/modernizr/modernizr.js',
+                '<%= yeoman.app %>/bower_components/platform/platform.js'],
+          dest: '<%= yeoman.dist %>/scripts/preload.js',
+      }
+    },
+    postload:{
+      options: {
+          src: ['<%= yeoman.app %>/bower_components/jquery/jquery.min.js',
+                '<%= yeoman.app %>/sass-bootstrap/js/affix.js',
+                '<%= yeoman.app %>/bower_components/OwlCarousel/owl-carousel/owl.carousel.min.js',
+                '<%= yeoman.app %>/sass-bootstrap/js/collapse.js'],
+          dest: '<%= yeoman.dist %>/scripts/postload.js',
+      }
+    }
+  },
+  vulcanize: {
+    flatiron:{
+      options: {
+        csp: true,
+        // need exclude because we include it several times
+        excludes: {
+          imports: [
+            "polymer.html"
+            ]
+        }
+      },
+      files: {
+        '<%= yeoman.app %>/lib-elements/flatiron-director.html': '<%= yeoman.app %>/lib-elements/flatiron-director/flatiron-director.html'
+      }
+    },
+    jsonp:{
+      options: {
+        csp: true,
+        // need exclude because we include it several times
+        excludes: {
+          imports: [
+            "polymer.html"
+            ]
+        }
+      },
+      files: {
+        '<%= yeoman.app %>/lib-elements/polymer-jsonp.html': '<%= yeoman.app %>/lib-elements/polymer-jsonp/polymer-jsonp.html'
+      }
+    },
+  },
         copy: {
             dist: {
                 files: [{
@@ -197,12 +353,25 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,txt}',
                         '.htaccess',
-                        'elements/**',
                         'lib-elements/**',
                         'images/{,*/}*.{webp,gif}'
                     ]
                 }]
+            },
+            webcomponents: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>/bower_components/',
+                    dest: '<%= yeoman.app %>/lib-elements',
+                    src: [
+                        'polymer/**',
+                        'flatiron-director/**',
+                        'polymer-jsonp/**'
+                    ]
+                }]
             }
+
         },
         bower: {
             all: {
@@ -219,9 +388,18 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
+            //
+            'copy:webcomponents',
+            // vulcanize ext libs
+            'vulcanize:flatiron',
+            'vulcanize:jsonp',
             'compass:server',
+            'compass:home',
+            'compass:research',
+            'compass:software',
+            'compass:highlights',
             'connect:livereload',
-            'copy',
+            // 'copy',
             'open',
             'watch'
         ]);
@@ -229,24 +407,44 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'clean:server',
-        
         'compass',
-        
-        
         'connect:test',
         'mocha'
     ]);
 
     grunt.registerTask('build', [
         'clean:dist',
+        // compile css for all pages
         'compass:dist',
+        'compass:home',
+        'compass:research',
+        'compass:software',
+        'compass:highlights',
+        // prepare files (replace <!-- build:js scripts/postload.js --> tags)
         'useminPrepare',
+        // prepare images
         'imagemin',
+        // compile html for all pages
         'htmlmin',
+        'htmlmin:home',
+        'htmlmin:research',
+        'htmlmin:highlights',
+        'htmlmin:software',
+        // concat whatever needs to be
         'concat',
+        'concat:preload',
+        'concat:postload',
+        // minify css
         'cssmin',
+        'cssmin:home',
+        'cssmin:research',
+        'cssmin:highlights',
+        'cssmin:software',
+        // minify JS
         'uglify',
+        // move last files over
         'copy',
+        // IDK yet
         'usemin'
     ]);
 

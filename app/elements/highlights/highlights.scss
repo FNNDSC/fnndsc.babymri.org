@@ -1,3 +1,5 @@
+@import '../../styles/main.scss';
+@import '../page/page.scss';
 
     #owl-demo .item{
       display: block;
@@ -12,17 +14,21 @@
     }
 
   .date{
-    background:rgb(242, 242, 242);
-    color: grey;
     font-weight: bold;
     text-align: center;
   }
 
+  .row > .col-md-12{
+    white-space: nowrap;
+overflow: hidden;
+/*text-overflow: ellipsis;*/
+  }
+
   .icon{
+
         font-weight: normal;
         font-family: "FontAwesome";
         text-align: left;
-
      }
 
      .talk{
@@ -30,7 +36,11 @@
       color: #FFF;
      }
 
-     .icon.talk::before{
+     .talk-border{
+       border:1px solid #003BD1;
+     }
+
+     .icon.talk:before{
         content:"\f130";
         padding-right: 5px;
         margin-left:-4px;
@@ -41,6 +51,10 @@
           .award{
       background:#D100D1;
       color: #FFF;
+     }
+
+     .award-border{
+       border:1px solid #D100D1;
      }
 
      .icon.award::before{
@@ -57,6 +71,10 @@
       color: #FFF;
      }
 
+     .paper-border{
+       border:1px solid #00D1C9;
+     }
+
      .icon.paper::before{
         content:"\f0f6";
         padding-right: 5px;
@@ -67,6 +85,10 @@
                .poster{
       background:#9FD100;
       color: #FFF;
+     }
+
+     .poster-border{
+       border:1px solid #9FD100;
      }
 
      .icon.poster::before{
@@ -81,6 +103,10 @@
       color: #FFF;
      }
 
+     .workshop-border{
+       border:1px solid #9600D1;
+     }
+
      .icon.workshop::before{
         content:"\f085";
         padding-right: 5px;
@@ -91,6 +117,10 @@
     .grant{
       background:#2A00D1;
       color: #FFF;
+     }
+
+     .grant-border{
+       border:1px solid #2A00D1;
      }
 
      .icon.grant::before{
@@ -105,6 +135,10 @@
       color: #FFF;
      }
 
+     .general-border{
+       border:1px solid #D16400;
+     }
+
      .icon.general::before{
         content:"\f05a";
         padding-right: 5px;
@@ -112,30 +146,34 @@
         font-size:10px;
      }
 
-                    .press{
+     .press{
       background:#00D108;
       color: #FFF;
      }
 
-     .icon.press::before{
+     .press-border{
+       border:1px solid #00D108;
+     }
+
+     .icon.press:before{
         content:"\f06c";
         padding-right:5px;
         margin-left:-4px;
         font-size:10px;
      }
 
-  .image { 
+  .image {
     display: block;
-    position: relative; 
+    position: relative;
     width: 100%;
     height:100%;
     margin:auto;
   }
 
   .image-info{
-    position: absolute; 
-    top: 100px; 
-    left: 50px; 
+    position: absolute;
+    top: 100px;
+    left: 50px;
     font-size: 25px;
     font-weight: bold;
     line-height: normal;
@@ -145,9 +183,9 @@
   }
 
   .image-link{
-    position: absolute; 
-    bottom: 80px; 
-    right: 50px; 
+    position: absolute;
+    bottom: 80px;
+    right: 50px;
     padding: 20px;
     background: #FFF;
     color:rgb(0, 136, 204);

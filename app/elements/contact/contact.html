@@ -1,5 +1,3 @@
-<link rel="import" href="../../lib-elements/polymer-jsonp/polymer-jsonp.html">
-
 <link rel="import" href="../page/page.html">
 
 <polymer-element name="contact-element" extends="page-element">
@@ -25,8 +23,8 @@
                 <template repeat="{{section in structure}}">
                   <li on-tap="{{gotoSection}}">
                     <a id='{{name}}-nav-{{section.index}}' class='{{name}}' data-section='{{section.index}}'>{{section.label}}</a>
-                  </li> 
-                </template> 
+                  </li>
+                </template>
               </template>
             </ul>
           </div>
@@ -98,7 +96,7 @@
             <div class='subtitle {{name}}'>Map</div>
             <div id="autumn-map"></div>
           </div>
-          
+
         </section>
 
         <section id="waltham" class="element">

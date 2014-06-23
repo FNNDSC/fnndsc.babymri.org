@@ -3,5 +3,6 @@ dist
 test/temp
 .sass-cache
 app/bower_components
+app/lib-elements
 .tmp
 test/bower_components/

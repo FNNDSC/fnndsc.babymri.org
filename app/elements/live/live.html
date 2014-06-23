@@ -1,5 +1,3 @@
-<link rel="import" href="../../lib-elements/polymer-jsonp/polymer-jsonp.html">
-
 <link rel="import" href="../page/page.html">
 <link rel="import" href="../event/event.html">
 
@@ -25,8 +23,8 @@
                 <template repeat="{{section in structure}}">
                   <li on-tap="{{gotoSection}}">
                     <a id='{{name}}-nav-{{section.index}}' class='{{name}}' data-section='{{section.index}}'>{{section.label}}</a>
-                  </li> 
-                </template> 
+                  </li>
+                </template>
               </template>
             </ul>
           </div>
@@ -100,7 +98,7 @@
       },
       liveChanged: function(){
         if(this.live){
-          this.cache = this.live; 
+          this.cache = this.live;
         }
       }
     });
