@@ -1,18 +1,5 @@
 @import '../../styles/main.scss';
 @import '../page/page.scss';
-
-    #owl-demo .item{
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    #owl-demo .item img{
-      display: block;
-      height: auto;
-      margin:auto;
-    }
-
   .date{
     font-weight: bold;
     text-align: center;
@@ -24,198 +11,86 @@ overflow: hidden;
 /*text-overflow: ellipsis;*/
   }
 
-  .icon{
-
-        font-weight: normal;
-        font-family: "FontAwesome";
-        text-align: left;
-     }
+$general-color: #6A6DB4;
+$press-color: #6A79B4;
+$grant-color: #6A88B4;
+$workshop-color: #6A99B4;
+$poster-color: #6AABB4;
+$paper-color: #6AB4AB;
+$award-color: #6AB499;
+$talk-color: #6AB485;
 
      .talk{
-      background:#003BD1;
+      background:$talk-color;
       color: #FFF;
      }
 
      .talk-border{
-       border:1px solid #003BD1;
+       border:1px solid $talk-color;
      }
 
-     .icon.talk:before{
-        content:"\f130";
-        padding-right: 5px;
-        margin-left:-4px;
-        font-size:10px;
-
-     }
-
-          .award{
-      background:#D100D1;
+    .award{
+      background:$award-color;
       color: #FFF;
      }
 
      .award-border{
-       border:1px solid #D100D1;
+       border:1px solid $award-color;
      }
 
-     .icon.award::before{
-        content:"\f18c";
-        padding-right: 5px;
-        margin-left:-4px;
-        font-size:10px;
-
-     }
-
-
-               .paper{
-      background:#00D1C9;
+    .paper{
+      background:$paper-color;
       color: #FFF;
      }
 
      .paper-border{
-       border:1px solid #00D1C9;
+       border:1px solid $paper-color;
      }
 
-     .icon.paper::before{
-        content:"\f0f6";
-        padding-right: 5px;
-        margin-left:-4px;
-        font-size:10px;
-     }
-
-               .poster{
-      background:#9FD100;
+    .poster{
+      background:$poster-color;
       color: #FFF;
      }
 
      .poster-border{
-       border:1px solid #9FD100;
+       border:1px solid $poster-color;
      }
 
-     .icon.poster::before{
-        content:"\f075";
-        padding-right: 5px;
-        margin-left:-4px;
-        font-size:10px;
-     }
-
-               .workshop{
-      background:#9600D1;
+    .workshop{
+      background:$workshop-color;
       color: #FFF;
      }
 
      .workshop-border{
-       border:1px solid #9600D1;
-     }
-
-     .icon.workshop::before{
-        content:"\f085";
-        padding-right: 5px;
-        margin-left:-4px;
-        font-size:10px;
+       border:1px solid $workshop-color;
      }
 
     .grant{
-      background:#2A00D1;
+      background:$grant-color;
       color: #FFF;
      }
 
      .grant-border{
-       border:1px solid #2A00D1;
+       border:1px solid $grant-color;
      }
 
-     .icon.grant::before{
-        content:"\f155";
-        padding-right: 5px;
-        margin-left:-4px;
-        font-size:10px;
-     }
-
-                    .general{
-      background:#D16400;
+    .general{
+      background:$general-color;
       color: #FFF;
      }
 
      .general-border{
-       border:1px solid #D16400;
-     }
-
-     .icon.general::before{
-        content:"\f05a";
-        padding-right: 5px;
-        margin-left:-4px;
-        font-size:10px;
+       border:1px solid $general-color;
      }
 
      .press{
-      background:#00D108;
+      background:$press-color;
       color: #FFF;
      }
 
      .press-border{
-       border:1px solid #00D108;
+       border:1px solid $press-color;
      }
-
-     .icon.press:before{
-        content:"\f06c";
-        padding-right:5px;
-        margin-left:-4px;
-        font-size:10px;
-     }
-
-  .image {
-    display: block;
-    position: relative;
-    width: 100%;
-    height:100%;
-    margin:auto;
-  }
-
-  .image-info{
-    position: absolute;
-    top: 100px;
-    left: 50px;
-    font-size: 25px;
-    font-weight: bold;
-    line-height: normal;
-    color: #000;
-    padding: 20px;
-    background-color: #de2;
-  }
-
-  .image-link{
-    position: absolute;
-    bottom: 80px;
-    right: 50px;
-    padding: 20px;
-    background: #FFF;
-    color:rgb(0, 136, 204);
-    font-size: 60px;
-    line-height: normal;
-    cursor: pointer;
-  }
-
-  .image-caption {
-    width:100%;
-    position:absolute;
-    bottom: 0;
-    text-align: center;
-    padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #FFF;
-    font-size: 40px;
-    line-height: 40px;
-  }
-
-  .video-caption {
-    width:915px;
-    text-align: center;
-    padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #FFF;
-    font-size: 40px;
-    line-height: 40px;
-    margin:auto;
-  }
 
   .info{
     background-color: #FFF;

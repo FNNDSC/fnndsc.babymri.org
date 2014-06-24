@@ -20,15 +20,21 @@
 
       .info{
         background-color: #FFF;
-        padding: 0 10px 10px 10px;
+        padding: 10px;
+        font-size:18px;
         font-style: italic;
+        -webkit-box-shadow: #cccccc 1px 1px 10px 0px;
       }
 
       .icon>span{
   display: inline-block!important;
 }
+
 .subtitle{
-border-bottom: 1px solid;
+font-size: 22px;
+font-weight: bold;
+padding: 20px;
+color: #838383;
 display: inline-block;
 
 }
