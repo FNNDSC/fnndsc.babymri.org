@@ -489,6 +489,12 @@ compassEvent: {
 
     grunt.registerTask('build', [
         'clean:dist',
+        //
+        'copy:webcomponents',
+        'copy:cssAsScss',
+        // vulcanize ext libs
+        'vulcanize:flatiron',
+        'vulcanize:jsonp',
         // compile css for all pages
         'compass:dist',
         'compass:home',
