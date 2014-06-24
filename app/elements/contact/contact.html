@@ -2,23 +2,25 @@
 
 <polymer-element name="contact-element" extends="page-element">
   <template>
-      <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <link rel="stylesheet" type="text/css" href="../page/page.css" />
       <link rel="stylesheet" href="contact.css">
+
+      <div class='pageTitle'>
       <div class="container">
         <div id="jumbo" class=" jumbotron fBox" >
-          <template if="{{contact == null && cache == null}}">
-            <img class="spinner" src="../../images/spinner.gif">
-          </template>
-            <span class="small">We have offices in 3 different</span>
+            <template if="{{(research == null) && (cache == null)}}">
+              <span class="spinner"><img src="../../images/spinner.gif"></span>
+            </template>
+            <span class="small">We have offices in 3 different </span>
             <span class="large {{name}}">locations</span>
       </div>
+      </div>
+      </div>
+
+      <div class="container">
       <div class="row">
-        <div class="col-md-2 ">
+        <div class="col-md-1 ">
           <div id='{{name}}-affix'  class="fBox">
             <ul id='{{name}}-navigation' class="nav ">
-              Navigation
               <template if="{{structure != null}}">
                 <template repeat="{{section in structure}}">
                   <li on-tap="{{gotoSection}}">
@@ -29,7 +31,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-11">
         <div class="fBox">
 
         <section id="main1" class="element">

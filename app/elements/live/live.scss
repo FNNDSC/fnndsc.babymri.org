@@ -1,3 +1,6 @@
+@import '../../styles/main.scss';
+@import '../page/page.scss';
+
       #live{
         font-size: 30px;
         position: relative;
@@ -21,3 +24,7 @@
         -webkit-flex-direction: row;
         flex-direction: row;
       }
+
+event-element{
+  width:100%;
+}

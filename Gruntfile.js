@@ -55,6 +55,31 @@ module.exports = function (grunt) {
                 tasks: ['compass:highlights']
             },
 
+            compassTeam: {
+                files: '<%= yeoman.app %>/elements/team/team.scss',
+                tasks: ['compass:team']
+            },
+
+            compassPeople: {
+                files: '<%= yeoman.app %>/elements/people/people.scss',
+                tasks: ['compass:people']
+            },
+
+compassContact: {
+    files: '<%= yeoman.app %>/elements/contact/contact.scss',
+    tasks: ['compass:contact']
+},
+
+compassLive: {
+    files: '<%= yeoman.app %>/elements/live/live.scss',
+    tasks: ['compass:live']
+},
+
+compassEvent: {
+    files: '<%= yeoman.app %>/elements/event/event.scss',
+    tasks: ['compass:event']
+},
+
             compassPages: {
                 files: '<%= yeoman.app %>/elements/page/page.scss',
                 tasks: ['compass:home',
@@ -182,6 +207,36 @@ module.exports = function (grunt) {
                   sassDir: '<%= yeoman.app %>/elements/highlights',
                   cssDir: '.tmp/elements/highlights',
               }
+            },
+            contact:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/contact',
+                  cssDir: '.tmp/elements/contact',
+              }
+            },
+            team:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/team',
+                  cssDir: '.tmp/elements/team',
+              }
+            },
+            people:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/people',
+                  cssDir: '.tmp/elements/people',
+              }
+            },
+            live:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/live',
+                  cssDir: '.tmp/elements/live',
+              }
+            },
+            event:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/event',
+                  cssDir: '.tmp/elements/event',
+              }
             }
         },
 
@@ -236,6 +291,31 @@ module.exports = function (grunt) {
                 files: {
                     '<%= yeoman.dist %>/elements/software/software.css': '.tmp/elements/software/software.css'
                 }
+            },
+            team: {
+                files: {
+                    '<%= yeoman.dist %>/elements/team/team.css': '.tmp/elements/team/team.css'
+                }
+            },
+            people: {
+                files: {
+                    '<%= yeoman.dist %>/elements/people/people.css': '.tmp/elements/people/people.css'
+                }
+            },
+            contact: {
+                files: {
+                    '<%= yeoman.dist %>/elements/contact/contact.css': '.tmp/elements/contact/contact.css'
+                }
+            },
+            live: {
+                files: {
+                    '<%= yeoman.dist %>/elements/live/live.css': '.tmp/elements/live/live.css'
+                }
+            },
+            event: {
+                files: {
+                    '<%= yeoman.dist %>/elements/event/event.css': '.tmp/elements/event/event.css'
+                }
             }
         },
         htmlmin: {
@@ -258,38 +338,14 @@ module.exports = function (grunt) {
                     dest: '<%= yeoman.dist %>'
                 }]
             },
-            home: {
+            elements: {
                 files: [{
                     expand: true,
-                    cwd: '<%= yeoman.app %>/elements/home',
-                    src: '*.html',
-                    dest: '<%= yeoman.dist %>/elements/home/'
+                    cwd: '<%= yeoman.app %>/elements',
+                  src: '{,*/}*.html',
+                    dest: '<%= yeoman.dist %>/elements/'
                 }]
             },
-research: {
-    files: [{
-        expand: true,
-        cwd: '<%= yeoman.app %>/research/home',
-        src: '*.html',
-        dest: '<%= yeoman.dist %>/research/home/'
-    }]
-},
-highlights: {
-    files: [{
-        expand: true,
-        cwd: '<%= yeoman.app %>/elements/highlights',
-        src: '*.html',
-        dest: '<%= yeoman.dist %>/elements/highlights/'
-    }]
-},
-software: {
-    files: [{
-        expand: true,
-        cwd: '<%= yeoman.app %>/elements/software',
-        src: '*.html',
-        dest: '<%= yeoman.dist %>/elements/software/'
-    }]
-},
         },
           concat: {
     options: {
@@ -358,6 +414,19 @@ software: {
                     ]
                 }]
             },
+                  cssAsScss: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/bower_components/OwlCarousel/owl-carousel/',
+            src: '**/*.css',
+            dest: '<%= yeoman.app %>/bower_components/OwlCarousel/owl-carousel',
+            filter: 'isFile',
+            ext: ".scss",
+            extDot: "last"
+          }
+        ]
+      },
             webcomponents: {
                 files: [{
                     expand: true,
@@ -390,6 +459,7 @@ software: {
             'clean:server',
             //
             'copy:webcomponents',
+            'copy:cssAsScss',
             // vulcanize ext libs
             'vulcanize:flatiron',
             'vulcanize:jsonp',
@@ -398,6 +468,11 @@ software: {
             'compass:research',
             'compass:software',
             'compass:highlights',
+            'compass:team',
+            'compass:people',
+            'compass:contact',
+            'compass:live',
+            'compass:event',
             'connect:livereload',
             // 'copy',
             'open',
@@ -420,16 +495,18 @@ software: {
         'compass:research',
         'compass:software',
         'compass:highlights',
+        'compass:team',
+        'compass:people',
+        'compass:contact',
+        'compass:live',
+        'compass:event',
         // prepare files (replace <!-- build:js scripts/postload.js --> tags)
         'useminPrepare',
         // prepare images
         'imagemin',
         // compile html for all pages
         'htmlmin',
-        'htmlmin:home',
-        'htmlmin:research',
-        'htmlmin:highlights',
-        'htmlmin:software',
+        'htmlmin:elements',
         // concat whatever needs to be
         'concat',
         'concat:preload',
@@ -440,6 +517,11 @@ software: {
         'cssmin:research',
         'cssmin:highlights',
         'cssmin:software',
+        'cssmin:team',
+        'cssmin:people',
+        'cssmin:contact',
+        'cssmin:live',
+        'cssmin:event',
         // minify JS
         'uglify',
         // move last files over

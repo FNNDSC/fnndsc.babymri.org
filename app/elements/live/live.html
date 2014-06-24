@@ -3,22 +3,27 @@
 
 <polymer-element name="live-element" extends="page-element">
   <template>
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link rel="stylesheet" type="text/css" href="../page/page.css" />
+
+    <link rel="stylesheet" type="text/css" href="live.css" />
+
+<div class='pageTitle'>
+<div class="container">
+  <div id="jumbo" class=" jumbotron fBox" >
+      <template if="{{(research == null) && (cache == null)}}">
+        <span class="spinner"><img src="../../images/spinner.gif"></span>
+      </template>
+<span class="small">We stream live</span>
+<span class="large {{name}}">events</span>
+</div>
+</div>
+</div>
 
       <div class="container">
-        <div id="jumbo" class=" jumbotron fBox" >
-            <template if="{{live == null && cache == null}}">
-              <img class="spinner" src="../../images/spinner.gif">
-            </template>
-            <span class="small">We stream live</span>
-            <span class="large {{name}}">events</span>
-      </div>
+
       <div class="row">
-        <div class="col-md-2 ">
+        <div class="col-md-1 ">
           <div id='{{name}}-affix'  class="fBox">
             <ul id='{{name}}-navigation' class="nav ">
-              Navigation
               <template if="{{structure != null}}">
                 <template repeat="{{section in structure}}">
                   <li on-tap="{{gotoSection}}">
@@ -29,7 +34,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-11">
         <div class="fBox">
 
         <section id="live" class='element'>
@@ -40,7 +45,6 @@
                 <div id="liveContent" class="row">
                   <event-element event="{{event}}" videoLoaded="{{videoLoaded}}"></event-element>
                 </div>
-<!--                   <a href="{{event.gsx$hangout.$t}}" target="_blank" style="text-align: center;display: block;">Ask questions to {{event.gsx$speaker.$t}} in the G+ Hangout!</a> -->
               </template>
             </template>
           </template>

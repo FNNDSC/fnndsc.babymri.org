@@ -1,4 +1,7 @@
-      .icon{
+@import '../../styles/main.scss';
+@import '../page/page.scss';
+
+.icon{
         font-weight: bold;
         font-style: normal;
         font-family: "FontAwesome";
@@ -9,7 +12,7 @@
         content:"\f095";
         color: #08C;
       }
-      
+
       .fax::before{
         content:"\f02f";
         color: #08C;

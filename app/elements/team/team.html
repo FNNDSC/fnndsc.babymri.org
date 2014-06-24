@@ -4,22 +4,25 @@
 <polymer-element name="team-element" extends="page-element">
   <template>
 
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link rel="stylesheet" type="text/css" href="../page/page.css" />
+<link rel="stylesheet" href="team.css">
+
+<div class='pageTitle'>
+<div class="container">
+  <div id="jumbo" class=" jumbotron fBox" >
+      <template if="{{(research == null) && (cache == null)}}">
+        <span class="spinner"><img src="../../images/spinner.gif"></span>
+      </template>
+      <span class="small">We are a multi-disciplinary </span>
+      <span class="large {{name}}">team</span>
+</div>
+</div>
+</div>
 
       <div class="container">
-        <div id="jumbo" class=" jumbotron fBox" >
-            <template if="{{team == null && cache == null}}">
-              <img class="spinner" src="../../images/spinner.gif">
-            </template>
-            <span class="small">We are a multidisciplinary</span>
-            <span class="large {{name}}">team</span>
-      </div>
       <div class="row">
-        <div class="col-md-2 ">
+        <div class="col-md-1 ">
           <div id='{{name}}-affix'  class="fBox">
             <ul id='{{name}}-navigation' class="nav ">
-              Navigation
               <template if="{{structure != null}}">
                 <template repeat="{{section in structure}}">
                   <li on-tap="{{gotoSection}}">
@@ -30,7 +33,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-11">
         <div class="fBox">
 
         <section id="faculty" class="element row">

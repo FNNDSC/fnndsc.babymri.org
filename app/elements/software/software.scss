@@ -1,6 +1,10 @@
 @import '../../styles/main.scss';
 @import '../page/page.scss';
 
+
+      @import '../../bower_components/OwlCarousel/owl-carousel/owl.carousel';
+      @import '../../bower_components/OwlCarousel/owl-carousel/owl.theme';
+
       .slider {
         width: 100%;
         margin: 50px auto 0;
