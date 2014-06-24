@@ -1,4 +1,4 @@
 fnndsc.babymri.org
 ==================
 
-FNNDSC Website: [![Status](https://travis-ci.org/FNNDSC/fnndsc.babymri.org.svg?branch=master)] 
+FNNDSC Website: ![Build Status](https://travis-ci.org/FNNDSC/fnndsc.babymri.org.svg?branch=master)
