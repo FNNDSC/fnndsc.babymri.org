@@ -6,17 +6,17 @@
     "modernizr": "~2.6.2",
     "polymer": "https://github.com/Polymer/polymer.git#master",
     "platform": "https://github.com/Polymer/platform.git#master",
-    "more-elememts": "https://github.com/PolymerLabs/more-elements.git",
-    "OwlCarousel": "https://github.com/OwlFonk/OwlCarousel.git",
+    "more-elememts": "https://github.com/PolymerLabs/more-elements.git#master",
+    "OwlCarousel": "https://github.com/OwlFonk/OwlCarousel.git#master",
     "polymer-ui-collapsible": "PolymerLabs/polymer-ui-collapsible#master",
     "jquery": "1.9",
-    "flatiron-director": "Polymer/flatiron-director"
+    "flatiron-director": "Polymer/flatiron-director#master"
   },
   "devDependencies": {},
   "resolutions": {
-    "platform": "master",
-    "core-component-page": "master",
     "polymer": "master",
-    "polymer-collapse": "master"
+    "polymer-collapse": "master",
+    "polymer-ajax": "master",
+    "x-meta": "master"
   }
 }
