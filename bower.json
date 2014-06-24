@@ -3,20 +3,16 @@
   "version": "0.0.0",
   "dependencies": {
     "sass-bootstrap": "latest",
-    "modernizr": "~2.6.2",
-    "polymer": "https://github.com/Polymer/polymer.git#master",
-    "platform": "https://github.com/Polymer/platform.git#master",
-    "more-elememts": "https://github.com/PolymerLabs/more-elements.git#master",
-    "OwlCarousel": "https://github.com/OwlFonk/OwlCarousel.git#master",
-    "polymer-ui-collapsible": "PolymerLabs/polymer-ui-collapsible#master",
+    "modernizr": "latest",
+    "polymer": "latest",
+    "platform": ">=0.3.0 <1.0.0",
+    "OwlCarousel": "https://github.com/OwlFonk/OwlCarousel.git#1.3.1",
     "jquery": "1.9",
-    "flatiron-director": "Polymer/flatiron-director#master"
+    "polymer-jsonp": "PolymerLabs/polymer-jsonp#>=0.3.0 <1.0.0",
+    "flatiron-director": "PolymerLabs/flatiron-director#>=0.3.0 <1.0.0"
   },
   "devDependencies": {},
   "resolutions": {
-    "polymer": "master",
-    "polymer-collapse": "master",
-    "polymer-ajax": "master",
-    "x-meta": "master"
+    "platform": ">=0.3.0 <1.0.0"
   }
 }
