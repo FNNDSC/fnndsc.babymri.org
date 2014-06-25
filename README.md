@@ -4,27 +4,24 @@ fnndsc.babymri.org
 
 [![build status](https://travis-ci.org/FNNDSC/fnndsc.babymri.org.svg?branch=master)](https://travis-ci.org/FNNDSC/fnndsc.babymri.org)
 
-Pre-requisite
+## Pre-requisite
 
-Node
-Compass
-Grunt
-Bower?
+*  Node
+*  Compass
+*  Grunt
+*  Bower
 
-Setup
-` git clone `
+## Setup
+`git clone https://github.com/FNNDSC/fnndsc.babymri.org.git`
+`cd fnndsc.babymri.org`
+`npm install -g bower grunt-cli`
+`bower install`
 
-` cd `
-
-` grunt install`
-
-` bower install`
-
-Development
+## Development
 
 `grunt server`
 
 
-Deployment
+## Deployment
 
 `grunt build`
