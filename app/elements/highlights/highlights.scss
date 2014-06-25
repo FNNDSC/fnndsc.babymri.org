@@ -3,6 +3,13 @@
   .date{
     font-weight: bold;
     text-align: center;
+    font-size: x-large;
+  }
+
+  .month{
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
   }
 
   .row > .col-md-12{
@@ -97,7 +104,14 @@ $talk-color: #6AB485;
     padding: 10px;
   }
 
-  .content{
+  .what{
+    font-size:20px;
+  }
+
+  .who{
+    font-size:16px;
+    font-style:italic;
+    color:grey;
   }
 
   .tags{

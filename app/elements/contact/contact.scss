@@ -18,12 +18,14 @@
         color: #08C;
       }
 
+.card{
+  -webkit-box-shadow: #cccccc 1px 1px 10px 0px;
+}
       .info{
         background-color: #FFF;
         padding: 10px;
         font-size:18px;
         font-style: italic;
-        -webkit-box-shadow: #cccccc 1px 1px 10px 0px;
       }
 
       .icon>span{

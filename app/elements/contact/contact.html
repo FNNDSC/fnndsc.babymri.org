@@ -36,13 +36,18 @@
 
         <section id="main1" class="element">
           <div class="title {{name}}">main hospital</div>
+
+          <div class='card'>
+
           <template if="{{contact != null}}">
             <template repeat="{{location in contact.feed.entry}}">
               <template if="{{location.gsx$location.$t === 'main'}}">
+
                 <div class="info">
                   {{location.gsx$name.$t}}</br>
                   {{location.gsx$address.$t}}</br>
                   {{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</br></br>
+
                   <div class="icon phone">
                     <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
                   </div>
@@ -53,22 +58,22 @@
               </template>
             </template>
           </template>
-          <div class="notes">
+          <div class="map">
+            <div id="main-map"></div>
+          </div>
+        </div>
+
+          <div id='main-allnotes'  class="notes">
             <div class='subtitle {{name}}'>Notes</div>
             <div id='main-notes'></div>
-          </div>
-          <div class="details">
-            <div class='subtitle {{name}}'>Detailed directions</div>
-            <div id='main-details'></div>
-          </div>
-          <div class="map">
-            <div class='subtitle {{name}}'>Map</div>
-            <div id="main-map"></div>
           </div>
         </section>
 
         <section id="autumn" class="element">
           <div class="title {{name}}">1 autumn street</div>
+
+          <div class='card'>
+
           <template if="{{contact != null}}">
             <template repeat="{{location in contact.feed.entry}}">
               <template if="{{location.gsx$location.$t === 'autumn'}}">
@@ -86,23 +91,20 @@
               </template>
             </template>
           </template>
-          <div class="notes">
+          <div class="map">
+            <div id="autumn-map"></div>
+          </div>
+        </div>
+          <div id='autumn-allnotes' class="notes">
             <div class='subtitle {{name}}'>Notes</div>
             <div id='autumn-notes'></div>
-          </div>
-          <div class="details">
-            <div class='subtitle {{name}}'>Detailed directions</div>
-            <div id='autumn-details'></div>
-          </div>
-          <div class="map">
-            <div class='subtitle {{name}}'>Map</div>
-            <div id="autumn-map"></div>
           </div>
 
         </section>
 
         <section id="waltham" class="element">
           <div class="title {{name}}">waltham</div>
+          <div class='card'>
           <template if="{{contact != null}}">
             <template repeat="{{location in contact.feed.entry}}">
               <template if="{{location.gsx$location.$t === 'waltham'}}">
@@ -120,17 +122,13 @@
               </template>
             </template>
           </template>
-          <div class="notes">
+          <div class="map">
+            <div id="waltham-map"></div>
+          </div>
+        </div>
+          <div id='waltham-allnotes' class="notes">
             <div class='subtitle {{name}}'>Notes</div>
             <div id='waltham-notes'></div>
-          </div>
-          <div class="details">
-            <div class='subtitle {{name}}'>Detailed directions</div>
-            <div id='waltham-details'></div>
-          </div>
-          <div class="map">
-            <div class='subtitle {{name}}'>Map</div>
-            <div id="waltham-map"></div>
           </div>
         </section>
 
@@ -162,7 +160,14 @@
         if(this.contact){
             var len = this.contact.feed.entry.length;
             while (len--) {
-              this.$[this.contact.feed.entry[len].gsx$location.$t+'-notes'].innerHTML = this.contact.feed.entry[len].gsx$notes.$t;
+
+              if(this.contact.feed.entry[len].gsx$notes.$t == ''){
+                this.$[this.contact.feed.entry[len].gsx$location.$t+'-allnotes'].innerHTML = this.contact.feed.entry[len].gsx$notes.$t;
+              }
+              else{
+                this.$[this.contact.feed.entry[len].gsx$location.$t+'-notes'].innerHTML = this.contact.feed.entry[len].gsx$notes.$t;
+              }
+
               this.$[this.contact.feed.entry[len].gsx$location.$t+'-map'].innerHTML = this.contact.feed.entry[len].gsx$map.$t;
             }
 
