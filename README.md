@@ -8,8 +8,6 @@ fnndsc.babymri.org
 
 *  Node
 *  Compass
-*  Grunt
-*  Bower
 
 ## Setup
 * Clone the project:
