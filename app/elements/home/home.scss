@@ -6,16 +6,6 @@
   padding-bottom:100px;
 }
 
-.light{
-background-color: #5158cc;
-color: #FFF;
-}
-
-.dark{
-  background-color: #353535;
-  color: #EEE;
-}
-
 #welcome .logo-home{
   display:none;
 }
@@ -48,4 +38,18 @@ color: #FFF;
 
 a:hover, a:focus {
 text-decoration: none;
+color:#353535;
+}
+
+.research{
+  color:#31b06b;
+}
+.software{
+color:#5158cc;
+}
+.team{
+color:#e1a90e;
+}
+.contact{
+color:#f55253;
 }
