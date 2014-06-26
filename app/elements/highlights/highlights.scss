@@ -18,14 +18,11 @@ overflow: hidden;
 /*text-overflow: ellipsis;*/
   }
 
-$general-color: #6A6DB4;
-$press-color: #6A79B4;
-$grant-color: #6A88B4;
-$workshop-color: #6A99B4;
-$poster-color: #6AABB4;
-$paper-color: #6AB4AB;
-$award-color: #6AB499;
-$talk-color: #6AB485;
+$general-color: #0eadee;
+$press-color: #31b06b;
+$publication-color: #f55253;
+$award-color: #e1a90e;
+$talk-color: #5158cc;
 
      .talk{
       background:$talk-color;
@@ -45,40 +42,13 @@ $talk-color: #6AB485;
        border:1px solid $award-color;
      }
 
-    .paper{
-      background:$paper-color;
+    .publication{
+      background:$publication-color;
       color: #FFF;
      }
 
-     .paper-border{
-       border:1px solid $paper-color;
-     }
-
-    .poster{
-      background:$poster-color;
-      color: #FFF;
-     }
-
-     .poster-border{
-       border:1px solid $poster-color;
-     }
-
-    .workshop{
-      background:$workshop-color;
-      color: #FFF;
-     }
-
-     .workshop-border{
-       border:1px solid $workshop-color;
-     }
-
-    .grant{
-      background:$grant-color;
-      color: #FFF;
-     }
-
-     .grant-border{
-       border:1px solid $grant-color;
+     .publication-border{
+       border:1px solid $publication-color;
      }
 
     .general{

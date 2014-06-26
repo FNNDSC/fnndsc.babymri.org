@@ -2,12 +2,13 @@
 @import '../page/page.scss';
 
 .container-fluid{
-  padding:150px;
+  padding-top:100px;
+  padding-bottom:100px;
 }
 
 .light{
-  background-color:#EEE;
-  color:#353535;
+background-color: #5158cc;
+color: #FFF;
 }
 
 .dark{

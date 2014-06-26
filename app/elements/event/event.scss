@@ -1,15 +1,29 @@
       @import '../../styles/main.scss';
       @import '../page/page.scss';
 
+$next-color: #5158cc;
+$fnndsctalk-color: #31b06b;
+$unix101-color: #f55253;
+
       #liveTitle{
         font-size: 20px;
         line-size:default!important;
         padding-bottom: 10px;
         text-align: center;
-        background-color: #6a99b4;
         color:#FFF;
       }
 
+      #liveTitle.next{
+        background-color: $next-color;
+      }
+
+      #liveTitle.fnndsctalk{
+        background-color: $fnndsctalk-color;
+      }
+
+      #liveTitle.unix101{
+        background-color: $unix101-color;
+      }
 
       #liveTime{
         font-size: 16px;

@@ -10,22 +10,36 @@
 
       .phone::before{
         content:"\f095";
-        color: #08C;
       }
 
       .fax::before{
         content:"\f02f";
-        color: #08C;
       }
 
 .card{
   -webkit-box-shadow: #cccccc 1px 1px 10px 0px;
+  padding: 20px;
+}
+
+$main-color: #5158cc;
+#main1 .card{
+  background-color:$main-color;
+}
+
+$autumn-color: #31b06b;
+#autumn .card{
+  background-color:$autumn-color;
+}
+
+$waltham-color: #e2aa0f;
+#waltham .card{
+  background-color:$waltham-color;
 }
       .info{
-        background-color: #FFF;
         padding: 10px;
         font-size:18px;
         font-style: italic;
+        color:#FFF;
       }
 
       .icon>span{

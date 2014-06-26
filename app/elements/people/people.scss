@@ -109,9 +109,29 @@ span{
   font-variant: small-caps;
 }
 
+$staff-color: #5158cc;
+$faculty-color: #31b06b;
+$alumni-color: #f55253;
+$collaborators-color: #e1a90e;
+
 .name{
   text-align:center;
-  background-color:#6a99b4;
+}
+
+.name.staff{
+  background-color:$staff-color;
+}
+
+.name.faculty{
+  background-color:$faculty-color;
+}
+
+.name.alumni{
+  background-color:$alumni-color;
+}
+
+.name.collaborators{
+  background-color:$collaborators-color;
 }
 
 .name > h1{
