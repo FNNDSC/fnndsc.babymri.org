@@ -1,12 +1,26 @@
 @import '../../styles/main.scss';
 @import '../page/page.scss';
 
+    paper-button {
+      margin: .5em;
+      width: 10em;
+      position: absolute;
+bottom: 0;
+left:0;
+text-align:left;
+    }
+
      .icon{
         font-weight: normal;
         font-family: "FontAwesome";
         color: #08C;
         text-align: center;
      }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 400;
+    }
 
      .phone::before{
         content:"\f095";
@@ -49,6 +63,7 @@ polymer-ui-collapsible {
       }
 
       .wrapper2 {
+        position: relative;
             -webkit-box-shadow: rgb(204, 204, 204) 1px 1px 10px 0px;
 margin-top: 10px;
       }

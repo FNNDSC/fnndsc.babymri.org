@@ -312,7 +312,7 @@ compassEvent: {
         htmlmin: {
             dist: {
                 options: {
-                    /*removeCommentsFromCDATA: true,
+                    removeCommentsFromCDATA: true,
                     // https://github.com/yeoman/grunt-usemin/issues/44
                     //collapseWhitespace: true,
                     collapseBooleanAttributes: true,
@@ -320,7 +320,7 @@ compassEvent: {
                     removeRedundantAttributes: true,
                     useShortDoctype: true,
                     removeEmptyAttributes: true,
-                    removeOptionalTags: true*/
+                    removeOptionalTags: true
                 },
                 files: [{
                     expand: true,
@@ -360,36 +360,6 @@ compassEvent: {
       }
     }
   },
-  vulcanize: {
-    flatiron:{
-      options: {
-        csp: true,
-        // need exclude because we include it several times
-        excludes: {
-          imports: [
-            "polymer.html"
-            ]
-        }
-      },
-      files: {
-        '<%= yeoman.app %>/lib-elements/flatiron-director.html': '<%= yeoman.app %>/lib-elements/flatiron-director/flatiron-director.html'
-      }
-    },
-    jsonp:{
-      options: {
-        csp: true,
-        // need exclude because we include it several times
-        excludes: {
-          imports: [
-            "polymer.html"
-            ]
-        }
-      },
-      files: {
-        '<%= yeoman.app %>/lib-elements/polymer-jsonp.html': '<%= yeoman.app %>/lib-elements/polymer-jsonp/polymer-jsonp.html'
-      }
-    },
-  },
         copy: {
             dist: {
                 files: [{
@@ -427,6 +397,23 @@ compassEvent: {
                     src: [
                         'polymer/**',
                         'flatiron-director/**',
+                        "polymer/polymer.html",
+                        "core-icon/**",
+                        "paper-focusable/**",
+                        "paper-ripple/**",
+                        "paper-shadow/**",
+                        "paper-dialog/**",
+                        "paper-button/**",
+                        "paper-tabs/**",
+                        "core-transition/**",
+                        "core-overlay/**",
+                        "core-iconset/**",
+                        "core-icons/**",
+                        "core-icon-button/**",
+                        "core-meta/**",
+                        "core-toolbar/**",
+                        "core-selector/**",
+                        "core-selection/**",
                         'polymer-jsonp/**'
                     ]
                 }]
@@ -451,9 +438,6 @@ compassEvent: {
             //
             'copy:webcomponents',
             'copy:cssAsScss',
-            // vulcanize ext libs
-            'vulcanize:flatiron',
-            'vulcanize:jsonp',
             'compass:server',
             'compass:home',
             'compass:research',
@@ -482,9 +466,6 @@ compassEvent: {
         //
         'copy:webcomponents',
         'copy:cssAsScss',
-        // vulcanize ext libs
-        'vulcanize:flatiron',
-        'vulcanize:jsonp',
         // compile css for all pages
         'compass:dist',
         'compass:home',

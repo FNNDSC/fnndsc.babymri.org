@@ -1,22 +1,23 @@
 @import '../../styles/main.scss';
 @import '../page/page.scss';
-  .date{
-    font-weight: bold;
-    text-align: center;
-    font-size: x-large;
-  }
 
-  .month{
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-  }
+.date{
+  font-weight: bold;
+  text-align: center;
+  font-size: x-large;
+}
 
-  .row > .col-md-12{
-    white-space: nowrap;
-overflow: hidden;
-/*text-overflow: ellipsis;*/
-  }
+.month{
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.row > .col-md-12{
+  white-space: nowrap;
+  overflow: hidden;
+ /*text-overflow: ellipsis;*/
+}
 
 $general-color: #0eadee;
 $press-color: #31b06b;
@@ -24,65 +25,68 @@ $publication-color: #f55253;
 $award-color: #e1a90e;
 $talk-color: #5158cc;
 
-     .talk{
-      background:$talk-color;
-      color: #FFF;
-     }
+.talk{
+  background:$talk-color;
+  color: #FFF;
+}
 
-     .talk-border{
-       border:1px solid $talk-color;
-     }
+.talk-border{
+  border:1px solid $talk-color;
+}
 
-    .award{
-      background:$award-color;
-      color: #FFF;
-     }
+.award{
+  background:$award-color;
+  color: #FFF;
+}
 
-     .award-border{
-       border:1px solid $award-color;
-     }
+.award-border{
+  border:1px solid $award-color;
+}
 
-    .publication{
-      background:$publication-color;
-      color: #FFF;
-     }
+.publication{
+  background:$publication-color;
+  color: #FFF;
+}
 
-     .publication-border{
-       border:1px solid $publication-color;
-     }
+.publication-border{
+  border:1px solid $publication-color;
+}
 
-    .general{
-      background:$general-color;
-      color: #FFF;
-     }
+.general{
+  background:$general-color;
+  color: #FFF;
+}
 
-     .general-border{
-       border:1px solid $general-color;
-     }
+.general-border{
+  border:1px solid $general-color;
+}
 
-     .press{
-      background:$press-color;
-      color: #FFF;
-     }
+.press{
+  background:$press-color;
+  color: #FFF;
+}
 
-     .press-border{
-       border:1px solid $press-color;
-     }
+.press-border{
+  border:1px solid $press-color;
+}
 
-  .info{
-    background-color: #FFF;
-    padding: 10px;
+.info{
+  background-color: #FFF;
+  padding: 10px;
+}
+
+.what{
+  font-size:20px;
+}
+
+.who{
+  font-size:16px;
+  font-style:italic;
+  color:grey;
+}
+
+@media (max-width: 999px){
+  .month, .date{
+    font-size:large;
   }
-
-  .what{
-    font-size:20px;
-  }
-
-  .who{
-    font-size:16px;
-    font-style:italic;
-    color:grey;
-  }
-
-  .tags{
-  }
+}
