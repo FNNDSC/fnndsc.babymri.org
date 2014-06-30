@@ -57,7 +57,16 @@ paper-tabs.transparent-teal paper-tab::shadow #ink {
   margin-top: 2em;
 }
 
-paper-dialog {
-  width: 50%;
-  min-width: 430px;
+@media (min-width: 1000px){
+  paper-dialog{
+    width:50%;
+    min-width:430px;
+  }
+}
+
+@media (max-width: 999px){
+  paper-dialog{
+    left:0;
+    width:100%;
+  }
 }
