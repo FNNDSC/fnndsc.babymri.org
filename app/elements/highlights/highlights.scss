@@ -11,12 +11,17 @@
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  border:1px solid #FFF;
 }
 
 .row > .col-md-12{
   white-space: nowrap;
   overflow: hidden;
- /*text-overflow: ellipsis;*/
+}
+
+.info:hover{
+  z-index:50;
+  -webkit-box-shadow: #353535 .3em .3em 1.2em .2em;
 }
 
 $general-color: #0eadee;
@@ -71,22 +76,66 @@ $talk-color: #5158cc;
 }
 
 .info{
-  background-color: #FFF;
-  padding: 10px;
+  // background-color: #FFF;
+  padding: 1em;
 }
 
 .what{
-  font-size:20px;
+  font-size:1.1em;
 }
 
 .who{
-  font-size:16px;
+  font-size:1em;
   font-style:italic;
-  color:grey;
+  color:lightgrey;
+}
+
+.where{
+  font-size:1em;
+  font-style:italic;
+  color:lightgrey;
 }
 
 @media (max-width: 999px){
   .month, .date{
     font-size:large;
   }
+
+  .info{
+    padding: .6em;
+  }
+
+  .info .content{
+    padding-top: .6em;
+  }
+
+}
+
+@media (min-width: 1000px){
+
+  .date{
+    color:#000;
+    background-color:#FFF;
+  }
+
+  section{
+    background-color:#353535;
+    margin-bottom:0;
+    padding-bottom:50px;
+  }
+
+  .info{
+    height:150px;
+    overflow-y:auto;
+  }
+
+}
+
+a{
+  color:#353535;
+}
+
+a:hover{
+  color:#353535;
+  font-weight: bold;
 }

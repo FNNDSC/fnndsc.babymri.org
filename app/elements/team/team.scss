@@ -3,7 +3,6 @@
 
 paper-button {
   margin: .5em;
-  width: 10em;
   position: absolute;
   bottom: 0;
   left:0;
@@ -61,16 +60,15 @@ paper-tabs.transparent-teal paper-tab::shadow #ink {
   paper-dialog{
     width:50%;
     min-width:430px;
+    @include transform(translate3d(0,0,0));
   }
 }
 
 @media (max-width: 999px){
   paper-dialog{
     left:0;
-    min-width: calc(100% - 20px);
-    margin:20px;
+    min-width: calc(100% - 40px);
+    margin-left:20px;
+    @include transform(translate3d(0,0,0));
   }
-  // paper-dialog>#container{
-  //   max-width: none;
-  // }
 }

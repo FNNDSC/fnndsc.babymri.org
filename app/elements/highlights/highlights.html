@@ -35,106 +35,126 @@
         <div class="fBox">
         <section id="2014" class="element">
           <div class="title {{name}}">2014</div>
-          <template if="{{highlights != null}}">
-            <template repeat="{{highlight in highlights.feed.entry}}">
-              <template if="{{highlight.gsx$year.$t === '2014'}}">
-                <div class="info row" >
-                  <div class="tags col-md-1">
-                    <div class='row'>
-                      <span class="col-md-12 month {{highlight.gsx$category.$t}} {{highlight.gsx$category.$t}}-border"><span class='{{highlight.gsx$category.$t}}'>{{highlight.gsx$month.$t}}</span></span>
-                      <span class="col-md-12 date {{highlight.gsx$category.$t}}-border">{{highlight.gsx$day.$t}}</span>
+
+          <div class='row'>
+            <template if="{{highlights != null}}">
+              <template repeat="{{highlight in highlights.feed.entry}}">
+                <template if="{{highlight.gsx$year.$t === '2014'}}">
+                  <div class="info {{highlight.gsx$category.$t}} col-md-4" >
+                    <div class="tags {{highlight.gsx$category.$t}} col-md-3">
+                      <div class='row'>
+                        <span class="col-md-12 month"><span class='{{highlight.gsx$category.$t}}'>{{highlight.gsx$month.$t}}</span></span>
+                        <span class="col-md-12 date">{{highlight.gsx$day.$t}}</span>
+                      </div>
+                  </div>
+                    <div class="content col-md-9">
+                      <div class="what">{{highlight.gsx$what.$t}}
+                        <template if="{{highlight.gsx$link.$t != null}}">
+                          <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
+                        </template>
+                      </div>
+                    <div class="who">{{highlight.gsx$who.$t}}</div>
+                    <div class="where">{{highlight.gsx$where.$t}}</div>
                     </div>
                   </div>
-                  <div class="content col-md-11">
-                    <div class="what">{{highlight.gsx$what.$t}}
-                      <template if="{{highlight.gsx$link.$t != null}}">
-                        <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
-                      </template>
-                    </div>
-                    <div class="who">{{highlight.gsx$who.$t}} - {{highlight.gsx$where.$t}}</div>
-                  </div>
-                </div>
+                </template>
               </template>
             </template>
-          </template>
+        </div>
+
         </section>
 
         <section id="2013" class="element">
           <div class="title {{name}}">2013</div>
-          <template if="{{highlights != null}}">
-            <template repeat="{{highlight in highlights.feed.entry}}">
-              <template if="{{highlight.gsx$year.$t === '2013'}}">
-                <div class="info row" >
-                  <div class="tags col-md-1">
-                    <div class='row'>
-                      <span class="col-md-12 month {{highlight.gsx$category.$t}} {{highlight.gsx$category.$t}}-border"><span class='{{highlight.gsx$category.$t}}'>{{highlight.gsx$month.$t}}</span></span>
-                      <span class="col-md-12 date {{highlight.gsx$category.$t}}-border">{{highlight.gsx$day.$t}}</span>
+
+          <div class='row'>
+            <template if="{{highlights != null}}">
+              <template repeat="{{highlight in highlights.feed.entry}}">
+                <template if="{{highlight.gsx$year.$t === '2013'}}">
+                  <div class="info {{highlight.gsx$category.$t}} col-md-4" >
+                    <div class="tags {{highlight.gsx$category.$t}} col-md-3">
+                      <div class='row'>
+                        <span class="col-md-12 month"><span class='{{highlight.gsx$category.$t}}'>{{highlight.gsx$month.$t}}</span></span>
+                        <span class="col-md-12 date">{{highlight.gsx$day.$t}}</span>
+                      </div>
+                  </div>
+                    <div class="content col-md-9">
+                      <div class="what">{{highlight.gsx$what.$t}}
+                        <template if="{{highlight.gsx$link.$t != null}}">
+                          <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
+                        </template>
+                      </div>
+                    <div class="who">{{highlight.gsx$who.$t}}</div>
+                    <div class="where">{{highlight.gsx$where.$t}}</div>
                     </div>
                   </div>
-                  <div class="content col-md-11">
-                    <div class="what">{{highlight.gsx$what.$t}}
-                      <template if="{{highlight.gsx$link.$t != null}}">
-                        <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
-                      </template>
-                    </div>
-                    <div class="who">{{highlight.gsx$who.$t}} - {{highlight.gsx$where.$t}}</div>
-                  </div>
-                </div>
+                </template>
               </template>
             </template>
-          </template>
+          </div>
+
         </section>
 
         <section id="2012" class="element">
           <div class="title {{name}}">2012</div>
-          <template if="{{highlights != null}}">
-            <template repeat="{{highlight in highlights.feed.entry}}">
-              <template if="{{highlight.gsx$year.$t === '2012'}}">
-                <div class="info row" >
-                  <div class="tags col-md-1">
-                    <div class='row'>
-                      <span class="col-md-12 month {{highlight.gsx$category.$t}} {{highlight.gsx$category.$t}}-border"><span class='{{highlight.gsx$category.$t}}'>{{highlight.gsx$month.$t}}</span></span>
-                      <span class="col-md-12 date {{highlight.gsx$category.$t}}-border">{{highlight.gsx$day.$t}}</span>
+
+          <div class='row'>
+            <template if="{{highlights != null}}">
+              <template repeat="{{highlight in highlights.feed.entry}}">
+                <template if="{{highlight.gsx$year.$t === '2012'}}">
+                  <div class="info {{highlight.gsx$category.$t}} col-md-4" >
+                    <div class="tags {{highlight.gsx$category.$t}} col-md-3">
+                      <div class='row'>
+                        <span class="col-md-12 month"><span class='{{highlight.gsx$category.$t}}'>{{highlight.gsx$month.$t}}</span></span>
+                        <span class="col-md-12 date">{{highlight.gsx$day.$t}}</span>
+                      </div>
+                  </div>
+                    <div class="content col-md-9">
+                      <div class="what">{{highlight.gsx$what.$t}}
+                        <template if="{{highlight.gsx$link.$t != null}}">
+                          <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
+                        </template>
+                      </div>
+                    <div class="who">{{highlight.gsx$who.$t}}</div>
+                    <div class="where">{{highlight.gsx$where.$t}}</div>
                     </div>
                   </div>
-                  <div class="content col-md-11">
-                    <div class="what">{{highlight.gsx$what.$t}}
-                      <template if="{{highlight.gsx$link.$t != null}}">
-                        <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
-                      </template>
-                    </div>
-                    <div class="who">{{highlight.gsx$who.$t}} - {{highlight.gsx$where.$t}}</div>
-                  </div>
-                </div>
+                </template>
               </template>
             </template>
-          </template>
+          </div>
+
         </section>
 
         <section id="2011" class="element">
           <div class="title {{name}}">2011</div>
-          <template if="{{highlights != null}}">
-            <template repeat="{{highlight in highlights.feed.entry}}">
-              <template if="{{highlight.gsx$year.$t === '2011'}}">
-                <div class="info row" >
-                  <div class="tags col-md-1">
-                    <div class='row'>
-                      <span class="col-md-12 month {{highlight.gsx$category.$t}} {{highlight.gsx$category.$t}}-border"><span class='{{highlight.gsx$category.$t}}'>{{highlight.gsx$month.$t}}</span></span>
-                      <span class="col-md-12 date {{highlight.gsx$category.$t}}-border">{{highlight.gsx$day.$t}}</span>
+
+          <div class='row'>
+            <template if="{{highlights != null}}">
+              <template repeat="{{highlight in highlights.feed.entry}}">
+                <template if="{{highlight.gsx$year.$t === '2011'}}">
+                  <div class="info {{highlight.gsx$category.$t}} col-md-4" >
+                    <div class="tags {{highlight.gsx$category.$t}} col-md-3">
+                      <div class='row'>
+                        <span class="col-md-12 month"><span class='{{highlight.gsx$category.$t}}'>{{highlight.gsx$month.$t}}</span></span>
+                        <span class="col-md-12 date">{{highlight.gsx$day.$t}}</span>
+                      </div>
+                  </div>
+                    <div class="content col-md-9">
+                      <div class="what">{{highlight.gsx$what.$t}}
+                        <template if="{{highlight.gsx$link.$t != null}}">
+                          <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
+                        </template>
+                      </div>
+                    <div class="who">{{highlight.gsx$who.$t}}</div>
+                    <div class="where">{{highlight.gsx$where.$t}}</div>
                     </div>
                   </div>
-                  <div class="content col-md-11">
-                    <div class="what">{{highlight.gsx$what.$t}}
-                      <template if="{{highlight.gsx$link.$t != null}}">
-                        <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
-                      </template>
-                    </div>
-                    <div class="who">{{highlight.gsx$who.$t}} - {{highlight.gsx$where.$t}}</div>
-                  </div>
-                </div>
+                </template>
               </template>
             </template>
-          </template>
+          </div>
+
         </section>
 
       </div>

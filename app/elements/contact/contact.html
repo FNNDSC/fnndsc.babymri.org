@@ -37,16 +37,19 @@
         <section id="main1" class="element">
           <div class="title {{name}}">main hospital</div>
 
-          <div class='card'>
+          <div class='row card'>
 
           <template if="{{contact != null}}">
             <template repeat="{{location in contact.feed.entry}}">
               <template if="{{location.gsx$location.$t === 'main'}}">
 
                 <div class="info">
-                  {{location.gsx$name.$t}}</br>
-                  {{location.gsx$address.$t}}</br>
-                  {{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</br></br>
+
+                  <div class='address'>
+                    <div>{{location.gsx$name.$t}}</div>
+                    <div>{{location.gsx$address.$t}}</div>
+                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                  </div>
 
                   <div class="icon phone">
                     <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
@@ -61,26 +64,33 @@
           <div class="map">
             <div id="main-map"></div>
           </div>
-        </div>
 
-          <div id='main-allnotes'  class="notes">
-            <div class='subtitle {{name}}'>Notes</div>
-            <div id='main-notes'></div>
+          <div id='main-allnotes'>
+            <div class="notes">
+              <div>Notes</div>
+              <div id='main-notes'></div>
+            </div>
           </div>
+
+        </div>
         </section>
 
         <section id="autumn" class="element">
           <div class="title {{name}}">1 autumn street</div>
 
-          <div class='card'>
+          <div class='row card'>
 
           <template if="{{contact != null}}">
             <template repeat="{{location in contact.feed.entry}}">
               <template if="{{location.gsx$location.$t === 'autumn'}}">
                 <div  class="info">
-                  {{location.gsx$name.$t}}</br>
-                  {{location.gsx$address.$t}}</br>
-                  {{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</br></br>
+
+                  <div class='address'>
+                    <div>{{location.gsx$name.$t}}</div>
+                    <div>{{location.gsx$address.$t}}</div>
+                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                  </div>
+
                   <div class="icon phone">
                     <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
                   </div>
@@ -94,24 +104,33 @@
           <div class="map">
             <div id="autumn-map"></div>
           </div>
-        </div>
-          <div id='autumn-allnotes' class="notes">
-            <div class='subtitle {{name}}'>Notes</div>
-            <div id='autumn-notes'></div>
+
+          <div id='autumn-allnotes'>
+            <div class="notes">
+              <div>Notes</div>
+              <div id='autumn-notes'></div>
+            </div>
           </div>
+
+        </div>
+
 
         </section>
 
         <section id="waltham" class="element">
           <div class="title {{name}}">waltham</div>
-          <div class='card'>
+          <div class='row card'>
           <template if="{{contact != null}}">
             <template repeat="{{location in contact.feed.entry}}">
               <template if="{{location.gsx$location.$t === 'waltham'}}">
                 <div  class="info">
-                  {{location.gsx$name.$t}}</br>
-                  {{location.gsx$address.$t}}</br>
-                  {{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</br></br>
+
+                  <div class='address'>
+                    <div>{{location.gsx$name.$t}}</div>
+                    <div>{{location.gsx$address.$t}}</div>
+                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                  </div>
+
                   <div class="icon phone">
                     <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
                   </div>
@@ -125,11 +144,15 @@
           <div class="map">
             <div id="waltham-map"></div>
           </div>
-        </div>
-          <div id='waltham-allnotes' class="notes">
-            <div class='subtitle {{name}}'>Notes</div>
-            <div id='waltham-notes'></div>
+
+          <div id='waltham-allnotes'>
+            <div class="notes">
+              <div>Notes</div>
+              <div id='waltham-notes'></div>
+            </div>
           </div>
+
+        </div>
         </section>
 
     </div>

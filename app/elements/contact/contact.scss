@@ -2,23 +2,27 @@
 @import '../page/page.scss';
 
 .icon{
-        font-weight: bold;
-        font-style: normal;
-        font-family: "FontAwesome";
-        text-align: left;
-      }
+  font-weight: bold;
+  font-style: normal;
+  font-family: "FontAwesome";
+  text-align: left;
+}
 
-      .phone::before{
-        content:"\f095";
-      }
+.phone::before{
+  content:"\f095";
+}
 
-      .fax::before{
-        content:"\f02f";
-      }
+.fax::before{
+  content:"\f02f";
+}
 
 .card{
-  -webkit-box-shadow: #cccccc 1px 1px 10px 0px;
-  padding: 20px;
+  -webkit-box-shadow: #cccccc .1em .1em 1em 0em;
+  padding: .5em;
+}
+
+.card:hover{
+  -webkit-box-shadow: #353535 .1em .1em 1em 0em;
 }
 
 $main-color: #5158cc;
@@ -35,22 +39,26 @@ $waltham-color: #e2aa0f;
 #waltham .card{
   background-color:$waltham-color;
 }
-      .info{
-        padding: 10px;
-        font-size:18px;
-        font-style: italic;
-        color:#FFF;
-      }
 
-      .icon>span{
+.info, .notes{
+  padding: 1em;
+  font-size:1.3em;
+  font-style: italic;
+  background-color: #FFF;
+}
+
+.info{
+  margin-bottom: 1em;
+}
+
+.notes{
+  margin-top: 1em;
+}
+
+.icon>span{
   display: inline-block!important;
 }
 
-.subtitle{
-font-size: 22px;
-font-weight: bold;
-padding: 20px;
-color: #838383;
-display: inline-block;
-
+.address{
+  margin-bottom: 1em;
 }

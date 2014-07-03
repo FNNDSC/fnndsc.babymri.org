@@ -1,52 +1,97 @@
-      @import '../../styles/main.scss';
-      @import '../page/page.scss';
+@import '../../styles/main.scss';
+@import '../page/page.scss';
 
-$next-color: #5158cc;
-$fnndsctalk-color: #31b06b;
+paper-button {
+  margin: .5em;
+  position: absolute;
+  bottom: 0;
+  right:0;
+  text-align:left;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.content {
+  padding: 1em;
+}
+
+.wrapper2 {
+  position: relative;
+  -webkit-box-shadow: #cccccc .1em .1em 1em 0em;
+  margin-top: 1em;
+  min-height: 14em;
+}
+
+.wrapper2:hover{
+  -webkit-box-shadow: #353535 .1em .1em 1em 0em;
+}
+
+h3{
+  font-size: 1em;
+  line-height: 1.2em;
+  font-weight:normal;
+}
+
+$fnndsctalk-color: #5158cc;
+$next-color: #31b06b;
 $unix101-color: #f55253;
 
-      #liveTitle{
-        font-size: 20px;
-        line-size:default!important;
-        padding-bottom: 10px;
-        text-align: center;
-        color:#FFF;
-      }
+.name{
+  text-align:center;
+}
 
-      #liveTitle.next{
-        background-color: $next-color;
-      }
+.name.next{
+  background-color:$next-color;
+}
 
-      #liveTitle.fnndsctalk{
-        background-color: $fnndsctalk-color;
-      }
+.name.fnndsctalk{
+  background-color:$fnndsctalk-color;
+}
 
-      #liveTitle.unix101{
-        background-color: $unix101-color;
-      }
+.name.unix101{
+  background-color:$unix101-color;
+}
 
-      #liveTime{
-        font-size: 16px;
-        line-height: normal;
-        font-style: italic;
-        margin: 10px;
-      }
+.name > h1{
+  color: #FFF;
+  display: block;
+  padding: .5em;
+  margin: 0 !important;
+  font-size: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
 
-      #liveSpeaker{
-        font-size: 16px;
-        line-height: normal;
-        font-weight: bold;
-        margin: 10px;
-      }
+#picture{
+  width:auto;
+  height:auto;
+  float:right;
+  padding:.5em;
+}
 
-      #liveAbstract{
-      	max-height: 200px;
-        overflow-y: auto;
-        margin-left: 10px;
-        font-size: 14px;
-        border-bottom: 1px lightgrey solid;
-      }
+#picture img{
+  width:100%;
+  height:100%;
+}
 
-      .eventrow{
-        margin-bottom: 20px;
-      }
+#info{
+  padding:.5em;
+}
+
+#info div{
+  padding-left:.5em;
+}
+
+#info .subtitle{
+  padding-top:.5em;
+  font-weight:bold;
+}
+
+.event{
+  font-size: 1em;
+  font-style: italic;
+  color: grey;
+}
