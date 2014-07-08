@@ -6,6 +6,7 @@
   font-style: normal;
   font-family: "FontAwesome";
   text-align: left;
+  color: #353535;
 }
 
 .phone::before{
@@ -16,35 +17,46 @@
   content:"\f02f";
 }
 
-.card{
-  -webkit-box-shadow: #cccccc .1em .1em 1em 0em;
-  padding: .5em;
-}
-
-.card:hover{
-  -webkit-box-shadow: #353535 .1em .1em 1em 0em;
-}
-
 $main-color: #5158cc;
 #main1 .card{
-  background-color:$main-color;
+  border-left: 5px solid $main-color;
 }
 
 $autumn-color: #31b06b;
 #autumn .card{
-  background-color:$autumn-color;
+  border-left: 5px solid $autumn-color;
 }
 
 $waltham-color: #e2aa0f;
 #waltham .card{
-  background-color:$waltham-color;
+  border-left: 5px solid $waltham-color;
 }
 
-.info, .notes{
-  padding: 1em;
+.info{
   font-size:1.3em;
-  font-style: italic;
   background-color: #FFF;
+  padding: 1em;
+  -webkit-box-shadow: #353535 .1em .1em 1em 0em;
+}
+
+.notes{
+  padding: .5em;
+  font-size:1em;
+  background-color: #FFF;
+  display:inline-block;
+  -webkit-box-shadow: #353535 .1em .1em 1em 0em;
+}
+
+#main1 .notes{
+  color:$main-color;
+}
+
+#autumn .notes{
+  color:$autumn-color;
+}
+
+#waltham .notes{
+  color:$waltham-color;
 }
 
 .info{
@@ -61,4 +73,5 @@ $waltham-color: #e2aa0f;
 
 .address{
   margin-bottom: 1em;
+  color: #353535;
 }

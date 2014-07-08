@@ -72,3 +72,24 @@ paper-tabs.transparent-teal paper-tab::shadow #ink {
     @include transform(translate3d(0,0,0));
   }
 }
+
+$faculty-color: #5158cc;
+#faculty .card{
+  border-left: 5px solid $faculty-color;
+}
+
+$staff-color: #31b06b;
+#staff .card{
+  border-left: 5px solid $staff-color;
+}
+
+$collaborators-color: #e1a90e;
+#collaborators .card{
+  border-left: 5px solid $collaborators-color;
+}
+
+
+$alumni-color: #f55253;
+#alumni .card{
+  border-left: 5px solid $alumni-color;
+}

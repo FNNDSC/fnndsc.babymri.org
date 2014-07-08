@@ -13,7 +13,7 @@
     <!-- Title -->
     <div class='pageTitle'>
       <div class="container">
-        <div id="jumbo" class=" jumbotron fBox" >
+        <div id="jumbo" class=" jumbotron" >
           <template if="{{(research == null) && (cache == null)}}">
             <span class="spinner"><img src="../../images/spinner.gif"></span>
           </template>
@@ -39,7 +39,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-1 ">
-          <div id='{{name}}-affix'  class="fBox">
+          <div id='{{name}}-affix'>
             <ul id='{{name}}-navigation' class="nav ">
               <template if="{{structure != null}}">
                 <template repeat="{{section in structure}}">
@@ -53,8 +53,12 @@
         </div>
         <div class="col-md-11">
           <div class="fBox">
-            <section id="live" class='element row'>
-              <div id="liveSectionTitle" class="title {{name}}">Upcoming talks</div>
+            <section id="live" class='element'>
+
+              <div class='row card'>
+
+                <div id="liveSectionTitle" class="title {{name}}">Upcoming talks</div>
+
               <template if="{{live != null}}">
                 <template repeat="{{event in live.feed.entry}}">
                   <template if="{{event.gsx$section.$t === 'next'}}">
@@ -64,10 +68,15 @@
                   </template>
                 </template>
               </template>
+            </div>
             </section>
 
-            <section id="fnndsctalks" class='element row'>
-              <div id="prevTitle" class="title {{name}}">Fnndsc talks</div>
+            <section id="fnndsctalks" class='element'>
+
+              <div class='row card'>
+
+                <div id="prevTitle" class="title {{name}}">Fnndsc talks</div>
+
               <template if="{{live != null}}">
                 <template repeat="{{event in live.feed.entry}}">
                   <template if="{{event.gsx$section.$t === 'fnndsctalk'}}">
@@ -77,10 +86,14 @@
                   </template>
                 </template>
               </template>
+            </div>
             </section>
 
-            <section id="unix101" class='element row'>
-              <div id="prevTitle" class="title {{name}}">Unix 101 series</div>
+            <section id="unix101" class='element'>
+
+              <div class='row card'>
+
+                <div id="prevTitle" class="title {{name}}">Unix 101 series</div>
               <template if="{{live != null}}">
                 <template repeat="{{event in live.feed.entry}}">
                   <template if="{{event.gsx$section.$t === 'unix101'}}">
@@ -90,6 +103,7 @@
                   </template>
                 </template>
               </template>
+            </div>
             </section>
           </div>
         </div>

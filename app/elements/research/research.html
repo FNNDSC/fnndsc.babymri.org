@@ -6,7 +6,7 @@
 
       <div class='pageTitle'>
         <div class="container">
-          <div id="jumbo" class=" jumbotron fBox" >
+          <div id="jumbo" class="jumbotron" >
             <template if="{{(research == null) && (cache == null)}}">
               <span class="spinner"><img src="../../images/spinner.gif"></span>
             </template>
@@ -19,7 +19,7 @@
       <div class="container">
       <div class="row">
         <div class="col-md-1 ">
-          <div id='{{name}}-affix'  class="fBox">
+          <div id='{{name}}-affix'>
             <ul id='{{name}}-navigation' class="nav ">
               <template if="{{structure != null}}">
                 <template repeat="{{section in structure}}">
@@ -35,26 +35,38 @@
         <div class="fBox">
 
         <section id="challenges" class="element">
-          <div id="challengesTitle" class="title {{name}}"></div>
+          <!-- <div id="challengesTitle" class="title"></div> -->
+          <div class='row card'>
+            <div id="challengesTitle2" class="title"></div>
           <div id="challengesContent" class="content"></div>
+        </div>
           <div class='clear'></div>
         </section>
 
         <section id="mri" class="element">
-          <div id="mriTitle" class="title {{name}}"></div>
+          <!-- <div id="mriTitle" class="title"></div> -->
+          <div class='row card'>
+            <div id="mriTitle2" class="title"></div>
           <div id="mriContent" class="content"></div>
+        </div>
           <div class='clear'></div>
         </section>
 
         <section id="nirs" class="element">
-          <div id="nirsTitle" class="title {{name}}"></div>
+          <!-- <div id="nirsTitle" class="title"></div> -->
+          <div class='row card'>
+            <div id="nirsTitle2" class="title"></div>
           <div id="nirsContent" class="content"></div>
+        </div>
           <div class='clear'></div>
         </section>
 
         <section id="meg" class="element">
-          <div id="megTitle" class="title {{name}}"></div>
+          <!-- <div id="megTitle" class="title"></div> -->
+          <div class='row card'>
+            <div id="megTitle2" class="title"></div>
           <div id="megContent" class="content"></div>
+        </div>
           <div class='clear'></div>
         </section>
 
@@ -87,10 +99,15 @@
       researchChanged: function() {
         if(this.research){
           // titles
-          this.$.challengesTitle.innerHTML = this.research.feed.entry[0].gsx$challenges.$t;
-          this.$.mriTitle.innerHTML = this.research.feed.entry[0].gsx$mri.$t;
-          this.$.nirsTitle.innerHTML = this.research.feed.entry[0].gsx$nirs.$t;
-          this.$.megTitle.innerHTML = this.research.feed.entry[0].gsx$meg.$t;
+          // this.$.challengesTitle.innerHTML = this.research.feed.entry[0].gsx$challenges.$t;
+          // this.$.mriTitle.innerHTML = this.research.feed.entry[0].gsx$mri.$t;
+          // this.$.nirsTitle.innerHTML = this.research.feed.entry[0].gsx$nirs.$t;
+          // this.$.megTitle.innerHTML = this.research.feed.entry[0].gsx$meg.$t;
+          // titles2
+          this.$.challengesTitle2.innerHTML = this.research.feed.entry[0].gsx$challenges.$t;
+          this.$.mriTitle2.innerHTML = this.research.feed.entry[0].gsx$mri.$t;
+          this.$.nirsTitle2.innerHTML = this.research.feed.entry[0].gsx$nirs.$t;
+          this.$.megTitle2.innerHTML = this.research.feed.entry[0].gsx$meg.$t;
           // contents
           this.$.challengesContent.innerHTML = this.research.feed.entry[1].gsx$challenges.$t;
           this.$.mriContent.innerHTML = this.research.feed.entry[1].gsx$mri.$t;

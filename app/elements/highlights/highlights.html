@@ -6,7 +6,7 @@
 
     <div class='pageTitle'>
       <div class="container">
-        <div id="jumbo" class=" jumbotron fBox" >
+        <div id="jumbo" class=" jumbotron" >
           <template if="{{(research == null) && (cache == null)}}">
             <img class="spinner" src="../../images/spinner.gif">
           </template>
@@ -19,7 +19,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-1 ">
-          <div id='{{name}}-affix' class="fBox">
+          <div id='{{name}}-affix'>
             <ul id='{{name}}-navigation' class="nav ">
               <template if="{{structure != null}}">
                 <template repeat="{{section in structure}}">
@@ -33,8 +33,9 @@
         </div>
         <div class="col-md-11">
         <div class="fBox">
-        <section id="2014" class="element">
-          <div class="title {{name}}">2014</div>
+        <section id="ttfourteen" class="element">
+          <div class='row card'>
+          <div class="title">2014</div>
 
           <div class='row'>
             <template if="{{highlights != null}}">
@@ -47,7 +48,7 @@
                         <span class="col-md-12 date">{{highlight.gsx$day.$t}}</span>
                       </div>
                   </div>
-                    <div class="content col-md-9">
+                    <div class="summary col-md-9">
                       <div class="what">{{highlight.gsx$what.$t}}
                         <template if="{{highlight.gsx$link.$t != null}}">
                           <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
@@ -61,11 +62,12 @@
               </template>
             </template>
         </div>
-
+</div>
         </section>
 
-        <section id="2013" class="element">
-          <div class="title {{name}}">2013</div>
+        <section id="ttthirteen" class="element">
+          <div class='row card'>
+          <div class="title">2013</div>
 
           <div class='row'>
             <template if="{{highlights != null}}">
@@ -78,7 +80,7 @@
                         <span class="col-md-12 date">{{highlight.gsx$day.$t}}</span>
                       </div>
                   </div>
-                    <div class="content col-md-9">
+                    <div class="summary col-md-9">
                       <div class="what">{{highlight.gsx$what.$t}}
                         <template if="{{highlight.gsx$link.$t != null}}">
                           <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
@@ -92,11 +94,12 @@
               </template>
             </template>
           </div>
-
+        </div>
         </section>
 
-        <section id="2012" class="element">
-          <div class="title {{name}}">2012</div>
+        <section id="tttwelve" class="element">
+          <div class='row card'>
+          <div class="title">2012</div>
 
           <div class='row'>
             <template if="{{highlights != null}}">
@@ -109,7 +112,7 @@
                         <span class="col-md-12 date">{{highlight.gsx$day.$t}}</span>
                       </div>
                   </div>
-                    <div class="content col-md-9">
+                    <div class="summary col-md-9">
                       <div class="what">{{highlight.gsx$what.$t}}
                         <template if="{{highlight.gsx$link.$t != null}}">
                           <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
@@ -123,11 +126,12 @@
               </template>
             </template>
           </div>
-
+          </div>
         </section>
 
-        <section id="2011" class="element">
-          <div class="title {{name}}">2011</div>
+        <section id="tteleven" class="element">
+          <div class='row card'>
+          <div class="title">2011</div>
 
           <div class='row'>
             <template if="{{highlights != null}}">
@@ -140,7 +144,7 @@
                         <span class="col-md-12 date">{{highlight.gsx$day.$t}}</span>
                       </div>
                   </div>
-                    <div class="content col-md-9">
+                    <div class="summary col-md-9">
                       <div class="what">{{highlight.gsx$what.$t}}
                         <template if="{{highlight.gsx$link.$t != null}}">
                           <a href="{{highlight.gsx$link.$t}}">{{highlight.gsx$linkname.$t}}</a>
@@ -154,6 +158,7 @@
               </template>
             </template>
           </div>
+        </div>
 
         </section>
 

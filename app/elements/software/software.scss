@@ -7,7 +7,7 @@
 
       .slider {
         width: 100%;
-        margin: 50px auto 0;
+        margin: 0 auto 0;
       }
 
       .buttons{
@@ -27,17 +27,6 @@
         padding:10px;
       }
 
-      .source{
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        width: 50%;
-        color: #fff;
-        border-left: 1px solid #0088cc;
-        text-align: center;
-        padding:10px;
-      }
-
       .container ul{
         list-style-position:inside;
       }
@@ -48,4 +37,64 @@
       .technology{
         color: grey;
         font-style: italic;
+      }
+
+$labbook-color: #5158cc;
+#labbook .card{
+  border-left: 5px solid $labbook-color;
+}
+
+$slicedrop-color: #31b06b;
+#slicedrop .card{
+  border-left: 5px solid $slicedrop-color;
+}
+
+$xtk-color: #e1a90e;
+#xtk .card{
+  border-left: 5px solid $xtk-color;
+}
+
+
+$more-color: #f55253;
+#more .card{
+  border-left: 5px solid $more-color;
+}
+
+      .logo{
+        float: right;width: 128px;
+        -webkit-box-shadow: #353535 .1em .1em 1em 0em;
+      }
+
+      .overview{
+        padding-bottom:2em;
+      }
+
+      .try{
+        font-size:2em;
+        padding:1em;
+        margin:1em;
+        color:#353535;
+        background-color:#FFF;
+        display:inline-block;
+      }
+
+      .technology{
+        padding:1em;
+        color:#353535;
+        background-color:#FFF;
+        -webkit-box-shadow: #353535 .1em .1em 1em 0em;
+      }
+
+      .license{
+        padding:1em;
+        color:#353535;
+        background-color:#FFF;
+        -webkit-box-shadow: #353535 .1em .1em 1em 0em;
+      }
+
+      .source{
+        padding:1em;
+        color:#353535;
+        background-color:#FFF;
+        -webkit-box-shadow: #353535 .1em .1em 1em 0em;
       }

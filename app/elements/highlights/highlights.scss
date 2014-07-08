@@ -11,7 +11,6 @@
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  border:1px solid #FFF;
 }
 
 .row > .col-md-12{
@@ -19,9 +18,16 @@
   overflow: hidden;
 }
 
+.info{
+  // -webkit-box-shadow: #353535 .1em .1em .5em .1em;
+}
 .info:hover{
   z-index:50;
   -webkit-box-shadow: #353535 .3em .3em 1.2em .2em;
+}
+
+.tags .row{
+  -webkit-box-shadow: #353535 .1em .1em 1em 0em;
 }
 
 $general-color: #0eadee;
@@ -105,7 +111,7 @@ $talk-color: #5158cc;
     padding: .6em;
   }
 
-  .info .content{
+  .info .summary{
     padding-top: .6em;
   }
 
@@ -116,12 +122,6 @@ $talk-color: #5158cc;
   .date{
     color:#000;
     background-color:#FFF;
-  }
-
-  section{
-    background-color:#353535;
-    margin-bottom:0;
-    padding-bottom:50px;
   }
 
   .info{
@@ -138,4 +138,24 @@ a{
 a:hover{
   color:#353535;
   font-weight: bold;
+}
+
+$ttfourteen-color: #5158cc;
+#ttfourteen .card{
+  border-left: 5px solid$ttfourteen-color;
+}
+
+$ttthirteen-color: #31b06b;
+#ttthirteen .card{
+  border-left: 5px solid$ttthirteen-color;
+}
+
+$tttwelve-color: #e2aa0f;
+#tttwelve .card{
+  border-left: 5px solid$tttwelve-color;
+}
+
+$tteleven-color: #f55253;
+#tteleven .card{
+  border-left: 5px solid $tteleven-color;
 }

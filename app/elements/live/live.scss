@@ -36,3 +36,24 @@ paper-dialog paper-button {
 #abstract{
   margin-top:1em;
 }
+
+$live-color: #5158cc;
+#live .card{
+  border-left: 5px solid $live-color;
+}
+
+$fnndsctalks-color: #31b06b;
+#fnndsctalks .card{
+  border-left: 5px solid $fnndsctalks-color;
+}
+
+$unix101-color: #e1a90e;
+#unix101 .card{
+  border-left: 5px solid $unix101-color;
+}
+
+
+$alumni-color: #f55253;
+#alumni .card{
+  border-left: 5px solid $alumni-color;
+}

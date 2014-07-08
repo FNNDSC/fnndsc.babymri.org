@@ -1,15 +1,26 @@
 @import '../../styles/main.scss';
 @import '../page/page.scss';
 
-li .title{
+li .main{
   font-weight:bold;
 }
 
-li .content{
-  // font-size:16px;
+$challenges-color: #5158cc;
+#challenges .card{
+  border-left: 5px solid $challenges-color;
 }
 
-.title{
-  text-overflow: ellipsis;
-  overflow: hidden;
+$mri-color: #31b06b;
+#mri .card{
+  border-left: 5px solid $mri-color;
+}
+
+$nirs-color: #e1a90e;
+#nirs .card{
+  border-left: 5px solid $nirs-color;
+}
+
+$meg-color: #f55253;
+#meg .card{
+  border-left: 5px solid $meg-color;
 }

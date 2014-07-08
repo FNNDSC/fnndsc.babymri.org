@@ -4,7 +4,7 @@ a.active{
 }
 
 .fBox{
-  background-color: #FFF;
+  background-color: #FAFAFA;
 }
 
 $bg-color: #14bef0;
@@ -41,7 +41,8 @@ section > .content{
 }
 
 section {
-    margin-bottom:50px;
+margin-bottom: 50px;
+margin-top: 25px;
 }
 
 @media (min-width: 1000px){
@@ -77,4 +78,25 @@ section {
 
 .spinner{
     float:right;
+}
+
+
+.card{
+  -webkit-box-shadow: #cccccc .1em .1em 1em 0em;
+  padding: 1.5em;
+  // color:#FFF;
+  background-color:#FFF;
+}
+
+.card:hover{
+  // -webkit-box-shadow: #353535 .1em .1em 1em 0em;
+}
+
+.title{
+  font-size: 2em;
+  padding-bottom: 1em;
+}
+
+.content{
+  font-size:1.3em;
 }
