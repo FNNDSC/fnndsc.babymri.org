@@ -88,6 +88,7 @@ $talk-color: #5158cc;
 
 .what{
   font-size:1.1em;
+  color:#FFF;
 }
 
 .who{
@@ -97,6 +98,12 @@ $talk-color: #5158cc;
 }
 
 .where{
+  font-size:1em;
+  font-style:italic;
+  color:lightgrey;
+}
+
+.location{
   font-size:1em;
   font-style:italic;
   color:lightgrey;
