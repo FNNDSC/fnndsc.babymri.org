@@ -8,4 +8,5 @@ before_install:
   - gem install compass --version "=0.12.2"
 before_script:
   - 'npm install -g bower grunt-cli'
+  - 'bower  --version'
   - 'bower install'
