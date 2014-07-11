@@ -9,4 +9,6 @@ before_install:
 before_script:
   - 'npm install -g bower grunt-cli'
   - 'bower  --version'
+  - 'npm update -g bower'
+  - 'bower  --version'
   - 'bower install'
