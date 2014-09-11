@@ -4,21 +4,15 @@
   "dependencies": {
     "sass-bootstrap": "3.0.2",
     "modernizr": "2.8.2",
-    "polymer": "latest",
-    "platform": "latest",
+    "polymer": "Polymer/polymer#~0.4.0",
+    "platform": "Polymer/platform#~0.4.0",
     "OwlCarousel": "https://github.com/OwlFonk/OwlCarousel.git#1.3.1",
     "jquery": "1.9",
-    "polymer-jsonp": "PolymerLabs/polymer-jsonp#latest",
-    "flatiron-director": "PolymerLabs/flatiron-director#latest",
-    "paper-button": "Polymer/paper-button#master",
-    "paper-dialog": "Polymer/paper-dialog#master",
-    "paper-tabs": "Polymer/paper-tabs#master",
-    "paper-shadow": "Polymer/paper-shadow#master"
-  },
-  "devDependencies": {},
-  "resolutions": {
-    "polymer": ">=0.3.0 <1.0.0",
-    "platform": ">=0.3.0 <1.0.0",
-    "core-component-page": ">=0.3.0 <1.0.0"
+    "polymer-jsonp": "PolymerLabs/polymer-jsonp#master",
+    "flatiron-director": "PolymerLabs/flatiron-director",
+    "paper-button": "Polymer/paper-button",
+    "paper-dialog": "Polymer/paper-dialog",
+    "paper-tabs": "Polymer/paper-tabs",
+    "paper-shadow": "Polymer/paper-shadow"
   }
 }
