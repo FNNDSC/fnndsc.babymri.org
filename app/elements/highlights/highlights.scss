@@ -1,18 +1,6 @@
 @import '../../styles/main.scss';
 @import '../page/page.scss';
 
-.date{
-  font-weight: bold;
-  text-align: center;
-  font-size: x-large;
-}
-
-.month{
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 .row > .col-md-12{
   white-space: nowrap;
   overflow: hidden;
@@ -26,9 +14,9 @@
   -webkit-box-shadow: #353535 .3em .3em 1.2em .2em;
 }
 
-.tags .row{
-  -webkit-box-shadow: #353535 .1em .1em 1em 0em;
-}
+// .tags .row{
+//   -webkit-box-shadow: #353535 .1em .1em 1em 0em;
+// }
 
 $general-color: #0eadee;
 $press-color: #31b06b;

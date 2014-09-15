@@ -54,6 +54,10 @@ module.exports = function (grunt) {
                 files: '<%= yeoman.app %>/elements/highlights/highlights.scss',
                 tasks: ['compass:highlights']
             },
+            compassHighlightsCard: {
+                files: '<%= yeoman.app %>/elements/highlights_card/highlights_card.scss',
+                tasks: ['compass:highlights_card']
+            },
 
             compassTeam: {
                 files: '<%= yeoman.app %>/elements/team/team.scss',
@@ -199,6 +203,12 @@ compassEvent: {
                   cssDir: '.tmp/elements/highlights',
               }
             },
+            highlights_card:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/highlights_card',
+                  cssDir: '.tmp/elements/highlights_card',
+              }
+            },
             contact:{
               options: {
                   sassDir: '<%= yeoman.app %>/elements/contact',
@@ -276,6 +286,11 @@ compassEvent: {
             highlights: {
                 files: {
                     '<%= yeoman.dist %>/elements/highlights/highlights.css': '.tmp/elements/highlights/highlights.css'
+                }
+            },
+            highlights_card: {
+                files: {
+                    '<%= yeoman.dist %>/elements/highlights/highlights_card.css': '.tmp/elements/highlights/highlights_card.css'
                 }
             },
             software: {
@@ -443,6 +458,7 @@ compassEvent: {
             'compass:research',
             'compass:software',
             'compass:highlights',
+            'compass:highlights_card',
             'compass:team',
             'compass:people',
             'compass:contact',
@@ -472,6 +488,7 @@ compassEvent: {
         'compass:research',
         'compass:software',
         'compass:highlights',
+        'compass:highlights_card',
         'compass:team',
         'compass:people',
         'compass:contact',
@@ -493,6 +510,7 @@ compassEvent: {
         'cssmin:home',
         'cssmin:research',
         'cssmin:highlights',
+        'cssmin:highlights_card',
         'cssmin:software',
         'cssmin:team',
         'cssmin:people',

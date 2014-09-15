@@ -9,12 +9,16 @@ a.active{
 
 $bg-color: #14bef0;
 
+.affix-top{
+  margin-top:25px;
+}
 .affix-top > .nav > li > a, .affix > .nav > li > a {
   border-left: 1px solid;
 position: relative;
 display: block;
 padding: 5px;
 color: $bg-color;
+font-size:1.3em;
 }
 
 .jumbotron{

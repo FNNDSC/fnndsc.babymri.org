@@ -2,7 +2,6 @@
 @import '../page/page.scss';
 
 .container-fluid{
-  padding-top:50px;
   padding-bottom:100px;
 }
 
@@ -23,7 +22,7 @@
   #welcome .logo-home{
 	  float:left;
 	  display:block;
-	  padding:10px;
+	  padding:40px;
   }
 
   .link{
@@ -32,8 +31,21 @@
     font-size:100px;
     margin:auto;
     border-radius: 90px;
-    -webkit-box-shadow: #cccccc .1em .1em 1em 0em;
+    /*-webkit-box-shadow: #cccccc .1em .1em 1em 0em;*/
+    display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   }
+
+  .link:hover, .link:focus, .link:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
 }
 
 @media (max-width: 999px){
@@ -71,31 +83,32 @@ a:hover, a:focus {
 }
 
 .link:hover, .link:focus{
-  background-color:#353535;
+  color:#353535;
+  border-color: #353535;
 }
 
 $research-color: #31b06b;
 .research {
-  background-color: $research-color;
-  color:#FFF;
+  border: 3px solid $research-color;
+  color:$research-color;
 }
 
 $software-color: #5158cc;
 .software{
-  background-color: $software-color;
-  color:#FFF;
+  border: 3px solid $software-color;
+  color:$software-color;
 }
 
 $team-color: #e1a90e;
 .team{
-  background-color: $team-color;
-  color:#FFF;
+  border: 3px solid $team-color;
+  color:$team-color;
 }
 
 $contact-color: #f55253;
 .contact{
-  background-color: $contact-color;
-  color:#FFF;
+  border: 3px solid $contact-color;
+  color: $contact-color;
 }
 
 .p1{

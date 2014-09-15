@@ -1,4 +1,5 @@
 <link rel="import" href="../page/page.html">
+<link rel="import" href="../highlights_card/highlights_card.html">
 
 <polymer-element name="highlights-element" extends="page-element">
   <template>
@@ -18,7 +19,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-1 ">
+        <div class="col-md-1 col-lg-2">
           <div id='{{name}}-affix'>
             <ul id='{{name}}-navigation' class="nav ">
               <template if="{{structure != null}}">
@@ -31,7 +32,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-11">
+        <div class="col-md-11 col-lg-10">
         <div class="fBox">
         <section id="ttfourteen" class="element">
           <div class='row card'>
@@ -41,13 +42,13 @@
             <template if="{{highlights != null}}">
               <template repeat="{{highlight in highlights.feed.entry}}">
                 <template if="{{highlight.gsx$year.$t === '2014'}}">
-                  <div class="info {{highlight.gsx$category.$t}} col-md-4" >
-                    <div class="tags {{highlight.gsx$category.$t}} col-md-3">
-                      <div class='row'>
-                        <span class="col-md-12 month"><span class='{{highlight.gsx$category.$t}}'>{{highlight.gsx$month.$t}}</span></span>
-                        <span class="col-md-12 date">{{highlight.gsx$day.$t}}</span>
-                      </div>
-                  </div>
+                  <highlights_card-element highlight="{{highlight}}" category="{{highlight.gsx$category.$t}}" peopleLoaded="{{peopleLoaded}}" peopleSelected="{{peopleSelected}}"></highlights_card-element>
+
+                  <!-- <div class="info {{highlight.gsx$category.$t}} col-md-4" >
+                    <div class="row">
+                      YAYA
+                    </div>
+                    <div class="row">
                     <div class="summary col-md-9">
                       <div class="what">{{highlight.gsx$what.$t}}
                         <template if="{{highlight.gsx$link.$t != null}}">
@@ -60,7 +61,14 @@
                       <div class="location">{{highlight.gsx$location.$t}}</div>
                     </template>
                     </div>
+                    <div class="tags {{highlight.gsx$category.$t}} col-md-3">
+                      <div class='row'>
+                        <span class="col-md-12 month"><span class='{{highlight.gsx$category.$t}}'>{{highlight.gsx$month.$t}}</span></span>
+                        <span class="col-md-12 date">{{highlight.gsx$day.$t}}</span>
+                      </div>
                   </div>
+                </div>
+                  </div> -->
                 </template>
               </template>
             </template>
