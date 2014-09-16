@@ -14,5 +14,10 @@
     "paper-dialog": "Polymer/paper-dialog",
     "paper-tabs": "Polymer/paper-tabs",
     "paper-shadow": "Polymer/paper-shadow"
+  },
+  "resolutions": {
+    "platform": "~0.4.0",
+    "polymer": "~0.4.0",
+    "core-component-page": ">=0.4.0 <1.0.0"
   }
 }

@@ -101,7 +101,7 @@ compassEvent: {
                     '<%= yeoman.app %>/elements/**/*.html',
                     '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
+                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             }
         },
@@ -259,7 +259,7 @@ compassEvent: {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.{png,jpg,jpeg}',
+                    src: '{,*/}*.{png,jpg,jpeg,svg}',
                     dest: '<%= yeoman.dist %>/images'
                 }]
             }
@@ -290,7 +290,7 @@ compassEvent: {
             },
             highlights_card: {
                 files: {
-                    '<%= yeoman.dist %>/elements/highlights/highlights_card.css': '.tmp/elements/highlights/highlights_card.css'
+                    '<%= yeoman.dist %>/elements/highlights_card/highlights_card.css': '.tmp/elements/highlights_card/highlights_card.css'
                 }
             },
             software: {
@@ -386,7 +386,7 @@ compassEvent: {
                         '*.{ico,txt}',
                         '.htaccess',
                         'lib-elements/**',
-                        'images/{,*/}*.{webp,gif}'
+                        'images/{,*/}*.{webp,gif,svg}'
                     ]
                 }]
             },
