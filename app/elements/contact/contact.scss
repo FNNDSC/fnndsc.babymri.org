@@ -34,29 +34,13 @@ $waltham-color: #e2aa0f;
 
 .info{
   font-size:1.3em;
-  background-color: #FFF;
-  padding: 1em;
-  -webkit-box-shadow: #ddd .1em .1em 1em 0em;
+background-color: #eee;
+padding: 20px 10px;
 }
 
 .notes{
-  padding: .5em;
-  font-size:1em;
-  background-color: #FFF;
-  display:inline-block;
-  -webkit-box-shadow: #ddd .1em .1em 1em 0em;
-}
-
-#main1 .notes{
-  color:$main-color;
-}
-
-#autumn .notes{
-  color:$autumn-color;
-}
-
-#waltham .notes{
-  color:$waltham-color;
+background-color: #eee;
+padding: 20px 10px;
 }
 
 .info{

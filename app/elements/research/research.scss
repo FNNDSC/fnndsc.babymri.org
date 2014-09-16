@@ -1,6 +1,9 @@
 @import '../../styles/main.scss';
 @import '../page/page.scss';
 
+@import '../../bower_components/OwlCarousel/owl-carousel/owl.carousel';
+@import '../../bower_components/OwlCarousel/owl-carousel/owl.theme';
+
 li .main{
   font-weight:bold;
 }
@@ -23,4 +26,9 @@ $nirs-color: #e1a90e;
 $meg-color: #f55253;
 #meg .card{
   border-left: 5px solid $meg-color;
+}
+
+.content{
+  background-color: #eee;
+  padding: 20px 10px;
 }

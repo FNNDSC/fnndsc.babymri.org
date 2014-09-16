@@ -190,6 +190,11 @@ $talk-color: #5158cc;
   .border.#{$category} {
     border:1px solid #{$color};
   }
+
+  .testme:hover .#{$category}.wrapper2{
+    background-color:#{$color};
+    color:#fff;
+  }
 }
 
 .name{
@@ -253,7 +258,8 @@ $talk-color: #5158cc;
 .testme:hover .mainHover{
 display : block;
 }
-.testme:hover #info{
+
+.testme:hover #info, .testme:hover h1{
 display : none;
 }
 

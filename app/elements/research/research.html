@@ -38,7 +38,9 @@
           <!-- <div id="challengesTitle" class="title"></div> -->
           <div class='row card'>
             <div id="challengesTitle2" class="title"></div>
-          <div id="challengesContent" class="content"></div>
+
+            <div id="owlchallenges" class="slider" style="z-index:10;">
+            </div>
         </div>
           <div class='clear'></div>
         </section>
@@ -47,7 +49,7 @@
           <!-- <div id="mriTitle" class="title"></div> -->
           <div class='row card'>
             <div id="mriTitle2" class="title"></div>
-          <div id="mriContent" class="content"></div>
+            <div id="owlmri" class="slider" style="z-index:10;">
         </div>
           <div class='clear'></div>
         </section>
@@ -56,7 +58,7 @@
           <!-- <div id="nirsTitle" class="title"></div> -->
           <div class='row card'>
             <div id="nirsTitle2" class="title"></div>
-          <div id="nirsContent" class="content"></div>
+            <div id="owlnirs" class="slider" style="z-index:10;">
         </div>
           <div class='clear'></div>
         </section>
@@ -65,7 +67,7 @@
           <!-- <div id="megTitle" class="title"></div> -->
           <div class='row card'>
             <div id="megTitle2" class="title"></div>
-          <div id="megContent" class="content"></div>
+            <div id="owlmeg" class="slider" style="z-index:10;">
         </div>
           <div class='clear'></div>
         </section>
@@ -94,6 +96,7 @@
         if(this.cache != null){
           this.research = this.cache;
         }
+
         this.attached = 1;
       },
       researchChanged: function() {
@@ -109,13 +112,30 @@
           this.$.nirsTitle2.innerHTML = this.research.feed.entry[0].gsx$nirs.$t;
           this.$.megTitle2.innerHTML = this.research.feed.entry[0].gsx$meg.$t;
           // contents
-          this.$.challengesContent.innerHTML = this.research.feed.entry[1].gsx$challenges.$t;
-          this.$.mriContent.innerHTML = this.research.feed.entry[1].gsx$mri.$t;
-          this.$.nirsContent.innerHTML = this.research.feed.entry[1].gsx$nirs.$t;
-          this.$.megContent.innerHTML = this.research.feed.entry[1].gsx$meg.$t;
+          this.owlify('challenges');
+          this.owlify('mri');
+          this.owlify('nirs');
+          this.owlify('meg');
 
           this.cache = this.research;
         }
+      },
+      owlify: function(target ){
+        var str = this.research.feed.entry[1]['gsx$'+target].$t.trim();
+        var res = str.split("</p>");
+        var els = '';
+        for(var i = 0; i< res.length; i++){
+          if(res[i] !== ""){
+          els += '<div class="item content">' + res[i] + '</p></div>';
+        }
+        }
+        this.$['owl'+target].innerHTML = els;
+        console.log(els);
+        var owlDemo0 = this.shadowRoot.querySelector('#owl'+target);
+        $(owlDemo0).owlCarousel({
+            singleItem:true,
+            navigation:true
+          });
       }
     });
 
