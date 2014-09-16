@@ -141,7 +141,7 @@ paper-button:hover, paper-button:focus, paper-button:active {
 
 .wrapper2 {
   position: relative;
-  -webkit-box-shadow: #ddd .1em .1em 1em 0em;
+  -webkit-box-shadow: #bbb .1em .1em 1em 0em;
   margin-top: 10px;
   background-color: #FFF;
   -webkit-transition-duration: 0.3s;
@@ -153,7 +153,7 @@ paper-button:hover, paper-button:focus, paper-button:active {
 }
 
 .wrapper2:hover, .wrapper2:focus, .wrapper2:active{
-  -webkit-box-shadow: #aaa .1em .1em 1em 0em;
+  -webkit-box-shadow: #888 .1em .1em 1em 0em;
 }
 
 #contactInfo{
@@ -191,10 +191,10 @@ $talk-color: #5158cc;
     border:1px solid #{$color};
   }
 
-  .testme:hover .#{$category}.wrapper2{
-    background-color:#{$color};
-    color:#fff;
-  }
+  // .testme:hover .#{$category}.wrapper2{
+  //   background-color:#{$color};
+  //   color:#fff;
+  // }
 }
 
 .name{
@@ -259,7 +259,7 @@ $talk-color: #5158cc;
 display : block;
 }
 
-.testme:hover #info, .testme:hover h1{
+.testme:hover #info{
 display : none;
 }
 
