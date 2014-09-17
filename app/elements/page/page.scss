@@ -1,6 +1,11 @@
 a.active{
-  text-decoration: underline;
-  font-weight: bold;
+  background-color:#14bef0;
+  color:#fff;;
+}
+
+.nav > li > a:hover {
+  color: #428bca;
+  cursor:pointer;
 }
 
 .fBox{
@@ -63,6 +68,18 @@ margin-top: 25px;
     line-height: 1.05;
     letter-spacing: -3px;
 }
+
+.jumbotron.scrolled .small, .jumbotron.scrolled .large{
+    display: inline-block;
+    font-size: 2em;
+  }
+
+  .jumbotron.scrolled{
+    margin-top: 163px;
+padding-top: 0;
+padding-bottom: 0;
+margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 999px){

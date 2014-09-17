@@ -2,14 +2,13 @@
 @import '../page/page.scss';
 
 paper-button {
-  margin: .5em;
-  width: 10em;
+  width: 100%;
   position: absolute;
   bottom: 0;
   left:0;
   text-align:center;
-  color: #353535;
-  border: 1px solid #353535;
+  color: #fff;
+  // border: 1px solid #353535;
 }
 
 /* Buzz Out */
@@ -154,6 +153,32 @@ paper-button:hover, paper-button:focus, paper-button:active {
 
 .wrapper2:hover, .wrapper2:focus, .wrapper2:active{
   -webkit-box-shadow: #888 .1em .1em 1em 0em;
+}
+
+.wrapper2:hover .item-overlay.top {
+  top: 80%;
+}
+
+.item-overlay {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  /* fix text transition issue for .left and .right but need to overwrite left and right properties in .right */
+  width: 100%;
+
+  -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+}
+/*
+…but this hide it
+*/
+.item-overlay.top {
+  top: 100%;
 }
 
 #contactInfo{

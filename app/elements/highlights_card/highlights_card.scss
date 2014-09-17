@@ -212,14 +212,14 @@ $talk-color: #5158cc;
 }
 
 #picture{
-  width:110px;
+  width:50px;
   height:135px;
   float:right;
   padding:5px;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-property: width height;
-  transition-property: width height;
+  -webkit-transition-property: width;
+  transition-property: width;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -231,6 +231,7 @@ $talk-color: #5158cc;
 #info{
   padding:5px;
   color: #353535;
+  display:none;
 }
 
 .date{
@@ -256,20 +257,19 @@ $talk-color: #5158cc;
 }
 
 .testme:hover .mainHover{
-display : block;
-}
-
-.testme:hover #info{
 display : none;
 }
 
+.testme:hover #info{
+display : block;
+}
+
 .testme:hover #picture{
-width:50px;
-height:80px;
+width:110px;
 }
 
 .mainHover{
   font-size:1em;
   padding:5px;
-  display:none;
+  display:block;
 }
