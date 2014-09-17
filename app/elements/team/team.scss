@@ -215,9 +215,24 @@ paper-button:hover, paper-button:focus, paper-button:active {
 #navnav{
   width:100%;
   height:50px;
-  background-color:#fff;
+  background-color:#14bef0;
+  position: fixed;
+  z-index: 1000;
+  top: 50px;
+  left: 0;
+  color:#fff;
 }
 
-#navnavContainer{
-  height:50px;
+.nav > li > a:hover {
+  color: #fff;
+  cursor:pointer;
+  background:none;
+}
+
+.nav > li > a{
+  color:#353535;
+}
+
+.nav > li > a.active{
+  color:#fff;;
 }
