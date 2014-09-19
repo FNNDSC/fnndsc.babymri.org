@@ -215,24 +215,29 @@ paper-button:hover, paper-button:focus, paper-button:active {
 #navnav{
   width:100%;
   height:50px;
-  background-color:#14bef0;
-  position: fixed;
-  z-index: 1000;
-  top: 50px;
-  left: 0;
-  color:#fff;
+background-color: #eee;
+/* border-top: 1px solid #FFF; */
+color: #353535;
+//   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// font-size: 1.3em;
+// font-weight: 200;
+}
+
+#navnavContainer{
+  height:50px;
 }
 
 .nav > li > a:hover {
-  color: #fff;
+  color: #353535;
   cursor:pointer;
   background:none;
 }
 
 .nav > li > a{
-  color:#353535;
+  color:#999;
 }
 
 .nav > li > a.active{
-  color:#fff;;
+  background-color:#fff;
+  color:#353535;
 }
