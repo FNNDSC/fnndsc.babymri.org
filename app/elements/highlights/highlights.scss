@@ -14,61 +14,6 @@
   -webkit-box-shadow: #353535 .3em .3em 1.2em .2em;
 }
 
-// .tags .row{
-//   -webkit-box-shadow: #353535 .1em .1em 1em 0em;
-// }
-
-$general-color: #0eadee;
-$press-color: #31b06b;
-$publication-color: #f55253;
-$award-color: #e1a90e;
-$talk-color: #5158cc;
-
-.talk{
-  background:$talk-color;
-  color: #FFF;
-}
-
-.talk-border{
-  border:1px solid $talk-color;
-}
-
-.award{
-  background:$award-color;
-  color: #FFF;
-}
-
-.award-border{
-  border:1px solid $award-color;
-}
-
-.publication{
-  background:$publication-color;
-  color: #FFF;
-}
-
-.publication-border{
-  border:1px solid $publication-color;
-}
-
-.general{
-  background:$general-color;
-  color: #FFF;
-}
-
-.general-border{
-  border:1px solid $general-color;
-}
-
-.press{
-  background:$press-color;
-  color: #FFF;
-}
-
-.press-border{
-  border:1px solid $press-color;
-}
-
 .info{
   // background-color: #FFF;
   padding: 1em;
@@ -135,22 +80,22 @@ a:hover{
   font-weight: bold;
 }
 
-$ttfourteen-color: #5158cc;
+$ttfourteen-color: #3f51b5;
 #ttfourteen .card{
   border-left: 5px solid$ttfourteen-color;
 }
 
-$ttthirteen-color: #31b06b;
+$ttthirteen-color: #259b24;
 #ttthirteen .card{
   border-left: 5px solid$ttthirteen-color;
 }
 
-$tttwelve-color: #e2aa0f;
+$tttwelve-color: #ffc107;
 #tttwelve .card{
   border-left: 5px solid$tttwelve-color;
 }
 
-$tteleven-color: #f55253;
+$tteleven-color: #e51c23;
 #tteleven .card{
   border-left: 5px solid $tteleven-color;
 }

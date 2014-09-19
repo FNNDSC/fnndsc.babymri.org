@@ -74,15 +74,16 @@
               <div class="row card">
 
                 <div class="title">faculty members</div>
-
+<div class='row'>
                 <template if="{{team != null}}">
                   <template repeat="{{people in team.feed.entry}}">
                     <template if="{{people.gsx$group.$t === 'faculty'}}">
-                      <people-element people="{{people}}" peopleLoaded="{{peopleLoaded}}" peopleSelected="{{peopleSelected}}"></people-element>
+                      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
                     </template>
                   </template>
                 </template>
               </div>
+            </div>
             </section>
 
             <section  id="staff" class="element">
@@ -90,15 +91,16 @@
                 <div class="row card">
 
                   <div class="title">staff</div>
-
+<div class='row'>
                 <template if="{{team != null}}">
                   <template repeat="{{people in team.feed.entry}}">
                     <template if="{{people.gsx$group.$t === 'staff'}}">
-                      <people-element people="{{people}}" peopleLoaded="{{peopleLoaded}}" peopleSelected="{{peopleSelected}}"></people-element>
+<card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
                     </template>
                   </template>
                 </template>
               </div>
+            </div>
             </section>
 
             <section id="collaborators" class="element">
@@ -106,15 +108,16 @@
               <div class="row card">
 
                 <div class="title">collaborators</div>
-
+<div class='row'>
                 <template if="{{team != null}}">
                   <template repeat="{{people in team.feed.entry}}">
                     <template if="{{people.gsx$group.$t === 'collaborators'}}">
-                      <people-element people="{{people}}" peopleLoaded="{{peopleLoaded}}" peopleSelected="{{peopleSelected}}"></people-element>
+<card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
                     </template>
                   </template>
                 </template>
               </div>
+            </div>
             </section>
 
             <section id="alumni" class="element">
@@ -122,14 +125,15 @@
               <div class="row card">
 
                 <div class="title">alumni</div>
-
+<div class='row'>
                 <template if="{{team != null}}">
                   <template repeat="{{people in team.feed.entry}}">
                     <template if="{{people.gsx$group.$t === 'alumni'}}">
-                      <people-element people="{{people}}" peopleLoaded="{{peopleLoaded}}" peopleSelected="{{peopleSelected}}"></people-element>
+<card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
                     </template>
                   </template>
                 </template>
+              </div>
               </div>
             </section>
 
@@ -148,6 +152,8 @@
     Polymer('team-element', {
       name: 'team',
       spreadsheet: '0Asu7h0aKnydhdHN6R2lCX1N4VlZ3dnB2ZHhLWWFZQ3c',
+      cdn: 'https://googledrive.com/host/0B8u7h0aKnydhYkRMZ2ktTnh6a3M/',
+      team: null,
       attached: function(){
         this.super();
         if(this.cache != null){
@@ -216,6 +222,49 @@
       },
       teamChanged: function(){
         if(this.team){
+          // // format the object
+          // <template repeat="{{people in team.feed.entry}}">
+          //   <template if="{{people.gsx$group.$t === 'faculty'}}">
+          //     <card-element cardObject="{{people}}" cardLoad
+          // {{cardObject.gsx$title.$t}}
+          // {{cardObject.gsx$art.$t}}
+          // {{cardObject.gsx$date.$t}}
+          // {{cardObject.gsx$category.$t}}
+          // {{cardObject.gsx$l1.$t}}
+          // {{cardObject.gsx$l2.$t}}
+          // {{cardObject.gsx$l3.$t}}
+          for(var i = 0; i < this.team.feed.entry.length; i++){
+            // generate title if no title
+            if(!this.team.feed.entry[i].gsx$title){
+              this.team.feed.entry[i].gsx$title = {$t:''};
+              this.team.feed.entry[i].gsx$title.$t = this.team.feed.entry[i].gsx$firstname.$t + ' ' + this.team.feed.entry[i].gsx$middlename.$t + ' ' + this.team.feed.entry[i].gsx$lastname.$t;
+              if(this.team.feed.entry[i].gsx$suffix.$t != ''){
+                this.team.feed.entry[i].gsx$title.$t += ', ' + this.team.feed.entry[i].gsx$suffix.$t;
+              }
+            }
+
+            // generate picture if no
+            if(!this.team.feed.entry[i].gsx$picture){
+              this.team.feed.entry[i].gsx$picture = {$t:''};
+              this.team.feed.entry[i].gsx$picture.$t = this.cdn +this.team.feed.entry[i].gsx$picturename.$t;
+            }
+
+            // generate text for the lines
+            if(!this.team.feed.entry[i].gsx$l1){
+              this.team.feed.entry[i].gsx$l1 = {$t:''};
+              this.team.feed.entry[i].gsx$l1.$t = this.team.feed.entry[i].gsx$hospitaltitle.$t;
+            }
+            if(!this.team.feed.entry[i].gsx$l2){
+              this.team.feed.entry[i].gsx$l2 = {$t:''};
+              this.team.feed.entry[i].gsx$l2.$t = this.team.feed.entry[i].gsx$academictitle.$t;
+            }
+            if(!this.team.feed.entry[i].gsx$l3){
+              this.team.feed.entry[i].gsx$l3 = {$t:''};
+              this.team.feed.entry[i].gsx$l3.$t = this.team.feed.entry[i].gsx$department.$t;
+            }
+          }
+
+          // cache it
           this.cache = this.team;
         }
       }

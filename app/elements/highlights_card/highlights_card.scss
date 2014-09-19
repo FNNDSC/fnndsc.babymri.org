@@ -180,7 +180,7 @@ span{
 $general-color: #0eadee;
 $press-color: #31b06b;
 $publication-color: #f55253;
-$award-color: #e1a90e;
+$award-color: #259b24;
 $talk-color: #5158cc;
 
 @each $category, $color in (general,$general-color), (press, $press-color), (publication, $publication-color), (award,$award-color), (talk, $talk-color) {

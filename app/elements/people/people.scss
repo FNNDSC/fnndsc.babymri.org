@@ -130,13 +130,13 @@ paper-button:hover, paper-button:focus, paper-button:active {
   padding: 1em;
 }
 
-.max-lines {
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  overflow: hidden;
-  max-height: 2.4em;
-  line-height: 1.2em;
-}
+// .max-lines {
+//   text-overflow: ellipsis;
+//   word-wrap: break-word;
+//   overflow: hidden;
+//   max-height: 2.4em;
+//   line-height: 1.2em;
+// }
 
 .wrapper2 {
   position: relative;
@@ -202,30 +202,46 @@ span{
   font-variant: small-caps;
 }
 
-$faculty-color: #5158cc;
-$staff-color: #31b06b;
-$alumni-color: #f55253;
-$collaborators-color: #e1a90e;
+$faculty-color: #3f51b5;
+$staff-color: #259b24;
+$alumni-color: #e51c23;
+$collaborators-color: #ffc107;
+
+$general-color: #03a9f4;
+$press-color: #259b24;
+$publication-color: #e51c23;
+// f55253
+$award-color: #ffc107;
+$talk-color: #3f51b5;
+
+$fnndsctalk-color: #259b24;
+$next-color: #3f51b5;
+$unix101-color: #ffc107;
 
 .name{
   text-align:center;
   color:#FFF;
 }
 
-.name.staff{
-  background-color:$staff-color;
-}
 
-.name.faculty{
-  background-color:$faculty-color;
-}
+@each $category, $color in (general,$general-color), (press, $press-color),
+                           (publication, $publication-color), (award,$award-color),
+                           (talk, $talk-color),
+                           (faculty,$faculty-color), (staff, $staff-color),
+                           (alumni, $alumni-color), (collaborators,$collaborators-color),
+                           (fnndsctalk,$fnndsctalk-color), (next, $next-color),
+                           (unix101, $unix101-color),
+                           (general,$general-color), (press, $press-color),
+                           (publication, $publication-color), (award,$award-color),
+                           (talk, $talk-color)
+                            {
+  .name.#{$category} {
+    background-color:#{$color};
+  }
 
-.name.alumni{
-  background-color:$alumni-color;
-}
-
-.name.collaborators{
-background-color:$collaborators-color;
+  .border.#{$category} {
+    border:1px solid #{$color};
+  }
 }
 
 .name > h1{
@@ -256,4 +272,52 @@ background-color:$collaborators-color;
 
 img{
   border: 1px solid #ddd;
+}
+
+
+
+#info{
+  padding:.5em;
+  color:#353535;
+  // position: absolute;
+  bottom: 49px;
+}
+
+#info div{
+  padding-left:.5em;
+}
+
+#info .subtitle{
+  padding-top:.5em;
+  font-weight:bold;
+}
+
+.event{
+  font-size: 1em;
+  font-style: italic;
+  color: grey;
+}
+
+#calendar{
+  border: 1px solid #ddd;
+}
+
+
+.date{
+  font-weight: bold;
+  text-align: center;
+  font-size: x-large;
+  width: 100%;
+  margin-top:-1px;
+
+}
+
+.month{
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.month span{
+  width:100%;
 }

@@ -16,7 +16,11 @@ body {
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
 color: #FFF;
-background-color: #14bef0;
+background-color: #03a9f4;
+}
+
+div.navbar-inverse{
+  background-color: #263238;
 }
 
 .navbar {

@@ -2,7 +2,7 @@
   background-color: #FAFAFA;
 }
 
-$bg-color: #14bef0;
+$bg-color: #03a9f4;
 
 .affix-top{
   margin-top:25px;
@@ -110,4 +110,34 @@ margin-bottom: 10px;
 
 .content{
   font-size:1.3em;
+}
+
+#navnav{
+  width:100%;
+  height:50px;
+background-color: #eee;
+/* border-top: 1px solid #FFF; */
+color: #353535;
+//   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// font-size: 1.3em;
+// font-weight: 200;
+}
+
+#navnavContainer{
+  height:50px;
+}
+
+.nav > li > a:hover {
+  color: #353535;
+  cursor:pointer;
+  background:none;
+}
+
+.nav > li > a{
+  color:#999;
+}
+
+.nav > li > a.active{
+  background-color:#fff;
+  color:#353535;
 }
