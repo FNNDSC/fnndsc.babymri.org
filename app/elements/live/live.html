@@ -18,7 +18,7 @@
             <span class="spinner"><img src="../../images/spinner.gif"></span>
           </template>
           <span class="small">We stream live</span>
-          <span class="large {{name}}">events</span>
+          <span class="large">events</span>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
               <template if="{{structure != null}}">
                 <template repeat="{{section in structure}}">
                   <li on-tap="{{gotoSection}}" class='nav-element'>
-                    <a id='{{name}}-nav-{{section.index}}' class='{{name}}' data-section='{{section.index}}'>{{section.label}}</a>
+                    <a id='{{name}}-nav-{{section.index}}' data-section='{{section.index}}'>{{section.label}}</a>
                   </li>
                 </template>
               </template>

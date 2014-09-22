@@ -19,22 +19,6 @@
   }
 }
 
-paper-button {
-  margin: .5em;
-  position: absolute;
-  bottom: 0;
-  left:0;
-  text-align:center;
-  color: #353535;
-  border: 1px solid #353535;
-}
-
-paper-dialog paper-button {
-  right:0;
-  left:initial;
-  text-align:center;
-}
-
 #abstract{
   margin-top:1em;
 }

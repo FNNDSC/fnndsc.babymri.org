@@ -111,9 +111,6 @@
         this.updateNavigation();
       },
       updateNavigation: function(){
-        console.log(this.curPage);
-        console.log(this.prevPage);
-        console.log(typeof(this.navElts));
         if(this.curPage != this.prevPage && typeof(this.navElts) != 'undefined'){
           // && this.navElts
           // desactivate previous section
@@ -127,7 +124,6 @@
         }
       },
       routeChanged: function() {
-        console.log('route changed...' + this.route);
         // get index of current page
         // should be optimized
         var nbPages = this.pages.length;

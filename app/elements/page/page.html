@@ -58,11 +58,15 @@
         this.updateNavigation();
       },
       updateStyle: function(){
-        console.log(this.scrool);
         // 263 - 50 or 100?
         var header = 263;
         //var nav = document.querySelectorAll('.navbar')[0];
         var nav = this.shadowRoot.querySelectorAll('#navnav')[0];
+
+        if(typeof(nav) === "undefined"){
+          return;
+        }
+
         var jumbo = this.shadowRoot.querySelectorAll('#jumbo')[0];
         // var title = this.shadowRoot.querySelectorAll('.pageTitle')[0];
         if(this.scrool < 30){
@@ -94,9 +98,13 @@
 
       },
       updateNavigation: function(){
-        console.log('update navigation');
         if(this.curSection != this.prevSection && this.targets){
           // desactivate previous section
+
+          if(typeof(this.targets[0]) === "undefined"){
+            return;
+          }
+
           if(this.prevSection >= 0){
             this.targets[this.prevSection].classList.remove('active');
           }

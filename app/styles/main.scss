@@ -1,6 +1,15 @@
 @import 'sass-bootstrap/lib/bootstrap';
 @import "compass/css3";
 
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
 body {
   padding-top: 50px;
 }
@@ -72,7 +81,7 @@ body{
 }
 
 .shady{
-  -webkit-box-shadow: #353535 .1em .1em 1em 0em;
+  @include vendor-prefix("box-shadow", "#353535 .1em .1em 1em 0em");
   position: fixed;
   z-index: 1000;
   top: 50px;
