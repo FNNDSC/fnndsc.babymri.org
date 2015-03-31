@@ -2,22 +2,23 @@
   "name": "fnndsc-babymri-org",
   "version": "0.0.0",
   "dependencies": {
-    "sass-bootstrap": "3.0.2",
-    "modernizr": "2.8.2",
-    "polymer": "Polymer/polymer#~0.4.0",
-    "platform": "Polymer/platform#~0.4.0",
-    "OwlCarousel": "https://github.com/OwlFonk/OwlCarousel.git#1.3.1",
-    "jquery": "1.9",
-    "polymer-jsonp": "PolymerLabs/polymer-jsonp#master",
-    "flatiron-director": "PolymerLabs/flatiron-director",
-    "paper-button": "Polymer/paper-button",
-    "paper-dialog": "Polymer/paper-dialog",
-    "paper-tabs": "Polymer/paper-tabs",
-    "paper-shadow": "Polymer/paper-shadow"
+    "polymer": "Polymer/polymer#^0.5.4",
+    "webapp-core": "NicolasRannou/webapp-core#master"
   },
+  "devDependencies": {},
   "resolutions": {
-    "platform": "~0.4.0",
-    "polymer": "~0.4.0",
-    "core-component-page": ">=0.4.0 <1.0.0"
+    "core-component-page": "^0.5",
+    "font-roboto": "^0.5",
+    "core-icons": "^0.5",
+    "paper-ripple": "^0.5",
+    "core-meta": "^0.5",
+    "core-shared-lib": "^0.5.5",
+    "core-signals": "^0.5",
+    "google-apis": "^0.4.2",
+    "core-iconset-svg": "^0.5",
+    "platform": "^0.4.0",
+    "core-icon": "^0.5",
+    "core-iconset": "^0.5",
+    "polymer": "^0.5.1"
   }
 }
