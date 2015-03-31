@@ -159,12 +159,12 @@
               {id:'members',
               label: 'Members',
               element: 'members-element',
-              key: '1SthCokDqdHWO7coUO1yT2dcT0ioOJ1RGJ9po5vbueNs'
+              key: '18wLiTBCiVIOE-ByELf4Ov0H-r1I18T_2bl5fMzBQifo'
             },
               {id:'contact',
               label: 'Contact',
               element: 'contact-element',
-              key: '1LgZmITZQA9UkxCSPLTB4aO1iXw4pASruUuTtFRAsX0o'
+              key: '1ZPliddJ9NietZa4IkJeQSKYGW4CS83Y_JnwMSaW3_Hk'
             }
             ]},
             {id: 'nirs', label: 'Near-infrared spectroscopy',
@@ -213,12 +213,12 @@
               {id:'members',
               label: 'Members',
               element: 'members-element',
-              key: '1SthCokDqdHWO7coUO1yT2dcT0ioOJ1RGJ9po5vbueNs'
+              key: '1oZQ9ZP6R7o1_3WwWkirr7Gs4EXjgODRW-OMLNN3pzjg'
             },
               {id:'contact',
               label: 'Contact',
               element: 'contact-element',
-              key: '1LgZmITZQA9UkxCSPLTB4aO1iXw4pASruUuTtFRAsX0o'
+              key: '16RIvt08KxYyJdpO9nApZhjD2LTm23uM5HktrVwsMa0Y'
             }
             ]},
             {id: 'softwares', label: 'Softwares',
@@ -267,56 +267,12 @@
               {id:'members',
               label: 'Members',
               element: 'members-element',
-              key: '1SthCokDqdHWO7coUO1yT2dcT0ioOJ1RGJ9po5vbueNs'
+              key: '1RTgmAK-KCsXmf_a-W5CNT9oykyrMR0KbUoL6wBjZhD4'
             },
               {id:'contact',
               label: 'Contact',
               element: 'contact-element',
-              key: '1LgZmITZQA9UkxCSPLTB4aO1iXw4pASruUuTtFRAsX0o'
-            }
-            ]},
-            {id: 'demo', label: 'Demo',
-            style: {
-              primary: {
-                normal : {
-                  color: '#3F51B5',
-                  font: '#ffffff'},
-                light : {
-                  color: '#C5CAE9',
-                  font: '#ffffff'},
-                dark : {
-                  color: '#303F9F',
-                  font: '#ffffff'},
-                bw : {
-                  color: '#212121',
-                  font: '#f9f9f9'},
-                wb : {
-                  color: '#f9f9f9',
-                  font: '#212121'}
-                },
-              accent: {
-                normal : {
-                  color: '#E91E63',
-                  font: '#ffffff'},
-                light : {
-                  color: '#F8BBD0',
-                  font: '#000000'},
-                dark : {
-                  color: '#C2185B',
-                  font: '#ffffff'},
-                bw : {
-                  color: '#212121',
-                  font: '#f9f9f9'},
-                wb : {
-                  color: '#f9f9f9',
-                  font: '#212121'}
-                }
-              },
-            pages: [
-              {id:'home',
-              label: 'Home Element',
-              element: 'home-element',
-              key: '1PKjWVTxDCcZMZ-u_olb70yWPMCRWtMb2pv2JXO8FCYE'
+              key: '1C3ri1r_6k1Z1pZYKF2IOwuI1kRs82F1zh_zcZLOudlE'
             }
             ]},];
 
