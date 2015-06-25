@@ -19,6 +19,7 @@
     "platform": "^0.4.0",
     "core-icon": "^0.5",
     "core-iconset": "^0.5",
-    "polymer": "^0.5.1"
+    "polymer": "^0.5.1",
+    "webcomponentsjs": "^0.6.0"
   }
 }
