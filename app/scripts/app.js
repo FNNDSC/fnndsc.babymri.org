@@ -221,7 +221,7 @@
               key: '16RIvt08KxYyJdpO9nApZhjD2LTm23uM5HktrVwsMa0Y'
             }
             ]},
-            {id: 'softwares', label: 'Softwares',
+            {id: 'software', label: 'Software',
             style: {
               primary: {
                 normal : {
