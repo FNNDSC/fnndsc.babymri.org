@@ -15,8 +15,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="generator" content="Polymer Starter Kit">
-  <title>Polymer Starter Kit</title>
+  <meta name="generator" content="FNNDSC Web App">
+  <title>FNNDSC Web App</title>
 
   <!-- Place favicon.ico in the `app/` directory -->
 
@@ -31,13 +31,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="PSK">
+  <meta name="application-name" content="FNNDSC">
   <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <meta name="apple-mobile-web-app-title" content="FNNDSC Web App">
   <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
   <!-- Tile icon for Win8 (144x144) -->
@@ -82,15 +82,82 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Home</span>
           </a>
 
-          <a data-route="users" href="{{baseUrl}}users">
-            <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
-          </a>
+          <!-- MRI Menu -->
+          <paper-submenu>
+            <paper-item class="menu-trigger">
+              <iron-icon icon="icons:picture-in-picture"></iron-icon>
+              <span>MRI</span>
+            </paper-item>
+            <paper-menu class="menu-content sublist">
+              <a data-route="mri-research" href="/mri-research" on-click="onDataRouteClick">
+                <paper-item>Research</paper-item>
+              </a>
+              <a data-route="mri-team" href="/mri-team" on-click="onDataRouteClick">
+                <paper-item>Team</paper-item>
+              </a>
+              <a data-route="mri-contact" href="/mri-contact" on-click="onDataRouteClick">
+                <paper-item>Contact</paper-item>
+              </a>
+            </paper-menu>
+          </paper-submenu>
 
-          <a data-route="contact" href="{{baseUrl}}contact">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
-          </a>
+          <!-- MEG Menu -->
+          <paper-submenu>
+            <paper-item class="menu-trigger">
+              <iron-icon icon="icons:record-voice-over"></iron-icon>
+              <span>MEG</span>
+            </paper-item>
+            <paper-menu class="menu-content sublist">
+              <a data-route="meg-research" href="/meg-research" on-click="onDataRouteClick">
+                <paper-item>Research</paper-item>
+              </a>
+              <a data-route="meg-team" href="/meg-team" on-click="onDataRouteClick">
+                <paper-item>Team</paper-item>
+              </a>
+              <a data-route="meg-contact" href="/meg-contact" on-click="onDataRouteClick">
+                <paper-item>Contact</paper-item>
+              </a>
+            </paper-menu>
+          </paper-submenu>
+
+          <!-- NIRS Menu -->
+          <paper-submenu>
+            <paper-item class="menu-trigger">
+              <iron-icon icon="icons:settings-remote"></iron-icon>
+              <span>NIRS</span>
+            </paper-item>
+            <paper-menu class="menu-content sublist">
+              <a data-route="nirs-research" href="/nirs-research" on-click="onDataRouteClick">
+                <paper-item>Research</paper-item>
+              </a>
+              <a data-route="nirs-team" href="/nirs-team" on-click="onDataRouteClick">
+                <paper-item>Team</paper-item>
+              </a>
+              <a data-route="nirs-contact" href="/nirs-contact" on-click="onDataRouteClick">
+                <paper-item>Contact</paper-item>
+              </a>
+            </paper-menu>
+          </paper-submenu>
+
+          <!-- SOFTWARE Menu -->
+          <paper-submenu>
+            <paper-item class="menu-trigger">
+              <iron-icon icon="icons:android"></iron-icon>
+              <span>Software</span>
+            </paper-item>
+            <paper-menu class="menu-content sublist">
+              <a data-route="software-research" href="/software-research" on-click="onDataRouteClick">
+                <paper-item>Research</paper-item>
+              </a>
+              <a data-route="software-team" href="/software-team" on-click="onDataRouteClick">
+                <paper-item>Team</paper-item>
+              </a>
+              <a data-route="software-contact" href="/software-contact" on-click="onDataRouteClick">
+                <paper-item>Contact</paper-item>
+              </a>
+            </paper-menu>
+          </paper-submenu>
+
         </paper-menu>
       </paper-scroll-header-panel>
 
@@ -102,18 +169,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <span class="space"></span>
 
-          <!-- Toolbar icons -->
-          <paper-icon-button icon="refresh"></paper-icon-button>
-          <paper-icon-button icon="search"></paper-icon-button>
-
           <!-- Application name -->
           <div class="middle middle-container">
-            <div class="app-name">Polymer Starter Kit</div>
+            <div class="app-name">FNNDSC Web App</div>
           </div>
 
           <!-- Application sub title -->
           <div class="bottom bottom-container">
-            <div class="bottom-title">The future of the web today</div>
+            <div class="bottom-title">a Boston Children's Hospital science center</div>
           </div>
         </paper-toolbar>
 
@@ -177,6 +240,58 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <h1 class="page-title focus-target" tabindex="-1">Contact</h1>
                 <p>This is the contact section</p>
               </paper-material>
+            </section>
+
+            <!-- MRI Pages -->
+            <section data-route="mri-research">
+              <mri-research></mri-research>
+            </section>
+
+            <section data-route="mri-team">
+              <mri-team></mri-team>
+            </section>
+
+            <section data-route="mri-contact">
+              <mri-contact></mri-contact>
+            </section>
+
+            <!-- MEG Pages -->
+            <section data-route="meg-research">
+              <meg-research></meg-research>
+            </section>
+
+            <section data-route="meg-team">
+              <meg-team></meg-team>
+            </section>
+
+            <section data-route="meg-contact">
+              <meg-contact></meg-contact>
+            </section>
+
+            <!-- NIRS Pages -->
+            <section data-route="nirs-research">
+              <nirs-research></nirs-research>
+            </section>
+
+            <section data-route="nirs-team">
+              <nirs-team></nirs-team>
+            </section>
+
+            <section data-route="nirs-contact">
+              <nirs-contact></nirs-contact>
+            </section>
+
+            <!-- Software Pages -->
+            <section data-route="software-research">
+              <software-research></software-research>
+            </section>
+
+            <section data-route="software-team">
+              <software-team></software-team>
+            </section>
+
+            <section data-route="software-contact">
+              <software-contact></software-contact>
             </section>
           </iron-pages>
         </div>

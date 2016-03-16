@@ -69,6 +69,62 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       setFocus(app.route);
     });
 
+    // MRI PAGES
+    page('/mri-contact', function() {
+      app.route = 'mri-contact';
+      setFocus(app.route);
+    });
+    page('/mri-research', function() {
+      app.route = 'mri-research';
+      setFocus(app.route);
+    });
+    page('/mri-team', function() {
+      app.route = 'mri-team';
+      setFocus(app.route);
+    });
+
+    // MEG PAGES
+    page('/meg-contact', function() {
+      app.route = 'meg-contact';
+      setFocus(app.route);
+    });
+    page('/meg-research', function() {
+      app.route = 'meg-research';
+      setFocus(app.route);
+    });
+    page('/meg-team', function() {
+      app.route = 'meg-team';
+      setFocus(app.route);
+    });
+
+    // NIRS PAGES
+    page('/nirs-contact', function() {
+      app.route = 'nirs-contact';
+      setFocus(app.route);
+    });
+    page('/nirs-research', function() {
+      app.route = 'nirs-research';
+      setFocus(app.route);
+    });
+    page('/nirs-team', function() {
+      app.route = 'nirs-team';
+      setFocus(app.route);
+    });
+
+    // Software PAGES
+    page('/software-contact', function() {
+      app.route = 'software-contact';
+      setFocus(app.route);
+    });
+    page('/software-research', function() {
+      app.route = 'software-research';
+      setFocus(app.route);
+    });
+    page('/software-team', function() {
+      app.route = 'software-team';
+      setFocus(app.route);
+    });
+
     // 404
     page('*', function() {
       app.$.toast.text = 'Can\'t find: ' + window.location.href  + '. Redirected you to Home Page';
