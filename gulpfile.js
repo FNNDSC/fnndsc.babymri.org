@@ -123,6 +123,7 @@ gulp.task('images', function() {
 // Copy all files at the root level (app)
 gulp.task('copy', function() {
   var app = gulp.src([
+    'CNAME',
     'app/*',
     '!app/test',
     '!app/elements',
