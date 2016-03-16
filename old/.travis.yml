@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+# COMPASS
+  - gem update --system
+  - gem install sass --version "=3.2.12"
+  - gem install compass --version "=0.12.2"
+before_script:
+  - 'npm install -g bower grunt-cli'
+  - 'bower  --version'
+  - 'npm update -g bower'
+  - 'bower  --version'
+  - 'bower install'
