@@ -175,7 +175,7 @@ gulp.task('vulcanize', function() {
 
 // Generate config data for the <sw-precache-cache> element.
 // This include a list of files that should be precached, as well as a (hopefully unique) cache
-// id that ensure that multiple PSK projects don't share the same Cache Storage.
+// id that ensure that multiple FNNDSC Web App projects don't share the same Cache Storage.
 // This task does not run by default, but if you are interested in using service worker caching
 // in your project, please enable it within the 'default' task.
 // See https://github.com/PolymerElements/polymer-starter-kit#enable-service-worker-support
@@ -218,7 +218,8 @@ gulp.task('serve', ['styles'], function() {
   browserSync({
     port: 5000,
     notify: false,
-    logPrefix: 'PSK',
+    https: true,
+    logPrefix: 'FNNDSC Web App',
     snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
@@ -248,7 +249,8 @@ gulp.task('serve:dist', ['default'], function() {
   browserSync({
     port: 5001,
     notify: false,
-    logPrefix: 'PSK',
+    https: true,
+    logPrefix: 'FNNDSC Web App',
     snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
