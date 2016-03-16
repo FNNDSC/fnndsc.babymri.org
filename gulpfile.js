@@ -279,7 +279,7 @@ gulp.task('default', ['clean'], function(cb) {
 });
 
 // Build then deploy to GitHub pages gh-pages branch
-gulp.task('build-deploy-gh-pages', function(cb) {
+gulp.task('build-deploy', function(cb) {
   runSequence(
     'default',
     'deploy-gh-pages',
@@ -287,7 +287,7 @@ gulp.task('build-deploy-gh-pages', function(cb) {
 });
 
 // Deploy to GitHub pages gh-pages branch
-gulp.task('deploy-gh-pages', function() {
+gulp.task('deploy', function() {
   return gulp.src(dist('**/*'))
     // Check if running task from Travis CI, if so run using GH_TOKEN
     // otherwise run using ghPages defaults.
