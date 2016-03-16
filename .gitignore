@@ -3,6 +3,7 @@ dist
 node_modules
 test/bower_components/
 test/temp
+.DS_STORE
 .publish
 .sass-cache
 .tmp
