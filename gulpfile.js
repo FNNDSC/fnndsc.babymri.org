@@ -282,7 +282,7 @@ gulp.task('default', ['clean'], function(cb) {
 gulp.task('build-deploy', function(cb) {
   runSequence(
     'default',
-    'deploy-gh-pages',
+    'deploy',
     cb);
 });
 
