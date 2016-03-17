@@ -77,30 +77,47 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Content -->
         <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
-<!--         * Overview 
-* News
-* Current Opportunities
-* Team
-* Contact -->
-          <a data-route="home" href="{{baseUrl}}">
-            <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
-          </a>
+
+          <!-- FNNDSC Menu -->
+          <paper-submenu>
+            <paper-item class="menu-trigger">
+              <iron-icon icon="icons:home"></iron-icon>
+              <span>FNNDSC</span>
+            </paper-item>
+            <paper-menu class="menu-content">
+              <a data-route="fnndsc-overview" href="{{baseUrl}}fnndsc-overview" on-click="onDataRouteClick">
+                <paper-item>Overview</paper-item>
+              </a>
+              <a data-route="fnndsc-news" href="{{baseUrl}}fnndsc-news" on-click="onDataRouteClick">
+                <paper-item>News</paper-item>
+              </a>
+              <a data-route="fnndsc-opportunities" href="{{baseUrl}}fnndsc-opportunities" on-click="onDataRouteClick">
+                <paper-item>Opportunities</paper-item>
+              </a>
+              <a data-route="fnndsc-team" href="{{baseUrl}}fnndsc-team" on-click="onDataRouteClick">
+                <paper-item>Team</paper-item>
+              </a>
+              <a data-route="fnndsc-contact" href="{{baseUrl}}fnndsc-contact" on-click="onDataRouteClick">
+                <paper-item>Contact</paper-item>
+              </a>
+            </paper-menu>
+          </paper-submenu>
 
           <!-- MRI Menu -->
-<!--           * Overview
-* Research and Publications
-* Current Projects
-* Team
-* Contact -->
           <paper-submenu>
             <paper-item class="menu-trigger">
               <iron-icon icon="icons:picture-in-picture"></iron-icon>
               <span>MRI</span>
             </paper-item>
             <paper-menu class="menu-content">
+              <a data-route="mri-overview" href="{{baseUrl}}mri-overview" on-click="onDataRouteClick">
+                <paper-item>Overview</paper-item>
+              </a>
+              <a data-route="mri-projects" href="{{baseUrl}}mri-projects" on-click="onDataRouteClick">
+                <paper-item>Current Projects</paper-item>
+              </a>
               <a data-route="mri-research" href="{{baseUrl}}mri-research" on-click="onDataRouteClick">
-                <paper-item>Research</paper-item>
+                <paper-item>Research and Publications</paper-item>
               </a>
               <a data-route="mri-team" href="{{baseUrl}}mri-team" on-click="onDataRouteClick">
                 <paper-item>Team</paper-item>
@@ -118,8 +135,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <span>MEG</span>
             </paper-item>
             <paper-menu class="menu-content sublist">
+              <a data-route="meg-overview" href="{{baseUrl}}meg-overview" on-click="onDataRouteClick">
+                <paper-item>Overview</paper-item>
+              </a>
+              <a data-route="meg-projects" href="{{baseUrl}}meg-projects" on-click="onDataRouteClick">
+                <paper-item>Current Projects</paper-item>
+              </a>
               <a data-route="meg-research" href="{{baseUrl}}meg-research" on-click="onDataRouteClick">
-                <paper-item>Research</paper-item>
+                <paper-item>Research and Publications</paper-item>
               </a>
               <a data-route="meg-team" href="{{baseUrl}}meg-team" on-click="onDataRouteClick">
                 <paper-item>Team</paper-item>
@@ -137,8 +160,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <span>NIRS</span>
             </paper-item>
             <paper-menu class="menu-content sublist">
+              <a data-route="nirs-overview" href="{{baseUrl}}nirs-overview" on-click="onDataRouteClick">
+                <paper-item>Overview</paper-item>
+              </a>
+              <a data-route="nirs-projects" href="{{baseUrl}}nirs-projects" on-click="onDataRouteClick">
+                <paper-item>Current Projects</paper-item>
+              </a>
               <a data-route="nirs-research" href="{{baseUrl}}nirs-research" on-click="onDataRouteClick">
-                <paper-item>Research</paper-item>
+                <paper-item>Research and Publications</paper-item>
               </a>
               <a data-route="nirs-team" href="{{baseUrl}}nirs-team" on-click="onDataRouteClick">
                 <paper-item>Team</paper-item>
@@ -156,8 +185,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <span>Software</span>
             </paper-item>
             <paper-menu class="menu-content sublist">
+              <a data-route="software-overview" href="{{baseUrl}}software-overview" on-click="onDataRouteClick">
+                <paper-item>Overview</paper-item>
+              </a>
+              <a data-route="software-projects" href="{{baseUrl}}software-projects" on-click="onDataRouteClick">
+                <paper-item>Current Projects</paper-item>
+              </a>
               <a data-route="software-research" href="{{baseUrl}}software-research" on-click="onDataRouteClick">
-                <paper-item>Research</paper-item>
+                <paper-item>Research and Publications</paper-item>
               </a>
               <a data-route="software-team" href="{{baseUrl}}software-team" on-click="onDataRouteClick">
                 <paper-item>Team</paper-item>
@@ -198,94 +233,97 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Main Content -->
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
-            <section data-route="home">
-              <paper-material elevation="1">
-                <my-greeting class="focus-target" tabindex="-1"></my-greeting>
 
-                <p class="subhead">You now have:</p>
 
-                <p>Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
-              </paper-material>
-
-              <paper-material elevation="1">
-                <p>This is another card.</p>
-              </paper-material>
-
-              <paper-material elevation="1">
-                <h2 id="license">License</h2>
-                <p>Everything in this repo is BSD style license unless otherwise specified.</p>
-                <p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
-                <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-                <ul>
-                <li>Redistributions of source code must retain the above copyright
-                notice, this list of conditions and the following disclaimer.</li>
-                <li>Redistributions in binary form must reproduce the above
-                copyright notice, this list of conditions and the following disclaimer
-                in the documentation and/or other materials provided with the
-                distribution.</li>
-                <li>Neither the name of Google Inc. nor the names of its
-                contributors may be used to endorse or promote products derived from
-                this software without specific prior written permission.</li>
-                </ul>
-                <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
-              </paper-material>
+            <!-- FNNDSC Pages -->
+            <section data-route="fnndsc-contact">
+              <fnndsc-contact class="focus-target" tabindex="-1"></fnndsc-contact>
+            </section>
+            <section data-route="fnndsc-news">
+              <fnndsc-news class="focus-target" tabindex="-1"></fnndsc-news>
+            </section>
+            <section data-route="fnndsc-opportunities">
+              <fnndsc-opportunities class="focus-target" tabindex="-1"></fnndsc-opportunities>
+            </section>
+            <section data-route="fnndsc-overview">
+              <fnndsc-overview class="focus-target" tabindex="-1"></fnndsc-overview>
+            </section>
+            <section data-route="fnndsc-team">
+              <fnndsc-team class="focus-target" tabindex="-1"></fnndsc-team>
             </section>
 
 
             <!-- MRI Pages -->
+            <section data-route="mri-contact">
+              <mri-contact class="focus-target" tabindex="-1"></mri-contact>
+            </section>
+            <section data-route="mri-overview">
+              <mri-overview class="focus-target" tabindex="-1"></mri-overview>
+            </section>
+            <section data-route="mri-projects">
+              <mri-projects class="focus-target" tabindex="-1"></mri-projects>
+            </section>
             <section data-route="mri-research">
               <mri-research class="focus-target" tabindex="-1"></mri-research>
             </section>
-
             <section data-route="mri-team">
               <mri-team class="focus-target" tabindex="-1"></mri-team>
             </section>
 
-            <section data-route="mri-contact">
-              <mri-contact class="focus-target" tabindex="-1"></mri-contact>
-            </section>
-
 
             <!-- MEG Pages -->
+            <section data-route="meg-contact">
+              <meg-contact class="focus-target" tabindex="-1"></meg-contact>
+            </section>
+            <section data-route="meg-overview">
+              <meg-overview class="focus-target" tabindex="-1"></meg-overview>
+            </section>
+            <section data-route="meg-projects">
+              <meg-projects class="focus-target" tabindex="-1"></meg-projects>
+            </section>
             <section data-route="meg-research">
               <meg-research class="focus-target" tabindex="-1"></meg-research>
             </section>
-
             <section data-route="meg-team">
               <meg-team class="focus-target" tabindex="-1"></meg-team>
             </section>
 
-            <section data-route="meg-contact">
-              <meg-contact class="focus-target" tabindex="-1"></meg-contact>
-            </section>
-
 
             <!-- NIRS Pages -->
+            <section data-route="nirs-contact">
+              <nirs-contact class="focus-target" tabindex="-1"></nirs-contact>
+            </section>
+            <section data-route="nirs-overview">
+              <nirs-overview class="focus-target" tabindex="-1"></nirs-overview>
+            </section>
+            <section data-route="nirs-projects">
+              <nirs-projects class="focus-target" tabindex="-1"></nirs-projects>
+            </section>
             <section data-route="nirs-research">
               <nirs-research class="focus-target" tabindex="-1"></nirs-research>
             </section>
-
             <section data-route="nirs-team">
               <nirs-team class="focus-target" tabindex="-1"></nirs-team>
             </section>
 
-            <section data-route="nirs-contact">
-              <nirs-contact class="focus-target" tabindex="-1"></nirs-contact>
-            </section>
-
 
             <!-- Software Pages -->
+            <section data-route="software-contact">
+              <software-contact class="focus-target" tabindex="-1"></software-contact>
+            </section>
+            <section data-route="software-overview">
+              <software-overview class="focus-target" tabindex="-1"></software-overview>
+            </section>
+            <section data-route="software-projects">
+              <software-projects class="focus-target" tabindex="-1"></software-projects>
+            </section>
             <section data-route="software-research">
               <software-research class="focus-target" tabindex="-1"></software-research>
             </section>
-
             <section data-route="software-team">
               <software-team class="focus-target" tabindex="-1"></software-team>
             </section>
 
-            <section data-route="software-contact">
-              <software-contact class="focus-target" tabindex="-1"></software-contact>
-            </section>
           </iron-pages>
         </div>
       </paper-scroll-header-panel>

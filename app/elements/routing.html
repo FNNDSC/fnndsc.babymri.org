@@ -44,18 +44,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
 
     page('/', function() {
-      app.route = 'home';
+      app.route = 'fnndsc-overview';
       setFocus(app.route);
     });
 
     page(app.baseUrl, function() {
-      app.route = 'home';
+      app.route = 'fnndsc-overview';
+      setFocus(app.route);
+    });
+
+    // FNNDSC PAGES
+    page('/fnndsc-contact', function() {
+      app.route = 'fnndsc-contact';
+      setFocus(app.route);
+    });
+    page('/fnndsc-news', function() {
+      app.route = 'fnndsc-news';
+      setFocus(app.route);
+    });
+    page('/fnndsc-opportunities', function() {
+      app.route = 'fnndsc-opportunities';
+      setFocus(app.route);
+    });
+    page('/fnndsc-overview', function() {
+      app.route = 'fnndsc-overview';
+      setFocus(app.route);
+    });
+    page('/fnndsc-team', function() {
+      app.route = 'fnndsc-team';
       setFocus(app.route);
     });
 
     // MRI PAGES
     page('/mri-contact', function() {
       app.route = 'mri-contact';
+      setFocus(app.route);
+    });
+    page('/mri-overview', function() {
+      app.route = 'mri-overview';
+      setFocus(app.route);
+    });
+    page('/mri-projects', function() {
+      app.route = 'mri-projects';
       setFocus(app.route);
     });
     page('/mri-research', function() {
@@ -72,6 +102,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.route = 'meg-contact';
       setFocus(app.route);
     });
+    page('/meg-overview', function() {
+      app.route = 'meg-overview';
+      setFocus(app.route);
+    });
+    page('/meg-projects', function() {
+      app.route = 'meg-projects';
+      setFocus(app.route);
+    });
     page('/meg-research', function() {
       app.route = 'meg-research';
       setFocus(app.route);
@@ -86,6 +124,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.route = 'nirs-contact';
       setFocus(app.route);
     });
+    page('/nirs-overview', function() {
+      app.route = 'nirs-overview';
+      setFocus(app.route);
+    });
+    page('/nirs-projects', function() {
+      app.route = 'nirs-projects';
+      setFocus(app.route);
+    });
     page('/nirs-research', function() {
       app.route = 'nirs-research';
       setFocus(app.route);
@@ -98,6 +144,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // Software PAGES
     page('/software-contact', function() {
       app.route = 'software-contact';
+      setFocus(app.route);
+    });
+    page('/software-overview', function() {
+      app.route = 'software-overview';
+      setFocus(app.route);
+    });
+    page('/software-projects', function() {
+      app.route = 'software-projects';
       setFocus(app.route);
     });
     page('/software-research', function() {
