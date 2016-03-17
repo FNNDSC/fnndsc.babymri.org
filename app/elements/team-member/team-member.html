@@ -1,0 +1,98 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+<dom-module id="team-member">
+  <template>
+    <style>
+      :host {
+        display: flex;
+        flex:1;
+        justify-content: center;
+      }
+
+    iron-image{
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      margin-top: 2px;
+      margin-left: 2px;
+    }
+
+    .border-wrap{
+      position:relative;
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      margin: auto;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      background: #FFFFFF;
+    }
+
+    paper-card {
+      width:256px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 256px) {
+      paper-card {
+        width: 100%;
+      }
+    }
+
+    .big {
+      font-size: 20px;
+      padding-bottom: 8px;
+      color: var(--google-grey-500);
+    }
+
+    .medium {
+      font-size: 16px;
+    }
+
+    .center {
+      @apply(--layout-horizontal);
+      @apply(--layout-wrap);
+      @apply(--layout-center-justified);
+    }
+
+    .colored{
+      background-color: var(--paper-blue-grey-700);
+    }
+
+    </style>
+
+    <paper-card>
+      <div class='center colored'>
+        <div class='border-wrap'>
+          <iron-image src=[[picture]] sizing="cover"></iron-image>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="big">[[firstname]] [[middlename]] [[lastname]], [[title]]</div>
+        <div class="medium">[[position]]</div>
+        <div class="medium">[[institution]]</div>
+      </div>
+    </paper-card>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'team-member',
+        properties: {
+          firstName: String,
+          middleName: String,
+          lastName: String,
+          position: String,
+          institution: String,
+          picture: String
+        }
+      });
+    })();
+  </script>
+</dom-module>

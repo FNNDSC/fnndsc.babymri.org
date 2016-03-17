@@ -1,12 +1,85 @@
-<dom-module id="software-team">
+<link rel='import' href='../../bower_components/polymer/polymer.html'>
+
+<link rel='import' href='../team-member/team-member.html'>
+
+<dom-module id='software-team'>
   <template>
     <style>
       :host {
         display: block;
       }
+
+      .container{
+        @apply(--layout-horizontal);
+        @apply(--layout-around-justified);
+        @apply(--layout-wrap);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .big {
+        font-size: 22px;
+        padding: 8px 16px 16px;
+        color: var(--google-grey-500);
+      }
     </style>
 
-    Welcome to software team page
+    <div class='big'>Team</div>
+
+    <div class="container">
+      <!-- Rudolph Pienaar -->
+      <team-member
+        firstName='Rudolph' middleName='' lastName='Pienaar'
+        title='PhD'
+        position='Technical Director'
+        institution='Boston Chidrens Hospital'
+        picture='../../images/team/Rudolph_Pienaar_110x135.jpg'>
+      </team-member>
+
+
+      <!-- Nicolas Rannou -->
+      <team-member
+        firstName='Nicolas' middleName='' lastName='Rannou'
+        title='MsC'
+        position='Software Engineer'
+        institution='Boston Chidrens Hospital'
+        picture='../../images/team/Nicolas_Rannou_110x135.jpg'>
+      </team-member>
+
+      <!-- Jorge Bernal-->
+      <team-member
+        firstName='Jorge' middleName='Luis' lastName='Bernal Rusiel'
+        title='PhD'
+        position='Software Engineer'
+        institution='Boston Chidrens Hospital'
+        picture='../../images/team/Jorge_Bernal_110x135.jpg'>
+      </team-member>
+
+    </div>
+
+    <div class='big'>Alumni</div>
+
+    <div class="container">
+      <!-- Daniel Haehn -->
+      <team-member
+        firstName='Daniel' middleName='' lastName='Haehn'
+        title='MsC'
+        position='PhD Student'
+        institution='Harvard University'
+        picture='../../images/team/Anonymous_110x135.jpg'>
+      </team-member>
+
+      <!-- Daniel Ginsburg -->
+      <team-member
+        firstName='Daniel' middleName='' lastName='Ginsburg'
+        title='MsC'
+        position='Software Engineer'
+        institution='?'
+        picture='../../images/team/Anonymous_110x135.jpg'>
+      </team-member>
+
+    </div>
+
   </template>
 
   <script>
