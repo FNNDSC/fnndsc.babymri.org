@@ -22,6 +22,11 @@
       margin-left: 2px;
     }
 
+    /*hack for now...*/
+    iron-image ::content #sizedImgDiv{
+      border-radius: 50%;
+    }
+
     .border-wrap{
       position:relative;
       width: 132px;
@@ -29,7 +34,7 @@
       border-radius: 50%;
       margin: auto;
       margin-top: 32px;
-      margin-bottom: 32px;
+      margin-bottom: -50px;
       background: #FFFFFF;
     }
 
@@ -68,13 +73,14 @@
     }
 
     .summary{
+      margin-top:50px;
       flex:1;
     }
 
     .footer{
       text-align: center;
       padding: 10px;
-      background-color: var(--paper-blue-grey-100);
+      background-color: var(--paper-grey-100);
       position:relative;
     }
 
