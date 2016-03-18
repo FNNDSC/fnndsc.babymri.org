@@ -22,12 +22,19 @@
         padding: 8px 16px 16px;
         color: var(--google-grey-500);
       }
+
+      .team team-member ::content .colored {
+        background-color: var(--paper-blue-grey-700);
+      }
+
+      .alumni team-member ::content .colored {
+        background-color: var(--paper-red-700);
+      }
     </style>
 
     <div class='big'>Team</div>
 
-    <div class="container">
-      <!-- Rudolph Pienaar -->
+    <div class="team container">
       <team-member
         firstName='Rudolph' middleName='' lastName='Pienaar'
         title='PhD'
@@ -36,8 +43,6 @@
         picture='../../images/team/Rudolph_Pienaar_110x135.jpg'>
       </team-member>
 
-
-      <!-- Nicolas Rannou -->
       <team-member
         firstName='Nicolas' middleName='' lastName='Rannou'
         title='MsC'
@@ -46,7 +51,6 @@
         picture='../../images/team/Nicolas_Rannou_110x135.jpg'>
       </team-member>
 
-      <!-- Jorge Bernal-->
       <team-member
         firstName='Jorge' middleName='Luis' lastName='Bernal Rusiel'
         title='PhD'
@@ -59,8 +63,7 @@
 
     <div class='big'>Alumni</div>
 
-    <div class="container">
-      <!-- Daniel Haehn -->
+    <div class="alumni container">
       <team-member
         firstName='Daniel' middleName='' lastName='Haehn'
         title='MsC'
@@ -69,7 +72,6 @@
         picture='../../images/team/Anonymous_110x135.jpg'>
       </team-member>
 
-      <!-- Daniel Ginsburg -->
       <team-member
         firstName='Daniel' middleName='' lastName='Ginsburg'
         title='MsC'
