@@ -1,12 +1,39 @@
-<dom-module id="mri-team">
+<link rel='import' href='../../bower_components/polymer/polymer.html'>
+
+<link rel='import' href='../team/team-behavior.html'>
+<link rel='import' href='../team/team-member.html'>
+<link rel="import" href="../team/team-styles.html">
+
+<dom-module id='mri-team'>
   <template>
+    <style include="team-styles"></style>
     <style>
       :host {
         display: block;
       }
     </style>
 
-    Welcome to mri team page
+    <template is="dom-if" if="{{team}}">
+      <div class='big'>Team</div>
+
+      <div class="team container">
+        <team-member
+          firstName='P.' middleName='Ellen' lastName='Grant'
+          degree='MD'
+          position='Director'
+          institution='Boston Chidrens Hospital'
+          picture='../../images/team/Anonymous_110x135.jpg'>
+        </team-member>
+
+        <team-member
+          firstName='Borjan' middleName='' lastName='Gagoski'
+          degree='PhD'
+          position='Instructor in Radiology'
+          institution='Boston Chidrens Hospital'
+          picture='../../images/team/Anonymous_110x135.jpg'>
+        </team-member>
+      </div>
+    </template>
   </template>
 
   <script>
@@ -14,7 +41,8 @@
       'use strict';
 
       Polymer({
-        is: 'mri-team'
+        is: 'mri-team',
+        behaviors: [TeamBehavior]
       });
     })();
   </script>

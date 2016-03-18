@@ -1,12 +1,45 @@
-<dom-module id="nirs-team">
+<link rel='import' href='../../bower_components/polymer/polymer.html'>
+
+<link rel='import' href='../team/team-behavior.html'>
+<link rel='import' href='../team/team-member.html'>
+<link rel="import" href="../team/team-styles.html">
+
+<dom-module id='nirs-team'>
   <template>
+    <style include="team-styles"></style>
     <style>
       :host {
         display: block;
       }
     </style>
 
-    Welcome to nirs team page
+    <template is="dom-if" if="{{team}}">
+      <div class='big'>Team</div>
+
+      <div class="team container">
+        <team-member
+          firstName='Rutvi' middleName='' lastName='Vyas'
+          degree='?'
+          position=''
+          institution='Boston Chidrens Hospital'
+          picture='../../images/team/Anonymous_110x135.jpg'>
+        </team-member>
+      </div>
+    </template>
+
+    <template is="dom-if" if="{{alumni}}">
+      <div class='big'>Alumni</div>
+
+      <div class="alumni container">
+        <team-member
+          firstName='Mathieu' middleName='' lastName='Dehaes'
+          degree='PhD'
+          position='Assistant Professor'
+          institution='Université de Montréal'
+          picture='../../images/team/Anonymous_110x135.jpg'>
+        </team-member>
+      </div>
+    </template>
   </template>
 
   <script>
@@ -14,7 +47,8 @@
       'use strict';
 
       Polymer({
-        is: 'nirs-team'
+        is: 'nirs-team',
+        behaviors: [TeamBehavior]
       });
     })();
   </script>

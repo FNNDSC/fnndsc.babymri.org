@@ -1,12 +1,36 @@
+<link rel='import' href='../../bower_components/polymer/polymer.html'>
+
+<link rel='import' href='../mri/mri-team.html'>
+<link rel='import' href='../meg/meg-team.html'>
+<link rel='import' href='../nirs/nirs-team.html'>
+<link rel='import' href='../software/software-team.html'>
+
 <dom-module id="fnndsc-team">
   <template>
     <style>
       :host {
         display: block;
       }
+
+      .big {
+        font-size: 32px;
+        padding: 8px 16px 16px;
+        color: var(--google-grey-700);
+      }
     </style>
 
-    Welcome to fnndsc team page
+    <div class='big'>MRI Group</div>
+      <mri-team team></mri-team>
+    </div>
+    <div class='big'>MEG Group</div>
+      <meg-team team></meg-team>
+    </div>
+    <div class='big'>NIRS Group</div>
+      <nirs-team team></nirs-team>
+    </div>
+    <div class='big'>Software Group</div>
+      <software-team team></software-team>
+    </div>
   </template>
 
   <script>
@@ -14,7 +38,7 @@
       'use strict';
 
       Polymer({
-        is: 'fnndsc-team'
+        is: 'fnndsc-team',
       });
     })();
   </script>

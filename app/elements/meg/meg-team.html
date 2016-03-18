@@ -1,12 +1,53 @@
-<dom-module id="meg-team">
+<link rel='import' href='../../bower_components/polymer/polymer.html'>
+
+<link rel='import' href='../team/team-behavior.html'>
+<link rel='import' href='../team/team-member.html'>
+<link rel="import" href="../team/team-styles.html">
+
+<dom-module id='meg-team'>
   <template>
+    <style include="team-styles"></style>
     <style>
       :host {
         display: block;
       }
     </style>
 
-    Welcome to meg team page
+    <template is="dom-if" if="{{team}}">
+      <div class='big'>Team</div>
+
+      <div class="team container">
+        <team-member
+          firstName='Christos' middleName='' lastName='Papadelis'
+          degree='PhD'
+          position='Technical Director'
+          institution='Boston Chidrens Hospital'
+          picture='../../images/team/Anonymous_110x135.jpg'>
+        </team-member>
+
+        <team-member
+          firstName='Banu' middleName='' lastName='Ahtam'
+          degree='MsC'
+          position='Post-doctoral Research Fellow'
+          institution='Boston Chidrens Hospital'
+          picture='../../images/team/Anonymous_110x135.jpg'>
+        </team-member>
+
+      </div>
+    </template>
+
+    <template is="dom-if" if="{{alumni}}">
+      <div class='big'>Alumni</div>
+
+      <div class="alumni container">
+        <team-member
+          firstName='Chiran' middleName='' lastName='Doshi'
+          degree='MsC'
+          position='Sof?'
+          picture='../../images/team/Anonymous_110x135.jpg'>
+        </team-member>
+      </div>
+    </template>
   </template>
 
   <script>
@@ -14,7 +55,8 @@
       'use strict';
 
       Polymer({
-        is: 'meg-team'
+        is: 'meg-team',
+        behaviors: [TeamBehavior]
       });
     })();
   </script>

@@ -1,87 +1,69 @@
 <link rel='import' href='../../bower_components/polymer/polymer.html'>
 
-<link rel='import' href='../team-member/team-member.html'>
+<link rel='import' href='../team/team-behavior.html'>
+<link rel='import' href='../team/team-member.html'>
+<link rel="import" href="../team/team-styles.html">
 
 <dom-module id='software-team'>
   <template>
+    <style include="team-styles"></style>
     <style>
       :host {
         display: block;
       }
-
-      .container{
-        @apply(--layout-horizontal);
-        @apply(--layout-around-justified);
-        @apply(--layout-wrap);
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .big {
-        font-size: 22px;
-        padding: 8px 16px 16px;
-        color: var(--google-grey-500);
-      }
-
-      .team team-member ::content .colored {
-        background-color: var(--paper-blue-grey-700);
-      }
-
-      .alumni team-member ::content .colored {
-        background-color: var(--paper-red-700);
-      }
     </style>
 
-    <div class='big'>Team</div>
+    <template is="dom-if" if="{{team}}">
+      <div class='big'>Team</div>
 
-    <div class="team container">
-      <team-member
-        firstName='Rudolph' middleName='' lastName='Pienaar'
-        degree='PhD'
-        position='Technical Director'
-        institution='Boston Chidrens Hospital'
-        picture='../../images/team/Rudolph_Pienaar_110x135.jpg'>
-      </team-member>
+      <div class="team container">
+        <team-member
+          firstName='Rudolph' middleName='' lastName='Pienaar'
+          degree='PhD'
+          position='Technical Director'
+          institution='Boston Chidrens Hospital'
+          picture='../../images/team/Rudolph_Pienaar_110x135.jpg'>
+        </team-member>
 
-      <team-member
-        firstName='Nicolas' middleName='' lastName='Rannou'
-        degree='MsC'
-        position='Software Engineer'
-        institution='Boston Chidrens Hospital'
-        picture='../../images/team/Nicolas_Rannou_110x135.jpg'>
-      </team-member>
+        <team-member
+          firstName='Nicolas' middleName='' lastName='Rannou'
+          degree='MsC'
+          position='Software Engineer'
+          institution='Boston Chidrens Hospital'
+          picture='../../images/team/Nicolas_Rannou_110x135.jpg'>
+        </team-member>
 
-      <team-member
-        firstName='Jorge' middleName='Luis' lastName='Bernal Rusiel'
-        degree='PhD'
-        position='Software Engineer'
-        institution='Boston Chidrens Hospital'
-        picture='../../images/team/Jorge_Bernal_110x135.jpg'>
-      </team-member>
+        <team-member
+          firstName='Jorge' middleName='Luis' lastName='Bernal Rusiel'
+          degree='PhD'
+          position='Software Engineer'
+          institution='Boston Chidrens Hospital'
+          picture='../../images/team/Jorge_Bernal_110x135.jpg'>
+        </team-member>
+      </div>
+    </template>
 
-    </div>
+    <template is="dom-if" if="{{alumni}}">
+      <div class='big'>Alumni</div>
 
-    <div class='big'>Alumni</div>
+      <div class="alumni container">
+        <team-member
+          firstName='Daniel' middleName='' lastName='Haehn'
+          degree='MsC'
+          position='PhD Student'
+          institution='Harvard University'
+          picture='../../images/team/Anonymous_110x135.jpg'>
+        </team-member>
 
-    <div class="alumni container">
-      <team-member
-        firstName='Daniel' middleName='' lastName='Haehn'
-        degree='MsC'
-        position='PhD Student'
-        institution='Harvard University'
-        picture='../../images/team/Anonymous_110x135.jpg'>
-      </team-member>
-
-      <team-member
-        firstName='Daniel' middleName='' lastName='Ginsburg'
-        degree='MsC'
-        position='Software Engineer'
-        institution='?'
-        picture='../../images/team/Anonymous_110x135.jpg'>
-      </team-member>
-
-    </div>
-
+        <team-member
+          firstName='Daniel' middleName='' lastName='Ginsburg'
+          degree='MsC'
+          position='Software Engineer'
+          institution='?'
+          picture='../../images/team/Anonymous_110x135.jpg'>
+        </team-member>
+      </div>
+    </template>
   </template>
 
   <script>
@@ -89,7 +71,8 @@
       'use strict';
 
       Polymer({
-        is: 'software-team'
+        is: 'software-team',
+        behaviors: [TeamBehavior]
       });
     })();
   </script>
