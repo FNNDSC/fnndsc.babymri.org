@@ -67,7 +67,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template is="dom-bind" id="app">
 
     <!-- force-narrow -->
-    <paper-drawer-panel id="paperDrawerPanel" responsive-width="840px">
+    <paper-drawer-panel id="paperDrawerPanel" responsive-width="840px" force-narrow="1">
       <!-- Drawer Scroll Header Panel -->
       <paper-scroll-header-panel drawer fixed>
 
@@ -114,6 +114,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <a data-route="mri-overview" href="{{baseUrl}}mri-overview" on-click="onDataRouteClick">
                 <paper-item>Overview</paper-item>
               </a>
+              <a data-route="mri-labs" href="{{baseUrl}}mri-labs" on-click="onDataRouteClick">
+                <paper-item>Laboratories</paper-item>
+              </a>
               <a data-route="mri-projects" href="{{baseUrl}}mri-projects" on-click="onDataRouteClick">
                 <paper-item>Current Projects</paper-item>
               </a>
@@ -139,6 +142,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <a data-route="meg-overview" href="{{baseUrl}}meg-overview" on-click="onDataRouteClick">
                 <paper-item>Overview</paper-item>
               </a>
+              <a data-route="meg-labs" href="{{baseUrl}}meg-labs" on-click="onDataRouteClick">
+                <paper-item>Laboratories</paper-item>
+              </a>
               <a data-route="meg-projects" href="{{baseUrl}}meg-projects" on-click="onDataRouteClick">
                 <paper-item>Current Projects</paper-item>
               </a>
@@ -163,6 +169,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-menu class="menu-content sublist">
               <a data-route="nirs-overview" href="{{baseUrl}}nirs-overview" on-click="onDataRouteClick">
                 <paper-item>Overview</paper-item>
+              </a>
+              <a data-route="nirs-labs" href="{{baseUrl}}nirs-labs" on-click="onDataRouteClick">
+                <paper-item>Laboratories</paper-item>
               </a>
               <a data-route="nirs-projects" href="{{baseUrl}}nirs-projects" on-click="onDataRouteClick">
                 <paper-item>Current Projects</paper-item>
@@ -227,7 +236,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Application sub title -->
           <div class="bottom bottom-container">
-            <div class="bottom-title">a fetal and neonatal science center</div>
+            <div class="bottom-title">Fetal-Neonatal Neuroimaging and Developmental Science Center at Boston Children's Hospital</div>
           </div>
         </paper-toolbar>
 
@@ -272,6 +281,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <div class="focus-target" tabindex="-1"></div>
               <mri-projects></mri-projects>
             </section>
+            <section data-route="mri-labs">
+              <div class="focus-target" tabindex="-1"></div>
+              <mri-labs></mri-labs>
+            </section>
             <section data-route="mri-research">
               <div class="focus-target" tabindex="-1"></div>
               <mri-research></mri-research>
@@ -295,6 +308,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <div class="focus-target" tabindex="-1"></div>
               <meg-projects></meg-projects>
             </section>
+            <section data-route="meg-labs">
+              <div class="focus-target" tabindex="-1"></div>
+              <meg-labs></meg-labs>
+            </section>
             <section data-route="meg-research">
               <div class="focus-target" tabindex="-1"></div>
               <meg-research></meg-research>
@@ -313,6 +330,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <section data-route="nirs-overview">
               <div class="focus-target" tabindex="-1"></div>
               <nirs-overview></nirs-overview>
+            </section>
+            <section data-route="nirs-labs">
+              <div class="focus-target" tabindex="-1"></div>
+              <nirs-labs></nirs-labs>
             </section>
             <section data-route="nirs-projects">
               <div class="focus-target" tabindex="-1"></div>
@@ -373,7 +394,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                          cache-config-file="cache-config.json">
       </platinum-sw-cache>
     </platinum-sw-register>
-    
+
 
   </template>
 
