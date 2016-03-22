@@ -8,7 +8,6 @@
     "paper-elements": "PolymerElements/paper-elements#^1.0.1",
     "platinum-elements": "PolymerElements/platinum-elements#^1.1.0",
     "polymer": "Polymer/polymer#^1.2.0",
-    "parallax-container": "^1.0.1",
     "parallax-element": "^1.0.1"
   },
   "devDependencies": {

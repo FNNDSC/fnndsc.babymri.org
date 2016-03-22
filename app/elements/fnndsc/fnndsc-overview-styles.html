@@ -1,0 +1,46 @@
+<dom-module id="fnndsc-overview-styles">
+  <template>
+    <style>
+      parallax-layers {
+        z-index: -1;
+        /*HACK*/
+        margin-left: -10px;
+      }
+
+      parallax-layers > .parallax-layer {
+        background: url("https://googledrive.com/host/0B8u7h0aKnydhMENyWHZNbVJTTkE/fetal_by_jfkpaint.jpg");
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        background-color: blue;
+      }
+    
+      div.no-parallax {
+        z-index: 0;
+        background: var(--paper-grey-100);
+        color: var(--paper-grey-700);
+      }
+
+      .footer {
+        padding:10px;
+        background: var(--paper-grey-100);
+        color: var(--paper-grey-700);
+        min-height: 50vh;
+      }
+
+      .tall {
+        min-height: 100vh;
+      }
+
+      .medium {
+        min-height: 90vh;
+      }
+
+      .small {
+        min-height: 40vh;
+      }
+
+    </style>
+  </template>
+</dom-module>

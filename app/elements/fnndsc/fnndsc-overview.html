@@ -11,7 +11,7 @@
     <style include="fnndsc-overview-styles"></style>
     <style>
       :host {
-        font: 200% / 1.5 Arial;
+        font-size:26px;
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
@@ -20,76 +20,46 @@
         -webkit-overflow-scrolling: auto;
         -webkit-flex-direction: column;
         flex-direction: column;
-        overflow-y: auto;
+        overflow-y: hidden;
         overflow-x: hidden;
-      }
-
-      parallax-layers {
-        min-height: 300px;
-        z-index: -1;
-      }
-
-      parallax-layers > .parallax-layer {
-        background: url("https://googledrive.com/host/0B8u7h0aKnydhMENyWHZNbVJTTkE/fetal_by_jfkpaint.jpg");
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: white;
-      }
-    
-      div.no-parallax {
-        min-height: 300px;
-        z-index: 0;
-        background: red;
-        border-style: solid;
-        border-width: 5px;
-        border-color: black;
-      }
-
-      parallax-container {
-        font-size: 200%;
-      }
-
-      .title {
         text-align: center;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
       }
-
 
     </style>
 
-    <parallax-layers style="z-index:-1">
-            <div depth="-0.3" class="parallax-layer fullbleed layout vertical center-center">
-              Welcome to the Fetal Neonatal Neuroimaging and Developmental Science Center (FNNDSC)
-            </div>
-          </parallax-layers>
+    <!-- WELCOME -->
+    <div class="no-parallax fullbleed layout vertical center-center tall">
+      <img width="30%" src="../../images/logo_gray.png" alt="FNNDSC">
+      <div>Welcome to</div>
+      <div>the Fetal Neonatal Neuroimaging and Developmental Science Center</div>
+      <div>(FNNDSC)</div>
+    </div>
+
+    <!-- MULTIDISCIPLINARY TEAM -->
+    <parallax-layers class="parallax medium" style="z-index: -1;">
+      <div depth="-.8" class="parallax-layer fullbleed layout vertical center-center">
+        <div>
+        The Fetal Neonatal Neuroimaging and Developmental Science Center (FNNDSC) at Boston Children's Hospital brings together a multidisciplinary team of researchers from the fields of medicine, engineering, computer science, and neuroscience.
+        </div>
+      </div>
+    </parallax-layers>
+
+    <!-- PUSH BOUNDARIES -->
+    <div class="no-parallax fullbleed layout vertical center-center small">
+        We push the boundaries of research in Magnetic Resonance Imaging (MRI), Magnetoencephalography (MEG), and Near-infrared Spectroscopy (NIRS).
+    </div>
+
+    <!-- IMPROVE HEALTHCARE -->
+    <parallax-layers class="parallax medium" style="z-index: -1;">
+      <div depth="-0.5" class="parallax-layer fullbleed layout vertical center-center">
+        We also develop new technologies that we hope can lead to improvements in healthcare for infants and children.
+      </div>
+    </parallax-layers>
 
 
-    <template is="dom-repeat" items="{{sections}}">
-
-        <template is="dom-if" if="{{isNormalSection(item)}}">
-          <div class="no-parallax     layout vertical center-center">
-            [[item.label]]
-          </div>
-        </template>
-
-       <template is="dom-if" if="{{!isNormalSection(item)}}">
-          <parallax-layers style$="{{computeSectionZindex(item)}}">
-            <div depth$="[[item.depth]]" class="parallax-layer fullbleed layout vertical center-center">
-              [[item.label]]
-            </div>
-          </parallax-layers>
-        </template>
-
-      </template>
-
-      <div style="height:50vh">
-           footer....
-          </div>
+      <div class="footer medium">
+        Made with by FNNDSC - Copyrights @ FNNDSC 2016
+      </div>
 
   </template>
 
@@ -99,27 +69,7 @@
 
       Polymer({
         is: 'fnndsc-overview',
-        behaviors: [Polymer.ParallaxScrollerBehavior],
-        properties: {
-        sections: {
-          type: Array,
-          value: function() {
-            return [{label:'Welcome to the Fetal Neonatal Neuroimaging and Developmental Science Center (FNNDSC)', depth:0},
-              {label:'wow parallax', depth:-0.3},
-              {label:'much normal div', depth:0},
-              {label:'yum foreground', depth:0.2},
-              {label:'so normal div', depth:0},
-              {label:'very parallax', depth:-1},
-              {label:'many normal div', depth:0}];
-          }
-        }
-      },
-      isNormalSection: function(section) {
-        return section.depth === 0;
-      },
-      computeSectionZindex: function(section) {
-        return 'z-index:' + (section.depth <= 0 ? -1 : 1) + ';';
-      }
+        behaviors: [Polymer.ParallaxScrollerBehavior]
       });
     })();
   </script>
