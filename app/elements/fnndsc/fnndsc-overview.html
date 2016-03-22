@@ -1,8 +1,7 @@
 <link rel='import' href='../../bower_components/polymer/polymer.html'>
 <link rel="import" href="../../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
 
-<link rel='import' href='../../bower_components/parallax-element/parallax-layers.html'>
-<link rel="import" href="../../bower_components/parallax-element/parallax-scroller-behavior.html">
+<link rel='import' href='../../bower_components/parallax-container/parallax-container.html'>
 
 <link rel="import" href="../fnndsc/fnndsc-overview-styles.html">
 
@@ -11,56 +10,76 @@
     <style include="fnndsc-overview-styles"></style>
     <style>
       :host {
-        font-size:26px;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        margin: 0;
-        padding: 0;
-        -webkit-overflow-scrolling: auto;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        overflow-y: hidden;
-        overflow-x: hidden;
-        text-align: center;
+        display: block;
       }
-
     </style>
 
-    <!-- WELCOME -->
-    <div class="no-parallax fullbleed layout vertical center-center tall">
-      <img width="30%" src="../../images/logo_gray.png" alt="FNNDSC">
-      <div>Welcome to</div>
-      <div>the Fetal Neonatal Neuroimaging and Developmental Science Center</div>
-      <div>(FNNDSC)</div>
-    </div>
+    <parallax-container>
+      
+      <!-- WELCOME -->
+      <parallax-group id="group1" z=2>
+        <parallax-layer>
+          <div class="title">
+            <img width="30%" src="../../images/logo_gray.png" alt="FNNDSC">
+            <div>Welcome to</div>
+            <div>the Fetal Neonatal Neuroimaging and Developmental Science Center</div>
+            <div>(FNNDSC)</div>
+          </div>
+        </parallax-layer>
+        <parallax-layer layer="-1">
+          <div class="title">
+            Background Layer
+          </div>
+        </parallax-layer>
+      </parallax-group>
+      
+      <!-- Mutidisciplinary team -->
+      <parallax-group id="group2" z=3>
+        <parallax-layer>
+          <div class="title">
+            The Fetal Neonatal Neuroimaging and Developmental Science Center (FNNDSC) at Boston Children's Hospital brings together a multidisciplinary team of researchers from the fields of medicine, engineering, computer science, and neuroscience.
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=1>
+          <div class="title">
+            Foreground Layer
+          </div>
+        </parallax-layer>
+      </parallax-group>
+      
+      <!-- Push boundaries -->
+      <parallax-group id="group3" z=1>
+        <parallax-layer>
+          <div class="title">
+            We push the boundaries of research in Magnetic Resonance Imaging (MRI), Magnetoencephalography (MEG), and Near-infrared Spectroscopy (NIRS).
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=-2>
+          <div class="title">
+            Deep Background Layer
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=-1>
+          <div class="title">
+            Background Layer
+          </div>
+        </parallax-layer>
+      </parallax-group>
+      
+      <!-- Improve Healthcare -->
+      <parallax-group id="group4" z=2>
+        <parallax-layer>
+          <div class="title">
+            We also develop new technologies that we hope can lead to improvements in healthcare for infants and children.
+          </div>
 
-    <!-- MULTIDISCIPLINARY TEAM -->
-    <parallax-layers class="parallax medium" style="z-index: -1;">
-      <div depth="-.8" class="parallax-layer fullbleed layout vertical center-center">
-        <div>
-        The Fetal Neonatal Neuroimaging and Developmental Science Center (FNNDSC) at Boston Children's Hospital brings together a multidisciplinary team of researchers from the fields of medicine, engineering, computer science, and neuroscience.
-        </div>
-      </div>
-    </parallax-layers>
-
-    <!-- PUSH BOUNDARIES -->
-    <div class="no-parallax fullbleed layout vertical center-center small">
-        We push the boundaries of research in Magnetic Resonance Imaging (MRI), Magnetoencephalography (MEG), and Near-infrared Spectroscopy (NIRS).
-    </div>
-
-    <!-- IMPROVE HEALTHCARE -->
-    <parallax-layers class="parallax medium" style="z-index: -1;">
-      <div depth="-0.5" class="parallax-layer fullbleed layout vertical center-center">
-        We also develop new technologies that we hope can lead to improvements in healthcare for infants and children.
-      </div>
-    </parallax-layers>
-
-
-      <div class="footer medium">
-        Made with by FNNDSC - Copyrights @ FNNDSC 2016
-      </div>
-
+          <div class="footer">
+            Made with by FNNDSC - Copyrights @ FNNDSC 2016
+          </div> 
+        </parallax-layer>
+      </parallax-group>
+      
+    </parallax-container>
   </template>
 
   <script>
@@ -68,8 +87,7 @@
       'use strict';
 
       Polymer({
-        is: 'fnndsc-overview',
-        behaviors: [Polymer.ParallaxScrollerBehavior]
+        is: 'fnndsc-overview'
       });
     })();
   </script>

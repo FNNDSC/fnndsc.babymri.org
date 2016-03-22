@@ -1,44 +1,40 @@
 <dom-module id="fnndsc-overview-styles">
   <template>
     <style>
-      parallax-layers {
-        z-index: -1;
-        /*HACK*/
-        margin-left: -10px;
+      parallax-container {
+        font-size: 128%;
+        text-align: center;
       }
 
-      parallax-layers > .parallax-layer {
-        background: url("https://googledrive.com/host/0B8u7h0aKnydhMENyWHZNbVJTTkE/fetal_by_jfkpaint.jpg");
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: white;
-        background-color: blue;
-      }
-    
-      div.no-parallax {
-        z-index: 0;
-        background: var(--paper-grey-100);
-        color: var(--paper-grey-700);
+      .title {
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
       }
 
       .footer {
-        padding:10px;
-        background: var(--paper-grey-100);
-        color: var(--paper-grey-700);
-        min-height: 50vh;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
       }
 
-      .tall {
-        min-height: 100vh;
+      #group1 [layer="-1"]{
+        background: #1f8dd6;
       }
-
-      .medium {
-        min-height: 90vh;
+      #group2{
+        background: #1faad6;
       }
-
-      .small {
-        min-height: 40vh;
+      #group3 [layer="-2"]{
+        background: #1f8dff;
+      }
+      #group4 {
+        background: #0077dd;
       }
 
     </style>
