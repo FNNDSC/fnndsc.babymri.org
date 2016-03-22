@@ -43,17 +43,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       next();
     });
 
-    page('/', function() {
-      app.route = 'fnndsc-overview';
-      setFocus(app.route);
-    });
-
-    page(app.baseUrl, function() {
-      app.route = 'fnndsc-overview';
+    // COMMON PAGES
+    page('/team-member-detail', function() {
+      app.route = 'team-member-detail';
       setFocus(app.route);
     });
 
     // FNNDSC PAGES
+    page('/', function() {
+      app.route = 'fnndsc-overview';
+      setFocus(app.route);
+    });
+    page(app.baseUrl, function() {
+      app.route = 'fnndsc-overview';
+      setFocus(app.route);
+    });
     page('/fnndsc-contact', function() {
       app.route = 'fnndsc-contact';
       setFocus(app.route);
