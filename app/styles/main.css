@@ -31,12 +31,13 @@ body {
   }
 
   .branding a{
-      color: #fff;
-      text-decoration: inherit;
+    color: #fff;
+    text-decoration: inherit;
   }
 
   paper-toolbar#mainToolbar{
-    background-image: url(../images/neuron-greenStain.jpg), linear-gradient(to bottom, #263238, #78909C);
+    background-image: url(../images/neuron-greenStain.jpg);
+    /*background-image: url(../images/blueprint.png), linear-gradient(to bottom, #263238, #78909C);*/
   }
 
   .app-name{

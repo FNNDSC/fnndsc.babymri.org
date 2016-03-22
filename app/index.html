@@ -67,7 +67,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template is="dom-bind" id="app">
 
     <!-- force-narrow -->
-    <paper-drawer-panel id="paperDrawerPanel" responsive-width="840px" force-narrow="1">
+    <paper-drawer-panel id="paperDrawerPanel" responsive-width="840px">
       <!-- Drawer Scroll Header Panel -->
       <paper-scroll-header-panel drawer fixed>
 
@@ -258,9 +258,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <div class="focus-target" tabindex="-1"></div>
               <fnndsc-opportunities></fnndsc-opportunities>
             </section>
-            <section data-route="fnndsc-overview">
+            <section data-route="fnndsc-overview" class="parallax-section">
               <div class="focus-target" tabindex="-1"></div>
-              <fnndsc-overview></fnndsc-overview>
+              <fnndsc-overview id="fnndscOverview"></fnndsc-overview>
             </section>
             <section data-route="fnndsc-team">
               <div class="focus-target" tabindex="-1"></div>

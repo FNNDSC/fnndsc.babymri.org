@@ -33,7 +33,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function() {
-    console.log('Our app is ready to rock!');
+    console.log('FNNDSC app is ready to rock!');
+    var fnndscOverview = Polymer.dom(document).querySelector('#fnndscOverview');
+    var headerPanel = Polymer.dom(document).querySelector('#headerPanelMain');
+    fnndscOverview.scroller = headerPanel.scroller
   });
   
   // See https://github.com/Polymer/polymer/issues/1381
