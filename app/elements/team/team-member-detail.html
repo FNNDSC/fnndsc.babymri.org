@@ -34,10 +34,7 @@
         <div class='border-wrap'>
           <iron-image src=[[member.picture]] sizing="cover"></iron-image>
         </div>
-        <div class="check">
-                  <paper-fab icon="check" class="check" on-tap="handleTap"></paper-fab>
-
-        </div>
+        <paper-fab icon="check" class="check" on-tap="handleTap"></paper-fab>
       </div>
 
       <div class="card-content">
@@ -58,6 +55,10 @@
           <div class="item">
             <div class="double-line-1">[[member.lastname]]</div>
             <div class="double-line-2">Last Name</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.degree]]</div>
+            <div class="double-line-2">Highest Degree</div>
           </div>
         </div>
 
