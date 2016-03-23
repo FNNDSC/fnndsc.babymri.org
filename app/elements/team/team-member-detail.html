@@ -1,58 +1,3 @@
-<!-- <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
-
-<script src="../../bower_components/page/page.js"></script>
-<dom-module id="team-member-detail">
-  <template>
-    <style>
-      :host {
-        display: flex;
-        flex:1;
-        justify-content: center;
-      }
-
-    paper-card {
-      width:512px;
-      margin-bottom: 16px;
-      /* should use polymer */
-      display: flex;
-      flex-direction: column;
-    }
-
-    </style>
-
-    <paper-card>
-    
-      [[member.firstname]] [[member.middlename]] [[member.lastname]] ROCKS!
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-        <paper-fab icon="favorite" title="heart" on-tap="handleTap"></paper-fab>
-
-    </paper-card>
-
-
-
-  </template>
-
-  <script>
-    (function() {
-      'use strict';
-
-      Polymer({
-        is: 'team-member-detail',
-        properties: {
-          member: Object
-        },
-        handleTap: function(){
-          page('/' + app.prevroute);
-        }
-      });
-    })();
-  </script>
-</dom-module> -->
-
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel='import' href='../../bower_components/google-map/google-map.html'>
 <link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
@@ -60,23 +5,30 @@
 <link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
 <link rel="import" href="../../bower_components/iron-icons/maps-icons.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="../../bower_components/paper-button/paper-button.html">
-<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
 
-<link rel='import' href='../contact/contact-member-behavior.html'>
-<link rel="import" href="../contact/contact-member-styles.html">
+<link rel='import' href='../team/team-member-detail-behavior.html'>
+<link rel="import" href="../team/team-member-detail-styles.html">
+<link rel="import" href="../team/team-styles.html">
 
+<script src="../../bower_components/page/page.js"></script>
 <dom-module id="team-member-detail">
   <template>
-    <style include="contact-member-styles"></style>
+    <style include="team-member-detail-styles"></style>
+    <style include="team-styles"></style>
     <style>
       :host {
         display: block;
+        @apply(--layout-horizontal);
+        @apply(--layout-around-justified);
+        @apply(--layout-wrap);
+        margin-left: auto;
+        margin-right: auto;
       }
 
     </style>
 
-    <paper-card heading="[[member.title]]">
+    <paper-card heading="[[member.firstname]] [[member.middlename]] [[member.lastname]]">
       <div class="card-content">
 
         <!-- FROM https://github.com/robdodson/contacts-app -->
@@ -85,16 +37,41 @@
         <div class="group">
           <div class="item">
             <iron-icon icon="icons:face"></iron-icon>
-            <div class="double-line-1">[[member.firstname]] [[member.middlename]] [[member.lastname]]</div>
-            <div class="double-line-2">Contact</div>
+            <div class="double-line-1">[[member.firstname]]</div>
+            <div class="double-line-2">First Name</div>
           </div>
           <div class="item">
+            <div class="double-line-1">[[member.middlename]]</div>
+            <div class="double-line-2">Middle Name</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.lastname]]</div>
+            <div class="double-line-2">Last Name</div>
+          </div>
+        </div>
+
+        <!-- POSITION -->
+        <div class="group">
+          <div class="item">
+            <iron-icon icon="icons:assignment-ind"></iron-icon>
             <div class="double-line-1">[[member.position]]</div>
             <div class="double-line-2">Position</div>
           </div>
-                      <div class="item">
+          <div class="item">
             <div class="double-line-1">[[member.laboratory]]</div>
             <div class="double-line-2">Laboratory</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.institution]]</div>
+            <div class="double-line-2">Institution</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.academicposition]]</div>
+            <div class="double-line-2">Academic Position</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.academicinstitution]]</div>
+            <div class="double-line-2">Academic Institution</div>
           </div>
         </div>
 
@@ -137,18 +114,21 @@
         </div>
       </div>
 
-      <!-- CONTACT MAP -->
+      <!-- PUBLICATIONS -->
+      <div class="group">
+          <a href="[[member.publications]]" target="_blank">
+            <div class="item">
+              <iron-icon icon="icons:book"></iron-icon>
+              <div class="double-line-1">Click to see publications</div>
+              <div class="double-line-2">Publications</div>
+            </div>
+          </a>
+      </div>
+
       <div class="card-actions">
-        <div on-tap="handleTap">
-          <paper-button>Show map</paper-button>
-          <paper-icon-button id="moreInfoIcon" icon="hardware:keyboard-arrow-up" title="more info" style="float:right;"></paper-icon-button>
+        <div>
+          <paper-fab icon="check" title="done" on-tap="handleTap" style="float:right; margin:10px"></paper-fab>
         </div>
-        <iron-collapse id="moreInfo" style="width:100%;">
-          <google-map latitude=[[member.latitude]] longitude=[[member.longitude]] zoom="17">
-            <google-map-marker latitude="[[member.latitude]]" longitude="[[member.longitude]]"
-      title="[[member.title]]"></google-map-marker>
-          </google-map>
-        </iron-collapse>
       </div>
     </paper-card>
 
@@ -160,7 +140,7 @@
 
       Polymer({
         is: 'team-member-detail',
-        behaviors: [ContactMemberBehavior]
+        behaviors: [TeamMemberDetailBehavior]
       });
     })();
   </script>
