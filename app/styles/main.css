@@ -36,7 +36,7 @@ body {
   }
 
   paper-toolbar#mainToolbar{
-    background-image: url(../images/neuron-greenStain.jpg);
+    background-image: url(../images/abstract_neurons_darkBlue.jpg);
     /*background-image: url(../images/blueprint.png), linear-gradient(to bottom, #263238, #78909C);*/
   }
 
