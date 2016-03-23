@@ -1,12 +1,35 @@
+<link rel='import' href='../../bower_components/polymer/polymer.html'>
+
+<link rel='import' href='../mri/mri-contact.html'>
+<link rel='import' href='../meg/meg-contact.html'>
+<link rel='import' href='../nirs/nirs-contact.html'>
+<link rel='import' href='../software/software-contact.html'>
+
 <dom-module id="fnndsc-contact">
   <template>
     <style>
       :host {
         display: block;
       }
+
+      .big {
+        font-size: 32px;
+        padding: 8px 16px 16px;
+        color: var(--google-grey-700);
+      }
     </style>
 
-    Welcome to fnndsc contact page
+    <div class='big'>MRI Group</div>
+    <mri-contact main></mri-contact>
+
+    <div class='big'>MEG Group</div>
+    <meg-contact main></meg-contact>
+
+    <div class='big'>NIRS Group</div>
+    <nirs-contact main></nirs-contact>
+
+    <div class='big'>Software Group</div>
+    <software-contact main></software-contact>
   </template>
 
   <script>

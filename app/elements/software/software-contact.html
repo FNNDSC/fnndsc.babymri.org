@@ -1,9 +1,8 @@
 <link rel='import' href='../../bower_components/polymer/polymer.html'>
-<link rel='import' href='../../bower_components/google-map/google-map.html'>
-
 
 <link rel='import' href='../contact/contact-behavior.html'>
 <link rel="import" href="../contact/contact-styles.html">
+<link rel="import" href="../contact/contact-member.html">
 
 <dom-module id="software-contact">
   <template>
@@ -14,7 +13,47 @@
       }
     </style>
 
-    <google-map latitude="37.77493" longitude="-122.41942"></google-map>
+    <div class="container">
+      <template is="dom-if" if="{{main}}">
+        <contact-member
+          member='{
+            "title"     : "Autumn Street Office",
+            "firstname" : "Heather",
+            "middlename": "",
+            "lastname"  : "Leosz",
+            "email"     : "iamthe@email.address",
+            "phone"     : "(857) 218-5111",
+            "fax"       : "(617) 730-4671",
+            "laboratory" : "Fetal-Neonatal Neuroimaging & Developmental Science Center",
+            "position"  : "Senior Administrative Associate",
+            "address"   : "1 Autumn Street, 6th Floor",
+           "city"      : "Boston, MA 02215",
+             "country"   : "United States",
+            "latitude"  : "42.33981",
+            "longitude" : "-71.10976"}'>
+        </contact-member>
+      </template>
+
+      <template is="dom-if" if="{{hospital}}">
+        <contact-member
+          member='{
+            "title"      : "Main Hospital",
+            "firstname"  : "Heather",
+            "middlename" : "",
+            "lastname"   : "Leosz",
+            "email"     : "iamthe@email.address",
+            "phone"     : "(857) 218-5111",
+            "fax"       : "(617) 730-4671",
+            "laboratory" : "Fetal-Neonatal Neuroimaging & Developmental Science Center",
+            "position"   : "Senior Administrative Associate",
+            "address"    : "300 Longwood Avenue",
+            "city"       : "Boston, MA 02215",
+            "country"    : "United States",
+            "latitude"   : "42.337212",
+            "longitude"  : "-71.1061415"}'>
+        </contact-member>
+      </template>
+    </div>
 
   </template>
 
