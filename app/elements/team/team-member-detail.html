@@ -4,6 +4,7 @@
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
 <link rel="import" href="../../bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
 
@@ -28,7 +29,17 @@
 
     </style>
 
-    <paper-card heading="[[member.firstname]] [[member.middlename]] [[member.lastname]]">
+    <paper-card>
+      <div class='center colored'>
+        <div class='border-wrap'>
+          <iron-image src=[[member.picture]] sizing="cover"></iron-image>
+        </div>
+        <div class="check">
+                  <paper-fab icon="check" class="check" on-tap="handleTap"></paper-fab>
+
+        </div>
+      </div>
+
       <div class="card-content">
 
         <!-- FROM https://github.com/robdodson/contacts-app -->
@@ -123,12 +134,6 @@
               <div class="double-line-2">Publications</div>
             </div>
           </a>
-      </div>
-
-      <div class="card-actions">
-        <div>
-          <paper-fab icon="check" title="done" on-tap="handleTap" style="float:right; margin:10px"></paper-fab>
-        </div>
       </div>
     </paper-card>
 
