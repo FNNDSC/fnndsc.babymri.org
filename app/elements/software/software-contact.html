@@ -1,12 +1,21 @@
+<link rel='import' href='../../bower_components/polymer/polymer.html'>
+<link rel='import' href='../../bower_components/google-map/google-map.html'>
+
+
+<link rel='import' href='../contact/contact-behavior.html'>
+<link rel="import" href="../contact/contact-styles.html">
+
 <dom-module id="software-contact">
   <template>
+    <style include="contact-styles"></style>
     <style>
       :host {
         display: block;
       }
     </style>
 
-    Welcome to software contact page
+    <google-map latitude="37.77493" longitude="-122.41942"></google-map>
+
   </template>
 
   <script>
@@ -14,7 +23,8 @@
       'use strict';
 
       Polymer({
-        is: 'software-contact'
+        is: 'software-contact',
+        behaviors: [ContactBehavior]
       });
     })();
   </script>

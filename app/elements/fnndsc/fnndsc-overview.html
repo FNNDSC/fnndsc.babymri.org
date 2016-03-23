@@ -1,8 +1,8 @@
 <link rel='import' href='../../bower_components/polymer/polymer.html'>
 <link rel="import" href="../../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
-
 <link rel='import' href='../../bower_components/parallax-container/parallax-container.html'>
 
+<link rel='import' href='../overview/overview-behavior.html'>
 <link rel="import" href="../fnndsc/fnndsc-overview-styles.html">
 
 <dom-module id="fnndsc-overview">
@@ -14,7 +14,7 @@
       }
     </style>
 
-    <parallax-container>
+    <parallax-container id="parallaxContainer" on-scroll="handleScroll">
 
       <!-- WELCOME -->
       <parallax-group id="group1" z=2>
@@ -88,7 +88,8 @@
       'use strict';
 
       Polymer({
-        is: 'fnndsc-overview'
+        is: 'fnndsc-overview',
+        behaviors: [OverviewBehavior]
       });
     })();
   </script>

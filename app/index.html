@@ -244,6 +244,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
+            <!-- Common Pages -->
+            <section data-route="team-member-detail">
+              <div class="focus-target" tabindex="-1"></div>
+              <team-member-detail member={{member}}></team-member-detail>
+            </section>
+
 
             <!-- FNNDSC Pages -->
             <section data-route="fnndsc-contact">
