@@ -1,12 +1,130 @@
+<link rel='import' href='../../bower_components/polymer/polymer.html'>
+<link rel="import" href="../../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+<link rel='import' href='../../bower_components/parallax-container/parallax-container.html'>
+
+<link rel='import' href='../overview/overview-behavior.html'>
+<link rel="import" href="../software/software-overview-styles.html">
+
 <dom-module id="software-overview">
   <template>
+    <style include="software-overview-styles"></style>
     <style>
       :host {
         display: block;
       }
     </style>
 
-    Welcome to software overview page
+    <parallax-container id="parallaxContainer" on-scroll="handleScroll">
+
+      <!-- WELCOME -->
+      <parallax-group id="sw-group1" z=2>
+        <parallax-layer>
+          <div class="slide" style="color:white">
+            <img width="66%" src="../../images/brain_gears.svg" alt="FNNDSC">
+            <div>
+             <h1 >A core focus of the FNNDSC is on software development -- from basic algorithms that analyze raw medical data and tease out valuable information to powerful and intuitive web-based systems that manage medical data and provide for powerful visualization and collaboration techniques.</h1>
+            </div>
+          </div>
+        </parallax-layer>
+        <parallax-layer layer="-1">
+          <div class="slide">
+          </div>
+        </parallax-layer>
+      </parallax-group>
+
+      <!-- Mutidisciplinary team -->
+      <parallax-group id="sw-group2" z=3>
+        <parallax-layer>
+          <div class="slide" style="color:white;">
+                  <div id="level">
+          		<div id="content">
+          			<div id="gears">
+          				<div id="gears-static"></div>
+          				<div id="gear-system-1">
+          					<div class="shadow" id="shadow15"></div>
+          					<div id="gear15"></div>
+          					<div class="shadow" id="shadow14"></div>
+          					<div id="gear14"></div>
+          					<div class="shadow" id="shadow13"></div>
+          					<div id="gear13"></div>
+          				</div>
+          				<div id="gear-system-2">
+          					<div class="shadow" id="shadow10"></div>
+          					<div id="gear10"></div>
+          					<div class="shadow" id="shadow3"></div>
+          					<div id="gear3"></div>
+          				</div>
+          				<div id="gear-system-3">
+          					<div class="shadow" id="shadow9"></div>
+          					<div id="gear9"></div>
+          					<div class="shadow" id="shadow7"></div>
+          					<div id="gear7"></div>
+          				</div>
+          				<div id="gear-system-4">
+          					<div class="shadow" id="shadow6"></div>
+          					<div id="gear6"></div>
+          					<div id="gear4"></div>
+          				</div>
+          				<div id="gear-system-5">
+          					<div class="shadow" id="shadow12"></div>
+          					<div id="gear12"></div>
+          					<div class="shadow" id="shadow11"></div>
+          					<div id="gear11"></div>
+          					<div class="shadow" id="shadow8"></div>
+          					<div id="gear8"></div>
+          				</div>
+          				<div class="shadow" id="shadow1"></div>
+          				<div id="gear1"></div>
+          				<div id="gear-system-6">
+          					<div class="shadow" id="shadow5"></div>
+          					<div id="gear5"></div>
+          					<div id="gear2"></div>
+          				</div>
+          				<div class="shadow" id="shadowweight"></div>
+          				<div id="chain-circle"></div>
+          				<div id="chain"></div>
+          				<div id="weight"></div>
+          			</div>
+          		</div>
+          	</div>
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=1>
+          <div class="slide">
+            <!-- Foreground Layer -->
+          </div>
+        </parallax-layer>
+      </parallax-group>
+
+      <!-- Push boundaries -->
+      <parallax-group id="sw-group3" z=1 style="color:white;">
+        <parallax-layer>
+          <div class="slide">
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=-2>
+          <div class="slide">
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=-1>
+          <div class="slide">
+          </div>
+        </parallax-layer>
+      </parallax-group>
+
+      <!-- Improve Healthcare -->
+      <parallax-group id="sw-group4" z=2>
+        <parallax-layer>
+          <div class="slide">
+          </div>
+
+          <div class="footer">
+            Copyright: FNNDSC 2016
+          </div>
+        </parallax-layer>
+      </parallax-group>
+
+    </parallax-container>
   </template>
 
   <script>
@@ -14,7 +132,8 @@
       'use strict';
 
       Polymer({
-        is: 'software-overview'
+        is: 'software-overview',
+        behaviors: [OverviewBehavior]
       });
     })();
   </script>
