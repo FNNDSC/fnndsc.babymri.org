@@ -4,10 +4,12 @@
 
 <link rel='import' href='../overview/overview-behavior.html'>
 <link rel="import" href="../software/software-overview-styles.html">
+<link rel="import" href="../software/gear-styles.html">
 
 <dom-module id="software-overview">
   <template>
     <style include="software-overview-styles"></style>
+    <style include="gear-styles"></style>
     <style>
       :host {
         display: block;
@@ -17,9 +19,9 @@
     <parallax-container id="parallaxContainer" on-scroll="handleScroll">
 
       <!-- WELCOME -->
-      <parallax-group id="sw-group1" z=2>
+      <parallax-group id="sw-group1" z=2  style="color:white">
         <parallax-layer>
-          <div class="slide" style="color:white">
+          <div class="slide">
             <img width="66%" src="../../images/brain_gears.svg" alt="FNNDSC">
             <div>
              <h1 >A core focus of the FNNDSC is on software development -- from basic algorithms that analyze raw medical data and tease out valuable information to powerful and intuitive web-based systems that manage medical data and provide for powerful visualization and collaboration techniques.</h1>
@@ -33,9 +35,9 @@
       </parallax-group>
 
       <!-- Mutidisciplinary team -->
-      <parallax-group id="sw-group2" z=3>
+      <parallax-group id="sw-group2" z=3  style="color:white">
         <parallax-layer>
-          <div class="slide" style="color:white;">
+          <div class="slide">
                   <div id="level">
           		<div id="content">
           			<div id="gears">
