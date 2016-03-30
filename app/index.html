@@ -59,7 +59,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style is="custom-style" include="shared-styles"></style>
 </head>
 
-<body unresolved style="overflow:hidden;">
+<body unresolved>
   <!-- build:remove -->
   <span id="browser-sync-binding"></span>
   <!-- endbuild -->
@@ -217,7 +217,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-scroll-header-panel>
 
       <!-- Main Area -->
-      <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
+      <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header style="overflow-y: hidden;">
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar" class="tall">
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
@@ -360,7 +360,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <div class="focus-target" tabindex="-1"></div>
               <software-contact main hospital></software-contact>
             </section>
-            <section data-route="software-overview">
+            <section data-route="software-overview" class="parallax-section">
               <div class="focus-target" tabindex="-1"></div>
               <software-overview></software-overview>
             </section>
