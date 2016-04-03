@@ -6,19 +6,48 @@
       }
     </style>
 
-    <h1>Software Projects</h1>
+    <paper-card heading="Software Projects" image="../../images/binary-code.jpg">
+            <div class="card-content">
 
-    <p>
-            At the FNNDSC, we are strong proponents of opensource concepts as applied to scientific software. All of our software work is available on github:
-    </p>
+                    <p>
+                            At the FNNDSC, we are strong proponents of opensource concepts as applied to scientific software. All of our software work is available on github:
+                    </p>
 
-    <ul>
-            <li>
-                    <a href="https://github.com/FNNDSC">https://github.com/FNNDSC</a>
-            </li>
-    </ul>
+                    <ul>
+                            <li>
+                                    <a href="https://github.com/FNNDSC">https://github.com/FNNDSC</a>
+                            </li>
+                    </ul>
 
-    <h2>Main Software Projects</h2>
+            </div>
+
+    </paper-card>
+
+    <br/>
+
+    <style is="custom-style">
+      paper-card.rate { @apply(--layout-horizontal); }
+      .rate-image {
+        width: 777px;
+        height: 200px;
+        background: url('../../images/BespokeSoftwareCode.jpg');
+        background-size: cover;
+      }
+      .rate-content {
+        @apply(--layout-flex);
+        float: left;
+      }
+      .rate-header { @apply(--paper-font-headline); }
+      .rate-name { color: var(--paper-grey-600); margin: 10px 0; }
+      paper-icon-button.rate-icon {
+        --iron-icon-fill-color: white;
+        --iron-icon-stroke-color: var(--paper-grey-600);
+      }
+    </style>
+    <paper-card class="rate">
+            <div class="rate-content">
+            <div class="card-content">
+                    <div class="rate-header">Main Software Projects</div>
 
     <p>
             Several projects are core to the FNNDSC development efforts. These include:
@@ -29,10 +58,10 @@
                     <b>ChRIS</b>
                     <ul>
                             <li>
-                                    ChRIS reloaded
+                                    ChRIS Reloaded
                             </li>
                             <li>
-                                    ChRIS Ulton
+                                    ChRIS Ultron
                             </li>
                     </ul>
             </li>
@@ -40,24 +69,34 @@
             <li>
                     <b>Javascript based medical image visualization</b>
                     <ul>
+                            <li>xtk</li>
                             <li>vjs</li>
                             <li>ami</li>
-                            <li>xtk</li>
                             <li>slicedrop</li>
                             <li>medview</li>
                             <li>mi2b2 viewer</li>
                     </ul>
             </li>
     </ul>
+    </div>
+    </div>
+    <div class="rate-image"></div>
+    </paper-card>
 
-    <h2>ChRIS</h2>
-
-    <img src="/images/ChRIS-overview.png" style="width:40%;float:right;">
+    <paper-card heading="ChRIS">
+            <div class="card-content">
 
     <p>
             ChRIS (ChRIS Research Integration System), is a novel web-based data storage and data processing workflow manager that provides strict data security while also facilitating secure, realtime interactive collaboration over the Internet and internal Intranets. Although ChRIS can manage any datatype, it is uniquely suited to medical image data, providing the ability to seamlessly collect data from typical sources found in hospitals (such as Picture Archive and Communications Systems, PACS), import from CDs/DVDs, users desktops, etc. ChRIS not only manages data collection and organization, but it also provides a large (and expanding) library of pipelines to analyze imported data. This library is easily extensible via a simple plugin mechanism, and ChRIS also provides the ability to directly interact with compute clusters for data analysis. Moreover, a wide variety of 2D, 3D, and 4D medical image data formats are natively supported and can be directly visualized and manipulated within the browser.
     </p>
 
+    <h3>ChRIS Reloaded</h3>
+
+    <img src="/images/ChRIS-overview.png" style="width:40%;float:right;">
+
+    <p>
+            <a href="https://github.com/FNNDSC/chrisreloaded">ChRIS reloaded</a> is the first production version of the ChRIS system. It is constructed using a mix of technologies: php, javascript, css, and MySQL, and is currently in use at several sites.
+    </p>
 
     <p>
     Using a modern Web 2.0 inspired design -- see Figure -- the system focuses on simplicity -- both in ease of use and in accessibility. End users will immediately recognize a facebook/twitter/gmail inspired interface, with a central news-type “feed” containing a persistent record of activity in the system, and plugins that can process “feeds”. Plugins are the mechanism by which users create feeds, and plugins are available for importing data, performing various analytical processing on data, and also providing detailed visualization of data and results -- all within the single-context approach of the ChRIS user interface. Actual processing of data is not usually performed by ChRIS, but by bundled applications that are connected to the feeds through a plugin mechanism. ChRIS also provides the ability to natively integrate to High Performance Computing (HPC) resources, allowing users to process data on powerful clusters without needing to manage data and results or worry about the transfer and management of data between local computers and the remote HPC.
@@ -75,9 +114,56 @@
     In most cases, the plugin will spawn a job out on an appropriately configured cluster resource. In the absence of a cluser, or for certain plugins (like filesystem access, search, and others) ChRIS itself will run the job on the machine it is deployed on (i.e. the web server).
     </p>
 
+    <h3>ChRIS Ultron</h3>
 
-    <h2>Javascript based medical image visualization</h2>
+    <p>
+            ChRIS Ultron is the successor to ChRIS reloaded, currently under development. ChRIS Ultron is a complete re-design of the ChRIS backend, using a powerful REST API approach to simplify the system interaction and allow also for multiple front-end clients to interact with ChRIS.
+    </p>
+    </div>
+    </paper-card>
 
+    <paper-card heading="Javascript based medical image visualization">
+            <div class="card-content">
+
+    <h3>xtk</h3>
+
+    <p>
+            The X toolkit (<a href="http://goxtk.com">xtk</a>) is a popular toolkit allowing for easy, lightweight, and fast browser-based visualization of medical image data and construction of web pages built around interacting with medical image data.
+    </p>
+
+    <h3>vjs</h3>
+
+    <p>
+            The Visualization toolkit (<a href="http://fnndsc.github.io/vjs">vjs<a>) is a successor to xtk currently under development. It is built on the popular threejs library to leverage many of powerful features of threejs.
+    </p>
+
+    <h3>ami</h3>
+
+    <p>
+            A lightweight component of vjs, the Ami Medical Image toolkit (<a href="https://github.com/FNNDSC/ami">ami</a>) is built to provde xtk-like simplicity to vjs.
+    </p>
+
+
+    <h3>slicedrop</h3>
+
+    <p>
+            Built to allow for drag-n-drop visualization from a web browser, <a href="http://slicedrop.org">Slice:Drop</a>, is an example of a site constructed off xtk allowing the visualization of almost any medical image type directly in a browser.
+    </p>
+
+    <h3>medview</h3>
+
+    <p>
+            A successor to Slice:Drop, <a href="http://fnndsc.github.io/medview>">medview</a> uses new underlying libraries that are geared to simplifying the building of image viewers, currently under active development.
+    </p>
+
+    <h3>mi2b2 viewer</h3>
+
+    <p>
+            Built as a companion to the Medical Imaging Informatics Bench to Bedside (mi2b2) effort, the <a href="http://mi2b2.fnndsc.org">mi2b2 viewer</a> demonstrates the integration of local data with remote server-side data. In this case, server side data is shared without using any backend.
+    </p>
+
+    </div>
+    </paper-card>
 
 
   </template>
