@@ -37,9 +37,9 @@ body {
   }
 
   paper-toolbar#mainToolbar{
-    background-image: url("../images/abstract_neurons_darkBlue.jpg");
+    /*background-image: url("../images/background_dark_lights.jpg");*/
     /*background-image: url("https://googledrive.com/host/0B8u7h0aKnydhMENyWHZNbVJTTkE/fetal_by_jfkpaint.jpg");*/
-    /*background-image: url(../images/blueprint.png), linear-gradient(to bottom, #263238, #78909C);*/
+    background-image: url(../images/blueprint.png), linear-gradient(to bottom, #263238, #78909C);
   }
 
   .app-name{
