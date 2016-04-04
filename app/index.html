@@ -12,6 +12,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <html lang="en">
 
 <head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
   <script>'https:'!==window.location.protocol&&(window.location.protocol='https')</script>
   <meta charset="utf-8">
   <meta name="description" content="">
@@ -57,6 +59,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- For shared styles, shared-styles.html import in elements.html -->
   <style is="custom-style" include="shared-styles"></style>
+
+  <style is="custom-style">
+    #paperDrawerPanel {
+    --paper-drawer-panel-left-drawer-container: {
+      background-color: transparent;
+    };
+  }
+    </style>
+
 </head>
 
 <body unresolved>
@@ -128,22 +139,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-item>
             <paper-menu class="menu-content">
               <a data-route="mri-overview" href="{{baseUrl}}mri-overview" on-click="onDataRouteClick">
-                <paper-item>Overview</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:home"></iron-icon>
+                              <span>Overview</span>
+                      </paper-item>
               </a>
               <a data-route="mri-labs" href="{{baseUrl}}mri-labs" on-click="onDataRouteClick">
-                <paper-item>Laboratories</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:dashboard"></iron-icon>
+                              <span>Laboratories</span>
+                      </paper-item>
               </a>
               <a data-route="mri-projects" href="{{baseUrl}}mri-projects" on-click="onDataRouteClick">
-                <paper-item>Current Projects</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:apps"></iron-icon>
+                              <span>Current Projects</span>
+                      </paper-item>
               </a>
               <a data-route="mri-research" href="{{baseUrl}}mri-research" on-click="onDataRouteClick">
-                <paper-item>Research and Publications</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:toc"></iron-icon>
+                              <span>Research and Publications</span>
+                      </paper-item>
               </a>
               <a data-route="mri-team" href="{{baseUrl}}mri-team" on-click="onDataRouteClick">
-                <paper-item>Team</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:perm-identity"></iron-icon>
+                              <span>Team</span>
+                      </paper-item>
               </a>
               <a data-route="mri-contact" href="{{baseUrl}}mri-contact" on-click="onDataRouteClick">
-                <paper-item>Contact</paper-item>
+                      <paper-item>
+                              <iron-icon icon="communication:contacts"></iron-icon>
+                              <span>Contact</span>
+                      </paper-item>
               </a>
             </paper-menu>
           </paper-submenu>
@@ -156,22 +185,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-item>
             <paper-menu class="menu-content sublist">
               <a data-route="meg-overview" href="{{baseUrl}}meg-overview" on-click="onDataRouteClick">
-                <paper-item>Overview</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:home"></iron-icon>
+                              <span>Overview</span>
+                      </paper-item>
               </a>
               <a data-route="meg-labs" href="{{baseUrl}}meg-labs" on-click="onDataRouteClick">
-                <paper-item>Laboratories</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:dashboard"></iron-icon>
+                              <span>Laboratories</span>
+                      </paper-item>
               </a>
               <a data-route="meg-projects" href="{{baseUrl}}meg-projects" on-click="onDataRouteClick">
-                <paper-item>Current Projects</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:apps"></iron-icon>
+                              <span>Current Projects</span>
+                      </paper-item>
               </a>
               <a data-route="meg-research" href="{{baseUrl}}meg-research" on-click="onDataRouteClick">
-                <paper-item>Research and Publications</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:toc"></iron-icon>
+                              <span>Research and Publications</span>
+                      </paper-item>
               </a>
               <a data-route="meg-team" href="{{baseUrl}}meg-team" on-click="onDataRouteClick">
-                <paper-item>Team</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:perm-identity"></iron-icon>
+                              <span>Team</span>
+                      </paper-item>
               </a>
               <a data-route="meg-contact" href="{{baseUrl}}meg-contact" on-click="onDataRouteClick">
-                <paper-item>Contact</paper-item>
+                      <paper-item>
+                              <iron-icon icon="communication:contacts"></iron-icon>
+                              <span>Contact</span>
+                      </paper-item>
               </a>
             </paper-menu>
           </paper-submenu>
@@ -184,22 +231,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-item>
             <paper-menu class="menu-content sublist">
               <a data-route="nirs-overview" href="{{baseUrl}}nirs-overview" on-click="onDataRouteClick">
-                <paper-item>Overview</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:home"></iron-icon>
+                              <span>Overview</span>
+                      </paper-item>
               </a>
               <a data-route="nirs-labs" href="{{baseUrl}}nirs-labs" on-click="onDataRouteClick">
-                <paper-item>Laboratories</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:dashboard"></iron-icon>
+                              <span>Laboratories</span>
+                      </paper-item>
               </a>
               <a data-route="nirs-projects" href="{{baseUrl}}nirs-projects" on-click="onDataRouteClick">
-                <paper-item>Current Projects</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:apps"></iron-icon>
+                              <span>Current Projects</span>
+                      </paper-item>
               </a>
               <a data-route="nirs-research" href="{{baseUrl}}nirs-research" on-click="onDataRouteClick">
-                <paper-item>Research and Publications</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:toc"></iron-icon>
+                              <span>Research and Publications</span>
+                      </paper-item>
               </a>
               <a data-route="nirs-team" href="{{baseUrl}}nirs-team" on-click="onDataRouteClick">
-                <paper-item>Team</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:perm-identity"></iron-icon>
+                              <span>Team</span>
+                      </paper-item>
               </a>
               <a data-route="nirs-contact" href="{{baseUrl}}nirs-contact" on-click="onDataRouteClick">
-                <paper-item>Contact</paper-item>
+                      <paper-item>
+                              <iron-icon icon="communication:contacts"></iron-icon>
+                              <span>Contact</span>
+                      </paper-item>
               </a>
             </paper-menu>
           </paper-submenu>
@@ -212,19 +277,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-item>
             <paper-menu class="menu-content sublist">
               <a data-route="software-overview" href="{{baseUrl}}software-overview" on-click="onDataRouteClick">
-                <paper-item>Overview</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:home"></iron-icon>
+                              <span>Overview</span>
+                      </paper-item>
               </a>
               <a data-route="software-projects" href="{{baseUrl}}software-projects" on-click="onDataRouteClick">
-                <paper-item>Current Projects</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:apps"></iron-icon>
+                              <span>Current Projects</span>
+                      </paper-item>
               </a>
               <a data-route="software-research" href="{{baseUrl}}software-research" on-click="onDataRouteClick">
-                <paper-item>Research and Publications</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:toc"></iron-icon>
+                              <span>Research and Publications</span>
+                      </paper-item>
               </a>
               <a data-route="software-team" href="{{baseUrl}}software-team" on-click="onDataRouteClick">
-                <paper-item>Team</paper-item>
+                      <paper-item>
+                              <iron-icon icon="icons:perm-identity"></iron-icon>
+                              <span>Team</span>
+                      </paper-item>
               </a>
               <a data-route="software-contact" href="{{baseUrl}}software-contact" on-click="onDataRouteClick">
-                <paper-item>Contact</paper-item>
+                      <paper-item>
+                              <iron-icon icon="communication:contacts"></iron-icon>
+                              <span>Contact</span>
+                      </paper-item>
               </a>
             </paper-menu>
           </paper-submenu>
