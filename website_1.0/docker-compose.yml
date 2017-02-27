@@ -1,0 +1,13 @@
+web:
+  #image: fnndsc/chris_dev_frontend
+  build: .
+  ports:
+    - "80:80"
+    - "2222:22"
+    - "443:443"
+    - "5000:5000"
+  volumes:
+     - .:/src/fnndsc.babymri.org
+  labels:
+    name: "FNNDSC_website"
+    role: "FNNDSC Website"
