@@ -1,0 +1,10 @@
+web:
+  #build: .
+  image: fnndsc/fnndsc.babymri.org
+  ports:
+    - "8060:8080"
+  volumes:
+   - .:/src/website
+  labels:
+    name: "FNNDSC Web App"
+    role: "FNNDSC Web App development server"
