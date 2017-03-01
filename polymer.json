@@ -2,10 +2,14 @@
   "entrypoint": "index.html",
   "shell": "src/my-app.html",
   "fragments": [
-    "src/my-view1.html",
-    "src/my-view2.html",
-    "src/my-view3.html",
-    "src/my-view404.html"
+    "src/fnndsc-element/fnndsc-element.html",
+    "src/fnndsc-element/fnndsc-error404.html",
+    "src/fnndsc-element/fnndsc-member.html",
+    "src/fnndsc-element/fnndsc-opportunities.html",
+    "src/fnndsc-element/fnndsc-team.html",
+    "src/fnndsc-element/fnndsc-overview.html",
+    "src/fnndsc-element/fnndsc-news.html",
+    "src/mri-element/mri-element.html"
   ],
   "sourceGlobs": [
     "src/**/*",

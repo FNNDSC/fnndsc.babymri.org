@@ -14,7 +14,7 @@ var icons = [
     size: '384x384'
   },
     {
-    name: 'chrome-touch-icon-192x192.png',
+    name: 'icon-192x192.png',
     size: '192x192'
   },
   {

@@ -1,0 +1,48 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../data/members-behavior.html">
+<link rel="import" href="../common-element/member-card-element.html">
+
+<dom-module id="fnndsc-team">
+  <template>
+    <style>
+      :host {
+        display: block;
+
+        padding: 10px 20px;
+      }
+    </style>
+
+    Hi Team!
+    <!-- template repeat -->
+    <template is="dom-repeat" items="[[members]]" as="member">
+        <member-card-element member=[[member]]></member-card-element>
+    </template>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'fnndsc-team',
+      behaviors: [MembersBehavior],
+      properties: {
+          members: {
+            type: Array,
+        },
+      },
+      ready: function() {
+        this.members = this.__members();
+      },
+    });
+  </script>
+</dom-module>

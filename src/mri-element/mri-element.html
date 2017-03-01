@@ -1,0 +1,77 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
+
+<link rel="import" href="../common-element/section-behavior.html">
+
+<dom-module id="mri-element">
+  <template>
+    <style>
+      :host {
+        --app-primary-color: #4285f4;
+        --app-secondary-color: black;
+
+        display: block;
+      }
+
+      iron-pages {
+        padding: 48px 62px;
+      }
+    </style>
+
+    <app-route
+        route="[[route]]"
+        pattern="/:page"
+        data="{{routeData}}",
+        tail="{{subroute}}">
+    </app-route>
+
+    <app-route
+        route="[[subroute]]"
+        pattern="/:uid"
+        data="{{subrouteData}}">
+    </app-route>
+
+       Hi MRI [[page]]
+
+    <iron-pages fullbleed
+            selected="[[page]]"
+            attr-for-selected="name"
+            fallback-selection="error404"
+            role="main">
+            <mri-overview name="overview"></mri-overview>
+            <mri-news name="news"></mri-news>
+            <mri-contact name="contact"></mri-contact>
+            <mri-team name="team"></mri-team>
+            <mri-member name="member" member="[[member]]"></mri-member>
+            <mri-opportunities name="opportunities"></mri-opportunities>
+            <mri-error404 name="error404"></mri-error404>
+        </iron-pages>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'mri-element',
+      behaviors: [SectionBehavior],
+      properties: {
+        section: {
+          type: String,
+          value: 'mri',
+        },
+      },
+    });
+  </script>
+</dom-module>

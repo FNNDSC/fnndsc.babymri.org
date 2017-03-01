@@ -17,12 +17,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 <link rel="import" href="../bower_components/app-route/app-location.html">
 <link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../bower_components/paper-menu/paper-submenu.html">
 <link rel="import" href="my-icons.html">
 
-<dom-module id="my-app">
+<dom-module id="fnndsc-app">
   <template>
     <style>
       :host {
@@ -56,6 +60,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: black;
         font-weight: bold;
       }
+
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -68,12 +73,63 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
       <app-drawer id="drawer">
-        <app-toolbar>Menu</app-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="/view1">View One</a>
-          <a name="view2" href="/view2">View Two</a>
-          <a name="view3" href="/view3">View Three</a>
-        </iron-selector>
+        <div style="height: 100%; overflow: auto;">
+          <app-toolbar>Menu</app-toolbar>
+
+          <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+            <paper-submenu>
+              <paper-item class="menu-trigger">
+                <iron-icon icon="icons:label-outline"></iron-icon>
+                <span>FNNDSC</span>
+              </paper-item>
+              <paper-menu class="menu-content">
+                <a data-route="fnndsc/overview" href$="{{prefixUrl}}/fnndsc/overview">
+                  <paper-item>Overview</paper-item>
+                </a>
+                <a data-route="fnndsc/news" href$="{{prefixUrl}}/fnndsc/news">
+                  <paper-item>News</paper-item>
+                </a>
+                <a data-route="fnndsc/opportunities" href$="{{prefixUrl}}/fnndsc/opportunities">
+                  <paper-item>Opportunities</paper-item>
+                </a>
+                <a data-route="fnndsc/team" href$="{{prefixUrl}}/fnndsc/team">
+                  <paper-item>Team</paper-item>
+                </a>
+                <a data-route="fnndsc/contact" href$="{{prefixUrl}}/fnndsc/contact">
+                  <paper-item>Contact</paper-item>
+                </a>
+              </paper-menu>
+            </paper-submenu>
+
+            <paper-submenu>
+              <paper-item class="menu-trigger">
+                <iron-icon icon="icons:donut-large"></iron-icon>
+                <span>MRI</span>
+              </paper-item>
+              <paper-menu class="menu-content">
+                <a data-route="mri/overview" href$="{{prefixUrl}}/mri/overview">
+                  <paper-item>Overview</paper-item>
+                </a>
+                <a data-route="mri/labs" href$="{{prefixUrl}}/mri/labs">
+                  <paper-item>Laboratories</paper-item>
+                </a>
+                <a data-route="mri/projects" href$="{{prefixUrl}}/mri/projects">
+                  <paper-item>Current Projects</paper-item>
+                </a>
+                <a data-route="mri/research" href$="{{prefixUrl}}/mri/research">
+                  <paper-item>Research and Publications</paper-item>
+                </a>
+                <a data-route="mri/team" href$="{{prefixUrl}}/mri/team">
+                  <paper-item>Team</paper-item>
+                </a>
+                <a data-route="mri/contact" href$="{{prefixUrl}}/mri/contact">
+                  <paper-item>Contact</paper-item>
+                </a>
+              </paper-menu>
+            </paper-submenu>
+          </iron-selector>
+
+        </div>
       </app-drawer>
 
       <!-- Main content -->
@@ -82,19 +138,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>My App</div>
+            <div main-title>FNNDSC Web</div>
           </app-toolbar>
         </app-header>
 
         <iron-pages
             selected="[[page]]"
             attr-for-selected="name"
-            fallback-selection="view404"
+            fallback-selection="error404"
             role="main">
-          <my-view1 name="view1"></my-view1>
-          <my-view2 name="view2"></my-view2>
-          <my-view3 name="view3"></my-view3>
-          <my-view404 name="view404"></my-view404>
+          <fnndsc-element name="fnndsc" current-section="[[page]]" route="[[subroute]]"></fnndsc-element>
+          <mri-element name="mri" current-section="[[page]]" route="[[subroute]]"></mri-element>
+          <error404-element name="error404"></error404-element>
         </iron-pages>
       </app-header-layout>
     </app-drawer-layout>
@@ -102,14 +157,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
     Polymer({
-      is: 'my-app',
+      is: 'fnndsc-app',
 
       properties: {
+        prefixUrl: {
+          type: String,
+          value: '',
+        },
         page: {
           type: String,
           reflectToAttribute: true,
           observer: '_pageChanged',
         },
+        routeData: Object,
+        subroute: Object,
       },
 
       observers: [
@@ -117,7 +178,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       ],
 
       _routePageChanged: function(page) {
-        this.page = page || 'view1';
+        this.page = page || 'fnndsc';
 
         if (!this.$.drawer.persistent) {
           this.$.drawer.close();
@@ -126,12 +187,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _pageChanged: function(page) {
         // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
+        var resolvedPageUrl =
+          this.resolveUrl(page + '-element/' + page + '-element.html');
         this.importHref(resolvedPageUrl, null, this._showPage404, true);
       },
 
       _showPage404: function() {
-        this.page = 'view404';
+        this.page = 'error404';
       },
     });
   </script>

@@ -8,30 +8,30 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="shared-styles.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<dom-module id="my-view3">
+<link rel="import" href="../common-element/member-element.html">
+
+<!-- import common member layout-->
+
+<dom-module id="fnndsc-member">
   <template>
-    <style include="shared-styles">
+    <style>
       :host {
         display: block;
-
-        padding: 10px;
       }
     </style>
 
-    <div class="card">
-      <div class="circle">3</div>
-      <h1>View Three</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-    </div>
+    <member-element member="[[member]]"></member-element>
+
   </template>
 
   <script>
     Polymer({
-      is: 'my-view3',
+      is: 'fnndsc-member',
+      properties: {
+        member: Object,
+      },
     });
   </script>
 </dom-module>

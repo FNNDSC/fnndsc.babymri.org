@@ -1,0 +1,61 @@
+<link rel="import" href="../data/members-behavior.html">
+
+<script>
+/** @polymerBehavior SectionBehavior */
+SectionBehavior = {
+  properties: {
+    currentSection: String,
+    section: String,
+    page: {
+        type: String,
+        observer: '__pageChanged',
+    },
+    route: Object,
+    routeData: Object,
+    subroute: Object,
+    subrouteData: Object,
+    member: Object,
+  },
+
+  observers: [
+    '__routePageChanged(routeData.page)',
+    '__subrouteUIDChanged(subrouteData.uid)',
+  ],
+
+  __filterItemByID: function(targetID, item) {
+    return targetID === item.id;
+  },
+
+  __subrouteUIDChanged: function(uid) {
+    // find member by id and update if necessary
+    if (!this.member || this.member.id !== uid) {
+        var members = this.__members();
+        members = members.filter(this.__filterItemByID.bind(this, uid));
+        if (members && members.length === 1) {
+          this.set('member', members[0]);
+        } else if (this.page === 'member') {
+          // console.error(
+          //  members.length + ' members with id ' + uid + 'found.');
+          this.page = 'error404';
+        }
+    }
+  },
+
+  __routePageChanged: function(page, currentSection) {
+      if (this.section !== this.currentSection) return;
+      this.page = page || 'overview';
+  },
+
+  __pageChanged: function(page) {
+    // Load page import on demand. Show 404 page if fails
+    var resolvedPageUrl = this.resolveUrl(this.section + '-' + page + '.html');
+    this.importHref(resolvedPageUrl, null, this.__showPage404, true);
+  },
+
+  __showPage404: function() {
+    this.page = 'error404';
+  },
+};
+
+SectionBehavior = [MembersBehavior, SectionBehavior];
+</script>
