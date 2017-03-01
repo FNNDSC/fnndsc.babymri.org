@@ -12,9 +12,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../data/members-behavior.html">
 <link rel="import" href="../common-element/member-card-element.html">
+<link rel="import" href="../common-element/team-styles.html">
 
 <dom-module id="fnndsc-team">
   <template>
+    <style include="team-styles"></style>
     <style>
       :host {
         display: block;
@@ -24,10 +26,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     Hi Team!
+
+          <div class='big'>Team</div>
+
+      <div class="team container">
     <!-- template repeat -->
     <template is="dom-repeat" items="[[members]]" as="member">
         <member-card-element member=[[member]]></member-card-element>
     </template>
+
+      </div>
 
   </template>
 

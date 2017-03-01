@@ -1,6 +1,6 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/my-app.html",
+  "shell": "src/fnndsc-app.html",
   "fragments": [
     "src/fnndsc-element/fnndsc-element.html",
     "src/fnndsc-element/fnndsc-error404.html",
@@ -9,6 +9,7 @@
     "src/fnndsc-element/fnndsc-team.html",
     "src/fnndsc-element/fnndsc-overview.html",
     "src/fnndsc-element/fnndsc-news.html",
+    "src/fnndsc-element/fnndsc-contact.html",
     "src/mri-element/mri-element.html"
   ],
   "sourceGlobs": [

@@ -1,0 +1,27 @@
+<dom-module id="team-styles">
+  <template>
+    <style>
+      .container{
+        @apply(--layout-horizontal);
+        @apply(--layout-around-justified);
+        @apply(--layout-wrap);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .big {
+        font-size: 22px;
+        padding: 8px 16px 16px;
+        color: var(--google-grey-500);
+      }
+
+      .team team-member ::content .colored {
+        background-color: var(--paper-blue-grey-700);
+      }
+
+      .alumni team-member ::content .colored {
+        background-color: var(--paper-red-700);
+      }
+    </style>
+  </template>
+</dom-module>
