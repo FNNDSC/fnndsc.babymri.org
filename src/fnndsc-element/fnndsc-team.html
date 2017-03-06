@@ -11,38 +11,97 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <link rel="import" href="../data/members-behavior.html">
+<link rel="import" href="../common-element/toc-behavior.html">
 <link rel="import" href="../common-element/member-card-element.html">
-<link rel="import" href="../common-element/team-styles.html">
+
+<link rel="import" href="../common-element/common-styles.html">
 
 <dom-module id="fnndsc-team">
   <template>
-    <style include="team-styles"></style>
+    <style include="common-styles"></style>
     <style>
       :host {
         display: block;
-
-        padding: 10px 20px;
       }
     </style>
 
-    Hi Team!
+    <article>
+      <header class="center">
+        <h1>FNNDSC Team</h1>
+      </header>
 
-          <div class='big'>Team</div>
+      <nav>
+        <div>Contents</div>
+        <ul>
+          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
+          <li><a href="#mri" label="mri" on-tap="__scrollTo">MRI Group</a></li>
+          <li><a href="#meg" label="meg" on-tap="__scrollTo">MEG Group</a></li>
+          <li><a href="#alumni" label="alumni" on-tap="__scrollTo">Alumnis</a></li>
+        </ul>
+      </nav>
 
-      <div class="team container">
-    <!-- template repeat -->
-    <template is="dom-repeat" items="[[members]]" as="member">
-        <member-card-element member=[[member]]></member-card-element>
-    </template>
+      <main>
 
-      </div>
+        <section>
+          <h2 id="about" class="maxflow" class="maxflow">About</h2>
+
+          <div>
+              Maybe some cool content introduciton??
+          </div>
+        </section>
+      
+        <section>
+          <h2 id="mri" class="maxflow" class="maxflow">MRI Group</h2>
+
+          <div class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+              <template is="dom-repeat" items="[[members]]" as="member">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+              <template is="dom-repeat" items="[[members]]" as="member">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="meg" class="maxflow" class="maxflow">MEG Group</h2>
+
+          <div class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+          </div>
+        </section>
+
+
+        <section>
+          <h2 class="maxflow" class="maxflow">Almuni</h2>
+
+          <div id="alumni" class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+          </div>
+        </section>
+        
+      </main>
+
+      <footer class="center">
+        <h4 class="maxflow">Copyright</h4>
+        <p class="maxflow">FNNDSC 2017</p>
+      </footer>
+    
+    </article>
 
   </template>
 
   <script>
     Polymer({
       is: 'fnndsc-team',
-      behaviors: [MembersBehavior],
+      behaviors: [TOCBehavior, MembersBehavior],
       properties: {
           members: {
             type: Array,

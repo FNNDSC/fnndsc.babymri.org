@@ -1,0 +1,9 @@
+<script>
+/** @polymerBehavior TOCBehavior */
+TOCBehavior = {
+  __scrollTo: function(e) {
+    var id = e.target.getAttribute('label');
+    this.fire('scroll', this.$$('#' + id).offsetTop);
+  }
+};
+</script>

@@ -22,6 +22,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-item/paper-icon-item.html">
 <link rel="import" href="../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../bower_components/paper-menu/paper-submenu.html">
 <link rel="import" href="my-icons.html">
@@ -30,15 +31,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <style>
       :host {
-        --app-primary-color: #4285f4;
-        --app-secondary-color: black;
+  
+        /* text */
+        --text-primary-color: #FFFFFF;
+        --primary-text-color: #212121;
+        --secondary-text-color: #757575;
+        --divider-color: #BDBDBD;
+
+        /* colors */
+        --default-primary-color: #607D8B;
+        --light-primary-color: #CFD8DC;
+        --dark-primary-color: #455A64;
+
+        /* accent */
+        --accent-color: #FF4081;
 
         display: block;
       }
 
       app-header {
         color: #fff;
-        background-color: var(--app-primary-color);
+        background-color: var(--default-primary-color);
       }
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
@@ -78,10 +91,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
             <paper-submenu>
-              <paper-item class="menu-trigger">
-                <iron-icon icon="icons:label-outline"></iron-icon>
-                <span>FNNDSC</span>
-              </paper-item>
+              <paper-icon-item class="menu-trigger">
+                <iron-icon icon="icons:label-outline" item-icon></iron-icon>
+                FNNDSC
+              </paper-icon-item>
               <paper-menu class="menu-content">
                 <a data-route="fnndsc/overview" href$="{{prefixUrl}}/fnndsc/overview">
                   <paper-item>Overview</paper-item>
@@ -102,10 +115,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-submenu>
 
             <paper-submenu>
-              <paper-item class="menu-trigger">
-                <iron-icon icon="icons:donut-large"></iron-icon>
-                <span>MRI</span>
-              </paper-item>
+              <paper-icon-item class="menu-trigger">
+                <iron-icon icon="icons:donut-large" item-icon></iron-icon>
+                MRI
+              </paper-icon-item>
               <paper-menu class="menu-content">
                 <a data-route="mri/overview" href$="{{prefixUrl}}/mri/overview">
                   <paper-item>Overview</paper-item>
@@ -135,7 +148,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
 
-        <app-header condenses reveals effects="waterfall">
+        <app-header id="header" condenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
             <div main-title>FNNDSC Web</div>
@@ -146,7 +159,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             selected="[[page]]"
             attr-for-selected="name"
             fallback-selection="error404"
-            role="main">
+            role="main"
+            on-scroll="_scroll">
           <fnndsc-element name="fnndsc" current-section="[[page]]" route="[[subroute]]"></fnndsc-element>
           <mri-element name="mri" current-section="[[page]]" route="[[subroute]]"></mri-element>
           <error404-element name="error404"></error404-element>
@@ -195,6 +209,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _showPage404: function() {
         this.page = 'error404';
       },
+
+      _scroll: function(e){
+        this.$.header.scrollTarget.scrollTop = e.detail;
+      }
     });
   </script>
 </dom-module>

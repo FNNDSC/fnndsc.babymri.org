@@ -10,31 +10,66 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
+<link rel="import" href="../common-element/toc-behavior.html">
 <link rel="import" href="../data/contacts-behavior.html">
 <link rel="import" href="../common-element/contact-element.html">
+<link rel="import" href="../common-element/common-styles.html">
 
 <dom-module id="fnndsc-contact">
   <template>
+    <style include="common-styles"></style>
     <style>
       :host {
         display: block;
-        height: 110vh;
-        padding: 10px 20px;
       }
     </style>
 
-    Hi Contacts!
-    <!-- template repeat -->
-    <template is="dom-repeat" items="[[contacts]]" as="contact">
-        <contact-element contact=[[contact]]></contact-element>
-    </template>
+    <article id="article">
+      <header class="center">
+        <h1>FNNDSC Contact</h1>
+      </header>
+
+      <nav>
+        <div>Contents</div>
+        <ul>
+          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
+          <template is="dom-repeat" items="[[contacts]]" as="contact">
+            <li><a href$="#[[contact.id]]" label$="[[contact.id]]" on-tap="__scrollTo">[[contact.title]]</a></li>
+          </template>
+        </ul>
+      </nav>
+
+
+      <main>
+        <section>
+            <h2 id="about" class="maxflow">About</h2>
+
+            <div>
+                Maybe some cool content introduciton??
+            </div>
+          </section>
+
+        <template is="dom-repeat" items="[[contacts]]" as="contact">
+          <section>
+            <h2 id="[[contact.id]]" class="maxflow" class="maxflow">[[contact.title]]</h2>
+            <contact-element contact=[[contact]]></contact-element>
+          </section>
+        </template>
+      </main>
+      
+      <footer class="center">
+        <h4 class="maxflow">Copyright</h4>
+        <p class="maxflow">FNNDSC 2017</p>
+      </footer>
+
+    </article>
 
   </template>
 
   <script>
     Polymer({
       is: 'fnndsc-contact',
-      behaviors: [ContactsBehavior],
+      behaviors: [TOCBehavior, ContactsBehavior],
       properties: {
         contacts: Object,
       },

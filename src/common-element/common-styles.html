@@ -1,0 +1,112 @@
+<dom-module id="common-styles">
+  <template>
+    <style>
+        
+        /* ARTICLE */
+
+        article {
+            display: flex;
+            flex-direction: column;
+            width: 840px;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            min-height: calc(100vh - 64px);
+        }
+
+        article.flow {
+            width: 100%;
+        }
+
+        /* 840 + 256*/
+        @media (max-width: 1096px) {
+            article {
+                width: 100%;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        /* DEFAULT SEMANTIC MARKUP STYLE */
+        header, main, section, footer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAV */
+        nav {
+          border-left: 5px solid var(--light-primary-color);
+          padding-left: 20px;
+          margin-top: 60px;
+        }
+
+        nav * {
+            text-decoration: none;
+            list-style-type: none;
+        }
+
+        nav * > a{
+            color: var(--dark-primary-color);
+        }
+
+        /* MAIN */
+        main {
+            flex: 1;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 32px;
+            border-top: 1px solid var(--divider-color);
+        }
+
+        /* COMMON */
+        h1 {
+            padding: 16px;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--primary-text-color);
+        }
+        h2 {
+            padding: 16px;
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--secondary-text-color);
+        }
+        h3 {
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--secondary-text-color);
+        }
+        .cards {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .center {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .centerText {
+            text-align: center;
+        }
+
+        .maxflow {
+            max-width: 840px;
+        }
+
+        paper-menu * a {
+            color: var(--dark-primary-color);
+        }
+
+    </style>
+  </template>
+</dom-module>

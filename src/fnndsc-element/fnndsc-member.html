@@ -11,18 +11,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <link rel="import" href="../common-element/member-element.html">
+<link rel="import" href="../common-element/common-styles.html">
 
 <!-- import common member layout-->
 
 <dom-module id="fnndsc-member">
   <template>
+    <style include="common-styles"></style>
     <style>
       :host {
         display: block;
       }
     </style>
 
-    <member-element member="[[member]]"></member-element>
+    <article>
+      <member-element member="[[member]]"></member-element>
+    </article>
 
   </template>
 
