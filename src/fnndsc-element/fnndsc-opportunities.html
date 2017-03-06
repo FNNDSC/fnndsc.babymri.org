@@ -10,23 +10,57 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
+<link rel="import" href="../common-element/toc-behavior.html">
+<link rel="import" href="../common-element/member-card-element.html">
+
+<link rel="import" href="../common-element/common-styles.html">
+
 <dom-module id="fnndsc-opportunities">
   <template>
+    <style include="common-styles"></style>
     <style>
       :host {
         display: block;
-        height: 110vh;
-        padding: 10px 20px;
       }
     </style>
 
-    Opportunities FNNDSC
+    <article>
+      <header class="center">
+        <h1>FNNDSC Opportunities</h1>
+      </header>
+
+      <nav>
+        <div>Contents</div>
+        <ul>
+          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
+        </ul>
+      </nav>
+
+      <main>
+
+        <section>
+          <h2 id="about" class="maxflow" class="maxflow">About</h2>
+
+          <div>
+              Maybe some cool content introduciton??
+          </div>
+        </section>
+        
+      </main>
+
+      <footer class="center">
+        <h4 class="maxflow">Copyright</h4>
+        <p class="maxflow">FNNDSC 2017</p>
+      </footer>
+    
+    </article>
 
   </template>
 
   <script>
     Polymer({
       is: 'fnndsc-opportunities',
+      behaviors: [TOCBehavior],
     });
   </script>
 </dom-module>
