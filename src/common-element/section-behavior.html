@@ -44,6 +44,7 @@ SectionBehavior = {
   __routePageChanged: function(page, currentSection) {
       if (this.section !== this.currentSection) return;
       this.page = page || 'overview';
+      this.fire('scroll', 0);
   },
 
   __pageChanged: function(page) {

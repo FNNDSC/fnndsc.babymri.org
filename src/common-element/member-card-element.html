@@ -109,10 +109,9 @@
         <div class="medium">[[member.institution]]</div>
       </div>
       <a href="member/[[member.id]]">
-      <div class="footer" on-tap="handleTap">
-        More about me
-        <!--<paper-ripple id='ripple'></paper-ripple>-->
-      </div>
+        <div class="footer" >
+          More about me
+        </div>
       </a>
     </paper-card>
 
@@ -126,9 +125,6 @@
         is: 'member-card-element',
         properties: {
           member: Object,
-        },
-        handleTap: function(){
-          this.fire('scroll', 0);
         }
       });
     })();

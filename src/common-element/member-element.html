@@ -14,6 +14,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/iron-icons/maps-icons.html">
 <link rel="import" href="../../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
+
 <link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 
@@ -32,11 +34,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <paper-card>
+      <paper-fab id="check" icon="check" class="check" on-tap="_onTap"></paper-fab>
+
       <div class='center colored'>
         <div class='border-wrap'>
           <iron-image src=[[member.picture]] sizing="cover"></iron-image>
         </div>
-        <paper-fab icon="check" class="check" on-tap="_onTap"></paper-fab>
       </div>
 
       <div class="card-content">
@@ -145,11 +148,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script>
     Polymer({
       is: 'member-element',
-
+      behaviors: [Polymer.IronResizableBehavior],
       properties: {
         member: Object,
       },
-
+      listeners: {
+        'iron-resize': '_onIronResize'
+      },
+      attached: function() {
+        this.async(this.notifyResize, 1);
+      },
+      _onIronResize: function(){
+        var x = this.offsetLeft + 32;
+        this.$.check.style.right = x + 'px';
+      },
       _onTap: function(event) {
         this.fire('scroll', 0);
         // Add an item to the history log

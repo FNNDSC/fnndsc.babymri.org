@@ -53,8 +53,9 @@
 
         /* SECTION */
         section {
-            padding: 88px 16px;
+            padding: 32px 16px;
         }
+
         .imageContainer {
             flex-direction: row;
             display: flex;
@@ -124,8 +125,8 @@
             background-color: var(--text-primary-color);
         }
 
-        /* 640 + 256*/
-        @media (max-width: 896px) {
+        /* 840 + 256*/
+        @media (max-width: 1096px) {
             article {
                 width: 100%;
             }
@@ -134,8 +135,17 @@
                 display: none;
             }
 
+            section {
+                padding: 16px;
+            }
+
             .imageContainer {
                 flex-direction: column;
+            }
+
+            .imageContainer img {
+                margin: 0;
+                width: 100%;
             }
 
             .imageContainer:first-child {
