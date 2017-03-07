@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../common-element/section-behavior.html">
 
-<dom-module id="fnndsc-element">
+<dom-module id="dev-element">
   <template>
     <style>
       :host {
@@ -44,25 +44,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             attr-for-selected="name"
             fallback-selection="error404"
             role="main">
-            <fnndsc-overview name="overview"></fnndsc-overview>
-            <fnndsc-news name="news"></fnndsc-news>
-            <fnndsc-contact name="contact"></fnndsc-contact>
-            <fnndsc-team name="team"></fnndsc-team>
-            <fnndsc-member name="member" member="[[member]]"></fnndsc-member>
-            <fnndsc-opportunities name="opportunities"></fnndsc-opportunities>
-            <fnndsc-error404 name="error404"></fnndsc-error404>
+            <dev-overview name="overview"></dev-overview>
+            <dev-team name="team"></dev-team>
+            <dev-member name="member" member="[[member]]"></dev-member>
+            <dev-contact name="contact"></dev-contact>
+            <dev-projects name="projects"></dev-projects>
+            <dev-research name="research"></dev-research>
+            <dev-error404 name="error404"></dev-error404>
         </iron-pages>
 
   </template>
 
   <script>
     Polymer({
-      is: 'fnndsc-element',
+      is: 'dev-element',
       behaviors: [SectionBehavior],
       properties: {
         section: {
           type: String,
-          value: 'fnndsc',
+          value: 'dev',
         },
       },
     });

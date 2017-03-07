@@ -44,19 +44,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         data="{{subrouteData}}">
     </app-route>
 
-       Hi MRI [[page]]
-
     <iron-pages fullbleed
             selected="[[page]]"
             attr-for-selected="name"
             fallback-selection="error404"
             role="main">
             <mri-overview name="overview"></mri-overview>
-            <mri-news name="news"></mri-news>
-            <mri-contact name="contact"></mri-contact>
+            <mri-labs name="labs"></mri-labs>
             <mri-team name="team"></mri-team>
             <mri-member name="member" member="[[member]]"></mri-member>
-            <mri-opportunities name="opportunities"></mri-opportunities>
+            <mri-contact name="contact"></mri-contact>
+            <mri-projects name="projects"></mri-projects>
+            <mri-research name="research"></mri-research>
             <mri-error404 name="error404"></mri-error404>
         </iron-pages>
 

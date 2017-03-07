@@ -1,0 +1,105 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../data/members-behavior.html">
+<link rel="import" href="../common-element/toc-behavior.html">
+<link rel="import" href="../common-element/member-card-element.html">
+
+<link rel="import" href="../common-element/common-styles.html">
+
+<dom-module id="nirs-team">
+  <template>
+    <style include="common-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <article>
+      <header class="center">
+        <h1>NIRS Team</h1>
+      </header>
+
+      <nav>
+        <div>Contents</div>
+        <ul>
+          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
+          <li><a href="#nirs" label="nirs" on-tap="__scrollTo">NIRS Team</a></li>
+          <li><a href="#alumni" label="alumni" on-tap="__scrollTo">Alumnis</a></li>
+        </ul>
+      </nav>
+
+      <main>
+
+        <section>
+          <h2 id="about" class="maxflow" class="maxflow">About</h2>
+
+          <p>Sweet roll tart tiramisu. Pudding muffin chocolate bar pie. Biscuit croissant liquorice lemon drops apple pie chupa chups. Liquorice candy soufflé chocolate bar biscuit gummies.</p>
+          <p>Carrot cake danish jelly tart. Pie jelly beans cookie. Tiramisu cupcake ice cream gummies.</p>
+          <p>Chocolate candy canes lemon drops. Topping caramels sesame snaps dragée powder caramels cake carrot cake. Candy sugar plum candy canes lemon drops candy. Lollipop donut cotton candy.</p>
+          </p>
+
+        </section>
+      
+        <section>
+          <h2 id="nirs" class="maxflow" class="maxflow">NIRS Team</h2>
+
+          <div class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isNIRS">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="maxflow" class="maxflow">Almuni</h2>
+
+          <div id="alumni" class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isAlumni">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+          </div>
+        </section>
+        
+      </main>
+
+      <footer class="center">
+        <h4 class="maxflow">Copyright</h4>
+        <p class="maxflow">FNNDSC 2017</p>
+      </footer>
+    
+    </article>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'nirs-team',
+      behaviors: [TOCBehavior, MembersBehavior],
+      properties: {
+          members: {
+            type: Array,
+        },
+      },
+      ready: function() {
+        this.members = this.__members();
+      },
+      _isNIRS: function(item) {
+        return item.NIRSTeam && !item.AlumniTeam;
+      },
+      _isAlumni: function(item) {
+        return item.NIRSTeam && item.AlumniTeam;
+      }
+    });
+  </script>
+</dom-module>

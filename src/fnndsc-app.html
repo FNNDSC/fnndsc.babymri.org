@@ -128,6 +128,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </a>
               </paper-menu>
             </paper-submenu>
+          
+            <paper-submenu>
+              <paper-icon-item class="menu-trigger">
+                <iron-icon icon="icons:change-history" item-icon></iron-icon>
+                MEG
+              </paper-icon-item>
+              <paper-menu class="menu-content">
+                <a data-route="meg/overview" href$="{{prefixUrl}}/meg/overview" on-tap="_scrollTop">
+                  <paper-item>Overview</paper-item>
+                </a>
+                <a data-route="meg/labs" href$="{{prefixUrl}}/meg/labs" on-tap="_scrollTop">
+                  <paper-item>Laboratories</paper-item>
+                </a>
+                <a data-route="meg/projects" href$="{{prefixUrl}}/meg/projects" on-tap="_scrollTop">
+                  <paper-item>Current Projects</paper-item>
+                </a>
+                <a data-route="meg/research" href$="{{prefixUrl}}/meg/research" on-tap="_scrollTop">
+                  <paper-item>Research and Publications</paper-item>
+                </a>
+                <a data-route="meg/team" href$="{{prefixUrl}}/meg/team" on-tap="_scrollTop">
+                  <paper-item>Team</paper-item>
+                </a>
+                <a data-route="meg/contact" href$="{{prefixUrl}}/meg/contact" on-tap="_scrollTop">
+                  <paper-item>Contact</paper-item>
+                </a>
+              </paper-menu>
+            </paper-submenu>
 
             <paper-submenu>
               <paper-icon-item class="menu-trigger">
@@ -155,6 +182,58 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </a>
               </paper-menu>
             </paper-submenu>
+
+            <paper-submenu>
+              <paper-icon-item class="menu-trigger">
+                <iron-icon icon="icons:check-box-outline-blank"item-icon></iron-icon>
+                NIRS
+              </paper-icon-item>
+              <paper-menu class="menu-content">
+                <a data-route="nirs/overview" href$="{{prefixUrl}}/nirs/overview" on-tap="_scrollTop">
+                  <paper-item>Overview</paper-item>
+                </a>
+                <a data-route="nirs/labs" href$="{{prefixUrl}}/nirs/labs" on-tap="_scrollTop">
+                  <paper-item>Laboratories</paper-item>
+                </a>
+                <a data-route="nirs/projects" href$="{{prefixUrl}}/nirs/projects" on-tap="_scrollTop">
+                  <paper-item>Current Projects</paper-item>
+                </a>
+                <a data-route="nirs/research" href$="{{prefixUrl}}/nirs/research" on-tap="_scrollTop">
+                  <paper-item>Research and Publications</paper-item>
+                </a>
+                <a data-route="nirs/team" href$="{{prefixUrl}}/nirs/team" on-tap="_scrollTop">
+                  <paper-item>Team</paper-item>
+                </a>
+                <a data-route="nirs/contact" href$="{{prefixUrl}}/nirs/contact" on-tap="_scrollTop">
+                  <paper-item>Contact</paper-item>
+                </a>
+              </paper-menu>
+            </paper-submenu>
+
+            <paper-submenu>
+              <paper-icon-item class="menu-trigger">
+                <iron-icon icon="icons:code" item-icon></iron-icon>
+                Software
+              </paper-icon-item>
+              <paper-menu class="menu-content">
+                <a data-route="meg/overview" href$="{{prefixUrl}}/dev/overview" on-tap="_scrollTop">
+                  <paper-item>Overview</paper-item>
+                </a>
+                <a data-route="dev/projects" href$="{{prefixUrl}}/dev/projects" on-tap="_scrollTop">
+                  <paper-item>Current Projects</paper-item>
+                </a>
+                <a data-route="dev/research" href$="{{prefixUrl}}/dev/research" on-tap="_scrollTop">
+                  <paper-item>Research and Publications</paper-item>
+                </a>
+                <a data-route="dev/team" href$="{{prefixUrl}}/dev/team" on-tap="_scrollTop">
+                  <paper-item>Team</paper-item>
+                </a>
+                <a data-route="dev/contact" href$="{{prefixUrl}}/dev/contact" on-tap="_scrollTop">
+                  <paper-item>Contact</paper-item>
+                </a>
+              </paper-menu>
+            </paper-submenu>
+
           </iron-selector>
 
         </div>
@@ -177,7 +256,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             role="main"
             on-scroll="_scroll">
           <fnndsc-element name="fnndsc" current-section="[[page]]" route="[[subroute]]"></fnndsc-element>
+          <meg-element name="meg" current-section="[[page]]" route="[[subroute]]"></meg-element>
           <mri-element name="mri" current-section="[[page]]" route="[[subroute]]"></mri-element>
+          <nirs-element name="nirs" current-section="[[page]]" route="[[subroute]]"></nirs-element>
+          <dev-element name="dev" current-section="[[page]]" route="[[subroute]]"></dev-element>
           <error404-element name="error404"></error404-element>
         </iron-pages>
       </app-header-layout>

@@ -1,0 +1,68 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../common-element/toc-behavior.html">
+<link rel="import" href="../common-element/member-card-element.html">
+
+<link rel="import" href="../common-element/common-styles.html">
+
+<dom-module id="mri-research">
+  <template>
+    <style include="common-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <article>
+      <header class="center">
+        <h1>MRI Research</h1>
+      </header>
+
+      <nav>
+        <div>Contents</div>
+        <ul>
+          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
+        </ul>
+      </nav>
+
+      <main>
+
+        <section>
+          <h2 id="about" class="maxflow" class="maxflow">About</h2>
+
+          <p>Sweet roll tart tiramisu. Pudding muffin chocolate bar pie. Biscuit croissant liquorice lemon drops apple pie chupa chups. Liquorice candy soufflé chocolate bar biscuit gummies.</p>
+          <p>Carrot cake danish jelly tart. Pie jelly beans cookie. Tiramisu cupcake ice cream gummies.</p>
+          <p>Chocolate candy canes lemon drops. Topping caramels sesame snaps dragée powder caramels cake carrot cake. Candy sugar plum candy canes lemon drops candy. Lollipop donut cotton candy.</p>
+          </p>
+
+        </section>
+        
+      </main>
+
+      <footer class="center">
+        <h4 class="maxflow">Copyright</h4>
+        <p class="maxflow">FNNDSC 2017</p>
+      </footer>
+    
+    </article>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'mri-research',
+      behaviors: [TOCBehavior],
+    });
+  </script>
+</dom-module>
