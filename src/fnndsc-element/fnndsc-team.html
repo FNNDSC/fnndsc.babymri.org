@@ -34,8 +34,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div>Contents</div>
         <ul>
           <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
-          <li><a href="#mri" label="mri" on-tap="__scrollTo">MRI Group</a></li>
-          <li><a href="#meg" label="meg" on-tap="__scrollTo">MEG Group</a></li>
+          <li><a href="#meg" label="meg" on-tap="__scrollTo">MEG Team</a></li>
+          <li><a href="#mri" label="mri" on-tap="__scrollTo">MRI Team</a></li>
+          <li><a href="#nirs" label="nirs" on-tap="__scrollTo">NIRS Team</a></li>
+          <li><a href="#dev" label="dev" on-tap="__scrollTo">DEV Team</a></li>
           <li><a href="#alumni" label="alumni" on-tap="__scrollTo">Alumnis</a></li>
         </ul>
       </nav>
@@ -45,43 +47,58 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <section>
           <h2 id="about" class="maxflow" class="maxflow">About</h2>
 
-          <div>
-              Maybe some cool content introduciton??
-          </div>
+          <p>Sweet roll tart tiramisu. Pudding muffin chocolate bar pie. Biscuit croissant liquorice lemon drops apple pie chupa chups. Liquorice candy soufflé chocolate bar biscuit gummies.</p>
+          <p>Carrot cake danish jelly tart. Pie jelly beans cookie. Tiramisu cupcake ice cream gummies.</p>
+          <p>Chocolate candy canes lemon drops. Topping caramels sesame snaps dragée powder caramels cake carrot cake. Candy sugar plum candy canes lemon drops candy. Lollipop donut cotton candy.</p>
+          </p>
+
         </section>
       
         <section>
-          <h2 id="mri" class="maxflow" class="maxflow">MRI Group</h2>
+          <h2 id="meg" class="maxflow" class="maxflow">MEG Team</h2>
 
           <div class="cards">
-              <template is="dom-repeat" items="[[members]]" as="member">
-                  <member-card-element member=[[member]]></member-card-element>
-              </template>
-              <template is="dom-repeat" items="[[members]]" as="member">
-                  <member-card-element member=[[member]]></member-card-element>
-              </template>
-              <template is="dom-repeat" items="[[members]]" as="member">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isMEG">
                   <member-card-element member=[[member]]></member-card-element>
               </template>
           </div>
         </section>
 
         <section>
-          <h2 id="meg" class="maxflow" class="maxflow">MEG Group</h2>
+          <h2 id="mri" class="maxflow" class="maxflow">MRI Team</h2>
 
           <div class="cards">
-              <template is="dom-repeat" items="[[members]]" as="member">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isMRI">
                   <member-card-element member=[[member]]></member-card-element>
               </template>
           </div>
         </section>
 
+        <section>
+          <h2 id="nirs" class="maxflow" class="maxflow">NIRS Team</h2>
+
+          <div class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isNIRS">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="dev" class="maxflow" class="maxflow">DEV Team</h2>
+
+          <div class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isDEV">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+          </div>
+        </section>
 
         <section>
           <h2 class="maxflow" class="maxflow">Almuni</h2>
 
           <div id="alumni" class="cards">
-              <template is="dom-repeat" items="[[members]]" as="member">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isAlumni">
                   <member-card-element member=[[member]]></member-card-element>
               </template>
           </div>
@@ -110,6 +127,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       ready: function() {
         this.members = this.__members();
       },
+      _isMEG: function(item) {
+        return item.MEGTeam && !item.AlumniTeam;
+      },
+      _isMRI: function(item) {
+        return item.MRITeam && !item.AlumniTeam;
+      },
+      _isNIRS: function(item) {
+        return item.NIRSTeam && !item.AlumniTeam;
+      },
+      _isDEV: function(item) {
+        return item.DEVTeam && !item.AlumniTeam;
+      },
+      _isAlumni: function(item) {
+        return item.AlumniTeam;
+      }
     });
   </script>
 </dom-module>

@@ -19,28 +19,22 @@
             width: 100%;
         }
 
-        /* 840 + 256*/
-        @media (max-width: 1096px) {
-            article {
-                width: 100%;
-            }
-
-            nav {
-                display: none;
-            }
-        }
-
         /* DEFAULT SEMANTIC MARKUP STYLE */
         header, main, section, footer {
             display: flex;
             flex-direction: column;
         }
 
+        /* HEADER */
+        header.fullscreen {
+            height: calc(100vh - 64px);
+        }
+
         /* NAV */
         nav {
-          border-left: 5px solid var(--light-primary-color);
-          padding-left: 20px;
-          margin-top: 60px;
+            border-left: 5px solid var(--light-primary-color);
+            padding-left: 20px;
+            margin-top: 60px;
         }
 
         nav * {
@@ -57,6 +51,26 @@
             flex: 1;
         }
 
+        /* SECTION */
+        section {
+            padding: 88px 16px;
+        }
+        .imageContainer {
+            flex-direction: row;
+            display: flex;
+        }
+
+        .imageContainer > * {
+            flex: 1;
+            flex-basis: 0.000000001px;
+        }
+  
+        .imageContainer img {
+            max-width: 368px;
+            max-height: 368px;
+            margin: 20px;
+        }
+
         /* FOOTER */
         footer {
             margin-top: 32px;
@@ -65,21 +79,18 @@
 
         /* COMMON */
         h1 {
-            padding: 16px;
             font-size: 32px;
-            font-weight: 600;
+            font-weight: 300;
             color: var(--primary-text-color);
         }
         h2 {
-            padding: 16px;
             font-size: 24px;
-            font-weight: 400;
+            font-weight: 300;
             color: var(--secondary-text-color);
         }
         h3 {
-            padding: 16px;
             font-size: 18px;
-            font-weight: 400;
+            font-weight: 300;
             color: var(--secondary-text-color);
         }
         .cards {
@@ -103,8 +114,33 @@
             max-width: 840px;
         }
 
-        paper-menu * a {
-            color: var(--dark-primary-color);
+        section.primary, section.primary * {
+            background-color: var(--default-primary-color);
+            color: #FFFFFF;
+        }
+
+        section.primaryInverted, section.primaryInverted * {
+            color: var(--default-primary-color);
+            background-color: var(--text-primary-color);
+        }
+
+        /* 640 + 256*/
+        @media (max-width: 896px) {
+            article {
+                width: 100%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .imageContainer {
+                flex-direction: column;
+            }
+
+            .imageContainer:first-child {
+                text-align: center;
+            }
         }
 
     </style>

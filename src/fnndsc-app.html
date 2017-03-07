@@ -51,11 +51,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       app-header {
         color: #fff;
-        background-image: url(../images/art/blueprint.png),linear-gradient(to bottom,#263238,#78909C);;
+        background-image: url(../images/art/blueprint.png), linear-gradient(to bottom,#263238,#2e4857);
       }
 
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
+      }
+
+      app-drawer {
+        --app-drawer-content-container: {
+          background-color: #eeeeee;
+        }
+      }
+
+      app-drawer paper-menu {
+        background-color: #f9f9f9;
+      }
+
+      app-header-layout {
+        background-color: #FFFFFF;
       }
 
       .drawer-list {
@@ -66,7 +80,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding: 0 16px;
         text-decoration: none;
-        color: var(--app-secondary-color);
+        color: var(--secondary-text-color);
         line-height: 40px;
       }
 
@@ -97,19 +111,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 FNNDSC
               </paper-icon-item>
               <paper-menu class="menu-content">
-                <a data-route="fnndsc/overview" href$="{{prefixUrl}}/fnndsc/overview">
+                <a data-route="fnndsc/overview" href$="{{prefixUrl}}/fnndsc/overview" on-tap="_scrollTop">
                   <paper-item>Overview</paper-item>
                 </a>
-                <a data-route="fnndsc/news" href$="{{prefixUrl}}/fnndsc/news">
+                <a data-route="fnndsc/news" href$="{{prefixUrl}}/fnndsc/news" on-tap="_scrollTop">
                   <paper-item>News</paper-item>
                 </a>
-                <a data-route="fnndsc/opportunities" href$="{{prefixUrl}}/fnndsc/opportunities">
+                <a data-route="fnndsc/opportunities" href$="{{prefixUrl}}/fnndsc/opportunities" on-tap="_scrollTop">
                   <paper-item>Opportunities</paper-item>
                 </a>
-                <a data-route="fnndsc/team" href$="{{prefixUrl}}/fnndsc/team">
+                <a data-route="fnndsc/team" href$="{{prefixUrl}}/fnndsc/team" on-tap="_scrollTop">
                   <paper-item>Team</paper-item>
                 </a>
-                <a data-route="fnndsc/contact" href$="{{prefixUrl}}/fnndsc/contact">
+                <a data-route="fnndsc/contact" href$="{{prefixUrl}}/fnndsc/contact" on-tap="_scrollTop">
                   <paper-item>Contact</paper-item>
                 </a>
               </paper-menu>
@@ -121,22 +135,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 MRI
               </paper-icon-item>
               <paper-menu class="menu-content">
-                <a data-route="mri/overview" href$="{{prefixUrl}}/mri/overview">
+                <a data-route="mri/overview" href$="{{prefixUrl}}/mri/overview" on-tap="_scrollTop">
                   <paper-item>Overview</paper-item>
                 </a>
-                <a data-route="mri/labs" href$="{{prefixUrl}}/mri/labs">
+                <a data-route="mri/labs" href$="{{prefixUrl}}/mri/labs" on-tap="_scrollTop">
                   <paper-item>Laboratories</paper-item>
                 </a>
-                <a data-route="mri/projects" href$="{{prefixUrl}}/mri/projects">
+                <a data-route="mri/projects" href$="{{prefixUrl}}/mri/projects" on-tap="_scrollTop">
                   <paper-item>Current Projects</paper-item>
                 </a>
-                <a data-route="mri/research" href$="{{prefixUrl}}/mri/research">
+                <a data-route="mri/research" href$="{{prefixUrl}}/mri/research" on-tap="_scrollTop">
                   <paper-item>Research and Publications</paper-item>
                 </a>
-                <a data-route="mri/team" href$="{{prefixUrl}}/mri/team">
+                <a data-route="mri/team" href$="{{prefixUrl}}/mri/team" on-tap="_scrollTop">
                   <paper-item>Team</paper-item>
                 </a>
-                <a data-route="mri/contact" href$="{{prefixUrl}}/mri/contact">
+                <a data-route="mri/contact" href$="{{prefixUrl}}/mri/contact" on-tap="_scrollTop">
                   <paper-item>Contact</paper-item>
                 </a>
               </paper-menu>
@@ -211,9 +225,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.page = 'error404';
       },
 
-      _scroll: function(e){
+      _scroll: function(e) {
         this.$.header.scrollTarget.scrollTop = e.detail;
-      }
+      },
+
+      _scrollTop: function() {
+        this.$.header.scrollTarget.scrollTop = 0;
+      },
     });
   </script>
 </dom-module>

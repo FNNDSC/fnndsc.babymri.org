@@ -15,6 +15,7 @@
     "Polymer": true,
     "SectionBehavior": true,
     "MembersBehavior": true,
-    "ContactsBehavior": true
+    "ContactsBehavior": true,
+    "TOCBehavior": true
   }
 }
