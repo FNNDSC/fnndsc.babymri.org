@@ -12,10 +12,10 @@
     - [Preview the build](#preview-the-build)
     - [Run tests](#run-tests)
     - [Deploy](#deploy)
-  - [Add a new view](#adding-a-new-view)
-    - [Add a new section](#add-a-new-section)
-    - [Add a new page in a section](#add-a-new-page-in-a-section)
-    - [Add a table of content](#add-a-table-of-content-in-a-page)
+  - [Add a view](#add-a-view)
+    - [Add a section](#add-a-section)
+    - [Add a page in a section](#add-a-page-in-a-section)
+    - [Add a table of content in a page](#add-a-table-of-content-in-a-page)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -70,7 +70,7 @@ This command builds the app at `/build/`. There is a `bundled` and `unbundled` b
 This command builds the app at `/build/` then pushes `/build/bundled/` to the `gh-pages`.
     npm run deploy
 
-## Add a new view
+## Add a view
 
 You can extend the app by adding more views that will be demand-loaded
 e.g. based on the route, or to progressively render non-critical sections of the
@@ -79,8 +79,8 @@ application. Each new demand-loaded fragment should be added to the list of
 components and their dependencies are added to the list of pre-cached components
 and will be included in the `bundled` build.
 
-### Add a new section
+### Add a section
 
-### Add a new page in a section
+### Add a page in a section
 
-### Add a table of content
+### Add a table of content in a page

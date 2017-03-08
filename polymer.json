@@ -51,7 +51,8 @@
     "src/**/*",
     "images/**/*",
     "bower.json",
-    "404.html"
+    "404.html",
+    "CNAME"
   ],
   "includeDependencies": [
     "manifest.json",
