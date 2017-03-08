@@ -11,6 +11,7 @@
     - [Build](#build)
     - [Preview the build](#preview-the-build)
     - [Run tests](#run-tests)
+    - [Deploy](#deploy)
   - [Adding a new view](#adding-a-new-view)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
@@ -34,10 +35,11 @@ This command serves the app at `http://localhost:8060`:
 
     npm install -g polymer-cli
 
-### Install the bower dependencies
+### Install the npm/bower dependencies
 
     cd fnndsc.babymri.org
     bower install
+    npm install
 
 ### Start the default development server
 
@@ -46,19 +48,24 @@ This command serves the app at `http://localhost:8080`:
 
     polymer serve
 
-## Build
+### Build
 
 This command builds the app at `/build/`. There is a `bundled` and `unbundled` build (for HTTP2). We currently use the `bundled` build.
 
     polymer build
 
-## Preview the build
+### Preview the build
 
     polymer serve build/bundled
 
-## Run tests
+### Run tests
 
     polymer test
+
+### Deploy
+
+This command builds the app at `/build/` then pushes `/build/bundled/` to the `gh-pages`.
+    npm run deploy
 
 ## Adding a new view
 
