@@ -11,6 +11,6 @@
   "scripts": {
     "lint": "eslint . --ext js,html --ignore-path .gitignore",
     "test": "npm run lint && polymer test",
-    "deploy": "polymer build && gh-pages -d build/bundled"
+    "deploy": "polymer build && timestamp=$(date \"+%c\") && gh-pages -d build/bundled -m \"Deployed on $timestamp\""
   }
 }
