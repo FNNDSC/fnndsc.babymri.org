@@ -50,7 +50,8 @@
   "sourceGlobs": [
     "src/**/*",
     "images/**/*",
-    "bower.json"
+    "bower.json",
+    "404.html"
   ],
   "includeDependencies": [
     "manifest.json",
