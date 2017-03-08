@@ -86,7 +86,7 @@ Add an entry in `ssrc/data/members-behavior.html`. The app will load it the appr
 
 For instance to add a member that belongs is `Alumni` and used to work in the `MEG` and `MRI` teams:
 
-``` json
+``` javascript
 
 // A cool alumni
 {
