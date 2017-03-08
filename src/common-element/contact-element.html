@@ -1,0 +1,106 @@
+<html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/google-map/google-map.html">
+<link rel="import" href="../../bower_components/google-map/google-map-marker.html">
+<link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+<link rel="import" href="contact-styles.html">
+
+</head><body><dom-module id="contact-element">
+  <template>
+    <style include="contact-styles"></style>
+    <style>
+      :host {
+        --app-primary-color: #4285f4;
+        --app-secondary-color: black;
+
+        display: block;
+      }
+    </style>
+
+<paper-card>
+      <div class="card-content">
+
+        
+
+        
+        <div class="group">
+          <div class="item">
+            <iron-icon icon="icons:face"></iron-icon>
+            <div class="double-line-1">[[contact.firstname]] [[contact.middlename]] [[contact.lastname]]</div>
+            <div class="double-line-2">Contact</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[contact.position]]</div>
+            <div class="double-line-2">Position</div>
+          </div>
+                      <div class="item">
+            <div class="double-line-1">[[contact.laboratory]]</div>
+            <div class="double-line-2">Laboratory</div>
+          </div>
+        </div>
+
+        
+        <div class="group">
+          <div class="item">
+            <iron-icon icon="communication:phone"></iron-icon>
+            <div class="double-line-1">[[contact.phone]]</div>
+            <div class="double-line-2">Office</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[contact.fax]]</div>
+            <div class="double-line-2">Fax</div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="item">
+            <iron-icon icon="icons:mail"></iron-icon>
+            <div class="double-line-1">[[contact.email]]</div>
+            <div class="double-line-2">email</div>
+          </div>
+        </div>
+
+        
+        <div class="group">
+          <div class="item">
+            <iron-icon icon="maps:place"></iron-icon>
+            <div class="double-line-1">[[contact.address]]</div>
+            <div class="double-line-2">Address</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[contact.city]]</div>
+            <div class="double-line-2">City, State ZIP</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">United States</div>
+            <div class="double-line-2">Country</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="card-actions">
+        <div on-tap="_onTap">
+          <paper-button>Show map</paper-button>
+          <paper-icon-button id="moreInfoIcon" icon="hardware:keyboard-arrow-up" title="more info" style="float:right"></paper-icon-button>
+        </div>
+        <iron-collapse id="moreInfo" style="width:100%">
+          <google-map fit-to-markers="" api-key="AIzaSyCn6fYO1tJL0oaJRXo45aUmZguPpOjQXSA" zoom="13">
+            <google-map-marker draggable="true" latitude="[[contact.latitude]]" longitude="[[contact.longitude]]" title="[[contact.title]]"></google-map-marker>
+          </google-map>
+        </iron-collapse>
+      </div>
+    </paper-card>
+
+  </template>
+
+  <script>Polymer({is:"contact-element",properties:{contact:Object},_onTap:function(o){var e=this.$.moreInfo,n=this.$.moreInfoIcon;n.icon=e.opened?"icons:expand-less":"icons:expand-more",e.toggle()}});</script>
+</dom-module>
+</body></html>

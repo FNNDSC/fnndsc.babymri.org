@@ -1,0 +1,116 @@
+<html><head></head><body><dom-module id="member-styles">
+  <template>
+    <style>
+
+          .container{
+        @apply(--layout-horizontal);
+        @apply(--layout-around-justified);
+        @apply(--layout-wrap);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .big {
+        font-size: 22px;
+        padding: 8px 16px 16px;
+        color: var(--google-grey-500);
+      }
+
+      .team team-member ::content .colored {
+        background-color: var(--paper-blue-grey-700);
+      }
+
+      .alumni team-member ::content .colored {
+        background-color: var(--paper-red-700);
+      }
+
+    paper-card{
+      width: 100%;
+      color: var(--primary-text-color);
+      --paper-card-header-color: var(--secondary-text-color);
+      --paper-card-background-color: var(--paper-grey-100);
+      background: var(--paper-grey-100);
+      margin: 20px auto;
+    }
+
+    /*from https://github.com/robdodson/contacts-app*/
+
+    .group {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 8px 0;
+      position: relative;
+    }
+
+    .item {
+      padding: 10px 72px;
+      color: rgb(102, 102, 102);
+    }
+
+    .item iron-icon {
+      position: absolute;
+      left: 16px;
+      top: 24px;
+      color: rgb(33, 33, 33);
+    }
+
+    .double-line-1 {
+      margin-top: 5px;
+      margin-bottom: 6px;
+    }
+
+    .double-line-2 {
+      font-size: 13px;
+      line-height: 13px;
+      color: rgba(0, 0, 0, 0.4);
+    }
+
+    google-map {
+      height: 500px;
+    }
+
+    iron-image{
+      width: 148px;
+      height: 148px;
+      border-radius: 50%;
+      margin-top: 2px;
+      margin-left: 2px;
+      /*-webkit-filter: sepia(1);
+      filter: sepia(1);*/
+    }
+
+    /*hack for now...*/
+    iron-image ::content #sizedImgDiv{
+       border-radius: 50%;
+    }
+
+    .border-wrap{
+      position:relative;
+      width: 152px;
+      height: 152px;
+      border-radius: 50%;
+      margin: auto;
+      margin-top: 32px;
+      margin-bottom: -20px;
+      background: #FFFFFF;
+    }
+
+    .check{
+        position: fixed;
+        bottom: 32px;
+        z-index: 99;
+      }
+
+    .center {
+      @apply(--layout-horizontal);
+      @apply(--layout-wrap);
+      @apply(--layout-center-justified);
+    }
+
+    .colored{
+      position:relative;
+      background-color: var(--paper-blue-grey-700);
+    }
+    </style>
+  </template>
+</dom-module>
+</body></html>

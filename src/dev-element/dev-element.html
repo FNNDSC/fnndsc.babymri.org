@@ -1,0 +1,31 @@
+<html><head><meta charset="UTF-8"><link rel="import" href="../fnndsc-app.html"></head><body><dom-module id="dev-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <app-route route="[[route]]" pattern="/:page" data="{{routeData}}" ,="" tail="{{subroute}}">
+    </app-route>
+
+    <app-route route="[[subroute]]" pattern="/:uid" data="{{subrouteData}}">
+    </app-route>
+
+    
+
+    <iron-pages fullbleed="" selected="[[page]]" attr-for-selected="name" fallback-selection="error404" role="main">
+            <dev-overview name="overview"></dev-overview>
+            <dev-team name="team"></dev-team>
+            <dev-member name="member" member="[[member]]"></dev-member>
+            <dev-contact name="contact"></dev-contact>
+            <dev-projects name="projects"></dev-projects>
+            <dev-research name="research"></dev-research>
+            <dev-error404 name="error404"></dev-error404>
+        </iron-pages>
+
+  </template>
+
+  <script>Polymer({is:"dev-element",behaviors:[SectionBehavior],properties:{section:{type:String,value:"dev"}}});</script>
+</dom-module>
+</body></html>

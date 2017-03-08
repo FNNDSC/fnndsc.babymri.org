@@ -1,0 +1,140 @@
+<html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
+
+<link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+<link rel="import" href="member-styles.html">
+
+</head><body><dom-module id="member-element">
+  <template>
+    <style include="member-styles"></style>
+    <style>
+      :host {
+        --app-primary-color: #4285f4;
+        --app-secondary-color: black;
+
+        display: block;
+      }
+    </style>
+
+    <paper-card>
+      <paper-fab id="check" icon="check" class="check" on-tap="_onTap"></paper-fab>
+
+      <div class="center colored">
+        <div class="border-wrap">
+          <iron-image src="[[member.picture]]" sizing="cover"></iron-image>
+        </div>
+      </div>
+
+      <div class="card-content">
+
+        
+
+        
+        <div class="group">
+          <div class="item">
+            <iron-icon icon="icons:face"></iron-icon>
+            <div class="double-line-1">[[member.firstname]]</div>
+            <div class="double-line-2">First Name</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.middlename]]</div>
+            <div class="double-line-2">Middle Name</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.lastname]]</div>
+            <div class="double-line-2">Last Name</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.degree]]</div>
+            <div class="double-line-2">Highest Degree</div>
+          </div>
+        </div>
+
+        
+        <div class="group">
+          <div class="item">
+            <iron-icon icon="icons:assignment-ind"></iron-icon>
+            <div class="double-line-1">[[member.position]]</div>
+            <div class="double-line-2">Position</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.laboratory]]</div>
+            <div class="double-line-2">Laboratory</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.institution]]</div>
+            <div class="double-line-2">Institution</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.academicposition]]</div>
+            <div class="double-line-2">Academic Position</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.academicinstitution]]</div>
+            <div class="double-line-2">Academic Institution</div>
+          </div>
+        </div>
+
+        
+        <div class="group">
+          <div class="item">
+            <iron-icon icon="communication:phone"></iron-icon>
+            <div class="double-line-1">[[member.phone]]</div>
+            <div class="double-line-2">Office</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.fax]]</div>
+            <div class="double-line-2">Fax</div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="item">
+            <iron-icon icon="icons:mail"></iron-icon>
+            <div class="double-line-1">[[member.email]]</div>
+            <div class="double-line-2">email</div>
+          </div>
+        </div>
+
+        
+        <div class="group">
+          <div class="item">
+            <iron-icon icon="maps:place"></iron-icon>
+            <div class="double-line-1">[[member.address]]</div>
+            <div class="double-line-2">Address</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">[[member.city]]</div>
+            <div class="double-line-2">City, State ZIP</div>
+          </div>
+          <div class="item">
+            <div class="double-line-1">United States</div>
+            <div class="double-line-2">Country</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="group">
+          <a href="[[member.publications]]" target="_blank">
+            <div class="item">
+              <iron-icon icon="icons:book"></iron-icon>
+              <div class="double-line-1">Click to see publications</div>
+              <div class="double-line-2">Publications</div>
+            </div>
+          </a>
+      </div>
+    </paper-card>
+
+  </template>
+
+  <script>Polymer({is:"member-element",behaviors:[Polymer.IronResizableBehavior],properties:{member:Object},listeners:{"iron-resize":"_onIronResize"},attached:function(){this.async(this.notifyResize,1)},_onIronResize:function(){var e=this.offsetLeft+32;this.$.check.style.right=e+"px"},_onTap:function(e){return this.fire("scroll",0),history.back(),e.preventDefault()}});</script>
+</dom-module>
+</body></html>

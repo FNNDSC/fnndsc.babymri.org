@@ -1,0 +1,69 @@
+<html><head><meta charset="UTF-8"><link rel="import" href="../fnndsc-app.html"></head><body><dom-module id="dev-team">
+  <template>
+    <style include="common-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <article>
+      <header class="center">
+        <h1>DEV Team</h1>
+      </header>
+
+      <nav>
+        <div>Contents</div>
+        <ul>
+          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
+          <li><a href="#dev" label="dev" on-tap="__scrollTo">DEV Team</a></li>
+          <li><a href="#alumni" label="alumni" on-tap="__scrollTo">Alumnis</a></li>
+        </ul>
+      </nav>
+
+      <main>
+
+        <section>
+          <h2 id="about" class="maxflow">About</h2>
+
+          <p>Sweet roll tart tiramisu. Pudding muffin chocolate bar pie. Biscuit croissant liquorice lemon drops apple pie chupa chups. Liquorice candy soufflé chocolate bar biscuit gummies.</p>
+          <p>Carrot cake danish jelly tart. Pie jelly beans cookie. Tiramisu cupcake ice cream gummies.</p>
+          <p>Chocolate candy canes lemon drops. Topping caramels sesame snaps dragée powder caramels cake carrot cake. Candy sugar plum candy canes lemon drops candy. Lollipop donut cotton candy.</p>
+          <p></p>
+
+        </section>
+      
+        <section>
+          <h2 id="dev" class="maxflow">DEV Team</h2>
+
+          <div class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isDEV">
+                  <member-card-element member="[[member]]"></member-card-element>
+              </template>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="maxflow">Almuni</h2>
+
+          <div id="alumni" class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isAlumni">
+                  <member-card-element member="[[member]]"></member-card-element>
+              </template>
+          </div>
+        </section>
+        
+      </main>
+
+      <footer class="center">
+        <h4 class="maxflow">Copyright</h4>
+        <p class="maxflow">FNNDSC 2017</p>
+      </footer>
+    
+    </article>
+
+  </template>
+
+  <script>Polymer({is:"dev-team",behaviors:[TOCBehavior,MembersBehavior],properties:{members:{type:Array}},ready:function(){this.members=this.__members()},_isDEV:function(e){return e.DEVTeam&&!e.AlumniTeam},_isAlumni:function(e){return e.DEVTeam&&e.AlumniTeam}});</script>
+</dom-module>
+</body></html>
