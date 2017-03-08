@@ -152,6 +152,23 @@ Update the of `fnndsc-app.html`.
 <fancy-element name="fancy" current-section="[[page]]" route="[[subroute]]"></fancy-element>
 ```
 
+Add the section in the `polymer.json` fragments to make sure the build works.
+
+    cd fnndsc.babymri.org
+    vim polymer.json
+
+``` json
+
+{
+  "entrypoint": "index.html",
+  "shell": "src/fnndsc-app.html",
+  "fragments": [
+    ...,
+    "src/fancy-element/fancy-element.html"
+  ],
+
+```
+
 ### Add a page in a section
 
 Beef up the `fancy-element.html`.
@@ -324,6 +341,25 @@ Add a `fancy-error404.html` page.
     });
   </script>
 </dom-module>
+
+```
+
+Add the pages in the `polymer.json` fragments to make sure the build works.
+
+    cd fnndsc.babymri.org
+    vim polymer.json
+
+``` json
+
+{
+  "entrypoint": "index.html",
+  "shell": "src/fnndsc-app.html",
+  "fragments": [
+    ...,
+    "src/fancy-element/fancy-element.html",
+    "src/fancy-element/fancy-overview.html",
+    "src/fancy-element/fancy-error404.html"
+  ],
 
 ```
 
