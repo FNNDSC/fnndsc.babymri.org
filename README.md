@@ -13,6 +13,7 @@
     - [Run tests](#run-tests)
     - [Deploy](#deploy)
   - [Add a view](#add-a-view)
+    - [Add a member](#add-a-member)
     - [Add a section](#add-a-section)
     - [Add a page in a section](#add-a-page-in-a-section)
     - [Add a table of content in a page](#add-a-table-of-content-in-a-page)
@@ -78,6 +79,43 @@ application. Each new demand-loaded fragment should be added to the list of
 `fragments` in the included `polymer.json` file. This will ensure those
 components and their dependencies are added to the list of pre-cached components
 and will be included in the `bundled` build.
+
+### Add a member
+
+Add an entry in `ssrc/data/members-behavior.html`. The app will load it the appropriate section based on the `MRITeam`, `MEGTeam`, `NIRSTeam`, `DEVTeam`, `AlumniTeam` flags.
+
+For instance to add a member that belongs is `Alumni` and used to work in the `MEG` and `MRI` teams:
+
+``` json
+
+// A cool alumni
+{
+    'id': 'coolalumni',
+    'firstname': 'Cool',
+    'middlename': '',
+    'lastname': 'Alumni',
+    'degree': 'PhD',
+    'position': 'Assistant Professor',
+    'laboratory': '-',
+    'institution': 'University of Hawaii',
+    'academicposition': '-',
+    'academicinstitution': '-',
+    'picture': '/images/team/mr_coolpicture_110x135.jpg',
+    'email': 'iamthe@email.address',
+    'phone': '(666) 666-6666',
+    'fax': '(666) 666-6666',
+    'address': '6th floor, 123 Brigham Circle',
+    'city': 'Boston, 02120 MA',
+    'country': 'United States',
+    'publications': 'https://hms-harvard.academia.edu/MrCool',
+    'MRITeam': true,
+    'MEGTeam': true,
+    'NIRSTeam': false,
+    'DEVTeam': false,
+    'AlumniTeam': true,
+},
+
+```
 
 ### Add a section
 
@@ -172,6 +210,9 @@ Add the section in the `polymer.json` fragments to make sure the build works.
 ### Add a page in a section
 
 Beef up the `fancy-element.html`.
+
+    cd fancy-element/
+    vim fancy-element.html
 
 ``` html
 
@@ -318,6 +359,9 @@ Add `fancy-overview.html` page.
 ```
 
 Add a `fancy-error404.html` page.
+
+    cd fancy-element/
+    vim fancy-error404.html
 
 ``` html
 
