@@ -1,83 +1,66 @@
-# Polymer App Toolbox - Starter Kit
+# fnndsc.babymri.org
 
-[![Build Status](https://travis-ci.org/PolymerElements/polymer-starter-kit.svg?branch=master)](https://travis-ci.org/PolymerElements/polymer-starter-kit)
+- [fnndsc.babymri.org](#fnndscbabymriorg)
+  - [Get the source code](#get-the-source-code)
+  - [Docker setup](#docker-setup)
+    - [Start the docker development server](#start-the-docker-development-server)
+  - [Default setup](#default-setup)
+    - [Get the polymer cli](#get-the-polymer-cli)
+    - [Install the bower dependencies](#install-the-bower-dependencies)
+    - [Start the default development server](#start-the-default-development-server)
+    - [Build](#build)
+    - [Preview the build](#preview-the-build)
+    - [Run tests](#run-tests)
+  - [Adding a new view](#adding-a-new-view)
 
-This template is a starting point for building apps using a drawer-based
-layout. The layout is provided by `app-layout` elements.
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-This template, along with the `polymer-cli` toolchain, also demonstrates use
-of the "PRPL pattern" This pattern allows fast first delivery and interaction with
-the content at the initial route requested by the user, along with fast subsequent
-navigation by pre-caching the remaining components required by the app and
-progressively loading them on-demand as the user navigates through the app.
+## Get the source code
 
-The PRPL pattern, in a nutshell:
+    git clone https://github.com/FNNDSC/fnndsc.babymri.org.git
 
-* **Push** components required for the initial route
-* **Render** initial route ASAP
-* **Pre-cache** components for remaining routes
-* **Lazy-load** and progressively upgrade next routes on-demand
+## Docker setup
 
-### Migrating from Polymer Starter Kit v1?
+### Start the docker development server
 
-[Check out our blog post that covers what's changed in PSK2 and how to migrate!](https://www.polymer-project.org/1.0/blog/2016-08-18-polymer-starter-kit-or-polymer-cli.html)
+This command serves the app at `http://localhost:8060`:
 
-### Setup
+    cd fnndsc.babymri.org
+    docker-compose up
 
-##### Prerequisites
+## Default setup
 
-First, install [Polymer CLI](https://github.com/Polymer/polymer-cli) using
-[npm](https://www.npmjs.com) (we assume you have pre-installed [node.js](https://nodejs.org)).
+### Get the polymer cli
 
     npm install -g polymer-cli
 
-##### Initialize project from template
+### Install the bower dependencies
 
-    mkdir my-app
-    cd my-app
-    polymer init starter-kit
+    cd fnndsc.babymri.org
+    bower install
 
-### Start the development server
+### Start the default development server
 
-This command serves the app at `http://localhost:8080` and provides basic URL
-routing for the app:
 
-    polymer serve --open
+This command serves the app at `http://localhost:8080`:
 
-### Build
+    polymer serve
 
-This command performs HTML, CSS, and JS minification on the application
-dependencies, and generates a service-worker.js file with code to pre-cache the
-dependencies based on the entrypoint and fragments specified in `polymer.json`.
-The minified files are output to the `build/unbundled` folder, and are suitable
-for serving from a HTTP/2+Push compatible server.
+## Build
 
-In addition the command also creates a fallback `build/bundled` folder,
-generated using fragment bundling, suitable for serving from non
-H2/push-compatible servers or to clients that do not support H2/Push.
+This command builds the app at `/build/`. There is a `bundled` and `unbundled` build (for HTTP2). We currently use the `bundled` build.
 
     polymer build
 
-### Preview the build
-
-This command serves the minified version of the app at `http://localhost:8080`
-in an unbundled state, as it would be served by a push-compatible server:
-
-    polymer serve build/unbundled
-
-This command serves the minified version of the app at `http://localhost:8080`
-generated using fragment bundling:
+## Preview the build
 
     polymer serve build/bundled
 
-### Run tests
-
-This command will run [Web Component Tester](https://github.com/Polymer/web-component-tester)
-against the browsers currently installed on your machine:
+## Run tests
 
     polymer test
 
-### Adding a new view
+## Adding a new view
 
 You can extend the app by adding more views that will be demand-loaded
 e.g. based on the route, or to progressively render non-critical sections of the
