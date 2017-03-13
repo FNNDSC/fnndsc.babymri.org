@@ -49,7 +49,7 @@ This command serves the app at `http://localhost:8060`:
 
 Working with **Git** can be confusing and we provide a simple command to work around it.
 
-5 steps:
+5 steps that were merged into 1 command:
 
 1. Fetch the latest version of the source code
 2. Merge/solve conflicts
