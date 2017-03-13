@@ -98,6 +98,7 @@ This command builds the app at `/build/`. There is a `bundled` and `unbundled` b
 ### Deploy
 
 This command builds the app at `/build/` then pushes `/build/bundled/` to the `gh-pages`.
+
     npm run deploy
 
 ## Add a view
@@ -155,7 +156,7 @@ Create a directory that contains the section.
 
 Create base element into this directory
 
-    cd fancy-element
+    cd fancy-element/
     vim fancy-element.html
 
 ``` html
@@ -221,7 +222,7 @@ Update the of `fnndsc-app.html`.
 
 Add the section in the `polymer.json` fragments to make sure the build works.
 
-    cd fnndsc.babymri.org
+    cd fnndsc.babymri.org/
     vim polymer.json
 
 ``` json
