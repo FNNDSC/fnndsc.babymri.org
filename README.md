@@ -1,68 +1,45 @@
 # fnndsc.babymri.org
 
-- [fnndsc.babymri.org](#fnndscbabymriorg)
-  - [Install npm](#install-npm)
-  - [Get the source code](#get-the-source-code)
-  - [Easy setup](#easy-setup)
-    - [Start the docker development server](#start-the-docker-development-server)
-    - [Save changes](#save-changes)
-  - [Default setup](#default-setup)
-    - [Get the polymer cli](#get-the-polymer-cli)
-    - [Install the bower dependencies](#install-the-bower-dependencies)
-    - [Start the default development server](#start-the-default-development-server)
-    - [Build](#build)
-    - [Preview the build](#preview-the-build)
-    - [Run tests](#run-tests)
-    - [Deploy](#deploy)
-  - [Add a view](#add-a-view)
-    - [Add a member](#add-a-member)
-    - [Add a section](#add-a-section)
-    - [Add a page in a section](#add-a-page-in-a-section)
-    - [Add a table of content in a page](#add-a-table-of-content-in-a-page)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-## Install npm
+
+## Pre-requisites
+
+### Install npm
 
 **NPM** is required to save the code on the Github server easily.
 
-## Get the source code
+### Get the source code
 
 Use **Git** to fetch the source code.
 
     git clone https://github.com/FNNDSC/fnndsc.babymri.org.git
 
-## Easy setup
+## For users
 
-Easy setup leverages **Docker** to easily modify content. It is recommended if you just intend to add/remove pages or content. For more advanced development, please follow the default setup.
+### Start the server
 
-### Start the docker development server
+**If the command does not work, please contact somebody from the dev team for help.**
 
 This command serves the app at `http://localhost:8060`:
 
     cd fnndsc.babymri.org
-    docker-compose up
+    npm run serve
 
-### Save changes
+### Save you changes
 
 **If the command does not work, please contact somebody from the dev team for help.**
 
-Working with **Git** can be confusing and we provide a simple command to work around it.
-
-5 steps that were merged into 1 command:
-
-1. Fetch the latest version of the source code
-2. Merge/solve conflicts
-3. Adds new files
-4. Commits modified files
-5. Push everything to **Github**
-
-Update to **MESSAGE** by a summary of the modifications you did.
+Replace **<message content>** by a summary of the modifications you did.
 
     cd fnndsc.babymri.org/
-    MESSAGE="Added user and modified the overview page." npm run save
+    MESSAGE="<message content>" npm run save
 
-## Default setup
+    # for instance:
+    # MESSAGE="Modified FNNDSC overview" npm run save
+
+## For developers
 
 ### Get the polymer cli
 
@@ -75,7 +52,6 @@ Update to **MESSAGE** by a summary of the modifications you did.
     npm install
 
 ### Start the default development server
-
 
 This command serves the app at `http://localhost:8080`:
 
