@@ -1,7 +1,28 @@
 # fnndsc.babymri.org
 
+- [fnndsc.babymri.org](#fnndscbabymriorg)
+  - [Pre-requisites](#pre-requisites)
+    - [Install npm](#install-npm)
+    - [Get the source code](#get-the-source-code)
+  - [For users](#for-users)
+    - [Start the server](#start-the-server)
+    - [Edit the content](#edit-the-content)
+      - [General workflow](#general-workflow)
+      - [Add a member](#add-a-member)
+      - [Add a section (i.e. FNNDSC, MRI, etc.)](#add-a-section--ie-fnndsc--mri--etc-)
+      - [Add a page within a section (i.e. Overview, Team, etc.)](#add-a-page-within-a-section--ie-overview--team--etc-)
+      - [Add a table of content in a section](#add-a-table-of-content-in-a-section)
+    - [Save you changes to Github](#save-you-changes-to-github)
+  - [For developers](#for-developers)
+    - [Get the polymer cli](#get-the-polymer-cli)
+    - [Install the npm/bower dependencies](#install-the-npm-bower-dependencies)
+    - [Start the default development server](#start-the-default-development-server)
+    - [Build](#build)
+    - [Preview the build](#preview-the-build)
+    - [Run tests](#run-tests)
+    - [Deploy](#deploy)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+[Table of contents generated with markdown-toc]('http://ecotrust-canada.github.io/markdown-toc/')
 
 
 ## Pre-requisites
@@ -39,11 +60,21 @@ You should see the `FNNDSC Overview` of the website.
 
 ### Edit the content
 
+#### General workflow
+
 * Do your edits
 * Save edits
 * Refresh the page @ <a href='http://localhost:8060'>http://localhost:8060</a>
 
 Your updates should be visible.
+
+#### Add a member
+
+#### Add a section (i.e. FNNDSC, MRI, etc.)
+
+#### Add a page within a section (i.e. Overview, Team, etc.)
+
+#### Add a table of content in a section
 
 ### Save you changes to Github
 
