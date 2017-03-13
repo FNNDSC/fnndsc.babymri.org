@@ -22,6 +22,8 @@
 
 ## Get the source code
 
+Use Git to fetch the source code.
+
     git clone https://github.com/FNNDSC/fnndsc.babymri.org.git
 
 ## Easy setup
