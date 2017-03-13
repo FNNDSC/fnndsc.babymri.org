@@ -45,16 +45,16 @@ This command serves the app at `http://localhost:8060`:
 
 ### Save changes
 
-** If the command does not work, please contact somebody from the dev team for help.**
+**If the command does not work, please contact somebody from the dev team for help.**
 
 Working with **Git** can be confusing and we provide a simple command to work around it.
 
-In a nutshell:
-1- Fetch the latest version of the source code
-2- Merge/solve conflicts
-3- Adds new files
-4- Commits modified files
-5- Push everything to **Github**
+5 steps:
+1. Fetch the latest version of the source code
+2. Merge/solve conflicts
+3. Adds new files
+4. Commits modified files
+5. Push everything to **Github**
 
 Update to **MESSAGE** by a summary of the modifications you did.
 
