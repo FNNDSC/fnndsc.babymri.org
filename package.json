@@ -12,7 +12,7 @@
     "deploy": "polymer build && timestamp=$(date \"+%c\") && gh-pages -d build/bundled -m \"Deployed on $timestamp\"",
     "lint": "eslint . --ext js,html --ignore-path .gitignore",
     "save": "git stash && git pull origin master --rebase --prune && git stash pop && git add -A && git commit -am \"$MESSAGE\" && git push origin master;",
-    "server": "git stash && git pull origin master --rebase --prune && git stash pop && docker-compose pull && docker-compose up",
+    "serve": "git stash && git pull origin master --rebase --prune && git stash pop && docker-compose pull && docker-compose up",
     "test": "npm run lint && polymer test"
   }
 }
