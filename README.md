@@ -1,9 +1,11 @@
 # fnndsc.babymri.org
 
 - [fnndsc.babymri.org](#fnndscbabymriorg)
+  - [Install npm](#install-npm)
   - [Get the source code](#get-the-source-code)
   - [Easy setup](#easy-setup)
     - [Start the docker development server](#start-the-docker-development-server)
+    - [Save changes](#save-changes)
   - [Default setup](#default-setup)
     - [Get the polymer cli](#get-the-polymer-cli)
     - [Install the bower dependencies](#install-the-bower-dependencies)
@@ -20,6 +22,10 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+## Install npm
+
+**NPM** is required to save the code on the Github server easily.
+
 ## Get the source code
 
 Use **Git** to fetch the source code.
@@ -30,10 +36,6 @@ Use **Git** to fetch the source code.
 
 Easy setup leverages **Docker** to easily modify content. It is recommended if you just intend to add/remove pages or content. For more advanced development, please follow the default setup.
 
-### Install npm
-
-**NPM** is required to save the code on the Github server easily.
-
 ### Start the docker development server
 
 This command serves the app at `http://localhost:8060`:
@@ -41,7 +43,7 @@ This command serves the app at `http://localhost:8060`:
     cd fnndsc.babymri.org
     docker-compose up
 
-### Save you changes
+### Save changes
 
 ** If the command does not work, please contact somebody from the dev team for help.**
 
