@@ -79,7 +79,7 @@ Your updates should be visible @ [http://localhost:8060](http://localhost:8060).
 
 **If the command does not work, please contact somebody from the dev team for help.**
 
-Replace **message content** by a summary of the modifications you did.
+Replace `message content` by a summary of the modifications you did.
 
     cd
     cd src/fnndsc.babymri.org/
