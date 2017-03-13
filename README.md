@@ -65,7 +65,7 @@ You should see the `FNNDSC Overview` of the website.
 - Save edits
 - Refresh the page @ [http://localhost:8060](http://localhost:8060)
 
-Your updates should be visible.
+Your updates should be visible @ [http://localhost:8060](http://localhost:8060).
 
 #### [Add a member](https://github.com/FNNDSC/fnndsc.babymri.org/wiki/add-member)
 
@@ -79,11 +79,11 @@ Your updates should be visible.
 
 **If the command does not work, please contact somebody from the dev team for help.**
 
-Replace **<message content>** by a summary of the modifications you did.
+Replace **message content** by a summary of the modifications you did.
 
     cd
     cd src/fnndsc.babymri.org/
-    MESSAGE="<message content>" npm run save
+    MESSAGE="message content" npm run save
 
     # for instance:
     # MESSAGE="Modified FNNDSC overview" npm run save
