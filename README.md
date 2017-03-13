@@ -21,14 +21,14 @@
   - [Run tests](#run-tests)
   - [Deploy](#deploy)
 
-[Table of contents generated with markdown-toc]('http://ecotrust-canada.github.io/markdown-toc/')
+[Table of contents generated with markdown-toc](http://ecotrust-canada.github.io/markdown-toc/)
 
 
 ## Pre-requisites
 
 ### Install npm
 
-[NPM Official Website]('https://nodejs.org/en/download/')
+[NPM Official Website](https://nodejs.org/en/download/)
 
 ### Get the source code
 
@@ -45,13 +45,13 @@ Use **Git** to fetch the source code.
 
 **If the command does not work, please contact somebody from the dev team for help.**
 
-This command serves the app at [http://localhost:8060]('http://localhost:8060'):
+This command serves the app at [http://localhost:8060](http://localhost:8060):
 
     cd
     cd src/fnndsc.babymri.org
     npm run serve
 
-Go to [http://localhost:8060]('http://localhost:8060').
+Go to [http://localhost:8060](http://localhost:8060).
 
 You should see the `FNNDSC Overview` of the website.
 
@@ -63,7 +63,7 @@ You should see the `FNNDSC Overview` of the website.
 
 - Do your edits
 - Save edits
-- Refresh the page @ [http://localhost:8060]('http://localhost:8060')
+- Refresh the page @ [http://localhost:8060](http://localhost:8060)
 
 Your updates should be visible.
 
@@ -102,7 +102,7 @@ Replace **<message content>** by a summary of the modifications you did.
 
 ### Start the default development server
 
-This command serves the app at `http://localhost:8080`:
+This command serves the app at [http://localhost:8080](http://localhost:8080):
 
     polymer serve
 
