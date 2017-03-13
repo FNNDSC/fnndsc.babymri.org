@@ -14,6 +14,9 @@
 
 Use **Git** to fetch the source code.
 
+    cd
+    mkdir src
+    cd src
     git clone https://github.com/FNNDSC/fnndsc.babymri.org.git
 
 ## For users
@@ -24,7 +27,8 @@ Use **Git** to fetch the source code.
 
 This command serves the app at <a href='http://localhost:8060'>http://localhost:8060</a>:
 
-    cd fnndsc.babymri.org
+    cd
+    cd srd/fnndsc.babymri.org
     npm run serve
 
 Go to <a href='http://localhost:8060'>http://localhost:8060</a>.
@@ -47,7 +51,8 @@ Your updates should be visible.
 
 Replace **<message content>** by a summary of the modifications you did.
 
-    cd fnndsc.babymri.org/
+    cd
+    cd src/fnndsc.babymri.org/
     MESSAGE="<message content>" npm run save
 
     # for instance:
