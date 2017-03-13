@@ -2,7 +2,7 @@
 
 - [fnndsc.babymri.org](#fnndscbabymriorg)
   - [Get the source code](#get-the-source-code)
-  - [Docker setup](#docker-setup)
+  - [Easy setup](#easy-setup)
     - [Start the docker development server](#start-the-docker-development-server)
   - [Default setup](#default-setup)
     - [Get the polymer cli](#get-the-polymer-cli)
@@ -24,7 +24,13 @@
 
     git clone https://github.com/FNNDSC/fnndsc.babymri.org.git
 
-## Docker setup
+## Easy setup
+
+Easy setup leverages **Docker** to easily modify content. It is recommended if you just intend to add/remove pages or content. For more advanced development, please follow the default setup.
+
+### Install npm
+
+It is required to push the code to the Github server easily.
 
 ### Start the docker development server
 
@@ -32,6 +38,11 @@ This command serves the app at `http://localhost:8060`:
 
     cd fnndsc.babymri.org
     docker-compose up
+    
+### Save you changes
+
+    cd fnndsc.babymri.org/
+    MESSAGE="Added user and modified the overview page." npm run save
 
 ## Default setup
 
