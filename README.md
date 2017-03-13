@@ -28,24 +28,24 @@ Use **Git** to fetch the source code.
 This command serves the app at <a href='http://localhost:8060'>http://localhost:8060</a>:
 
     cd
-    cd srd/fnndsc.babymri.org
+    cd src/fnndsc.babymri.org
     npm run serve
 
 Go to <a href='http://localhost:8060'>http://localhost:8060</a>.
 
 You should see the `FNNDSC Overview` of the website.
 
-Pro-tip: Hit <control key> + <c key> at the same time to stop the server.
+    Pro-tip: Hit `control` key + `c` key at the same time to stop the server.
 
 ### Edit the content
 
 * Do your edits
 * Save edits
-* Refresh the page <a href='http://localhost:8060'>http://localhost:8060</a>
+* Refresh the page @ <a href='http://localhost:8060'>http://localhost:8060</a>
 
 Your updates should be visible.
 
-### Save you changes
+### Save you changes to Github
 
 **If the command does not work, please contact somebody from the dev team for help.**
 
@@ -66,7 +66,7 @@ Replace **<message content>** by a summary of the modifications you did.
 
 ### Install the npm/bower dependencies
 
-    cd fnndsc.babymri.org
+    cd fnndsc.babymri.org/
     bower install
     npm install
 
