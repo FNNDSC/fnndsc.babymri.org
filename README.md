@@ -43,7 +43,9 @@ Use **Git** to fetch the source code.
 
 ### Start the server
 
-**If the command does not work, please contact somebody from the dev team for help.**
+``` diff
+- If the command does not work, please contact the dev team.
+```
 
 This command serves the app at [http://localhost:8060](http://localhost:8060):
 
@@ -77,7 +79,9 @@ Your updates should be visible @ [http://localhost:8060](http://localhost:8060).
 
 ### Save you changes to Github
 
-**If the command does not work, please contact somebody from the dev team for help.**
+``` diff
+- If the command does not work, please contact the dev team.
+```
 
 Replace `message content` by a summary of the modifications you did.
 
