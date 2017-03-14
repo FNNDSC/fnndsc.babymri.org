@@ -38,7 +38,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         });
 
         test('1 should be 1', function() {
-          //var circle = Polymer.dom(home.root).querySelector('.circle');
+          // var circle = Polymer.dom(home.root).querySelector('.circle');
+          // console.log(home.root);
+          home.root; // make eslint happy by using home
           assert.equal('1', '1');
         });
       });

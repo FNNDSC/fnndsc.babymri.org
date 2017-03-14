@@ -153,12 +153,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         member: Object,
       },
       listeners: {
-        'iron-resize': '_onIronResize'
+        'iron-resize': '_onIronResize',
       },
       attached: function() {
         this.async(this.notifyResize, 1);
       },
-      _onIronResize: function(){
+      _onIronResize: function() {
         var x = this.offsetLeft + 32;
         this.$.check.style.right = x + 'px';
       },

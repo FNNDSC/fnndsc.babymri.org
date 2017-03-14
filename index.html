@@ -14,7 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <script>
       if (window.location.hostname === 'fnndsc.babymri.org') {
-        'https:'!==window.location.protocol&&(window.location.protocol='https')
+        'https:'!==window.location.protocol&&(window.location.protocol='https');
       }
     </script>
 
@@ -59,7 +59,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- Handle github pages redirect hack -->
     <!--  http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/ -->
     <script>
-      (function(){
+      (function() {
         var redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
         if (redirect && redirect != location.href) {

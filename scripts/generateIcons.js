@@ -1,8 +1,10 @@
-const util = require('util')
-const exec = require('child_process').exec;
+/* global require */
+var exec = require('child_process').exec;
 
-var targetImage = '/Users/nico/work/gitroot/fnndsc.babymri.org/images/art/logo_gray.png';
-var destination = '/Users/nico/work/gitroot/fnndsc.babymri.org/images/manifest/';
+var targetImage =
+    '/Users/nico/work/gitroot/fnndsc.babymri.org/images/art/logo_gray.png';
+var destination =
+    '/Users/nico/work/gitroot/fnndsc.babymri.org/images/manifest/';
 
 var icons = [
   {
@@ -35,13 +37,18 @@ var icons = [
   },
 ];
 
+/**
+ * Log output
+ * @param {*} error
+ * @param {*} stdout
+ * @param {*} stderr
+ * @return {*}
+ */
 function puts(error, stdout, stderr) {
-  console.log(error);
-  console.log(stdout);
-  console.log(stderr);
-};
+  return error + stdout + stderr;
+}
 
-for(let i=0; i<icons.length; i++){
+for (var i=0; i<icons.length; i++) {
   exec('convert ' + targetImage +
          ' -verbose' +
          ' -background none' +
