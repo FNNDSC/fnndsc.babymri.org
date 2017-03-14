@@ -49,8 +49,8 @@ Use **Git** to fetch the source code.
 
 This command serves the app at [http://localhost:8060](http://localhost:8060):
 
-    cd
-    cd src/fnndsc.babymri.org
+    cd && \
+    cd src/fnndsc.babymri.org && \
     npm run serve
 
 Go to [http://localhost:8060](http://localhost:8060).
@@ -85,8 +85,8 @@ Your updates should be visible @ [http://localhost:8060](http://localhost:8060).
 
 Replace `message content` by a summary of the modifications you did.
 
-    cd
-    cd src/fnndsc.babymri.org/
+    cd && \
+    cd src/fnndsc.babymri.org/ && \
     MESSAGE="message content" npm run save
 
     # for instance:
@@ -100,8 +100,8 @@ Replace `message content` by a summary of the modifications you did.
 
 ### Install the npm/bower dependencies
 
-    cd fnndsc.babymri.org/
-    bower install
+    cd fnndsc.babymri.org/ && \
+    bower install && \
     npm install
 
 ### Start the default development server
