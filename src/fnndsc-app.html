@@ -21,11 +21,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../bower_components/paper-item/paper-icon-item.html">
 <link rel="import" href="../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../bower_components/paper-menu/paper-submenu.html">
+<link rel="import" href="../bower_components/paper-toast/paper-toast.html">
 
 <dom-module id="fnndsc-app">
   <template>
@@ -107,6 +109,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .warning > div > div {
         margin-left: 12px;
       }
+
+        .yellow-button {
+    text-transform: none;
+    color: #eeff41;
+  }
+
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -116,7 +124,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
 
-    <app-drawer-layout fullbleed>
+    <app-drawer-layout id="drawerLayout" fullbleed>
       <!-- Drawer content -->
       <app-drawer id="drawer">
         <div style="height: 100%; overflow: auto;">
@@ -290,6 +298,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       </app-header-layout>
     </app-drawer-layout>
+
+    <paper-toast id="toast1" duration="0" text="A new version of the website is available!">
+      <paper-button on-tap="_updateServiceWorker" class="yellow-button">Update now!</paper-button>
+    </paper-toast>
+
   </template>
 
   <script>
@@ -317,6 +330,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         '_routePageChanged(routeData.page)',
       ],
 
+      _updateServiceWorker: function(){
+        this.$.toast1.close();
+        window.location.reload();
+      },
+
       _routePageChanged: function(page) {
         this.page = page || 'fnndsc';
 
@@ -341,7 +359,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             this.importHref(this.resolveUrl('lazy-resources.html'), function() {
               // Register service worker if supported.
               if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/service-worker.js');
+                navigator.serviceWorker.register('/service-worker.js')
+                .then(function(registration) {
+                  registration.onupdatefound = function() {
+                    var installingWorker = registration.installing;
+                    installingWorker.onstatechange = function() {
+                      switch (installingWorker.state) {
+                        case 'installed':
+                          if (navigator.serviceWorker.controller) {
+                            console.log('New version available');
+                            toast1.open();
+                          }
+                          break;
+                        case 'redundant':
+                          console.error('The installing service worker became redundant.');
+                          break;
+                        default:
+                          break;
+                      }
+                    };
+                  };
+                });
               }
               this.loadComplete = true;
             }, null, true);
