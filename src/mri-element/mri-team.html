@@ -95,10 +95,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.members = this.__members();
       },
       _isMRI: function(item) {
-        return item.MRITeam && !item.AlumniTeam;
+        return item.team.indexOf('mri') >= 0 && item.team.indexOf('alumni') < 0;
       },
       _isAlumni: function(item) {
-        return item.MRITeam && item.AlumniTeam;
+        return item.team.indexOf('mri') >= 0 && item.team.indexOf('alumni') >= 0;
       },
     });
   </script>

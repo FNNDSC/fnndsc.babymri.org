@@ -128,19 +128,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.members = this.__members();
       },
       _isMEG: function(item) {
-        return item.MEGTeam && !item.AlumniTeam;
+        return item.team.indexOf('meg') >= 0 && item.team.indexOf('alumni') < 0;
       },
       _isMRI: function(item) {
-        return item.MRITeam && !item.AlumniTeam;
+        return item.team.indexOf('mri') >= 0 && item.team.indexOf('alumni') < 0;
       },
       _isNIRS: function(item) {
-        return item.NIRSTeam && !item.AlumniTeam;
+        return item.team.indexOf('nirs') >= 0 && item.team.indexOf('alumni') < 0;
       },
       _isDEV: function(item) {
-        return item.DEVTeam && !item.AlumniTeam;
+        return item.team.indexOf('dev') >= 0 && item.team.indexOf('alumni') < 0;
       },
       _isAlumni: function(item) {
-        return item.AlumniTeam;
+        return item.team.indexOf('alumni') >= 0;
       },
     });
   </script>
