@@ -44,7 +44,7 @@
     
     <script>!function(){var e=sessionStorage.redirect;delete sessionStorage.redirect,e&&e!=location.href&&history.replaceState(null,null,e)}();</script>
 
-    <script>window.Polymer={dom:"shadow",lazyRegister:!0},function(){"use strict";var e=function(){window.HTMLImports||document.dispatchEvent(new CustomEvent("WebComponentsReady",{bubbles:!0}))},n="registerElement"in document&&"import"in document.createElement("link")&&"content"in document.createElement("template");if(n)e();else{var t=document.createElement("script");t.async=!0,t.src="/bower_components/webcomponentsjs/webcomponents-lite.min.js",t.onload=e,document.head.appendChild(t)}}(),"serviceWorker"in navigator&&window.addEventListener("load",function(){navigator.serviceWorker.register("/service-worker.js").then(function(e){e.onupdatefound=function(){var n=e.installing;n.onstatechange=function(){switch(n.state){case"installed":navigator.serviceWorker.controller&&(console.log("New version available"),parentElement.fire("notify",{message:"New version available",buttonText:"Reload to update",buttonTapHandler:function(){window.location.reload()},duration:0}));break;case"redundant":console.error("The installing service worker became redundant.")}}}})});</script>
+    <script>window.Polymer={dom:"shadow",lazyRegister:!0},function(){"use strict";var e=function(){window.HTMLImports||document.dispatchEvent(new CustomEvent("WebComponentsReady",{bubbles:!0}))},n="registerElement"in document&&"import"in document.createElement("link")&&"content"in document.createElement("template");if(n)e();else{var t=document.createElement("script");t.async=!0,t.src="/bower_components/webcomponentsjs/webcomponents-lite.min.js",t.onload=e,document.head.appendChild(t)}}(),"serviceWorker"in navigator&&window.addEventListener("load",function(){navigator.serviceWorker.register("/service-worker.js")});</script>
 
     <link rel="import" href="/src/fnndsc-app.html">
 
@@ -60,7 +60,6 @@
   </head>
   <body>
     <fnndsc-app></fnndsc-app>
-    
   
 
 </body></html>
