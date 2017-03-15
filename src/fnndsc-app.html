@@ -107,7 +107,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .warning > div > div {
         margin-left: 12px;
       }
-
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -279,7 +278,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             attr-for-selected="name"
             fallback-selection="error404"
             role="main"
-            on-scroll="_scroll">
+            on-scroll="_scroll"
+            selected-attribute="visible">
           <fnndsc-element name="fnndsc" current-section="[[page]]" route="[[subroute]]"></fnndsc-element>
           <meg-element name="meg" current-section="[[page]]" route="[[subroute]]"></meg-element>
           <mri-element name="mri" current-section="[[page]]" route="[[subroute]]"></mri-element>
@@ -287,6 +287,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <dev-element name="dev" current-section="[[page]]" route="[[subroute]]"></dev-element>
           <error404-element name="error404"></error404-element>
         </iron-pages>
+
       </app-header-layout>
     </app-drawer-layout>
   </template>
@@ -307,6 +308,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         },
         routeData: Object,
         subroute: Object,
+        loadComplete: {
+          type: Boolean,
+        }
       },
 
       observers: [
@@ -322,10 +326,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _pageChanged: function(page) {
+        // load non-critical resources
+        this._ensureLazyLoaded();
         // Load page import on demand. Show 404 page if fails
         var resolvedPageUrl =
           this.resolveUrl(page + '-element/' + page + '-element.html');
         this.importHref(resolvedPageUrl, null, this._showPage404, true);
+      },
+
+      _ensureLazyLoaded: function(){
+        // load lazy resources after render and set `loadComplete` when done.
+        if (!this.loadComplete) {
+          Polymer.RenderStatus.afterNextRender(this, function() {
+            this.importHref(this.resolveUrl('lazy-resources.html'), function() {
+              // Register service worker if supported.
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/service-worker.js');
+              }
+              this.loadComplete = true;
+            }, null, true);
+          });
+        }
       },
 
       _showPage404: function() {

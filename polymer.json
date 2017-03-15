@@ -45,7 +45,8 @@
     "src/dev-element/dev-projects.html",
     "src/dev-element/dev-research.html",
     "src/dev-element/dev-team.html",
-    "src/error404-element/error404-element.html"
+    "src/error404-element/error404-element.html",
+    "src/lazy-resources.html"
   ],
   "sourceGlobs": [
     "src/**/*",
