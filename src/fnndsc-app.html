@@ -323,14 +323,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         subroute: Object,
         loadComplete: {
           type: Boolean,
-        }
+        },
       },
 
       observers: [
         '_routePageChanged(routeData.page)',
       ],
 
-      _updateServiceWorker: function(){
+      _updateServiceWorker: function() {
         this.$.toast1.close();
         window.location.reload();
       },
@@ -352,7 +352,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.importHref(resolvedPageUrl, null, this._showPage404, true);
       },
 
-      _ensureLazyLoaded: function(){
+      _ensureLazyLoaded: function() {
+        var toast1 = this.$.toast1;
         // load lazy resources after render and set `loadComplete` when done.
         if (!this.loadComplete) {
           Polymer.RenderStatus.afterNextRender(this, function() {
@@ -364,19 +365,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   registration.onupdatefound = function() {
                     var installingWorker = registration.installing;
                     installingWorker.onstatechange = function() {
-                      switch (installingWorker.state) {
-                        case 'installed':
-                          if (navigator.serviceWorker.controller) {
-                            console.log('New version available');
-                            toast1.open();
-                          }
-                          break;
-                        case 'redundant':
-                          console.error('The installing service worker became redundant.');
-                          break;
-                        default:
-                          break;
-                      }
+                      if (installingWorker.state === 'installed' &&
+                            navigator.serviceWorker.controller) {
+                          toast1.open();
+                        }
                     };
                   };
                 });
