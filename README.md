@@ -56,7 +56,7 @@ Go to [http://localhost:8060](http://localhost:8060).
 
 You should see the `FNNDSC Overview` of the website.
 
-    Pro-tip: Hit `control` key + `c` key at the same time to stop the server.
+    Pro-tip: To stop the server, hit `control` + `c` keys at the same.
 
 ### Edit the content
 
