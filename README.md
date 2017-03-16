@@ -34,9 +34,9 @@
 
 Use **git** to fetch the source code.
 
-    cd && \
-    mkdir src && \
-    cd src && \
+    cd ~
+    mkdir src 
+    cd src 
     git clone https://github.com/FNNDSC/fnndsc.babymri.org.git
 
 ## For users
