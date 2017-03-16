@@ -76,7 +76,7 @@ Your updates should be visible @ [http://localhost:8060](http://localhost:8060).
 
 #### [Add a table of content in a page]()
 
-### Save you changes to Github
+### Save your changes to github
 
 ``` diff
 - If the command does not work, please contact the dev team.
@@ -84,12 +84,13 @@ Your updates should be visible @ [http://localhost:8060](http://localhost:8060).
 
 Replace `message content` by a summary of the modifications you did.
 
-    cd && \
-    cd src/fnndsc.babymri.org/ && \
+    cd ~/src/fnndsc.babymri.org 
     MESSAGE="message content" npm run save
 
     # for instance:
     # MESSAGE="Modified FNNDSC overview" npm run save
+
+This will push the changes you made up to the master repository. This will not update the live website. To update the live website, let the dev team know.
 
 ## For developers
 
