@@ -49,8 +49,7 @@ Use **git** to fetch the source code.
 
 This command serves the app at [http://localhost:8060](http://localhost:8060):
 
-    cd && \
-    cd src/fnndsc.babymri.org && \
+    cd ~/src/fnndsc.babymri.org 
     npm run serve
 
 Go to [http://localhost:8060](http://localhost:8060).
