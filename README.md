@@ -32,7 +32,7 @@
 
 ### Get the source code
 
-Use **Git** to fetch the source code.
+Use **git** to fetch the source code.
 
     cd && \
     mkdir src && \
