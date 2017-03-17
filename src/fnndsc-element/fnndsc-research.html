@@ -1,4 +1,4 @@
-<html><head><meta charset="UTF-8"><link rel="import" href="../fnndsc-app.html"></head><body><dom-module id="mri-research">
+<html><head><meta charset="UTF-8"><link rel="import" href="../fnndsc-app.html"></head><body><dom-module id="fnndsc-research">
   <template>
     <style include="common-styles"></style>
     <style>
@@ -9,13 +9,13 @@
 
     <article>
       <header class="center">
-        <h1>Publications and papers</h1>
+        <h1>Papers and publications</h1>
       </header>
 
       <nav>
         <div>Contents</div>
         <ul>
-          <template is="dom-repeat" items="[[publications]]" as="publication" filter="_isMRI">
+          <template is="dom-repeat" items="[[publications]]" as="publication">
             <li><a href$="#{{publication.id}}" label$="{{publication.id}}" on-tap="__scrollTo">{{publication.date}} - {{publication.whereShort}} - {{publication.title}}</a></li>
           </template>
         </ul>
@@ -23,7 +23,7 @@
 
       <main>
 
-        <template is="dom-repeat" items="[[publications]]" as="publication" filter="_isMRI">
+        <template is="dom-repeat" items="[[publications]]" as="publication">
           <section>
             <h2 id="{{publication.id}}" class="maxflow">{{publication.title}}</h2>
 
@@ -48,6 +48,6 @@
 
   </template>
 
-  <script>Polymer({is:"mri-research",behaviors:[TOCBehavior,PublicationsBehavior],_isMRI:function(i){return i.team.indexOf("mri")>=0}});</script>
+  <script>Polymer({is:"fnndsc-research",behaviors:[TOCBehavior,PublicationsBehavior]});</script>
 </dom-module>
 </body></html>

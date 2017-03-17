@@ -60,6 +60,6 @@
 
   </template>
 
-  <script>Polymer({is:"MRI-team",behaviors:[TOCBehavior,MembersBehavior],properties:{members:{type:Array}},ready:function(){this.members=this.__members()},_isMRI:function(e){return e.team.indexOf("mri")>=0&&e.team.indexOf("alumni")<0},_isAlumni:function(e){return e.team.indexOf("mri")>=0&&e.team.indexOf("alumni")>=0}});</script>
+  <script>Polymer({is:"MRI-team",behaviors:[TOCBehavior,MembersBehavior],_isMRI:function(e){return e.team.indexOf("mri")>=0&&e.team.indexOf("alumni")<0},_isAlumni:function(e){return e.team.indexOf("mri")>=0&&e.team.indexOf("alumni")>=0}});</script>
 </dom-module>
 </body></html>

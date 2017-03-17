@@ -94,6 +94,6 @@
 
   </template>
 
-  <script>Polymer({is:"fnndsc-team",behaviors:[TOCBehavior,MembersBehavior],properties:{members:{type:Array}},ready:function(){this.members=this.__members()},_isMEG:function(e){return e.team.indexOf("meg")>=0&&e.team.indexOf("alumni")<0},_isMRI:function(e){return e.team.indexOf("mri")>=0&&e.team.indexOf("alumni")<0},_isNIRS:function(e){return e.team.indexOf("nirs")>=0&&e.team.indexOf("alumni")<0},_isDEV:function(e){return e.team.indexOf("dev")>=0&&e.team.indexOf("alumni")<0},_isAlumni:function(e){return e.team.indexOf("alumni")>=0}});</script>
+  <script>Polymer({is:"fnndsc-team",behaviors:[TOCBehavior,MembersBehavior],_isMEG:function(n){return n.team.indexOf("meg")>=0&&n.team.indexOf("alumni")<0},_isMRI:function(n){return n.team.indexOf("mri")>=0&&n.team.indexOf("alumni")<0},_isNIRS:function(n){return n.team.indexOf("nirs")>=0&&n.team.indexOf("alumni")<0},_isDEV:function(n){return n.team.indexOf("dev")>=0&&n.team.indexOf("alumni")<0},_isAlumni:function(n){return n.team.indexOf("alumni")>=0}});</script>
 </dom-module>
 </body></html>

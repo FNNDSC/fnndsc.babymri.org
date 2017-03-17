@@ -15,30 +15,30 @@
       <nav>
         <div>Contents</div>
         <ul>
-          <li><a href="#chris-august2015" label="chris-august2015" on-tap="__scrollTo">08-2015 - EMBC - ChRIS - A web-based neuroimaging and informatics system for collecting, organizing, processing, visualizing and sharing of medical data</a></li>
-          <li><a href="#chris-july2014" label="chris-july2014" on-tap="__scrollTo">07-2014 - OHBM - ChRIS: real-time web-based MRI data collection, analysis, and sharing</a></li>
+          <template is="dom-repeat" items="[[publications]]" as="publication" filter="_isDEV">
+            <li><a href$="#{{publication.id}}" label$="{{publication.id}}" on-tap="__scrollTo">{{publication.date}} - {{publication.whereShort}} - {{publication.title}}</a></li>
+          </template>
         </ul>
       </nav>
 
       <main>
 
-        <section>
-          <h2 id="chris-august2015" class="maxflow">ChRIS - A web-based neuroimaging and informatics system for collecting, organizing, processing, visualizing and sharing of medical data</h2>
+        <template is="dom-repeat" items="[[publications]]" as="publication" filter="_isDEV">
+          <section>
+            <h2 id="{{publication.id}}" class="maxflow">{{publication.title}}</h2>
 
-          <p>Background / Purpose: The children's research integration system (ChRIS), developed at Boston Children's Hospital, is a novel web-based data storage and data processing workflow manager. It provides strict data security while also facilitating secure, realtime interactive collaboration over the internet and internal intranets.</p>
-          <p>Main conclusion: We believe that using web-based metaphors in medical image processing, can lead to increased collaboration and sharing of results and findings. Ultimately, this can contribute to improved clinical care.</p>
-          <p>Conference paper: <a href="https://www.researchgate.net/publication/266156558_ChRIS_real-time_web-based_MRI_data_collection_analysis_and_sharing">here</a></p>
+            <p>{{publication.abstract}}</p>
 
-        </section>
+            <p>
+              <template is="dom-repeat" items="[[publication.authors]]" as="author">
+                {{author}},
+              </template>
+            </p>
 
-        <section>
-          <h2 id="chris-july2014" class="maxflow">ChRIS: real-time web-based MRI data collection, analysis, and sharing</h2>
+            <p><a href="{{publication.link}}">Direct link</a></p>
 
-          <p>Background / Purpose: The children's research integration system (ChRIS), developed at Boston Children's Hospital, is a novel web-based data storage and data processing workflow manager. It provides strict data security while also facilitating secure, realtime interactive collaboration over the internet and internal intranets.</p>
-          <p>Main conclusion: We believe that using web-based metaphors in medical image processing, can lead to increased collaboration and sharing of results and findings. Ultimately, this can contribute to improved clinical care.</p>
-          <p>Conference paper: <a href="https://www.researchgate.net/publication/266156558_ChRIS_real-time_web-based_MRI_data_collection_analysis_and_sharing">here</a></p>
-
-        </section>
+          </section> 
+        </template>
         
       </main>
 
@@ -48,6 +48,6 @@
 
   </template>
 
-  <script>Polymer({is:"dev-research",behaviors:[TOCBehavior]});</script>
+  <script>Polymer({is:"dev-research",behaviors:[TOCBehavior,PublicationsBehavior],_isDEV:function(e){return e.team.indexOf("dev")>=0}});</script>
 </dom-module>
 </body></html>

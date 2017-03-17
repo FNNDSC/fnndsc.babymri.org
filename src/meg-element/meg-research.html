@@ -9,26 +9,36 @@
 
     <article>
       <header class="center">
-        <h1>Publications and papers</h1>
+        <h1>Papers and publications</h1>
       </header>
 
       <nav>
         <div>Contents</div>
         <ul>
-          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
+          <template is="dom-repeat" items="[[publications]]" as="publication" filter="_isMEG">
+            <li><a href$="#{{publication.id}}" label$="{{publication.id}}" on-tap="__scrollTo">{{publication.date}} - {{publication.whereShort}} - {{publication.title}}</a></li>
+          </template>
         </ul>
       </nav>
 
       <main>
 
-        <section>
-          <h2 id="about" class="maxflow">About</h2>
+        <template is="dom-repeat" items="[[publications]]" as="publication" filter="_isMEG">
+          <section>
+            <h2 id="{{publication.id}}" class="maxflow">{{publication.title}}</h2>
 
-          <p>Sweet roll tart tiramisu. Pudding muffin chocolate bar pie. Biscuit croissant liquorice lemon drops apple pie chupa chups. Liquorice candy soufflé chocolate bar biscuit gummies.</p>
-          <p>Carrot cake danish jelly tart. Pie jelly beans cookie. Tiramisu cupcake ice cream gummies.</p>
-          <p>Chocolate candy canes lemon drops. Topping caramels sesame snaps dragée powder caramels cake carrot cake. Candy sugar plum candy canes lemon drops candy. Lollipop donut cotton candy.</p>
+            <p>{{publication.abstract}}</p>
 
-        </section>
+            <p>
+              <template is="dom-repeat" items="[[publication.authors]]" as="author">
+                {{author}},
+              </template>
+            </p>
+
+            <p><a href="{{publication.link}}">Direct link</a></p>
+
+          </section> 
+        </template>
         
       </main>
 
@@ -38,6 +48,6 @@
 
   </template>
 
-  <script>Polymer({is:"meg-research",behaviors:[TOCBehavior]});</script>
+  <script>Polymer({is:"meg-research",behaviors:[TOCBehavior,PublicationsBehavior],_isMEG:function(e){return e.team.indexOf("meg")>=0}});</script>
 </dom-module>
 </body></html>
