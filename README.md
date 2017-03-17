@@ -7,9 +7,9 @@
   - [Start the server](#start-the-server)
   - [Edit the content](#edit-the-content)
     - [General workflow](#general-workflow)
-    - [Add a member](#add-a-member)
+    - [Add a lab member](#add-a-member)
     - [Add a section (i.e. FNNDSC, MRI, etc.)](#add-a-section--ie-fnndsc--mri--etc-)
-    - [Add a page within a section (i.e. Overview, Team, etc.)](#add-a-page-within-a-section--ie-overview--team--etc-)
+    - [Add a page within a section (i.e. Join a study, Overview, Team, etc.)](#add-a-page-within-a-section--ie-overview--team--etc-)
     - [Add a table of content in a page](#add-a-table-of-content-in-a-page)
   - [Save you changes to Github](#save-you-changes-to-github)
 - [For developers](#for-developers)
@@ -68,11 +68,11 @@ You should see the `FNNDSC Overview` of the website.
 
 Your updates should be visible @ [http://localhost:8060](http://localhost:8060).
 
-#### [Add a member](https://github.com/FNNDSC/fnndsc.babymri.org/wiki/add-member)
+#### [Add a lab member](https://github.com/FNNDSC/fnndsc.babymri.org/wiki/add-member)
 
 #### [Add a section (i.e. FNNDSC, MRI, etc.)](https://github.com/FNNDSC/fnndsc.babymri.org/wiki/add-section)
 
-#### [Add a page within a section (i.e. Overview, Team, etc.)](https://github.com/FNNDSC/fnndsc.babymri.org/wiki/add-page)
+#### [Add a page within a section (i.e. Join a study, Overview, Team, etc.)](https://github.com/FNNDSC/fnndsc.babymri.org/wiki/add-page)
 
 #### [Add a table of content in a page]()
 
