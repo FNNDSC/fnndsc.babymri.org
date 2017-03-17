@@ -82,14 +82,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
       is: 'MRI-team',
       behaviors: [TOCBehavior, MembersBehavior],
-      properties: {
-          members: {
-            type: Array,
-        },
-      },
-      ready: function() {
-        this.members = this.__members();
-      },
       _isMRI: function(item) {
         return item.team.indexOf('mri') >= 0 && item.team.indexOf('alumni') < 0;
       },

@@ -16,6 +16,7 @@
     "SectionBehavior": true,
     "MembersBehavior": true,
     "ContactsBehavior": true,
-    "TOCBehavior": true
+    "TOCBehavior": true,
+    "PublicationsBehavior": true
   }
 }

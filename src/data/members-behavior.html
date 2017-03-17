@@ -1,6 +1,15 @@
 <script>
   /** @polymerBehavior MembersBehavior */
   MembersBehavior = {
+      properties: {
+          members: {
+            type: Array,
+        },
+      },
+
+      ready: function() {
+        this.members = this.__members();
+      },
       __members: function() {
         var members = [
             // Banu Atham

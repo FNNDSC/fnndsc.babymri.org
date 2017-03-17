@@ -83,14 +83,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
       is: 'nirs-team',
       behaviors: [TOCBehavior, MembersBehavior],
-      properties: {
-          members: {
-            type: Array,
-        },
-      },
-      ready: function() {
-        this.members = this.__members();
-      },
       _isNIRS: function(item) {
         return item.team.indexOf('nirs') >= 0 && item.team.indexOf('alumni') < 0;
       },

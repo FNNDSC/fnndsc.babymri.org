@@ -1,0 +1,78 @@
+<script>
+  /* eslint-disable max-len */
+  /** @polymerBehavior PublicationsBehavior */
+  PublicationsBehavior = {
+      properties: {
+          publications: {
+            type: Array,
+        },
+      },
+
+      ready: function() {
+        this.publications = this.__publications();
+      },
+
+      __publications: function() {
+        var publications = [
+            // MRI February 2017
+            {
+            'id': 'mri-feb2017',
+            'date': '02-2017',
+            'title': 'Spatiotemporal alignment of in utero BOLD-MRI series:Spatiotemporal Alignment of MRI series',
+            'authors': ['Esra Abaci Turk', 'Jie Luo', 'Borjan Gagoski', 'Javier Pascau', 'Carolina Bibbo', 'Julian N. Robinson', 'P. Ellen Grant', 'Elfar Adalsteinsson', 'Polina Goland', 'Norberto Malpica'],
+            'type': 'Article',
+            'where': 'Journal of Magnetic Resonance Imaging',
+            'whereShort': 'Journal of MRI',
+            'keywords': [],
+            'abstract': 'To present a method for spatiotemporal alignment of in-utero magnetic resonance imaging (MRI) time series acquired during maternal hyperoxia for enabling improved quantitative tracking of blood oxygen level-dependent (BOLD) signal changes that characterize oxygen transport through the placenta to fetal organs. The proposed pipeline for spatiotemporal alignment of images acquired with a single-shot gradient echo echo-planar imaging includes 1) signal nonuniformity correction, 2) intravolume motion correction based on nonrigid registration, 3) correction of motion and nonrigid deformations across volumes, and 4) detection of the outlier volumes to be discarded from subsequent analysis. BOLD MRI time series collected from 10 pregnant women during 3T scans were analyzed using this pipeline. To assess pipeline performance, signal fluctuations between consecutive timepoints were examined. In addition, volume overlap and distance between manual region of interest (ROI) delineations in a subset of frames and the delineations obtained through propagation of the ROIs from the reference frame were used to quantify alignment accuracy. A previously demonstrated rigid registration approach was used for comparison. The proposed pipeline improved anatomical alignment of placenta and fetal organs over the state-of-the-art rigid motion correction methods. In particular, unexpected temporal signal fluctuations during the first normoxia period were significantly decreased (P < 0.01) and volume overlap and distance between region boundaries measures were significantly improved (P < 0.01). The proposed approach to align MRI time series enables more accurate quantitative studies of placental function by improving spatiotemporal alignment across placenta and fetal organs. Level of Evidence: 1 J. Magn. Reson. Imaging 2017',
+            'link': 'https://www.researchgate.net/publication/313266885_Spatiotemporal_alignment_of_in_utero_BOLD-MRI_series_Spatiotemporal_Alignment_of_MRI_series',
+            'team': ['mri'],
+            },
+            // MEG Jan 2017
+            {
+            'id': 'meg-jan2017',
+            'date': '01-2017',
+            'title': 'Current and Emerging Potential of Magnetoencephalography in the Detection and Localization of High-Frequency Oscillations in Epilepsy',
+            'authors': ['Eleonora Tamilia', 'Joseph R. Madsen', 'P Ellen Grant', 'Philipp L. Pearl', 'Christos Papadelis'],
+            'type': 'Article',
+            'where': 'Frontiers in Neurology',
+            'whereShort': 'Frontiers',
+            'keywords': ['high-frequency oscillations', 'magnetoencephalography', 'epilepsy', 'epileptogenic zone', 'epilepsy surgery', 'source localization'],
+            'abstract': 'Up to a third of patients with epilepsy are medically intractable and need resective surgery. To be successful, epilepsy surgery requires a comprehensive preoperative evaluation to define the epileptogenic zone (EZ), the brain area that should be resected to achieve seizure-freedom. Due to lack of tools and methods that measure the EZ directly, this area is defined indirectly based on concordant data from a multitude of presurgical non-invasive tests and intracranial recordings. However, the results of these tests are often insufficiently concordant or inconclusive. Thus, the presurgical evaluation of surgical candidates is frequently challenging or unsuccessful. To improve the efficacy of the surgical treatment, there is an overriding need for reliable biomarkers that can delineate the EZ. High frequency oscillations (HFOs) have emerged over the last decade as new potential biomarkers for the delineation of the EZ. Multiple studies have shown that HFOs are spatially associated with the EZ. Despite the encouraging findings, there are still significant challenges for the translation of HFOs as epileptogenic biomarkers to the clinical practice. One of the major barriers is the difficulty to detect and localize them with non-invasive techniques, such as magnetoencephalography (MEG) or scalp electroencephalography (EEG). Although most literature have studied HFOs using invasive recordings, recent studies have reported the detection and localization of HFOs using MEG or scalp EEG. MEG seems to be particularly advantageous compared to scalp EEG due to its inherent advantages of being less affected by skull conductivity and less susceptible to contamination from muscular activity. The detection and localization of HFOs with MEG would largely expand the clinical utility of these new promising biomarkers to an earlier stage in the diagnostic process and to a wider range of patients with epilepsy. Here, we conduct a thorough critical review of the recent MEG literature that investigates HFOs in patients with epilepsy, summarizing the different methodological approaches and the main findings. Our goal is to highlight the emerging potential of MEG in the non-invasive detection and localization of HFOs for the presurgical evaluation of patients with medically refractory epilepsy (MRE).',
+            'link': 'https://www.researchgate.net/publication/312211075_Current_and_Emerging_Potential_of_Magnetoencephalography_in_the_Detection_and_Localization_of_High-Frequency_Oscillations_in_Epilepsy',
+            'team': ['meg'],
+            },
+            // ChRIS August 2015
+            {
+            'id': 'chris-august2015',
+            'date': '08-2015',
+            'title': 'ChRIS - A web-based neuroimaging and informatics system for collecting, organizing, processing, visualizing and sharing of medical data',
+            'authors': ['Rudolph Pienaar', 'Nicolas Rannou', 'Jorge Bernal', 'Daniel Haehn', 'P Ellen Grant'],
+            'type': 'Conference Paper',
+            'where': '37th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)',
+            'whereShort': 'EMBC',
+            'keywords': [],
+            'abstract': 'Background / Purpose: The children\'s research integration system (ChRIS), developed at Boston Children\'s Hospital, is a novel web-based data storage and data processing workflow manager. It provides strict data security while also facilitating secure, realtime interactive collaboration over the internet and internal intranets. Main conclusion: We believe that using web-based metaphors in medical image processing, can lead to increased collaboration and sharing of results and findings. Ultimately, this can contribute to improved clinical care.',
+            'link': 'https://www.researchgate.net/publication/308865656_ChRIS-_A_web-based_neuroimaging_and_informatics_system_for_collecting_organizing_processing_visualizing_and_sharing_of_medical_data',
+            'team': ['dev'],
+            },
+            // ChRIS July 2014
+            {
+            'id': 'chris-july2014',
+            'date': '07-2014',
+            'title': 'ChRIS: real-time web-based MRI data collection, analysis, and sharing',
+            'authors': ['Rudolph Pienaar', 'Nicolas Rannou', 'Daniel Haehn', 'P Ellen Grant'],
+            'type': 'Conference Paper',
+            'where': '20th Annual Meeting of the Organization for Human Brain Mapping (OHBM) 2014',
+            'whereShort': 'OHBM',
+            'keywords': [],
+            'abstract': 'Background / Purpose: The children\'s research integration system (ChRIS), developed at Boston Children\'s Hospital, is a novel web-based data storage and data processing workflow manager. It provides strict data security while also facilitating secure, realtime interactive collaboration over the internet and internal intranets. Main conclusion: We believe that using web-based metaphors in medical image processing, can lead to increased collaboration and sharing of results and findings. Ultimately, this can contribute to improved clinical care.',
+            'link': 'https://www.researchgate.net/publication/266156558_ChRIS_real-time_web-based_MRI_data_collection_analysis_and_sharing',
+            'team': ['dev'],
+            },
+          ];
+        return publications;
+      },
+    /* eslint-enable max-len */
+  };
+</script>
