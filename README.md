@@ -11,7 +11,7 @@
     - [Add a section (i.e. FNNDSC, MRI, etc.)](#add-a-section--ie-fnndsc--mri--etc-)
     - [Add a page within a section (i.e. Join a study, Overview, Team, etc.)](#add-a-page-within-a-section--ie-overview--team--etc-)
     - [Add a table of content in a page](#add-a-table-of-content-in-a-page)
-  - [Save you changes to Github](#save-you-changes-to-github)
+  - [Save your changes to Github](#save-you-changes-to-github)
 - [For developers](#for-developers)
   - [Get the polymer cli](#get-the-polymer-cli)
   - [Install the npm/bower dependencies](#install-the-npm-bower-dependencies)
