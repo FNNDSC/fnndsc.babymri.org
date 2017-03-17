@@ -1,0 +1,82 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/social-icons.html">
+
+<link rel="import" href="common-styles.html">
+<link rel="import" href="extra-icons.html">
+
+<dom-module id="footer-element">
+  <template>
+    <style include="common-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+
+      footer > div {
+        box-sizing: border-box;
+        padding: 2px;
+        width: 100%;
+      }
+
+      .medias {
+        display:flex;
+        background-color: var(--dark-primary-color);
+        color: var(--text-primary-color);
+        padding: 10px;
+        justify-content: center;
+        padding: 16px 0;
+      }
+
+      .license {
+        font-size: 12px;
+        background-color: #212121;
+        color: #d9d9d9;
+      }
+
+      a {
+        color: var(--text-primary-color);
+        display: inline-block;
+        padding: 3px 20px;
+        font-size: 13px;
+        font-weight: 500;
+        text-shadow: none;
+        text-decoration: none;
+        text-align: center;
+        min-width: 100px;
+        white-space: nowrap;
+      }
+
+      a span {
+        line-height: 24px;
+        margin-left: 5px;
+      }
+
+      #slack .st0{fill:#FD2;}
+
+    </style>
+
+    <footer class="center">
+        <div class="medias">
+            <a href="https://github.com/fnndsc" title="Get the FNNDSC code on GitHub" aria-label="Get the FNNDSC code on GitHub">
+                <iron-icon icon="extra:github"></iron-icon>
+                <span>/FNNDSC</span>
+            </a>
+            <a href="https://slack.babymri.org/" title="Join the FNNDSC slack channel" aria-label="Join the FNNDSC slack channel">
+                <iron-icon id="slack" icon="extra:slack"></iron-icon>
+                <span>Slack Channel</span>
+            </a>
+        </div>
+        <div class="license">© 2017 FNNDSC. Code Licensed under the ? License. Documentation licensed under ?.</div>
+    </footer>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'footer-element',
+    });
+  </script>
+</dom-module>
