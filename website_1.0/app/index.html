@@ -361,8 +361,63 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <fnndsc-opportunities></fnndsc-opportunities>
             </section>
             <section data-route="fnndsc-overview" class="parallax-section">
-              <div class="focus-target" tabindex="-1"></div>
-              <fnndsc-overview id="fnndscOverview"></fnndsc-overview>
+              <!-- <div class="focus-target" tabindex="-1"></div> -->
+              <parallax-container>
+      
+      <parallax-group id="group1" z=2>
+        <parallax-layer>
+          <div class="title">
+            Base Layer
+          </div>
+        </parallax-layer>
+        <parallax-layer layer="-1">
+          <div class="title">
+            Background Layer
+          </div>
+        </parallax-layer>
+      </parallax-group>
+      
+      <parallax-group id="group2" z=3>
+        <parallax-layer>
+          <div class="title">
+            Base Layer
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=1>
+          <div class="title">
+            Foreground Layer
+          </div>
+        </parallax-layer>
+      </parallax-group>
+      
+      <parallax-group id="group3" z=1>
+        <parallax-layer>
+          <div class="title">
+            Base Layer
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=-2>
+          <div class="title">
+            Deep Background Layer
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=-1>
+          <div class="title">
+            Background Layer
+          </div>
+        </parallax-layer>
+      </parallax-group>
+      
+      <parallax-group id="group4" z=2>
+        <parallax-layer>
+          <div class="title">
+            Base Layer
+          </div>
+        </parallax-layer>
+      </parallax-group>
+      
+    </parallax-container>
+              <!-- <fnndsc-overview id="fnndscOverview"></fnndsc-overview> -->
             </section>
             <section data-route="fnndsc-team">
               <div class="focus-target" tabindex="-1"></div>

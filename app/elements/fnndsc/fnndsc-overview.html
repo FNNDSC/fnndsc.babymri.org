@@ -1,0 +1,182 @@
+<link rel='import' href='../../bower_components/polymer/polymer.html'>
+<link rel="import" href="../../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+
+<!-- <link rel='import' href='../../bower_components/parallax-element/parallax-layers.html'>
+<link rel="import" href="../../bower_components/parallax-element/parallax-scroller-behavior.html"> -->
+
+<link rel="import" href="../fnndsc/fnndsc-overview-styles.html">
+
+<dom-module id="fnndsc-overview">
+  <template>
+    <style include="fnndsc-overview-styles"></style>
+    <style>
+      :host {
+        
+        font: 200% / 1.5 Arial;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        -webkit-overflow-scrolling: auto;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      parallax-layers {
+        min-height: 300px;
+        z-index: -1;
+      }
+
+      parallax-layers > .parallax-layer {
+        background: url("https://googledrive.com/host/0B8u7h0aKnydhMENyWHZNbVJTTkE/fetal_by_jfkpaint.jpg");
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+      }
+    
+      div.no-parallax {
+        min-height: 300px;
+        z-index: 0;
+        background: red;
+        border-style: solid;
+        border-width: 5px;
+        border-color: black;
+      }
+
+      parallax-container {
+        font-size: 200%;
+      }
+
+      .title {
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+            parallax-container {
+        font-size: 200%;
+      }
+      .title {
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      #group1 [layer="-1"]{
+        background: #1f8dd6;
+      }
+      #group2{
+        background: #1faad6;
+      }
+      #group3 [layer="-2"]{
+        background: #1f8dff;
+      }
+      #group4 {
+        background: #0077dd;
+      }
+
+
+    </style>
+
+<!-- <parallax-container> -->
+      
+      <parallax-group id="group1" z=2>
+        <parallax-layer>
+          <div class="title">
+            Base Layer
+          </div>
+        </parallax-layer>
+        <parallax-layer layer="-1">
+          <div class="title">
+            Background Layer
+          </div>
+        </parallax-layer>
+      </parallax-group>
+      
+      <parallax-group id="group2" z=3>
+        <parallax-layer>
+          <div class="title">
+            Base Layer
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=1>
+          <div class="title">
+            Foreground Layer
+          </div>
+        </parallax-layer>
+      </parallax-group>
+      
+      <parallax-group id="group3" z=1>
+        <parallax-layer>
+          <div class="title">
+            Base Layer
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=-2>
+          <div class="title">
+            Deep Background Layer
+          </div>
+        </parallax-layer>
+        <parallax-layer layer=-1>
+          <div class="title">
+            Background Layer
+          </div>
+        </parallax-layer>
+      </parallax-group>
+      
+      <parallax-group id="group4" z=2>
+        <parallax-layer>
+          <div class="title">
+            Base Layer
+          </div>
+        </parallax-layer>
+      </parallax-group>
+      
+    <!-- </parallax-container> -->
+<!-- 
+      <div style="height:50vh">
+           footer....
+          </div> -->
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'fnndsc-overview',
+        //behaviors: [Polymer.ParallaxScrollerBehavior],
+        properties: {
+        sections: {
+          type: Array,
+          value: function() {
+            return [{label:'Welcome to the Fetal Neonatal Neuroimaging and Developmental Science Center (FNNDSC)', depth:0},
+              {label:'wow parallax', depth:-0.3},
+              {label:'much normal div', depth:0},
+              {label:'yum foreground', depth:0.2},
+              {label:'so normal div', depth:0},
+              {label:'very parallax', depth:-1},
+              {label:'many normal div', depth:0}];
+          }
+        }
+      },
+      isNormalSection: function(section) {
+        return section.depth === 0;
+      },
+      computeSectionZindex: function(section) {
+        return 'z-index:' + (section.depth <= 0 ? -1 : 1) + ';';
+      }
+      });
+    })();
+  </script>
+</dom-module>
