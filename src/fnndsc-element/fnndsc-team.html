@@ -1,4 +1,21 @@
-<html><head><meta charset="UTF-8"><link rel="import" href="../fnndsc-app.html"></head><body><dom-module id="fnndsc-team">
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../data/members-behavior.html">
+<link rel="import" href="../common-element/toc-behavior.html">
+<link rel="import" href="../common-element/footer-element.html">
+<link rel="import" href="../common-element/member-card-element.html">
+
+<link rel="import" href="../common-element/common-styles.html">
+
+</head><body><dom-module id="fnndsc-team">
   <template>
     <style include="common-styles"></style>
     <style>
@@ -94,6 +111,26 @@
 
   </template>
 
-  <script>Polymer({is:"fnndsc-team",behaviors:[TOCBehavior,MembersBehavior],_isMEG:function(n){return n.team.indexOf("meg")>=0&&n.team.indexOf("alumni")<0},_isMRI:function(n){return n.team.indexOf("mri")>=0&&n.team.indexOf("alumni")<0},_isNIRS:function(n){return n.team.indexOf("nirs")>=0&&n.team.indexOf("alumni")<0},_isDEV:function(n){return n.team.indexOf("dev")>=0&&n.team.indexOf("alumni")<0},_isAlumni:function(n){return n.team.indexOf("alumni")>=0}});</script>
+  <script>
+    Polymer({
+      is: 'fnndsc-team',
+      behaviors: [TOCBehavior, MembersBehavior],
+      _isMEG: function(item) {
+        return item.team.indexOf('meg') >= 0 && item.team.indexOf('alumni') < 0;
+      },
+      _isMRI: function(item) {
+        return item.team.indexOf('mri') >= 0 && item.team.indexOf('alumni') < 0;
+      },
+      _isNIRS: function(item) {
+        return item.team.indexOf('nirs') >= 0 && item.team.indexOf('alumni') < 0;
+      },
+      _isDEV: function(item) {
+        return item.team.indexOf('dev') >= 0 && item.team.indexOf('alumni') < 0;
+      },
+      _isAlumni: function(item) {
+        return item.team.indexOf('alumni') >= 0;
+      },
+    });
+  </script>
 </dom-module>
 </body></html>
