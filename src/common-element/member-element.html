@@ -1,12 +1,4 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
+<html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
 <link rel="import" href="../../bower_components/iron-icons/maps-icons.html">
@@ -42,9 +34,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <div class="card-content">
 
-        <!-- FROM https://github.com/robdodson/contacts-app -->
+        
 
-        <!-- CONTACT PERSON -->
+        
         <div class="group">
           <div class="item">
             <iron-icon icon="icons:face"></iron-icon>
@@ -65,7 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
         </div>
 
-        <!-- POSITION -->
+        
         <div class="group">
           <div class="item">
             <iron-icon icon="icons:assignment-ind"></iron-icon>
@@ -90,7 +82,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
         </div>
 
-        <!-- CONTACT MEDIA -->
+        
         <div class="group">
           <div class="item">
             <iron-icon icon="communication:phone"></iron-icon>
@@ -111,7 +103,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
         </div>
 
-        <!-- CONTACT ADDRESS -->
+        
         <div class="group">
           <div class="item">
             <iron-icon icon="maps:place"></iron-icon>
@@ -129,7 +121,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
       </div>
 
-      <!-- PUBLICATIONS -->
+      
       <div class="group">
           <a href="[[member.publications]]" target="_blank">
             <div class="item">
@@ -143,30 +135,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   </template>
 
-  <script>
-    Polymer({
-      is: 'member-element',
-      behaviors: [Polymer.IronResizableBehavior],
-      properties: {
-        member: Object,
-      },
-      listeners: {
-        'iron-resize': '_onIronResize',
-      },
-      attached: function() {
-        this.async(this.notifyResize, 1);
-      },
-      _onIronResize: function() {
-        var x = this.offsetLeft + 32;
-        this.$.check.style.right = x + 'px';
-      },
-      _onTap: function(event) {
-        this.fire('scroll', 0);
-        // Add an item to the history log
-        history.back();
-        return event.preventDefault();
-      },
-    });
-  </script>
+  <script>Polymer({is:"member-element",behaviors:[Polymer.IronResizableBehavior],properties:{member:Object},listeners:{"iron-resize":"_onIronResize"},attached:function(){this.async(this.notifyResize,1)},_onIronResize:function(){var e=this.offsetLeft+32;this.$.check.style.right=e+"px"},_onTap:function(e){return this.fire("scroll",0),history.back(),e.preventDefault()}});</script>
 </dom-module>
 </body></html>

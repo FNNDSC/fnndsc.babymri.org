@@ -1,12 +1,4 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
+<html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/google-map/google-map.html">
 <link rel="import" href="../../bower_components/google-map/google-map-marker.html">
 <link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
@@ -35,9 +27,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <paper-card>
       <div class="card-content">
 
-        <!-- FROM https://github.com/robdodson/contacts-app -->
+        
 
-        <!-- CONTACT PERSON -->
+        
         <div class="group">
           <div class="item">
             <iron-icon icon="icons:face"></iron-icon>
@@ -54,7 +46,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
         </div>
 
-        <!-- CONTACT MEDIA -->
+        
         <div class="group">
           <div class="item">
             <iron-icon icon="communication:phone"></iron-icon>
@@ -75,7 +67,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
         </div>
 
-        <!-- CONTACT ADDRESS -->
+        
         <div class="group">
           <div class="item">
             <iron-icon icon="maps:place"></iron-icon>
@@ -93,13 +85,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
       </div>
 
-      <!-- CONTACT MAP -->
+      
       <div class="card-actions">
         <div on-tap="_onTap">
           <paper-button>Show map</paper-button>
-          <paper-icon-button id="moreInfoIcon" icon="hardware:keyboard-arrow-up" title="more info" style="float:right;"></paper-icon-button>
+          <paper-icon-button id="moreInfoIcon" icon="hardware:keyboard-arrow-up" title="more info" style="float:right"></paper-icon-button>
         </div>
-        <iron-collapse id="moreInfo" style="width:100%;">
+        <iron-collapse id="moreInfo" style="width:100%">
           <google-map fit-to-markers="" api-key="AIzaSyCn6fYO1tJL0oaJRXo45aUmZguPpOjQXSA" zoom="13">
             <google-map-marker draggable="true" latitude="[[contact.latitude]]" longitude="[[contact.longitude]]" title="[[contact.title]]"></google-map-marker>
           </google-map>
@@ -109,22 +101,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   </template>
 
-  <script>
-    Polymer({
-      is: 'contact-element',
-
-      properties: {
-        contact: Object,
-      },
-
-      _onTap: function(event) {
-        var moreInfo = this.$.moreInfo;
-        var iconButton = this.$.moreInfoIcon;
-        iconButton.icon = moreInfo.opened ? 'icons:expand-less'
-                                            : 'icons:expand-more';
-        moreInfo.toggle();
-      },
-    });
-  </script>
+  <script>Polymer({is:"contact-element",properties:{contact:Object},_onTap:function(o){var e=this.$.moreInfo;this.$.moreInfoIcon.icon=e.opened?"icons:expand-less":"icons:expand-more",e.toggle()}});</script>
 </dom-module>
 </body></html>
