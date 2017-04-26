@@ -13,7 +13,7 @@
     "dock": "docker-compose pull && docker-compose up",
     "lint": "eslint . --ext js,html --ignore-path .gitignore",
     "save": "git stash && git pull origin master --rebase --prune && git stash pop && git add -A && git commit -am \"$MESSAGE\" && git push origin master;",
-    "serve": "git stash && git pull origin master --rebase --prune && git stash pop && npm run dock || npm run dock",
+    "serve": "chmod -R o+rw * && git stash && git pull origin master --rebase --prune && git stash pop && npm run dock || npm run dock",
     "test": "npm run lint && polymer test"
   }
 }
