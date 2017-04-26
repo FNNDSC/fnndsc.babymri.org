@@ -1,6 +1,7 @@
 # fnndsc.babymri.org
 
 - [Pre-requisites](#pre-requisites)
+  - [Setup git](#setup-git)
   - [Install npm](#install-npm)
   - [Get the source code](#get-the-source-code)
 - [For users](#for-users)
@@ -26,6 +27,19 @@
 
 ## Pre-requisites
 
+### Setup git
+
+#### Create an account on Github
+
+[Create Github account](https://github.com/join)
+
+#### Let dev team know your Github username
+
+#### Setup git on your machine
+
+    git config --global user.name "johndoe"
+    git config --global user.email johndoe@example.com
+
 ### Install npm
 
 [NPM Official Website](https://nodejs.org/en/download/)
@@ -35,9 +49,11 @@
 Use **git** to fetch the source code.
 
     cd ~
-    mkdir src 
-    cd src 
+    mkdir src
+    chmod 755 src
+    cd src
     git clone https://github.com/FNNDSC/fnndsc.babymri.org.git
+    chmod 755 fnndsc.babymri.org
 
 ## For users
 
