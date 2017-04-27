@@ -27,6 +27,17 @@
 
 ## Pre-requisites
 
+### Make sure you have a local working directory on your machine
+
+Please provide your username and the name of your machine to dev team for setup.
+
+```bash
+su -                                         # become 'root'
+cd /home                                     # goto the local HDD directory called '/home'
+mkdir <firstname>                            # create a directory called <firstname>
+chown -R <username>:<usergroup> <firstname>  # make your user own this new dir
+```
+
 ### Setup git
 
 #### Create an account on Github
@@ -35,9 +46,9 @@
 
 #### Let dev team know your Github username
 
-#### Setup git on your machine
+#### Setup git credentials
 
-    git config --global user.name "johndoe"
+    git config --global user.name johndoe
     git config --global user.email johndoe@example.com
 
 ### Install npm
@@ -48,12 +59,10 @@
 
 Use **git** to fetch the source code.
 
-    cd ~
+    cd /home/<firstname>
     mkdir src
-    chmod 755 src
     cd src
     git clone https://github.com/FNNDSC/fnndsc.babymri.org.git
-    chmod 755 fnndsc.babymri.org
 
 ## For users
 
@@ -65,7 +74,7 @@ Use **git** to fetch the source code.
 
 This command serves the app at [http://localhost:8060](http://localhost:8060):
 
-    cd ~/src/fnndsc.babymri.org 
+    cd /home/<firstname>/src/fnndsc.babymri.org
     npm run serve
 
 Go to [http://localhost:8060](http://localhost:8060).
@@ -90,7 +99,7 @@ Your updates should be visible @ [http://localhost:8060](http://localhost:8060).
 
 #### [Add a page within a section (i.e. Join a study, Overview, Team, etc.)](https://github.com/FNNDSC/fnndsc.babymri.org/wiki/add-page)
 
-#### [Add a table of content in a page]()
+#### [Add a table of content in a page](https://github.com/FNNDSC/fnndsc.babymri.org/wiki/add-toc)
 
 ### Save your changes to github
 
@@ -100,7 +109,7 @@ Your updates should be visible @ [http://localhost:8060](http://localhost:8060).
 
 Replace `message content` by a summary of the modifications you did.
 
-    cd ~/src/fnndsc.babymri.org 
+    cd /home/<firstname>/src/fnndsc.babymri.org 
     MESSAGE="message content" npm run save
 
     # for instance:
