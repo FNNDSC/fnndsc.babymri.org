@@ -1,6 +1,7 @@
 # fnndsc.babymri.org
 
 - [Pre-requisites](#pre-requisites)
+  - [Local working directory](#local-working-directory)
   - [Setup git](#setup-git)
   - [Install npm](#install-npm)
   - [Get the source code](#get-the-source-code)
@@ -27,7 +28,7 @@
 
 ## Pre-requisites
 
-### Make sure you have a local working directory on your machine
+### Local working directory
 
 Please provide your username and the name of your machine to dev team for setup.
 
@@ -109,7 +110,7 @@ Your updates should be visible @ [http://localhost:8060](http://localhost:8060).
 
 Replace `message content` by a summary of the modifications you did.
 
-    cd /home/<firstname>/src/fnndsc.babymri.org 
+    cd /home/<firstname>/src/fnndsc.babymri.org
     MESSAGE="message content" npm run save
 
     # for instance:
