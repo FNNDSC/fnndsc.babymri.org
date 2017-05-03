@@ -2,7 +2,7 @@ FROM node:latest
 MAINTAINER fnndsc "dev@babymri.org"
 
 # Install bower and polymer-cli
-RUN npm install -g bower polymer-cli@0.13.0
+RUN npm install -g bower polymer-cli@0.17.0
 
 # Install bower deps
 RUN mkdir -p /src/website-deps
