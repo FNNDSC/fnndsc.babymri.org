@@ -2,7 +2,7 @@ FROM node:latest
 MAINTAINER fnndsc "dev@babymri.org"
 
 # Install bower and polymer-cli
-RUN npm install -g bower polymer-cli@0.17.0
+RUN npm install -g bower polymer-cli@0.18.0
 
 # Install bower deps
 RUN mkdir -p /src/website-deps
@@ -12,7 +12,7 @@ RUN bower install --allow-root
 
 # Start dev server
 WORKDIR /src/website
-EXPOSE 8080
+EXPOSE 8060
 COPY ./docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["polymer", "serve", "--hostname", "0.0.0.0"]
+CMD ["polymer", "serve", "--hostname", "0.0.0.0", "--port", "8060"]

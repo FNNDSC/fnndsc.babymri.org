@@ -2,7 +2,7 @@ web:
   #build: .
   image: fnndsc/fnndsc.babymri.org
   ports:
-    - "8060:8080"
+    - "8060:8060"
   volumes:
    - .:/src/website
   labels:
