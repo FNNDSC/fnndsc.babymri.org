@@ -20,7 +20,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <style>
       :host {
+        --app-primary-color: #4285f4;
+        --app-secondary-color: black;
+
         display: block;
+      }
+
+      iron-pages {
+        padding: 48px 62px;
       }
     </style>
 
@@ -37,20 +44,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         data="{{subrouteData}}">
     </app-route>
 
-    <!--Hi FNNDSC [[page]]-->
-
     <iron-pages fullbleed
             selected="[[page]]"
             attr-for-selected="name"
             fallback-selection="error404"
             role="main">
             <meg-overview name="overview"></meg-overview>
-            <meg-labs name="labs"></meg-labs>
-            <meg-team name="team"></meg-team>
-            <meg-member name="member" member="[[member]]"></meg-member>
-            <meg-contact name="contact"></meg-contact>
-            <meg-projects name="projects"></meg-projects>
-            <meg-research name="research"></meg-research>
+            <meg-resources name="resources"></meg-resources>
+            <meg-whatismeg name="whatismeg"></meg-whatismeg>
+            <meg-people name="people"></meg-people>
+            <meg-canmychildparticipate name="canmychildparticipate"></meg-canmychildparticipate>
+            <meg-whattoexpect name="whattoexpect"></meg-whattoexpect>
+            <meg-contactus name="contactus"></meg-contactus>
+            <meg-gettinghere name="gettinghere"></meg-gettinghere>
+            <meg-jobpostings name="jobpostings"></meg-jobpostings>
+            <meg-mediaandtimeline name="mediaandtimeline"></meg-mediaandtimeline>
             <meg-error404 name="error404"></meg-error404>
         </iron-pages>
 

@@ -1,0 +1,315 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../common-element/common-styles.html">
+
+<link rel="import" href="../common-element/section-behavior.html">
+
+<dom-module id="meg-resources">
+  <template>
+<style include="common-styles"></style>
+  <style>
+    :host {
+        display: block;
+      }
+    </style>
+
+    <article class="flow">
+      <header class="center">
+        <h1 class="maxflow centerText">RESOURCES</h1>
+      </header>
+
+      <main>
+
+        <section class="center primary">
+          <h3><font size="5">Facility:</font></h3>
+          <div class="imageContainer maxflow">
+            <div style="height: 500px">
+                 <img src="IMG_0938.jpg" style="width: 100%;max-height: 100%" />
+            </div>
+
+            <div>
+                <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+              <p><font size="4">Special care has been taken to ensure a safe, comfortable, child friendly environment for research
+participants and BCH patients alike. While the child is getting comfortable and prepared for a
+ recording we can provide toys, books, coloring materials, or a tablet to watch cartoons. The facility
+   itself has been made a welcoming and fun environment with various stickers and wall decals. In case
+of emergency there is a hospital bed, code cart, as well oxygen, air, nitrous oxide, and waste anesthetic
+   gas disposal.</font></p> 
+   <p>&nbsp;</p>
+     <p>&nbsp;</p>     <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            </div>
+          </div>
+
+            </section>
+
+  <section class="center">
+          <h3><font size="5">Magnetoencephalography (MEG):</font></h3>
+          <div class="imageContainer maxflow">
+            <div style="height: 500px">
+              <IMG SRC="helmet_horizontal.JPG" style="width: 100%;max-height: 100%" />
+            </div>
+            <div>
+
+              <p><font size="4"> Hardware: The MagView Biomagnetometer, or “BabyMEG”, is a 375-channel
+magnetoencephalography (MEG) system manufactured by Tristan Technologies and is specifically
+ designed to study the electrophysiological development of the human brain during the first years of life
+ (the helmet provides whole head coverage for 95% of 36-month old boys). The BabyMEG has a total
+ of 375 sensors structured in a unique two-layer design. The inner layer consists of 270 magnetometers
+ (10 mm diameter, ~15 mm coil-to-coil spacing), the outer layer has 35 three-axis magnetometers (20
+ mm x 20 mm), and there are also 3 three-axis reference magnetometers (</font><font size="4"><u><A HREF = "http://www.tristantech.com/">Tristan Tech</A></u></font>). </font></p>
+</section>
+<section class="center">
+      <div class="imageContainer maxflow">
+        <div style="height: 500px">
+          <IMG SRC="mne_cpp.JPG" style="width: 100%;max-height: 100%" />
+        </div>
+
+  <p><font size="4"> Software: The BabyMEG data acquisition software, MNE-Scan, has been developed as part of a
+   collaboration with Athinoula A. Martinos Center for Biomedical Imaging at MGH and the Technische
+   Universität Ilmenau. It provides features such as online averaging, real time source localization, and
+  records data in .fif file format. This open source platform functions as a part of the greater MNE-CPP
+  framework; for further information, please refer to the MNE-CPP website at </font><font size="4"><u><A HREF = "http://www.mne-cpp.org/">MNE-CPP</A></u></font>.</font> </p>
+            </div>
+          </div>
+
+        </section>
+
+  <section class="center primary">
+      <h3><font size="5">Magnetically Shielded Room (MSR):</font></h3>
+        <div class="imageContainer maxflow">
+          <div style="height: 500px">
+            <IMG SRC="msr.jpg" style="width: 100%;max-height: 100%" rotate="90" />
+          </div>
+          <div>
+
+            <p><font size="4">The BabyMEG is located in a lightly shielded, two-layer MSR (Vacuumschmeltz model Basic+) with a
+6.4 cm gap between the layers. The needs of patients were carefully considered when installing the
+ MSR. The floor of the MSR is at the same level as the floor of the MEG participant preparation area to
+facilitate ease of transfer for patients and emergency equipment between rooms. </font></p>
+          </div>
+        </div>
+
+      </section>
+
+  <section class="center">
+      <h3><font size="5">Helium Recycler:</font></h3>
+      <div class="imageContainer maxflow">
+        <div style="height: 500px">
+          <IMG SRC="recycler.png" style="width: 100%;max-height: 100%" />
+
+        </div>
+        <div>
+
+          <p><font size="4">A closed-cycle helium recycler provides continuous operation without interruption during MEG
+measurements. The helium recycler utilized was manufactured by Cryomech Inc.
+   (</font><font size="4"><u><A HREF = "http://www.cryomech.com/">Cryomech</A></u></font>).<font size="4"> This virtually maintenance-free system greatly reduces operation cost and the
+  need for helium refills. </font></p>
+  <p>&nbsp;</p>
+        </div>
+      </div>
+
+    </section>
+  <section class="center primary">
+      <h3><font size="5">Electroencephalography (EEG):</font></h3>
+    <div class="imageContainer maxflow">
+      <div style="height: 500px">
+        <IMG SRC="eeg.jpg" style="width: 100%;max-height: 100%" />
+
+      </div>
+      <div>
+
+        <p><font size="4">Several EEG caps are available for independent use or simultaneous MEG and EEG recordings.
+The EEG system utilized is manufactured by ANT-Neuro. (</font><font size="4"><u><A HREF = "http://www.ant-neuro.com/">ANT-Neuro</A></u></font>).<font size="4"> There
+ are two child size caps, one with 32 channels and one with 128 channels. There are three small
+sized caps, one with 32 channels and two with 128 channels. The EEG system also provides the option
+ to monitor eye blinks/movement, heartbeats, and muscle activity with EOG, ECG, and EMG
+electrodes. </font></p>
+      </div>
+    </div>
+
+  </section>
+  <section class="center">
+      <h3><font size="5">Auditory:</font></h3>
+  <div class="imageContainer maxflow">
+    <div style="height: 500px">
+      <IMG SRC="electrostatic.jpg" style="width: 100%;max-height: 100%" />
+    </div>
+    <div>
+
+      <p><font size="4">The MSR is equipped with two full-range, 15.5” x 18” x 69”, electrostatic loudspeakers. These
+speakers, manufactured by Sanders Sound Systems (</font><font size="4"><u><A HREF = "http://www.sanderssoundsystems.com/">Sanders Sound Systems</A></u></font>)<font size="4">,
+operate on high voltage rather than magnetism and thus do not produce magnetic fields that interfere with MEG signals. ESL impedance is 112 ohms at 500 Hz falling to 1.2 ohms at 20
+KHz. Features include a digital crossover system, which includes an automated, room correction
+system and full DSP equalization capabilities. Further technical specifications available upon request
+from Sanders Sound Systems.</font></p>
+</section>
+<section class="center">
+<div class="imageContainer maxflow">
+<div style="height: 500px">
+  <IMG SRC="acoustic_pannels.jpg" style="width: 100%;max-height: 100%" />
+</div>
+
+<p><font size="4">Four 2' x 4' SONEX Melamine Foam Acoustical Panels are placed across from the electrostatic
+speakers to reduce echo (</font><font size="4"><u><A HREF = "http://www.acousticalsolutions.com/">Acoustical Solutions</A></u></font>). </font></p>
+</section>
+<section class="center">
+   <div class="imageContainer maxflow">
+   <div style="height: 500px">
+     <IMG SRC="ear_inserts.jpg" style="width: 100%;max-height: 100%" />
+   </div>
+
+<p><font size="4">Etymotic’s ER-30 ear inserts are made of 20 feet of silicon tubing with disposable ear tips. A Crown
+ Audio XLS 1502 Stereo Power Amplifier (525W at 4 Ohm) is available for use in conjunction with
+ these ear inserts (</font><font size="4"><u><A HREF = "http://www.etymotic.com/">Etymotic</A></u></font>). </font></p>
+</section>
+
+<section class="center primary">
+    <h3><font size="5">Visual:</font></h3>
+
+<div class="imageContainer maxflow">
+<div style="height: 500px">
+  <IMG SRC="projector.jpg" style="width: 100%;max-height: 100%" />
+</div>
+
+<p><font size="4">The Avotec Silent Vision SV 8000 MR Mini Projection System is available for visual experiments with
+the screen 3.5 feet from the MEG helmet (</font><font size="4"><u><A HREF = "http://www.avotecinc.com/">Avotec</A></u></font>). </font></p>
+</section>
+<section class="center primary">
+   <div class="imageContainer maxflow">
+   <div style="height: 500px">
+     <IMG SRC="eyetracker.jpg" style="width: 100%;max-height: 100%" />
+   </div>
+
+<p><font size="4">The SR-Research EyeLink 1000 Plus utilizes a long-range mount to detect eye movements from 4 feet
+away. The fiber optic camera head has lenses available at 35 mm, 50 mm, and 75 mm. It comes with
+ accompanying software including Experiment Builder and Data Viewer (</font><font size="4"><u><A HREF = "http://www.sr-research.com/eyelink1000plus.html/">SR Research</A></u></font>). </font></p>
+  </div>
+
+</section>
+  <section class="center">
+      <h3><font size="5">Tactile Stimulators:</font></h3>
+<div class="imageContainer maxflow">
+    <div style="height: 500px">
+    <IMG SRC="pizo_REDO.jpg" style="width: 100%;max-height: 100%" />
+  </div>
+  <div>
+
+    <p><font size="4">The QuaeroSys Piezoelectric stimulator has rounded tactile caps in a 2x4 configuration with a timing
+accuracy of 0.5ms (</font><font size="4"><u><A HREF = "http://www.quaerosys.com/">QuaeroSys</A></u></font>). </font></p>  
+</section>
+<section class="center">
+   <div class="imageContainer maxflow">
+   <div style="height: 500px">
+     <IMG SRC="pneumatic1.jpg" style="width: 100%;max-height: 100%"/>
+   </div>
+<p>&nbsp;</p>
+<p><font size="4">The 4D Neuroimaging Somatosensory Stimulus Generator has 4 pneumatic tubes with finger clips
+ attached.</font></p>
+ </section>
+  <IMG SRC="pneumatic2.jpg" align="middle" height="100" width="300"/>
+
+<section class="center">
+    <div class="imageContainer maxflow">
+    <div style="height: 500px">
+      <IMG SRC="braille.jpg" style="width: 100%;max-height: 100%"/>
+    </div>
+<p>&nbsp;</p>
+<p><font size="4">The Metec Braille Cell Stimulator has 5 attached units, each with 8 rounded tactile caps in a 2x4
+configuration with 2.45 mm between pins (</font><font size="4"><u><A HREF = "http://web.metec-ag.de/">Metec</A></u></font>).</font> </p>   
+  </div>
+</div>
+
+</section>
+  <section class="center primary">
+          <h3><font size="5">Head Digitization:</font></h3>
+<p><font size="4">Two options for head digitization, the Polhemus FASTRAK and the Polhemus FastSCAN II, provide a
+noninvasive method for obtaining a 3D image of the child’s head. These systems help determine the
+ relative position of the child’s head inside the MEG helmet and also allow for precise registration to an
+ MRI (</font><font size="4"><u><A HREF = "http://www.polhemus.com/">Polhemus</A></u></font>). </font></p>
+    <p>&nbsp;</p>
+    <div class="imageContainer maxflow">
+    <div style="height: 500px">
+      <IMG SRC="fastrack.jpg" style="width: 100%;max-height: 100%" />
+    </div>
+<p>&nbsp;</p>
+<p><font size="4">The FASTRAK utilizes a stylus to manually choose points of interest with resolution accuracy of 0.03
+inches RMS with a resolution of 0.0002 inches per inch.</font></p>
+</section>
+<section class="center primary">
+   <div class="imageContainer maxflow">
+   <div style="height: 500px">
+     <IMG SRC="fastscan.jpg" style="width: 100%;max-height: 100%" />
+   </div>
+ <p>&nbsp;</p>
+<p><font size="4">The FastSCAN II system utilizes a handheld wand to accurately and rapidly digitize the 3D surface of
+the head while collecting hundreds of points to model the entire surface with resolution typically
+within 0.0004 inches. </font></p>
+</section>
+<section class="center primary">
+    <div class="imageContainer maxflow">
+    <div style="height: 500px">
+      <IMG SRC="hpi.jpg" style="width: 100%;max-height: 100%"/>
+    </div>
+<p>&nbsp;</p>
+<p><font size="4">A set of Elekta head position indicator coils (four coils) can be attached to the child's head and included
+in the digitization process to localize the child's head with respect to the MEG sensor.</font></p>
+
+  </div>
+</div>
+
+</section>
+  <section class="center">
+        <h3><font size="5">Communication Systems:</font></h3>
+<div class="imageContainer maxflow">
+  <div style="height: 500px">
+    <IMG SRC="headset.jpg" style="width: 100%;max-height: 100%" />
+  </div>
+  <div>
+
+    <p><font size="4">The Avotec Silent Scan intercom system allows for communication between scientists inside and
+outside the MSR without magnetic interference (</font><font size="4"><u><A HREF = "http://www.avotecinc.com/">Avotec</A></u></font>). </font></p>
+</section>
+<section class="center">
+    <div class="imageContainer maxflow">
+    <div style="height: 500px">
+      <IMG SRC="intercom.jpg" style="width: 100%;max-height: 100%" />
+    </div>
+<p>&nbsp;</p>
+<p><font size="4">A Vitek VTC-IRE70 CCTV camera is linked to a TV outside the MSR so families can observe their
+ child during the recording (</font><font size="4"><u><A HREF = "http://www.vitekcctv.com/">Vitek</A></u></font>). </font></p>
+  </div>
+</div>
+
+</section>
+
+
+
+      </main>
+
+      <footer-element></footer-element>
+
+    </article>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'meg-resources',
+    });
+  </script>
+</dom-module>
