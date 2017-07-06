@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:alpine
 MAINTAINER fnndsc "dev@babymri.org"
 
 # Install bower and polymer-cli
