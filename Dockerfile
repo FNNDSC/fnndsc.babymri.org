@@ -1,20 +1,19 @@
-FROM node:alpine
+FROM node:7
 MAINTAINER fnndsc "dev@babymri.org"
 
 # Install bower and polymer-cli
-RUN npm install npm@latest -g
-RUN npm install -g bower
-RUN npm install -g polymer-cli
+RUN npm install -g bower polymer-cli
 
-# Install bower deps
-RUN mkdir -p /src/website-deps
-COPY bower.json /src/website-deps/
-WORKDIR /src/website-deps
-RUN bower install --allow-root
+RUN useradd --user-group --create-home --shell /bin/false fnndsc
+ENV HOME=/home/fnndsc
+
+COPY bower.json $HOME/src/
+RUN chown -R fnndsc:fnndsc $HOME/*
+
+USER fnndsc
+WORKDIR $HOME/src
+RUN bower install
 
 # Start dev server
-WORKDIR /src/website
 EXPOSE 8060
-COPY ./docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["polymer", "serve", "--hostname", "0.0.0.0", "--port", "8060"]
