@@ -25,41 +25,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         display: block;
       }
-
-      iron-pages {
-        padding: 48px 62px;
-      }
     </style>
 
     <app-route
-        route="[[route]]"
-        pattern="/:page"
-        data="{{routeData}}",
-        tail="{{subroute}}">
+      route="[[route]]"
+      pattern="/:page"
+      data="{{routeData}}",
+      tail="{{subroute}}">
     </app-route>
 
     <app-route
-        route="[[subroute]]"
-        pattern="/:uid"
-        data="{{subrouteData}}">
+      route="[[subroute]]"
+      pattern="/:uid"
+      data="{{subrouteData}}">
     </app-route>
 
     <iron-pages fullbleed
-            selected="[[page]]"
-            attr-for-selected="name"
-            fallback-selection="error404"
-            role="main">
-            <meg-overview name="overview"></meg-overview>
-            <meg-resources name="resources"></meg-resources>
-            <meg-whatismeg name="whatismeg"></meg-whatismeg>
-            <meg-people name="people"></meg-people>
-            <meg-member name="member" member="[[member]]"></meg-member>
-            <meg-canmychildparticipate name="canmychildparticipate"></meg-canmychildparticipate>
-            <meg-contactus name="contactus"></meg-contactus>
-            <meg-jobpostings name="jobpostings"></meg-jobpostings>
-            <meg-mediaandtimeline name="mediaandtimeline"></meg-mediaandtimeline>
-            <meg-error404 name="error404"></meg-error404>
-        </iron-pages>
+      selected="[[page]]"
+      attr-for-selected="name"
+      fallback-selection="error404"
+      role="main">
+      <meg-overview name="overview"></meg-overview>
+      <meg-resources name="resources"></meg-resources>
+      <meg-whatismeg name="whatismeg"></meg-whatismeg>
+      <meg-people name="people"></meg-people>
+      <meg-member name="member" member="[[member]]"></meg-member>
+      <meg-canmychildparticipate name="canmychildparticipate"></meg-canmychildparticipate>
+      <meg-contactus name="contactus"></meg-contactus>
+      <meg-jobpostings name="jobpostings"></meg-jobpostings>
+      <meg-mediaandtimeline name="mediaandtimeline"></meg-mediaandtimeline>
+      <meg-error404 name="error404"></meg-error404>
+  </iron-pages>
 
   </template>
 
