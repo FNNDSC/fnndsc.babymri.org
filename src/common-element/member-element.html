@@ -46,6 +46,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- FROM https://github.com/robdodson/contacts-app -->
 
+        <!-- ABOUT PERSON -->
+        <div class="group">
+          <div class="item">
+            <iron-icon icon="icons:description"></iron-icon>
+            <div class="double-line-1">
+              <template is="dom-repeat" items="{{member.about}}">
+                  <div>[[item]]</div>
+              </template>
+            </div>
+            <div class="double-line-2">About</div>
+          </div>
+
+          <a href="[[member.publications]]" target="_blank">
+            <div class="item">
+              <div class="double-line-1">Click to see publications</div>
+              <div class="double-line-2">Publications</div>
+            </div>
+          </a>
+        </div>
+
         <!-- CONTACT PERSON -->
         <div class="group">
           <div class="item">
@@ -129,17 +149,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div class="double-line-2">Country</div>
           </div>
         </div>
-      </div>
-
-      <!-- PUBLICATIONS -->
-      <div class="group">
-          <a href="[[member.publications]]" target="_blank">
-            <div class="item">
-              <iron-icon icon="icons:book"></iron-icon>
-              <div class="double-line-1">Click to see publications</div>
-              <div class="double-line-2">Publications</div>
-            </div>
-          </a>
       </div>
     </paper-card>
 
