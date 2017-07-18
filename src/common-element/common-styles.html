@@ -26,8 +26,12 @@
         }
 
         /* HEADER */
-        header.fullscreen {
+        .fullscreen {
             height: calc(100vh - 64px);
+        }
+
+        .halfscreen {
+           height: calc(50vh - 64px); 
         }
 
         /* NAV */
@@ -74,6 +78,10 @@
             max-width: 368px;
             max-height: 368px;
             margin: 20px;
+        }
+
+        .imageContainer img.noMaxWidth {
+            max-width: inherit;
         }
 
         /* FOOTER */
