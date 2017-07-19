@@ -39,6 +39,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <li><a href="#mri" label="mri" on-tap="__scrollTo">MRI Team</a></li>
           <li><a href="#nirs" label="nirs" on-tap="__scrollTo">NIRS Team</a></li>
           <li><a href="#dev" label="dev" on-tap="__scrollTo">DEV Team</a></li>
+          <li><a href="#administration" label="administration" on-tap="__scrollTo">Administration</a></li>
         </ul>
       </nav>
 
@@ -92,6 +93,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </section>
 
         <section>
+          <h2 class="maxflow" class="maxflow">Administration</h2>
+
+          <div id="administration" class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isAdministration">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+          </div>
+        </section>
+
+        <section>
           <h2 class="maxflow" class="maxflow">Almuni</h2>
 
           <div id="alumni" class="cards">
@@ -101,6 +112,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
         </section>
         
+       
       </main>
 
       <footer-element></footer-element>
@@ -124,6 +136,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       _isDEV: function(item) {
         return item.team.indexOf('dev') >= 0 && item.team.indexOf('alumni') < 0;
+      },
+      _isAdministration: function(item) {
+        return item.team.indexOf('administration') >= 0 && item.team.indexOf('alumni') < 0;
       },
       _isAlumni: function(item) {
         return item.team.indexOf('alumni') >= 0;
