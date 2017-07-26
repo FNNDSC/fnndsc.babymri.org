@@ -33,12 +33,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <nav>
         <div>Contents</div>
         <ul>
-          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
-          <li><a href="#meg" label="meg" on-tap="__scrollTo">MEG Team</a></li>
+          <li><a href="#leadership" label="leadership" on-tap="__scrollTo">Leadership</a></li>
+          <li><a href="#Administration" label="Administration" on-tap="__scrollTo">Administration</a></li>
           <li><a href="#mri" label="mri" on-tap="__scrollTo">MRI Team</a></li>
           <li><a href="#nirs" label="nirs" on-tap="__scrollTo">NIRS Team</a></li>
+          <li><a href="#meg" label="meg" on-tap="__scrollTo">MEG Team</a></li>
           <li><a href="#dev" label="dev" on-tap="__scrollTo">DEV Team</a></li>
-          <li><a href="#Administration" label="Administration" on-tap="__scrollTo">Administration</a></li>
+          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
         </ul>
       </nav>
 
@@ -50,12 +51,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <p>These teams each tackle a different part of the research that is under the FNNDSC team<p>
 
         </section>
-      
+
         <section>
-          <h2 id="meg" class="maxflow" class="maxflow">MEG Team</h2>
+          <h2 id="Leadership" class="maxflow" class="maxflow">Leadership</h2>
 
           <div class="cards">
-              <template is="dom-repeat" items="[[members]]" as="member" filter="_isMEG">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isLeadership">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="Administration" class="maxflow" class="maxflow">Administration</h2>
+
+          <div class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isAdministration">
                   <member-card-element member=[[member]]></member-card-element>
               </template>
           </div>
@@ -70,7 +81,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </template>
           </div>
         </section>
-
+      
         <section>
           <h2 id="nirs" class="maxflow" class="maxflow">NIRS Team</h2>
 
@@ -82,20 +93,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </section>
 
         <section>
-          <h2 id="dev" class="maxflow" class="maxflow">DEV Team</h2>
+          <h2 id="meg" class="maxflow" class="maxflow">MEG Team</h2>
 
           <div class="cards">
-              <template is="dom-repeat" items="[[members]]" as="member" filter="_isDEV">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isMEG">
                   <member-card-element member=[[member]]></member-card-element>
               </template>
           </div>
         </section>
 
-   <section>
-          <h2 id="Administration" class="maxflow" class="maxflow">Administration</h2>
+        <section>
+          <h2 id="dev" class="maxflow" class="maxflow">DEV Team</h2>
 
           <div class="cards">
-              <template is="dom-repeat" items="[[members]]" as="member" filter="_isAdministration">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isDEV">
                   <member-card-element member=[[member]]></member-card-element>
               </template>
           </div>
@@ -124,21 +135,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
       is: 'fnndsc-team',
       behaviors: [TOCBehavior, MembersBehavior],
-      _isMEG: function(item) {
-        return item.team.indexOf('meg') >= 0 && item.team.indexOf('alumni') < 0;
+     _isLeadership: function(item) {
+        return item.team.indexOf('Leadership') >= 0 && item.team.indexOf('alumni') < 0;
       },
-      _isMRI: function(item) {
+     _isAdministration: function(item) {
+        return item.team.indexOf('admin') >= 0 && item.team.indexOf('alumni') < 0;
+      },
+     _isMRI: function(item) {
         return item.team.indexOf('mri') >= 0 && item.team.indexOf('alumni') < 0;
       },
-      _isNIRS: function(item) {
+     _isNIRS: function(item) {
         return item.team.indexOf('nirs') >= 0 && item.team.indexOf('alumni') < 0;
+      },
+      _isMEG: function(item) {
+        return item.team.indexOf('meg') >= 0 && item.team.indexOf('alumni') < 0;
       },
       _isDEV: function(item) {
         return item.team.indexOf('dev') >= 0 && item.team.indexOf('alumni') < 0;
      },
-      _isAdministration: function(item) {
-        return item.team.indexOf('admin') >= 0 && item.team.indexOf('alumni') < 0;
-      },
       _isAlumni: function(item) {
         return item.team.indexOf('alumni') >= 0;
       },
