@@ -133,8 +133,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
             <paper-submenu>
               <paper-icon-item class="menu-trigger">
-                <iron-icon icon="icons:label-outline" item-icon></iron-icon>
-                FNNDSC
+                <iron-icon icon="icons:home" item-icon></iron-icon>
+                Home
               </paper-icon-item>
               <paper-menu class="menu-content">
                 <a data-route="fnndsc/overview" href$="{{prefixUrl}}/fnndsc/overview" on-tap="_scrollTop">
@@ -161,32 +161,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-submenu>
               <paper-icon-item class="menu-trigger">
                 <iron-icon icon="icons:change-history" item-icon></iron-icon>
-                MEG
+                MEG Lab
               </paper-icon-item>
               <paper-menu class="menu-content">
                 <a data-route="meg/overview" href$="{{prefixUrl}}/meg/overview" on-tap="_scrollTop">
                   <paper-item>Overview</paper-item>
                 </a>
-                <a data-route="meg/resources" href$="{{prefixUrl}}/meg/resources" on-tap="_scrollTop">
-                  <paper-item>Resources</paper-item>
+		<a data-route="meg/resources" href$="{{prefixUrl}}/meg/resources" on-tap="_scrollTop">
+                  <paper-item>Laboratories</paper-item>
                 </a>
                 <a data-route="meg/whatismeg" href$="{{prefixUrl}}/meg/whatismeg" on-tap="_scrollTop">
                   <paper-item>What is MEG?</paper-item>
                 </a>
-                <a data-route="meg/people" href$="{{prefixUrl}}/meg/people" on-tap="_scrollTop">
-                  <paper-item>People</paper-item>
-                </a>
                 <a data-route="meg/canmychildparticipate" href$="{{prefixUrl}}/meg/canmychildparticipate" on-tap="_scrollTop">
-                  <paper-item>Can My Child Participate?</paper-item>
+                  <paper-item> Projects and Studies</paper-item>
                 </a>
-                <a data-route="meg/contactus" href$="{{prefixUrl}}/meg/contactus" on-tap="_scrollTop">
-                  <paper-item>Contact Us!</paper-item>
+		 <a data-route="dev/research" href$="{{prefixUrl}}/dev/research" on-tap="_scrollTop">
+                  <paper-item>Research and Publications</paper-item>
+                </a>
+  		<a data-route="meg/people" href$="{{prefixUrl}}/meg/people" on-tap="_scrollTop">
+                  <paper-item>Team</paper-item>
+                </a>               
+		 <a data-route="meg/contactus" href$="{{prefixUrl}}/meg/contactus" on-tap="_scrollTop">
+                  <paper-item>Contact</paper-item>
                 </a>
                 <a data-route="meg/jobpostings" href$="{{prefixUrl}}/meg/jobpostings" on-tap="_scrollTop">
-                  <paper-item>Job Postings</paper-item>
-                </a>
-                <a data-route="meg/mediaandtimeline" href$="{{prefixUrl}}/meg/mediaandtimeline" on-tap="_scrollTop">
-                  <paper-item>Media & Timeline</paper-item>
+                  <paper-item>Opportunities</paper-item>
                 </a>
               </paper-menu>
             </paper-submenu>
@@ -194,22 +194,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-submenu>
               <paper-icon-item class="menu-trigger">
                 <iron-icon icon="icons:donut-large" item-icon></iron-icon>
-                MRI
+                MRI Lab
               </paper-icon-item>
               <paper-menu class="menu-content">
                 <a data-route="mri/overview" href$="{{prefixUrl}}/mri/overview" on-tap="_scrollTop">
                   <paper-item>Overview</paper-item>
                 </a>
-                <a data-route="mri/labs" href$="{{prefixUrl}}/mri/labs" on-tap="_scrollTop">
+               <a data-route="mri/resources" href$="{{prefixUrl}}/meg/resources" on-tap="_scrollTop">
                   <paper-item>Laboratories</paper-item>
                 </a>
+		<a data-route="mri/labs" href$="{{prefixUrl}}/mri/labs" on-tap="_scrollTop">
+                  <paper-item>What is MRI?</paper-item>
+                </a>
                 <a data-route="mri/projects" href$="{{prefixUrl}}/mri/projects" on-tap="_scrollTop">
-                  <paper-item>Current Projects</paper-item>
+                  <paper-item> Projects and Studies</paper-item>
                 </a>
-                <a data-route="mri/research" href$="{{prefixUrl}}/mri/research" on-tap="_scrollTop">
+		 <a data-route="mri/research" href$="{{prefixUrl}}/mri/research" on-tap="_scrollTop">
                   <paper-item>Research and Publications</paper-item>
-                </a>
-                <a data-route="mri/team" href$="{{prefixUrl}}/mri/team" on-tap="_scrollTop">
+                </a>        
+		<a data-route="mri/team" href$="{{prefixUrl}}/mri/team" on-tap="_scrollTop">
                   <paper-item>Team</paper-item>
                 </a>
                 <a data-route="mri/contact" href$="{{prefixUrl}}/mri/contact" on-tap="_scrollTop">
@@ -221,21 +224,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-submenu>
               <paper-icon-item class="menu-trigger">
                 <iron-icon icon="icons:check-box-outline-blank"item-icon></iron-icon>
-                NIRS
+                NIRS Lab
               </paper-icon-item>
               <paper-menu class="menu-content">
                 <a data-route="nirs/overview" href$="{{prefixUrl}}/nirs/overview" on-tap="_scrollTop">
                   <paper-item>Overview</paper-item>
                 </a>
-                <a data-route="nirs/labs" href$="{{prefixUrl}}/nirs/labs" on-tap="_scrollTop">
+                <a data-route="nirs/resources" href$="{{prefixUrl}}/meg/resources" on-tap="_scrollTop">
                   <paper-item>Laboratories</paper-item>
                 </a>
+			<a data-route="mri/labs" href$="{{prefixUrl}}/mri/labs" on-tap="_scrollTop">
+                  <paper-item>What is NIRS?</paper-item>
+                </a>
                 <a data-route="nirs/projects" href$="{{prefixUrl}}/nirs/projects" on-tap="_scrollTop">
-                  <paper-item>Current Projects</paper-item>
+                  <paper-item> Projects and Studies</paper-item>
                 </a>
-                <a data-route="nirs/research" href$="{{prefixUrl}}/nirs/research" on-tap="_scrollTop">
+ 		<a data-route="dev/research" href$="{{prefixUrl}}/dev/research" on-tap="_scrollTop">
                   <paper-item>Research and Publications</paper-item>
-                </a>
+                </a>  
                 <a data-route="nirs/team" href$="{{prefixUrl}}/nirs/team" on-tap="_scrollTop">
                   <paper-item>Team</paper-item>
                 </a>
@@ -248,14 +254,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-submenu>
               <paper-icon-item class="menu-trigger">
                 <iron-icon icon="icons:code" item-icon></iron-icon>
-                Software
+                Software Lab
               </paper-icon-item>
               <paper-menu class="menu-content">
                 <a data-route="meg/overview" href$="{{prefixUrl}}/dev/overview" on-tap="_scrollTop">
                   <paper-item>Overview</paper-item>
                 </a>
                 <a data-route="dev/projects" href$="{{prefixUrl}}/dev/projects" on-tap="_scrollTop">
-                  <paper-item>Current Projects</paper-item>
+                  <paper-item> Projects and Studies</paper-item>
                 </a>
                 <a data-route="dev/research" href$="{{prefixUrl}}/dev/research" on-tap="_scrollTop">
                   <paper-item>Research and Publications</paper-item>

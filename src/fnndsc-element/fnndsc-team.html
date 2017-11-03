@@ -27,7 +27,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <article>
       <header class="center">
-        <h1>FNNDSC Team</h1>
+        <h1>FNNDSC Teams</h1>
       </header>
 
       <nav>
@@ -38,19 +38,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <li><a href="#mri" label="mri" on-tap="__scrollTo">MRI Team</a></li>
           <li><a href="#nirs" label="nirs" on-tap="__scrollTo">NIRS Team</a></li>
           <li><a href="#meg" label="meg" on-tap="__scrollTo">MEG Team</a></li>
-          <li><a href="#dev" label="dev" on-tap="__scrollTo">DEV Team</a></li>
-          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
+          <li><a href="#dev" label="dev" on-tap="__scrollTo">Software Team</a></li>
+       
         </ul>
       </nav>
 
       <main>
-
-        <section>
-          <h2 id="about" class="maxflow" class="maxflow">About</h2>
-
-          <p>These teams each tackle a different part of the research that is under the FNNDSC team<p>
-
-        </section>
 
         <section>
           <h2 id="Leadership" class="maxflow" class="maxflow">Leadership</h2>
@@ -103,7 +96,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </section>
 
         <section>
-          <h2 id="dev" class="maxflow" class="maxflow">DEV Team</h2>
+          <h2 id="dev" class="maxflow" class="maxflow">Software Team</h2>
 
           <div class="cards">
               <template is="dom-repeat" items="[[members]]" as="member" filter="_isDEV">
@@ -113,7 +106,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </section>
 
         <section>
-          <h2 class="maxflow" class="maxflow">Almuni</h2>
+          <h2 class="maxflow" class="maxflow">Alumni</h2>
 
           <div id="alumni" class="cards">
               <template is="dom-repeat" items="[[members]]" as="member" filter="_isAlumni">
@@ -141,14 +134,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      _isAdministration: function(item) {
         return item.team.indexOf('admin') >= 0 && item.team.indexOf('alumni') < 0;
       },
+_isMEG: function(item) {
+        return item.team.indexOf('meg') >= 0 && item.team.indexOf('alumni') < 0;
+      },
      _isMRI: function(item) {
         return item.team.indexOf('mri') >= 0 && item.team.indexOf('alumni') < 0;
       },
      _isNIRS: function(item) {
         return item.team.indexOf('nirs') >= 0 && item.team.indexOf('alumni') < 0;
-      },
-      _isMEG: function(item) {
-        return item.team.indexOf('meg') >= 0 && item.team.indexOf('alumni') < 0;
       },
       _isDEV: function(item) {
         return item.team.indexOf('dev') >= 0 && item.team.indexOf('alumni') < 0;

@@ -27,30 +27,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <article>
-      <header class="center">
-        <h1>People</h1>
-      </header>
 
-      <nav>
-        <div>Contents</div>
-        <ul>
-          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
-          <li><a href="#meg" label="meg" on-tap="__scrollTo">BabyMEG Team</a></li>
-          <li><a href="#alumni" label="alumni" on-tap="__scrollTo">Alumni</a></li>
-        </ul>
-      </nav>
+       <header class="center">
+        <h1>MEG Team</h1>
+      </header>
 
       <main>
 
         <section>
-          <h2 id="about" class="maxflow" class="maxflow">About</h2>
 
-          <p>We are the BabyMEG Team and we are located in the main building of Boston Children's Hospital on Longwood Ave. Please see below to learn more about each of us!</p>
-
-        </section>
-
-        <section>
-          <h2 id="meg" class="maxflow" class="maxflow">BabyMEG Team</h2>
 
           <div class="cards">
               <template is="dom-repeat" items="[[members]]" as="member" filter="_isNIRS">
@@ -59,21 +44,55 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
         </section>
 
-        <section>
-          <h2 class="maxflow" class="maxflow">Alumni</h2>
+ <section>
+<header class="center">
+        <h1>Alumni</h1>
+<div style="text-align: center;"</div>
+<div id="alumni" class="cards">
 
-          <div id="alumni" class="cards">
-              <template is="dom-repeat" items="[[members]]" as="member" filter="_isAlumni">
-                  <member-card-element member=[[member]]></member-card-element>
-              </template>
-          </div>
-        </section>
+<ul style="list-style-type:square">
+<p><u>Team Members</u></p>
+<li><font size="4">Natsuko Mori</font></li>
+<li><font size="4">Nirupama Sharadamma</font></li>
+<li><font size="4">Tapsya Nayak</font></li>
+<li><font size="4">Chiran Doshi</font></li>
+<li><font size="4">Christos Papadelis, PhD</font></li>
+<li><font size="4">Anne Philip</font></li>
+<li><font size="4">Seok Lew, PhD</font></li>
+<li><font size="4">Kathryn Gill</font></li>
+</ul>
+<p>&nbsp;</p>
+
+<ul style="list-style-type:square">
+<p><u>Visiting Researchers </u></p>
+<li><font size="4">Alexander Hunold</font></li>
+<li><font size="4">Kikuko Nagao</font></li>
+<li><font size="4">Maria Nazarova, MD, PhD</font></li>
+<li><font size="4">Lorenz Esch</font></li>
+<li><font size="4">Dulce Maria Magdelano Arroyo</font></li>
+<li><font size="4">Mario Bräcklein</font></li>
+</ul>
+<p>&nbsp;</p>
+
+<ul style="list-style-type:square">
+<p><u>Interns</u></p>
+<li><font size="4">Joseph Wachutka</font></li>
+<li><font size="4">Jackson Stone</font></li>
+<li><font size="4">Rebbecca Hathaway</font></li>
+<li><font size="4">Ethan Cottrill</font></li>
+<li><font size="4">Benjamin Ferleger</font></li>
+<li><font size="4">Stephanie Pawlyszyn</font></li>
+</ul>
+
+</div>
 
       </main>
 
       <footer-element></footer-element>
 
     </article>
+
+
 
   </template>
 
@@ -90,3 +109,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
   </script>
 </dom-module>
+
+
+
