@@ -1,6 +1,5 @@
 # fnndsc.babymri.org
 
-
 - [Pre-requisites](#pre-requisites)
   - [Local working directory](#local-working-directory)
   - [Setup git](#setup-git)
