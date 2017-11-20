@@ -7,14 +7,13 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <link rel="import" href="../common-element/toc-behavior.html">
 <link rel="import" href="../data/contacts-behavior.html">
 <link rel="import" href="../common-element/contact-element.html">
-<link rel="import" href="../common-element/common-styles.html">
 <link rel="import" href="../common-element/footer-element.html">
+<link rel="import" href="../common-element/common-styles.html">
 
 <dom-module id="mri-contact">
   <template>
@@ -27,26 +26,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <article id="article">
       <header class="center">
-        <h1>MRI Contact</h1>
+        <h1>MRI Lab Contact</h1>
       </header>
 
-      <nav>
-        <div>Contents</div>
-        <ul>
-          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
-          <template is="dom-repeat" items="[[contacts]]" as="contact">
-            <li><a href$="#[[contact.id]]" label$="[[contact.id]]" on-tap="__scrollTo">[[contact.title]]</a></li>
-          </template>
-        </ul>
-      </nav>
-
-
       <main>
-        <section>
-          <h2 id="about" class="maxflow">About</h2>
 
-          <p>For more information about FNNDSC please do not hesitate to contact Heather Leosz</p>
-        </section>
 
         <template is="dom-repeat" items="[[contacts]]" as="contact">
           <section>
@@ -55,7 +39,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </section>
         </template>
       </main>
-      
+
       <footer-element></footer-element>
 
     </article>

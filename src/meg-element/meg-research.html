@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../common-element/footer-element.html">
 <link rel="import" href="../common-element/common-styles.html">
 
-<dom-module id="dev-research">
+<dom-module id="meg-research">
   <template>
     <style include="common-styles"></style>
     <style>
@@ -33,7 +33,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <nav>
         <div>Contents</div>
         <ul>
-          <template is="dom-repeat" items="[[publications]]" as="publication" filter="_isDEV">
+          <template is="dom-repeat" items="[[publications]]" as="publication" filter="_isMEG">
             <li><a href$="#{{publication.id}}" label$="{{publication.id}}" on-tap="__scrollTo">{{publication.date}} - {{publication.whereShort}} - {{publication.title}}</a></li>
           </template>
         </ul>
@@ -41,7 +41,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <main>
 
-        <template is="dom-repeat" items="[[publications]]" as="publication" filter="_isDEV">
+        <template is="dom-repeat" items="[[publications]]" as="publication" filter="_isMEG">
           <section>
             <h2 id="{{publication.id}}" class="maxflow" class="maxflow">{{publication.title}}</h2>
 
@@ -68,10 +68,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
     Polymer({
-      is: 'dev-research',
+      is: 'meg-research',
       behaviors: [TOCBehavior, PublicationsBehavior],
-      _isDEV: function(item) {
-        return item.team.indexOf('dev') >= 0;
+      _isMEG: function(item) {
+        return item.team.indexOf('meg') >= 0;
       },
     });
   </script>

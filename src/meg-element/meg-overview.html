@@ -9,8 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../common-element/footer-element.html">
 <link rel="import" href="../common-element/common-styles.html">
+<link rel="import" href="../common-element/footer-element.html">
 
 <dom-module id="meg-overview">
   <template>
@@ -19,14 +19,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
       }
-
     </style>
 
-    <article>
+    <article class="flow">
       <header class="center">
-        <h1>Welcome to the MEG Lab</h1>
+        <h1 class="maxflow centerText">Welcome to the MEG Lab</h1>
+      </header>
 
-      <main>
+<main>
 
         <section class="center">
 
@@ -34,10 +34,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div>
               <img src="/images/meg/IMG_1583.JPG">
             </div>
-            <div>
+            <div align="justify">
               <h3>Who We Are</h3>
-              <p>We are the BabyMEG Lab under the FNNDSC at Boston Children’s Hospital. The BabyMEG system is at the forefront of MEG technologies and was one of the first systems designed specifically for children 0-4 years of age. The facility itself is ideally located across from the NICU to provide ease of access for patients while bringing together researchers and clinicians to promote an integrated approach to developing technologies and caring for patients.</p>
-
+              <p>We are the BabyMEG Lab under the FNNDSC at Boston Children’s Hospital. The BabyMEG system is at the forefront of MEG technologies and was one of the first systems designed specifically for children 0-4 years of age. The facility itself is ideally located across from the NICU to provide ease of access for patients while bringing together researchers and clinicians to promote an integrated approach to developing technologies and caring for patients.</p>
 
             </div>
           </div>
@@ -49,9 +48,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div>
               <img src="/images/art/MEG_brain_mapping.jpg">
             </div>
-            <div>
+            <div align="justify">
               <h3>What We Do</h3>
-              <p>Magnetoencephalography, or MEG, is a noninvasive neuroimaging technique designed to measure brain activity via magnetic fields. Electrical signals associated with neuronal firing cause subtle fluctuations in the magnetic fields surrounding the brain. MEG measures the change in these magnetic fields to provide an indirect measure of the strength and location of brain activity. </p>
+              <p>Magnetoencephalography, or MEG, is a noninvasive neuroimaging technique designed to measure brain activity via magnetic fields. Electrical signals associated with neuronal firing cause subtle fluctuations in the magnetic fields surrounding the brain. MEG measures the change in these magnetic fields to provide an indirect measure of the strength and location of brain activity.</p>
 
             </div>
           </div>
@@ -61,13 +60,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <div class="imageContainer maxflow">
             <div>
-              <img src="/images/meg/eeg.jpg"
-">
+              <img src="/images/meg/eeg.jpg">
             </div>
-            <div>
+            <div align="justify">
               <h3>How We Do It</h3>
               <p>We strive to create a comfortable and child friendly environment for all families visiting the BabyMEG Lab. MEG is a system that is completely non-invasive and does not produce any form of radiation. We are able to collect data during natural sleep and still obtain real-time brain activity with excellent spatial resolution.</p>
-
 
             </div>
           </div>
@@ -75,11 +72,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </section>
 
       </main>
+
+      <main>
+
+       <section class="center primaryInverted">
+          <h3 class="maxflow centerText">Join a study!</h3>
+        </section>
+
+      </main>
+
       <footer-element></footer-element>
 
     </article>
 
   </template>
+
 
   <script>
     Polymer({

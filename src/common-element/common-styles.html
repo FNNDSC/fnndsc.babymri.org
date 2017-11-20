@@ -1,7 +1,7 @@
 <dom-module id="common-styles">
   <template>
     <style>
-        
+
         /* ARTICLE */
 
         article {
@@ -31,9 +31,16 @@
         }
 
         .halfscreen {
-           height: calc(50vh - 64px); 
+           height: calc(50vh - 64px);
         }
 
+        .threequarterscreen {
+           height: calc(75vh - 64px);
+        }
+
+        .quarterscreen {
+           height: calc(25vh - 64px);
+        }
         /* NAV */
         nav {
             border-left: 5px solid var(--light-primary-color);
@@ -73,7 +80,7 @@
             flex: 1;
             flex-basis: 0.000000001px;
         }
-  
+
         .imageContainer img {
             max-width: 368px;
             max-height: 368px;
@@ -108,6 +115,11 @@
         }
 
         p {
+            font-weight: lighter;
+        }
+
+        pj {
+            text-align:justify;
             font-weight: lighter;
         }
 

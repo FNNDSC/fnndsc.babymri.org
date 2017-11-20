@@ -11,12 +11,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <link rel="import" href="../common-element/toc-behavior.html">
-<link rel="import" href="../data/contacts-behavior.html">
-<link rel="import" href="../common-element/contact-element.html">
-<link rel="import" href="../common-element/common-styles.html">
+<link rel="import" href="../common-element/member-card-element.html">
 <link rel="import" href="../common-element/footer-element.html">
+<link rel="import" href="../common-element/common-styles.html">
 
-<dom-module id="meg-mediaandtimeline">
+<dom-module id="nirs-whatisnirs">
   <template>
     <style include="common-styles"></style>
     <style>
@@ -25,38 +24,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
-   <article class="flow">
-    <article id="article">
+    <article>
       <header class="center">
-        <h1>Media and Timeline</h1>
+        <h1>What is NIRS?</h1>
       </header>
 
+      <nav>
+        <div>Contents</div>
+        <ul>
+          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
+        </ul>
+      </nav>
 
       <main>
+
         <section>
+          <h2 id="about" class="maxflow" class="maxflow">About</h2>
 
+          <p>Labs</p>
 
+        </section>
 
-
-
+      </main>
 
       <footer-element></footer-element>
 
     </article>
-        </article>
 
   </template>
 
   <script>
     Polymer({
-      is: 'meg-mediaandtimeline',
-      behaviors: [TOCBehavior, ContactsBehavior],
-      properties: {
-        contacts: Object,
-      },
-      ready: function() {
-        this.contacts = this.__contacts();
-      },
+      is: 'nirs-whatisnirs',
+      behaviors: [TOCBehavior],
     });
   </script>
 </dom-module>
