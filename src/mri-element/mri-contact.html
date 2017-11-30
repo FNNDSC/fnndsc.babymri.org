@@ -30,11 +30,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </header>
 
       <main>
-
-
-        <template is="dom-repeat" items="[[contacts]]" as="contact">
+        <template is="dom-repeat" items="[[contacts]]" as="contact" filter="_isMRIContact">
           <section>
-            <h2 id="[[contact.id]]" class="maxflow" class="maxflow">[[contact.title]]</h2>
             <contact-element contact=[[contact]]></contact-element>
           </section>
         </template>
@@ -55,6 +52,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       ready: function() {
         this.contacts = this.__contacts();
+      },
+      _isMRIContact: function(item) {
+        return item.id === 'mri-contact';
       },
     });
   </script>
