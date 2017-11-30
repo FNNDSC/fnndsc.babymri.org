@@ -9,7 +9,8 @@
   "rules": {
     "no-var": "off",
     "new-cap": ["error", { "capIsNewExceptions": ["Polymer"] }],
-    "keyword-spacing": "error"
+    "keyword-spacing": "error",
+    "max-len": "warn"
   },
   "globals": {
     "Polymer": true,
