@@ -24,18 +24,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       header {
         background-image: url('/images/art/babybackground.jpg);
         background-repeat: no-repeat;
-        background-size: fit;
+        background-size: cover;
       }
 
+      header div {
+        background-color: rgba(255, 255, 255, .6);
+        padding: 8px;
+      }
 
-      header > h1 {
+      header h1 {
         font-size: 36px;
-        color: #fff
+        padding: 16px;
       }
 
-      header > h2 {
+      header h2 {
         font-size: 30px;
-color: #fff
+        padding: 16px;
       }
 
       h3 {
@@ -50,14 +54,16 @@ color: #fff
     </style>
 
     <article class="flow">
-      <header class="center halfscreen">
-        <h1 class="maxflow centerText"><font color="#000000">Welcome to the Fetal Neonatal Neuroimaging <br>and Developmental Science Center</br></font></h1>
-        <h2 class="maxflow "><font color="#000000">Boston Children's Hospital</font></h2>
+      <header class="center fullscreen">
+        <div>
+          <h1 class="maxflow centerText">Welcome to the Fetal Neonatal Neuroimaging <br>and Developmental Science Center</h1>
+          <h2 class="maxflow centerText">Boston Children's Hospital</h2>
+        </div>
       </header>
 
       <main>
 
-      <section class="center primary">
+      <section class="center">
       </section>
 
         <section class="center">
