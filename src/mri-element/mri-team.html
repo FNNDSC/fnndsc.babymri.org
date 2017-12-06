@@ -33,23 +33,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <nav>
         <div>Contents</div>
         <ul>
-          <li><a href="#about" label="about" on-tap="__scrollTo">About</a></li>
-          <li><a href="#mri" label="meg" on-tap="__scrollTo">MRI Team</a></li>
-          <li><a href="#alumni" label="alumni" on-tap="__scrollTo">Alumnis</a></li>
+          <li><a href="#mri" label="mri" on-tap="__scrollTo">MRI Team</a></li>
+          <li><a href="#alumni" label="alumni" on-tap="__scrollTo">Alumni</a></li>
+
         </ul>
       </nav>
 
       <main>
 
         <section>
-          <h2 id="about" class="maxflow" class="maxflow">About</h2>
-
-          <p>The MRI Team</p>
-
-        </section>
-
-        <section>
-          <h2 id="meg" class="maxflow" class="maxflow">MRI Team</h2>
+          <h2 id="mri" class="maxflow" class="maxflow">MRI Team</h2>
 
           <div class="cards">
               <template is="dom-repeat" items="[[members]]" as="member" filter="_isMRI">
@@ -59,7 +52,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </section>
 
         <section>
-          <h2 class="maxflow" class="maxflow">Almuni</h2>
+          <h2 class="maxflow" class="maxflow">Alumni</h2>
 
           <div id="alumni" class="cards">
               <template is="dom-repeat" items="[[members]]" as="member" filter="_isAlumni">

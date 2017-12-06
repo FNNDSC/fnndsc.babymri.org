@@ -14,7 +14,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../common-element/toc-behavior.html">
 <link rel="import" href="../common-element/member-card-element.html">
 <link rel="import" href="../common-element/footer-element.html">
-
 <link rel="import" href="../common-element/common-styles.html">
 
 <dom-module id="meg-team">
@@ -27,28 +26,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <article>
-
-       <header class="center">
+      <header class="center">
         <h1>MEG Team</h1>
       </header>
+
+      <nav>
+        <div>Contents</div>
+        <ul>
+          <li><a href="#meg" label="meg" on-tap="__scrollTo">MEG Team</a></li>
+          <li><a href="#alumni" label="alumni" on-tap="__scrollTo">Alumni</a></li>
+
+        </ul>
+      </nav>
 
       <main>
 
         <section>
-
+          <h2 id="meg" class="maxflow" class="maxflow">MEG Team</h2>
 
           <div class="cards">
-              <template is="dom-repeat" items="[[members]]" as="member" filter="_isNIRS">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isMEG">
                   <member-card-element member=[[member]]></member-card-element>
               </template>
           </div>
         </section>
 
- <section>
-<header class="center">
-        <h1>Alumni</h1>
-<div style="text-align: center;"</div>
-<div id="alumni" class="cards">
+        <section>
+          <h2 class="maxflow" class="maxflow">Alumni</h2>
+
+          <div id="alumni" class="cards">
+              <template is="dom-repeat" items="[[members]]" as="member" filter="_isAlumni">
+                  <member-card-element member=[[member]]></member-card-element>
+              </template>
+          </div>
+        </section>
 
 <ul style="list-style-type:square">
 <p><u>Team Members</u></p>
@@ -92,15 +103,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </article>
 
-
-
   </template>
 
   <script>
     Polymer({
       is: 'meg-team',
       behaviors: [TOCBehavior, MembersBehavior],
-      _isNIRS: function(item) {
+      _isMEG: function(item) {
         return item.team.indexOf('meg') >= 0 && item.team.indexOf('alumni') < 0;
       },
       _isAlumni: function(item) {
