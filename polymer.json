@@ -50,7 +50,8 @@
     "images/**/*",
     "bower.json",
     "404.html",
-    "CNAME"
+    "CNAME",
+    ".htaccess"
   ],
   "includeDependencies": [
     "manifest.json",
