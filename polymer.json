@@ -45,7 +45,7 @@
     "src/error404-element/error404-element.html",
     "src/lazy-resources.html"
   ],
-  "sourceGlobs": [
+  "sources": [
     "src/**/*",
     "images/**/*",
     "bower.json",
@@ -53,7 +53,7 @@
     "CNAME",
     ".htaccess"
   ],
-  "includeDependencies": [
+  "extraDependencies": [
     "manifest.json",
     "bower_components/webcomponentsjs/webcomponents-lite.min.js"
   ]
